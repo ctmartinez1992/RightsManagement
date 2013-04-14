@@ -1,0 +1,99 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+h1{
+	font: bold 20px Tahoma;
+}
+
+h2{
+	font: bold 14px Tahoma;
+}
+
+header, section, footer, aside, nav, article, hgroup{
+	display: block;
+}
+
+body{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+}
+
+#big_wrapper{
+	max-width: 1000px;
+	margin: 20px 0px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-flex: 1;
+}
+
+#top_header{
+	background: yellow;
+	border: 3px solid black;
+	padding: 20px;
+}
+
+#top_menu{
+	background: blue;
+	border: red;
+	color: white;
+}
+
+#top_menu li{
+	display: inline-block;
+	list-style: none;
+	padding: 5px;
+	font: bold 14px Tahoma;
+}
+
+#new_div{
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+#main_section{
+	border: 1px solid blue;
+	-webkit-box-flex: 1;
+	margin: 20px;
+	padding: 10px;
+}
+
+#main_section article{
+	border: 1px solid green;
+	-webkit-box-flex: 1;
+	margin: 10px;
+	padding: 10px;
+}
+
+#main_section article h2{
+	font: bold 16px Tahoma;
+	margin-bottom: 10px;
+}
+
+#main_section article p{
+	font: 12px Tahoma;
+	margin: 0px 15px;
+	text-align: justify;
+}
+
+#main_section article footer{
+	font: 10px Tahoma;
+	text-align: right;
+	margin-top: 20px;
+}
+
+#side_section{
+	border: 1px solid red;
+	width: 220px;
+	margin: 20px 0px;
+	padding_ 30px;
+	background: #66CCCC;
+}
+
+#footer{
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid green;
+}
