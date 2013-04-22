@@ -17,6 +17,7 @@ class Model_users extends CI_Model {
 
     public function add_temp_user($key) {
         $data = array(
+            'nome' => $this->input->post('nome'),
             'email' => $this->input->post('email'),
             'password' => md5($this->input->post('password')),
             'key' => $key
@@ -49,6 +50,7 @@ class Model_users extends CI_Model {
         if($temp_user) {
             $row = $temp_user->row();
             $data = array(
+                'nome' => $row->nome,
                 'email' => $row->email,
                 'password' => $row->password
             );
@@ -61,5 +63,26 @@ class Model_users extends CI_Model {
         } else {
             return false;
         }
+    }
+    
+    public function get_name_given_email($email) {
+        $query = $this->db->query('SELECT nome FROM users WHERE email="'.$email.'"');
+        return $query->row();
+    }
+    
+    public function update_profile($name, $birth, $country, $email) {
+        $data = array(
+            'nome' => $name,
+            'nascimento' => $birth,
+            'pais' => $country
+        );
+
+        $this->db->where('id', $this->get_id_given_email($email)->id);
+        $this->db->update('users', $data);
+    }
+    
+    public function get_id_given_email($email) {
+        $query = $this->db->query('SELECT id FROM users WHERE email="'.$email.'"');
+        return $query->row();
     }
 }

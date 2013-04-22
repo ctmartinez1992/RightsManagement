@@ -15,12 +15,13 @@ class Site extends CI_Controller {
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
-            $data["logged_user"] = $this->session->userdata('email');
+            $data["logged_user"] = $this->session->userdata('nome');
             $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
         } else {
             $this->load->view("site_login");
+            $this->load->view("site_nav");
         }
-        $this->load->view("site_nav");
         $this->load->view("content_home", $data);
         $this->load->view("site_footer");
     }
@@ -31,25 +32,61 @@ class Site extends CI_Controller {
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
-            $this->load->view("site_logged");
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
         } else {
             $this->load->view("site_login");
+            $this->load->view("site_nav");
         }
-        $this->load->view("site_nav");
         $this->load->view("content_about", $data);
         $this->load->view("site_footer");
     }
 
-    public function contact() {
+    public function contact_no() {
         $data["message"] = "";
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
-            $this->load->view("site_logged");
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
         } else {
             $this->load->view("site_login");
+            $this->load->view("site_nav");
         }
-        $this->load->view("site_nav");
         $this->load->view("content_contact", $data);
+        $this->load->view("site_footer");
+    }
+
+    public function contact($message) {
+        $data["message"] = $message;
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        $this->load->view("content_contact", $data);
+        $this->load->view("site_footer");
+    }
+
+    public function profile() {
+        $this->load->model("model_get");
+        $data["result"] = $this->model_get->getData("home");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        $this->load->view("site_profile", $data);
         $this->load->view("site_footer");
     }
 
@@ -59,19 +96,8 @@ class Site extends CI_Controller {
         $this->form_validation->set_rules("email", "Email", "required|valid_email|xss_clean");
         $this->form_validation->set_rules("message", "Message", "required|xss_clean");
         if ($this->form_validation->run() == FALSE) {
-            $data["message"] = "";
-            $this->load->view("site_header");
-            if ($this->session->userdata('is_logged_in')) {
-                $this->load->view("site_logged");
-            } else {
-                $this->load->view("site_login");
-            }
-            $this->load->view("site_nav");
-            $this->load->view("content_contact", $data);
-            $this->load->view("site_footer");
+            $this->contact_no();
         } else {
-            $data["message"] = "Success";
-
             $this->load->library('email');
             $this->email->set_newline("\r\n");
             $this->email->from(set_value("email"), set_value("fullName"));
@@ -80,15 +106,7 @@ class Site extends CI_Controller {
             $this->email->message(set_value("message"));
             $result = $this->email->send();
 
-            $this->load->view("site_header");
-            if ($this->session->userdata('is_logged_in')) {
-                $this->load->view("site_logged");
-            } else {
-                $this->load->view("site_login");
-            }
-            $this->load->view("site_nav");
-            $this->load->view("content_contact", $data);
-            $this->load->view("site_footer");
+            $this->contact("Success");
         }
     }
 
@@ -98,18 +116,20 @@ class Site extends CI_Controller {
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
-            $data["logged_user"] = $this->session->userdata('email');
+            $data["logged_user"] = $this->session->userdata('nome');
             $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
         } else {
             $this->load->view("site_login");
+            $this->load->view("site_nav");
         }
-        $this->load->view("site_nav");
         $this->load->view("site_signup", $data);
         $this->load->view("site_footer");
     }
 
     public function signup_validation() {
         $this->load->library('form_validation');
+        $this->form_validation->set_rules('nome', 'Nome', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|trim|matches[password]');
@@ -124,7 +144,7 @@ class Site extends CI_Controller {
 
             $this->email->set_newline("\r\n");
             $this->email->from('ctmartinez@sapo.pt', 'Steve');
-            $this->email->to("ctmartinez1992@gmail.com");
+            $this->email->to($this->input->post('email'));
             $this->email->subject("confirm your account");
 
             $message = "<p>Thank you for signing up!</p>";
@@ -135,14 +155,14 @@ class Site extends CI_Controller {
             if ($this->model_users->add_temp_user($key)) {
                 $result = $this->email->send();
                 if ($result) {
-                    echo "email was sent";
+                    $data["answer"] = "O email de confirmação foi enviado com sucesso para a sua conta.";
                 } else {
-                    echo "email was NOT sent";
+                    $data["answer"] = "Pedimos desculpa, houve um erro a enviar o email de confirmação.";
                 }
             } else {
-                echo "problem adding to db.";
+                $data["answer"] = "Pedimos desculpa, houve um erro com a nossa base de dados, tente mais tarde.";
             }
-        } else {
+            
             $this->load->model("model_get");
             $data["result"] = $this->model_get->getData("home");
 
@@ -150,13 +170,16 @@ class Site extends CI_Controller {
             if ($this->session->userdata('is_logged_in')) {
                 $data["logged_user"] = $this->session->userdata('email');
                 $this->load->view("site_logged", $data);
+                $this->load->view("site_nav_logged");
             } else {
                 $this->load->view("site_login");
+                $this->load->view("site_nav");
             }
-            $this->load->view("site_nav");
-            $this->load->view("site_signup", $data);
-            echo "erro a preencher os campos";
+            $this->load->view("site_signup_answer", $data);
             $this->load->view("site_footer");
+        } else {
+            $this->signup();
+            echo "erro a preencher os campos";
         }
     }
 
@@ -164,7 +187,9 @@ class Site extends CI_Controller {
         $this->load->model('model_users');
         if ($this->model_users->is_key_valid($key)) {
             if ($newemail = $this->model_users->add_user($key)) {
+                $result = $this->model_users->get_name_given_email($newemail);
                 $data = array(
+                'nome' => $result->nome,
                 'email' => $newemail,
                 'is_logged_in' => 1
                 );
@@ -184,11 +209,14 @@ class Site extends CI_Controller {
     }
 
     public function login_validation() {
+        $this->load->model("model_users");
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clear|callback_validate_credentials');
         $this->form_validation->set_rules('password', 'Password', 'required|md5|trim|xss_clear');
         if ($this->form_validation->run()) {
+            $result = $this->model_users->get_name_given_email($this->input->post('email'));
             $data = array(
+                'nome' => $result->nome,
                 'email' => $this->input->post('email'),
                 'is_logged_in' => 1
             );
@@ -206,6 +234,24 @@ class Site extends CI_Controller {
         } else {
             $this->form_validation->set_message('validate_credentials', 'incorrect user/pass');
             return false;
+        }
+    }
+
+    public function profile_validation() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nome', 'Nome', 'required');
+        if ($this->form_validation->run()) {
+            echo "passou";
+            $this->load->model("model_users");
+            $date = mktime(0, 0, 0, $this->input->post('mes'), $this->input->post('dia'), $this->input->post('ano'));
+            echo date('d/m/Y', $date);
+            $this->model_users->update_profile($this->input->post('nome'),
+                                               date('d/m/Y', $date),
+                                               $this->input->post('pais'),
+                                               $this->session->userdata('email'));
+            //redirect('site/members');
+        } else {
+            $this->profile();
         }
     }
 

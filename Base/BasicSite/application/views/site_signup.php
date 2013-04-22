@@ -7,8 +7,13 @@
 //            echo validation_errors();
             
             echo "<tr>";
+            echo "<td>Nome: ";
+            echo "</td><td>" . form_input('nome') . "</td>";
+            echo "</tr>";
+            
+            echo "<tr>";
             echo "<td>Email: ";
-            echo "</td><td>" . form_input('email', $this->input->post('email')) . "</td>";
+            echo "</td><td>" . form_input('email') . "</td>";
             echo "</tr>";
 
             echo "<tr>";

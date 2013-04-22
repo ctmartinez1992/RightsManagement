@@ -23,6 +23,8 @@
         </article>
     </section>
     <aside id="side_section">
-        Needs to go to the side!
+        Notícias
+        Updates
+        Versões
     </aside>
 </div>
