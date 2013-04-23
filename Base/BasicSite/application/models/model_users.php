@@ -32,7 +32,6 @@ class Model_users extends CI_Model {
     }
     
     public function is_key_valid($key) {
-        echo $key;
         $this->db->where('key', $key);
         $query = $this->db->get('temp_users');
         
@@ -65,11 +64,6 @@ class Model_users extends CI_Model {
         }
     }
     
-    public function get_name_given_email($email) {
-        $query = $this->db->query('SELECT nome FROM users WHERE email="'.$email.'"');
-        return $query->row();
-    }
-    
     public function update_profile($name, $birth, $country, $email) {
         $data = array(
             'nome' => $name,
@@ -79,6 +73,16 @@ class Model_users extends CI_Model {
 
         $this->db->where('id', $this->get_id_given_email($email)->id);
         $this->db->update('users', $data);
+    }
+    
+    public function get_everything_given_email($email) {
+        $query = $this->db->query('SELECT * FROM users WHERE email="'.$email.'"');
+        return $query->row();
+    }
+    
+    public function get_name_given_email($email) {
+        $query = $this->db->query('SELECT nome FROM users WHERE email="'.$email.'"');
+        return $query->row();
     }
     
     public function get_id_given_email($email) {

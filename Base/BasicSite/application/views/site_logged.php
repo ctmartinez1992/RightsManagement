@@ -1,7 +1,12 @@
 <div id="login">
-    <p style="margin: 5px 5px 5px 10px; font: bold 14px Tahoma">Olá, <?php echo $logged_user; ?></p>
-    <p style="margin: 20px 5px 5px 46px"><a href="<?php echo base_url(); ?>site/profile">perfil</a> | <a href="#">mensagens</a> | <a href="#">opções</a></p>
-    <div id="logout_button">
+    <p style="margin: 5px 0px 0px 0px; font: bold 12px Tahoma; text-align: center;">Olá</p>
+    <p style="margin: 20px 0px 0px 0px; font: bold 16px Tahoma; text-align: center;"><?php echo $logged_user; ?></p>
+    <div id="login_button" style="margin-top: 20px">
+        <a href='<?php echo base_url() . "site/profile"; ?>'>
+            <button type="button" class="button_login">Perfil</button>
+        </a>
+    </div>
+    <div id="signup_button" style="margin-top: 20px">
         <a href='<?php echo base_url() . "site/logout"; ?>'>
             <button type="button" class="button_login">Logout</button>
         </a>

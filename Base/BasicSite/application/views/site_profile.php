@@ -18,9 +18,11 @@
             }
             
             $optionsYear = array();
-            for ($y=date('Y'); $y>=1850; $y--) {
+            for ($y=1850; $y<=date('Y'); $y++) {
                 $optionsYear[$y] = $y;
             }
+            
+            $date = explode('/', $user->nascimento);
         
             echo form_open('site/profile_validation');
             
@@ -28,19 +30,24 @@
             
             echo "<tr>";
             echo "<td>Nome: ";
-            echo "</td><td>" . form_input('nome', $this->session->userdata('nome')) . "</td>";
+            echo "</td><td>" . form_input('nome', $user->nome) . "</td>";
             echo "</tr>";
             
             echo "<tr>";
             echo "<td>Data de Nascimento: ";
-            echo "</td><td>" . form_dropdown('dia', $optionsDay, '0') . " - </td>" . "<td>" . 
-                               form_dropdown('mes', $optionsMonth, '0') . " - </td>" . "<td>" . 
-                               form_dropdown('ano', $optionsYear, '0') . "</td>";
-            echo "</tr>";
+            if ($date[0] == 0) {
+                echo "</td><td>" . form_dropdown('dia', $optionsDay, 0) . " - </td>" . "<td>" . 
+                                   form_dropdown('mes', $optionsMonth, 0) . " - </td>" . "<td>" . 
+                                   form_dropdown('ano', $optionsYear, 0) . "</td>";
+            } else {
+                echo "</td><td>" . form_dropdown('dia', $optionsDay, $date[0]) . " - </td>" . "<td>" . 
+                                   form_dropdown('mes', $optionsMonth, $date[1]) . " - </td>" . "<td>" . 
+                                   form_dropdown('ano', $optionsYear, $date[2]) . "</td>";
+            }
 
             echo "<tr>";
             echo "<td>País: ";
-            echo "</td><td>" . form_dropdown('pais', $optionsCountry, 'Portugal') . "</td>";
+            echo "</td><td>" . form_dropdown('pais', $optionsCountry, $user->pais) . "</td>";
             echo "</tr>";
         ?>
         <tr><td>

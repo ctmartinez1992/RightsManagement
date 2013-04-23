@@ -86,6 +86,8 @@ class Site extends CI_Controller {
             $this->load->view("site_login");
             $this->load->view("site_nav");
         }
+        $this->load->model("model_users");
+        $data["user"] = $this->model_users->get_everything_given_email($this->session->userdata('email'));
         $this->load->view("site_profile", $data);
         $this->load->view("site_footer");
     }
@@ -241,15 +243,21 @@ class Site extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nome', 'Nome', 'required');
         if ($this->form_validation->run()) {
-            echo "passou";
             $this->load->model("model_users");
             $date = mktime(0, 0, 0, $this->input->post('mes'), $this->input->post('dia'), $this->input->post('ano'));
-            echo date('d/m/Y', $date);
             $this->model_users->update_profile($this->input->post('nome'),
                                                date('d/m/Y', $date),
                                                $this->input->post('pais'),
                                                $this->session->userdata('email'));
-            //redirect('site/members');
+            $data = array(
+                'nome' => $this->input->post('nome'),
+                'email' => $this->session->userdata('email'),
+                'nascimento' => date('d/m/Y', $date),
+                'pais' => $this->input->post('pais'),
+                'is_logged_in' => 1
+            );
+            $this->session->set_userdata($data);
+            redirect('site/members');
         } else {
             $this->profile();
         }
