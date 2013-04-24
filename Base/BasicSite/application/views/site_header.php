@@ -10,5 +10,5 @@
 <body>
     <div id="big_wrapper">
         <header id="top_header">
-            <a href="<?php echo base_url(); ?>site/home"><img src="<?php echo base_url(); ?>images/logo.png" /></a>
+            <a href="<?php echo base_url(); ?>site/home" style="margin-left: 20px;"><img src="<?php echo base_url(); ?>images/logo.png" /></a>
         </header>

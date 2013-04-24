@@ -48,8 +48,7 @@ input[type="text"]:focus:hover, input[type="password"]:focus:hover{
 #top_header{
     overflow: hidden;
     zoom: 1;
-    background: #CCC;
-    padding: 50px 5px 20px 5px;
+    padding: 10px 5px 20px 5px;
 }
 
 body{
@@ -62,9 +61,18 @@ body{
 #big_wrapper{
     width: 1200px;
     margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-box-flex: 1;
+    -webkit-box-flex: 1;    
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #CCC;
+    background-image: -moz-linear-gradient(#CCC, #AAA);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCC), to(#AAA));
 }
 
 #login{
@@ -72,7 +80,8 @@ body{
     float: right;
     overflow: hidden;
     zoom: 1;
-    margin: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     padding-top: 5px; 
     display: block;
     background: gainsboro;
@@ -190,28 +199,30 @@ table.signup_form td{
 }
 
 #main_section{
-    border: 1px solid blue;
-    -webkit-box-flex: 1;
-    margin: 20px;
-    padding: 10px;
-}
-
-#main_section article{
-    border: 1px solid green;
     -webkit-box-flex: 1;
     margin: 10px;
     padding: 10px;
 }
 
+#main_section article{
+    border: 2px solid #036;
+    -webkit-box-flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #EEE;
+}
+
 #main_section article h2{
-    font: bold 16px Tahoma;
+    font: 18px Tahoma;
     margin-bottom: 10px;
+    color: #036;
 }
 
 #main_section article p{
-    font: 12px Tahoma;
+    font: 14px Tahoma;
     margin: 0px 15px;
     text-align: justify;
+    margin-bottom: 15px;
 }
 
 #main_section article footer{
@@ -221,11 +232,43 @@ table.signup_form td{
 }
 
 #side_section{
-    border: 1px solid red;
-    width: 220px;
+    width: 250px;
     margin: 20px 0px;
-    padding: 30px;
-    background: #66CCCC;
+    padding: 10px;
+}
+
+#side_section .banner{
+    background: #036;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#side_section .banner p{
+    font: bold 16px Tahoma;
+    color: white;
+    padding-left: 80px; 
+}
+
+#side_section article {
+    border: 1px solid #036;
+    -webkit-box-flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #EEE;
+}
+
+#side_section article h2{
+    font: 18px Tahoma;
+    margin-bottom: 10px;
+    color: #036;
+}
+
+#side_section article p{
+    font: 14px Tahoma;
+    margin: 0px 15px;
+    text-align: justify;
 }
 
 #footer{

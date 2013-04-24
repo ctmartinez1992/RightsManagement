@@ -1,8 +1,9 @@
     <footer id="footer">
         <div id="footer">
+            <?php if ($this->session->userdata("is_logged_in")) { ?>
                 <ul id="footer_menu">
                 
-                        <li class="homeButton"><a href="#"></a></li>
+                        <li class="homeButton"><a href="<?php echo base_url(); ?>site/home"></a></li>
                         
                         <li><a href="#">Account</a>
                                 <div class="one_column_layout">
@@ -110,7 +111,7 @@
                                 </ul>
                         </li>                   
  
-                        <li class="right"><a href="#" class="drop">Log Out</a>
+                        <li class="right"><a href="<?php echo base_url() . "site/logout"; ?>" class="drop">Log Out</a>
                         </li>
                         
                 </ul><!-- End Footer Menu -->
@@ -133,6 +134,38 @@
                                 </a>
                         </li>
                 </ul>
+            <?php } else { ?>
+                <ul id="footer_menu">
+                
+                        <li class="homeButton"><a href="<?php echo base_url(); ?>site/home"></a></li>
+                         
+                        <li><a href="#">Notícias</a><!-- Begin 2 Columns Menu Item -->
+                                <div class="two_column_layout"><!-- Begin 2 columns container -->
+                                        <div class="col_2">
+                                                <h2>Two Column Layout</h2>
+                                        </div>
+                                        <div class="col_1">
+                                                <p>This is a two columns example. Praesent gravida venenatis felis sed egestas.</p>             
+                                        </div>
+                                        <div class="col_1">
+                                                <p>Duis sit amet erat enim. Sed ac tortor lobortis sem gravida consequat et vel mi venenatis.</p>             
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="col_2">
+                                                <p>Vivamus ut urna magna. Aenean vehicula feugiat leo, sit amet facilisis felis commodo a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet erat enim.</p>             
+                                        </div>
+                                </div><!-- End 2 columns container -->
+                        </li><!-- End 2 Columns Menu Item -->
+                        
+                        
+                </ul><!-- End Footer Menu -->
+ 
+                <ul id="notifications">
+                        <li><a href="#" class="notificationIcons"><img src="<?php echo base_url(); ?>images/twitter.png"  alt="" /></a></li>
+                        <li><a href="#" class="notificationIcons"><img src="<?php echo base_url(); ?>images/rss.png" alt="" /></a></li>
+                        <li><a href="#" class="notificationIcons"><img src="<?php echo base_url(); ?>images/facebook.png" alt="" /></a></li>
+                </ul>
+            <?php } ?>
         </div>
     </footer>
 </div>

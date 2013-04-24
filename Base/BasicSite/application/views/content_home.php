@@ -23,8 +23,16 @@
         </article>
     </section>
     <aside id="side_section">
-        Notícias
-        Updates
-        Versões
+        <div class="banner">
+            <p>Notícias</p>
+        </div>
+        <article>
+            <h2>Notícia 1</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+        <article>
+            <h2>Notícia 2</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        </article>
     </aside>
 </div>

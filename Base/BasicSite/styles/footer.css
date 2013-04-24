@@ -1,3 +1,7 @@
+body {
+        background:url("../images/background.jpg") repeat; /*repeated both vertically and horizontally*/
+}
+
 #footer{
     position: fixed;
     bottom: 0px;
@@ -16,31 +20,31 @@
 }
 
 #footer h2{
-    font-weight:normal;
-    font-size:14px;
-    text-decoration:underline;
-    color: #CC0000;
-    margin-top:10px;
-    margin-bottom:5px;
-    margin-left:10px;       
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #CCCCCC;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;       
 }
 
 #footer p{
-    color:white;
-    font-size:12px;
-    float:left;
-    padding:0px 10px; /*top & bottom = 0px */
-    margin:10px 0px;
+    color: white;
+    font-size: 12px;
+    float: left;
+    padding: 0px 10px; /*top & bottom = 0px */
+    margin: 10px 0px;
 }
 
 #footer img{
-    border:none;
+    border: none;
 }
 
 #footer li ul{ /* Programs button is a list */
-    list-style:none;
-    padding:0px;
-    margin-bottom:12px;
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 12px;
 }
 
 .clear { /* Use this class between rows of content when you use columns */
@@ -53,76 +57,76 @@
 }
 
 #footer .whiteBorder { /* good for images */
-    border:1px solid white;
+    border: 1px solid white;
 }
 
 #footer .img_left { /* image floats to the left */
-    float:left;
-    margin-right:10px;
+    float: left;
+    margin-right: 10px;
     width: 40px;
 }
 
 #footer .black_box {
     background: rgba(0,0,0,0.4);
-    padding:5px;
-    margin-bottom:5px;
+    padding: 5px;
+    margin-bottom: 5px;
     border-radius: 5px;
 }
 
 #footer #notifications { /* entire notification section */
-    float:right;
-    width:auto;
-    margin:5px 15px 0px; /*top, right/left, bottom*/
-    padding:0px;
-    overflow:hidden;
+    float: right;
+    width: auto;
+    margin: 5px 15px 0px; /*top, right/left, bottom*/
+    padding: 0px;
+    overflow: hidden;
 }
 
 #footer #notifications li { /* each notification icon */
-    margin-right:12px; /* 12px is the space between each one of them */
-    float:left;
-    width:24px;
-    padding:0px;
-    height:32px;
-    list-style:none;
+    margin-right: 12px; /* 12px is the space between each one of them */
+    float: left;
+    width: 24px;
+    padding: 0px;
+    height: 32px;
+    list-style: none;
 }
 
 #footer #notifications li:hover {
-    margin-top:-1px; /* icons move 1px up on hover, use this or change color on hover (like home button) */
+    margin-top: -1px; /* icons move 1px up on hover, use this or change color on hover (like home button) */
 }
 
 a.notificationIcons span { /* span is text when you hover over */
-    display:none;
-    font-size:12px;
-    padding:5px;
-    bottom:45px;
-    position:relative;
-    width:150px;
+    display: none;
+    font-size: 12px;
+    padding: 5px;
+    bottom: 45px;
+    position: relative;
+    width: 150px;
     border-radius: 3px;
 }
 
 a.notificationIcons:hover span {
-    display:block;
-    position:absolute;
-    border:1px solid #161616;
-    color:white;
-    margin-left:-70px;
-    background:rgba(0,0,0,0.3);
+    display: block;
+    position: absolute;
+    border: 1px solid #161616;
+    color: white;
+    margin-left: -70px;
+    background: rgba(0,0,0,0.3);
 }
 
 /* Footer Buttons  */
 #footer_menu{ /*entire footer bar*/
-    margin: 0;
-    padding: 0;
-    width:auto;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
 }
 
 #footer_menu li { /* the "buttons" */
     list-style: none;
     float: left;
-    font-size:12px;
+    font-size: 12px;
     padding: 12px 14px 14px 14px;
     /* cool glass look */
-    border-right:1px solid rgba(0,0,0,0.4);
+    border-right: 1px solid rgba(0,0,0,0.4);
     background: rgba(0,0,0,0.1);
 }
 
@@ -142,23 +146,23 @@ a.notificationIcons:hover span {
 
 /* used for the home button, text is here hidden and replaced by an image */
 #footer_menu .homeButton { 
-    padding:5px 8px 0px 14px;
-    border:none;
-    background:none;
+    padding: 5px 8px 0px 14px;
+    border: none;
+    background: none;
 }
 
 #footer_menu .homeButton a { /* used for the home button, text is replaced by an image */
-    background:url("../images/home.png") top left no-repeat;
-    width:36px;
-    height:30px;
+    background: url("../images/home.png") top left no-repeat;
+    width: 36px;
+    height: 30px;
 }
 
 #footer_menu li.homeButton:hover {
-    background:none;
+    background: none;
 }
 
 #footer_menu li.homeButton a:hover {
-    background:url("../images/home2.png") top left no-repeat;
+    background: url("../images/home2.png") top left no-repeat;
 }
 
 /* Drop-Up Menus */
@@ -170,73 +174,73 @@ a.notificationIcons:hover span {
     display: block;
     position: absolute;
     margin: 0 0 0 -15px; /*move left 15px to line up properly*/
-    bottom:40px; /* distance to the bottom of the browser */
+    bottom: 40px; /* distance to the bottom of the browser */
     border: 1px solid #111111;
-    border-bottom:none;
+    border-bottom: none;
     background: rgba(0,0,0,0.5);
     border-radius: 7px 7px 0px 0px; /*top-left, top-right, bottom-right, bottom-left*/
 }
 
 #footer_menu li:hover li { /* items in Programs menu */
     float: none;
-    background:none;
-    border:none;
-    border-bottom:1px solid #161616;
-    padding:12px 10px 12px 10px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #161616;
+    padding: 12px 10px 12px 10px;
 }
 
 /* drop-up default links */
 #footer_menu li:hover a {
-    color: #aaaaaa;
+    color: #AAA;
 }
 
 #footer_menu li:hover a:hover {
-    color: #eeeeee; /*lighter*/
+    color: #EEE; /*lighter*/
 }
 
 /* Stream, Messages, etc... */
 #footer_menu li:hover a.headerLinks {
-    font-size:14px;
-    text-decoration:underline;
-    color: #CC0000;
-    margin-top:10px;
-    margin-left:10px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #CCC;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #footer_menu li:hover a.headerLinks:hover {
-    color: white;
-    cursor:pointer;
+    color: blanchedalmond;
+    cursor: pointer;
 }
 
 /* List Links */
 #footer_menu li:hover a.listLinks {
-    font-size:12px;
-    color: #999999;
-    margin-left:10px;
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
 }
 
 #footer_menu li:hover a.listLinks:hover {
-    color: white;
-    cursor:pointer;
+    color: blanchedalmond;
+    cursor: pointer;
 }
 
 #footer_menu .right { /* Use the right class to push the content to the right */
-    float:right;
-    right:0px;
-    margin-right:2px;
-    border-right:none;
-    border-left:1px solid rgba(0,0,0,0.3);
+    float: right;
+    right: 0px;
+    margin-right: 2px;
+    border-right: none;
+    border-left: 1px solid rgba(0,0,0,0.3);
 }
 
 /* 03 FOOTER - COLUMNS CONTENT - We will make 3 different layouts, which can contain 1 to 3 columns */
 #footer .one_column_layout, 
 #footer .two_column_layout, 
 #footer .three_column_layout {
-    margin:4px auto;
-    position:absolute;
-    padding-bottom:15px;
-    display:none;
-    text-align:left;
+    margin: 4px auto;
+    position: absolute;
+    padding-bottom: 15px;
+    display: none;
+    text-align: left;
 }
 
 /* Layout Sizes */
@@ -251,7 +255,7 @@ a.notificationIcons:hover span {
     display: block;
     position: absolute;
     margin: 0 0 0 -15px;
-    bottom:40px;
+    bottom: 40px;
     border: 1px solid #111111;
     border-radius: 7px 7px 0px 0px;
     background: rgba(0,0,0,0.5);
@@ -261,7 +265,7 @@ a.notificationIcons:hover span {
 #footer .col_1,
 #footer .col_2,
 #footer .col_3 {
-    display:inline;
+    display: inline;
     float: left;
     position: relative;
     margin-left: 5px;
