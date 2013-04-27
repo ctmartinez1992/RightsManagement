@@ -1,0 +1,387 @@
+﻿________________
+
+4192 Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009
+ASSEMBLEIA DA REPÚBLICA
+Lei n.o 29/2009
+de 29 de Junho
+Aprova o Regime Jurídico do Processo de Inventário e altera o Código Civil, o Código de Processo Civil, o Código do Registo Predial e o Código do Registo Civil, no cumprimento das medi- das de descongestionamento dos tribunais previstas na Reso- lução do Conselho de Ministros n.o 172/2007, de 6 de Novembro, o Regime do Registo Nacional de Pessoas Colectivas, procede à transposição da Directiva n.o 2008/52/CE, do Parlamento e do Conselho, de 21 de Março, e altera o Decreto -Lei n.o 594/74, de 7 de Novembro. A Assembleia da República decreta, nos termos da alínea c) do artigo 161.o da Constituição, o seguinte:
+CAPÍTULO I
+Regime Jurídico do Processo de Inventário
+SECÇÃO I
+Disposições gerais
+Artigo 1.o
+Funções do inventário 1 — O processo de inventário destina -se a pôr termo à comunhão hereditária ou, não carecendo de se realizar a partilha da herança, a relacionar os bens que constituem objecto de sucessão e a servir de base à eventual liquidação da herança.
+2 — Procede -se à partilha por inventário: a) Quando não houver acordo de todos os interessados na partilha;
+b) Quando o Ministério Público entenda que o interesse do incapaz a quem a herança é deferida implica aceitação beneficiária;
+c) Nos casos em que algum dos herdeiros não possa, por motivo de ausência em parte incerta ou de incapaci- dade de facto permanente, intervir em partilha registral ou notarial.
+3 — Ao inventário destinado à realização dos fins pre- vistos na segunda parte do n.o 1 é aplicável o presente regime jurídico, com as necessárias adaptações.
+4 — O inventário pode ainda destinar -se à partilha consequente à extinção da comunhão de bens entre os cônjuges, nos termos previstos no artigo 71.o
+Artigo 2.o
+Fases e publicidade do inventário 1 — O processo de inventário é composto pelas se- guintes fases:
+a) Apresentação do requerimento de inventário; b) Conferência de interessados e eventual apresentação de licitações;
+c) Decisão da partilha.
+2 — As fases previstas nas alíneas b) e c) do número anterior são realizadas no mesmo dia, a não ser que tal se revele absolutamente impossível.
+3 — No decurso do processo de inventário, devem ser publicados em sítio na Internet, regulado por portaria do membro do Governo responsável pela área da justiça, os seguintes actos:
+a) Requerimento de inventário; b) Citações efectuadas; c) Marcação da data da conferência de interessados; d) Decisão da partilha; e) Quaisquer outros actos que se considerem relevantes para as finalidades do processo de inventário.
+4 — O acesso ao sítio da Internet referido no número anterior é condicionado aos interessados através da atri- buição de um código de acesso nos termos previstos na portaria referida no número anterior.
+Artigo 3.o
+Competência 1 — Cabe aos serviços de registos a designar por porta- ria do membro do Governo responsável pela área da justiça e aos cartórios notariais efectuar as diligências do processo de inventário, tendo o juiz o controlo geral do processo. 2 — Os interessados podem escolher qualquer serviço de registo designado nos termos do número anterior ou qualquer cartório notarial para apresentar o processo de inventário.
+3 — Sem prejuízo do disposto no artigo 4.o, são, entre outros, da competência do conservador e do notário os seguintes actos:
+a) A decisão das questões prejudiciais, dos incidentes e das reclamações que ocorram no decurso do inventário; b) A decisão de devolução dos interessados para o juiz que detém o controlo geral do processo;
+c) A marcação e a presidência da conferência de inte- ressados;
+d) A decisão de suspensão e de arquivamento do pro- cesso;
+e) A decisão da partilha.
+4 — É aplicável ao conservador ou notário o regime de impedimentos e suspeições previsto para os magistrados judiciais.
+Artigo 4.o
+Controlo geral do processo 1 — O juiz tem controlo geral do processo de inventá- rio, podendo, a todo o tempo, decidir e praticar os actos que entenda deverem ser decididos ou praticados pelo tribunal.
+2 — Compete exclusivamente ao juiz: a) Proferir sentença homologatória da partilha; b) Praticar outros actos que, nos termos desta lei, sejam da competência do juiz.
+Artigo 5.o
+Legitimidade para requerer ou intervir 1 — Têm legitimidade para requerer e intervir no pro- cesso de inventário:
+a) Os interessados directos na partilha; b) O Ministério Público, quando a herança seja deferida a incapazes ou ausentes em parte incerta ou ao Estado.
+________________
+________________
+
+Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009 4193
+2 — Quando haja herdeiros legitimários, os legatários e donatários são admitidos a intervir em todos os actos susceptíveis de influenciar o cálculo ou determinação da legítima e implicar eventual redução das respectivas li- beralidades.
+3 — Os credores da herança e os legatários são ad- mitidos a intervir nas questões relativas à verificação e satisfação dos seus direitos, cumprindo ao Ministério Público a representação da defesa dos interesses da Fa- zenda Pública.
+Artigo 6.o
+Intervenção judicial 1 — O conservador ou o notário são obrigados a remeter os interessados para o juiz que detém o controlo geral do processo nos seguintes casos:
+a) Verificação das questões prejudiciais referidas no n.o 1 do artigo 18.o;
+b) Apuramento de dívida litigiosa, nos termos do n.o 2 do artigo 31.o;
+c) Verificação da insolvência da herança, nos termos do artigo 43.o;
+d) Na sequência de nova partilha, não tendo havido restituição pelo interessado dos bens móveis que tenha recebido, para efeitos do disposto no n.o 4 do artigo 62.o
+2 — Só o juiz que detém o controlo geral do processo pode aplicar a sanção civil prevista para a sonegação de bens, conforme o disposto no artigo 30.o
+Artigo 7.o
+Acesso ao processo O juiz e o Ministério Público têm acesso ao processo através de meios electrónicos para poderem exercer as competências que lhe estão atribuídas.
+Artigo 8.o
+Constituição obrigatória de advogado 1 — É obrigatória a constituição de advogado no in- ventário se forem suscitadas ou discutidas questões de direito.
+2 — Em caso de recurso de decisões proferidas no pro- cesso de inventário é obrigatória a constituição de advo- gado.
+Artigo 9.o
+Representação de incapazes e ausentes 1 — O incapaz é representado por curador especial quando o representante legal concorra com ele à herança ou a ela concorrerem vários incapazes representados pelo mesmo representante.
+2 — O ausente em parte incerta, não estando insti- tuída a curadoria, é também representado por curador especial.
+3 — Findo o inventário, os bens adjudicados ao au- sente que carecerem de administração são entregues ao curador nomeado, que passa a ter, em relação aos bens entregues, os direitos e deveres do curador provi- sório, cessando a administração logo que seja deferida a curadoria.
+4 — Os curadores especiais previstos nos n.os 1 e 2 são nomeados oficiosamente pelo conservador ou notário.
+Artigo 10.o
+Intervenção principal 1 — Em qualquer altura do processo é possível a apre- sentação de intervenção principal espontânea ou provocada por qualquer interessado directo na partilha.
+2 — Os interessados são notificados para responder, seguindo -se o disposto nos artigos 27.o e 28.o
+3 — A apresentação da intervenção suspende o processo a partir da conferência de interessados.
+Artigo 11.o
+Intervenção de outros interessados 1 — Havendo herdeiros legitimários, os legatários e donatários que não tenham sido inicialmente citados para o inventário podem apresentar intervenção no processo, aplicando -se, com as necessárias adaptações, o disposto no artigo anterior.
+2 — Os credores da herança podem reclamar no in- ventário os seus direitos, mesmo que estes não tenham sido relacionados no requerimento de inventário, até à conferência de interessados.
+3 — O conservador ou notário podem, a qualquer mo- mento do processo de inventário, determinar a intervenção de qualquer interessado que considerem preterido.
+Artigo 12.o
+Entrega de documentos e notificações 1 — A apresentação do requerimento de partilha, da eventual oposição, bem como de todos os actos subse- quentes deve realizar -se, sempre que possível, através de meios electrónicos.
+2 — As notificações aos interessados, aos demais in- tervenientes e entre mandatários são efectuadas de acordo com o disposto no Código de Processo Civil e, sempre que possível, através de meios electrónicos.
+Artigo 13.o
+Prazo geral 1 — Na falta de disposição especial, o prazo para os interessados requererem qualquer acto ou diligência, apre- sentarem incidentes ou praticarem qualquer outro acto é de 10 dias.
+2 — O prazo para qualquer resposta conta -se sempre da notificação do acto a que se responde.
+Artigo 14.o
+Venda e apreensão de bens 1 — Cabe ao conservador ou notário procederem à apre- ensão dos bens prevista nos n.os 3 e 4 do artigo 24.o, bem como efectuar a respectiva venda para efeitos do disposto no n.o 5 do artigo 39.o e no n.o 3 do artigo 58.o
+2 — Para efeitos do disposto no número anterior, o conservador e o notário assumem todos os direitos e obrigações que impendem sobre os agentes de execução e o juiz que detém o controlo geral do processo exerce as funções que cabem, nos termos da lei, ao juiz de exe- cução.
+________________
+________________
+
+4194 Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009
+Artigo 15.o
+Habilitação no inventário
+1 — Se antes de concluído o inventário falecer algum interessado directo na partilha, qualquer outro interes- sado pode indicar os sucessores do falecido, juntando os documentos que se mostrem necessários e que não possam ser obtidos oficiosamente, nos termos do ar- tigo 22.o
+2 — As pessoas indicadas são citadas para o inven- tário e os outros interessados são notificados da indi- cação.
+3 — A legitimidade dos sucessores indicados pode ser impugnada, quer pelo citado, quer pelos outros interessados notificados, nos termos dos artigos 27.o e 28.o
+4 — Na falta de impugnação, têm -se como habilita- das as pessoas indicadas, sem prejuízo de os sucessores eventualmente preteridos apresentarem a sua própria ha- bilitação.
+5 — Os sucessores do interessado falecido podem ainda pedir a respectiva habilitação, aplicando -se o disposto nos números anteriores.
+6 — Se falecer algum legatário, credor ou donatário que tenha sido citado para o inventário, os seus herdeiros podem fazer -se admitir no processo, seguindo -se os termos previstos no número anterior.
+7 — A habilitação do cessionário de quota hereditária e dos subadquirentes dos bens doados, sujeitos ao ónus de redução, pode fazer -se por qualquer uma das formas legalmente admissíveis.
+Artigo 16.o
+Cumulação de inventários
+1 — É permitida a cumulação de inventários para a partilha de heranças diversas quando se verifiquem as seguintes situações:
+a) Identidade de pessoas por quem devam ser repartidos os bens;
+b) Heranças deixadas pelos dois cônjuges; c) Uma das partilhas esteja dependente da outra ou das outras.
+2 — No caso previsto na alínea c) do número anterior, se a dependência for parcial por haver outros bens, o con- servador ou notário podem indeferir a cumulação quando a mesma se afigure inconveniente para os interesses das partes ou para a tramitação célere do inventário.
+Artigo 17.o
+Direito de preferência dos interessados na partilha
+1 — A preferência dos interessados na partilha na aliena- ção de quinhões hereditários pode ser exercida no processo de inventário.
+2 — Apresentando -se a preferir mais de um interessado, o quinhão objecto de alienação é adjudicado a todos, na proporção dos seus quinhões.
+3 — O exercício do direito de preferência suspende o processo a partir da conferência de interessados.
+4 — O não exercício da preferência no processo de inventário não preclude o direito de intentar acção de pre- ferência nos termos gerais.
+5 — Se for exercido direito de preferência fora do pro- cesso de inventário, pode determinar -se, oficiosamente ou a requerimento de algum dos interessados directos na partilha, a suspensão do inventário, nos termos do ar- tigo 279.o do Código de Processo Civil, aplicável com as necessárias adaptações.
+Artigo 18.o
+Questões prejudiciais e suspensão do inventário 1 — Se, na pendência do inventário, se suscitarem questões prejudiciais das quais dependa a admissibilidade do processo ou a definição dos direitos dos interessados directos na partilha e que não possam ser decididas no in- ventário por falta de prova documental, o conservador ou notário, logo que os bens estejam relacionados, determinam a suspensão do processo até que haja decisão definitiva, remetendo os interessados para o juiz que detém o controlo geral do processo.
+2 — A suspensão do inventário pode ainda ser determi- nada quando estiver pendente em tribunal causa prejudicial em que se debata alguma das questões a que se refere o número anterior.
+3 — A requerimento dos interessados directos na parti- lha, o conservador ou notário podem autorizar o prossegui- mento do inventário para realização de partilha provisória, sujeita a posterior alteração em conformidade com o que vier a ser decidido, quando ocorra uma das seguintes si- tuações:
+a) Demora anormal na propositura ou julgamento da causa prejudicial;
+b) Os inconvenientes no diferimento da partilha superem os que derivam da sua realização como provisória.
+4 — Realizada a partilha provisória, é aplicável o dis- posto no artigo 62.o, relativamente à entrega aos interes- sados dos bens que lhes couberem.
+5 — Se um dos interessados for nascituro, o inventário é suspenso a partir da conferência de interessados até ao nascimento do interessado.
+Artigo 19.o
+Questões definitivamente resolvidas no inventário Consideram -se definitivamente resolvidas as questões prejudiciais relativamente às quais, no inventário, houve acordo de todos os interessados directos na partilha, desde que estes tenham sido regularmente admitidos a intervir no processo.
+Artigo 20.o
+Arquivamento do processo 1 — Se o processo estiver parado durante mais de um mês por negligência dos interessados em promover os seus termos, o conservador ou notário notificam imediatamente os interessados para que estes pratiquem os actos em falta no prazo de 10 dias.
+2 — Se os interessados não praticarem os actos em falta ou não justificarem fundadamente a sua omissão, o conservador ou notário determinam o arquivamento do processo, salvo se puderem oficiosamente praticar os actos devidos.
+________________
+________________
+
+Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009 4195
+SECÇÃO II
+Requerimento de inventário e oposição dos interessados
+Artigo 21.o
+Requerimento de inventário 1 — No requerimento de inventário deve constar: a) A identificação do autor da herança, o lugar da sua última residência e a data e o lugar em que tenha falecido; b) A identificação dos interessados directos na partilha, bem como dos legatários, credores da herança e, havendo herdeiros legitimários, dos donatários, com indicação das respectivas residências actuais ou domicílios profissionais;
+c) A relação dos bens que integram a herança; d) A identificação dos testamentos, convenções ante- nupciais e doações que se mostrem necessárias;
+e) Outra informação que o requerente considere perti- nente para o desenvolvimento do processo.
+2 — O modelo do requerimento de inventário é apro- vado por despacho do presidente do Instituto dos Registos e do Notariado, I. P. (IRN, I. P.).
+3 — Para efeito do disposto no n.o 1 do artigo 4.o, o requerimento de inventário e documentação anexa são enviados, por via electrónica, ao tribunal.
+Artigo 22.o
+Diligências oficiosas de instrução 1 — O registo ou assento de óbito devem ser compro- vados por meios electrónicos, nos termos previstos em portaria do membro do Governo responsável pela área da justiça.
+2 — O disposto no número anterior é aplicável à com- provação da existência de perfilhação, quando tenha sido declarada, bem como das convenções antenupciais lavradas em conservatória do registo civil.
+3 — A comprovação do teor dos testamentos, conven- ções antenupciais lavradas por notário e escrituras de doa- ção deve ser efectuada através de meios electrónicos, caso existam, ou por meio de certidão solicitada oficiosamente ao notário que tiver lavrado tais actos.
+Artigo 23.o
+Relação de bens 1 — Os bens que integram a herança são relacionados por meio de verbas, sujeitas a uma só numeração, indicando os bens imóveis, os bens móveis, os direitos de crédito, e o respectivo valor.
+2 — As dívidas são relacionadas em separado com outra numeração.
+3 — A prova da situação registral dos bens sujeitos a registo é feita oficiosamente por meios electrónicos, nos termos previstos em portaria do membro do Governo res- ponsável pela área da justiça.
+4 — Não havendo inconveniente para a partilha, podem ser agrupados, na mesma verba, os móveis, ainda que de natureza diferente, desde que se destinem a um fim unitário e sejam de valor diminuto.
+5 — As benfeitorias pertencentes à herança são descritas em espécie, quando possam separar -se do prédio em que foram realizadas, ou como simples crédito, no caso con- trário e as benfeitorias efectuadas por terceiros em prédio
+da herança são descritas como dívidas, quando não possam ser levantadas por quem as realizou.
+6 — O conservador ou notário devem, oficiosamente e nos termos previstos na portaria referida no n.o 3, loca- lizar nas bases de dados registrais bens que façam parte da herança.
+7 — O conservador e o notário podem, oficiosamente ou a requerimento, solicitar a instituição bancária, interme- diário financeiro, ou emitente, a prestação de informações sobre depósitos bancários e instrumentos financeiros de que o falecido fosse titular ou co -titular.
+8 — No caso previsto no número anterior, a prestação das informações solicitadas não pode ser recusada com base em sigilo profissional.
+Artigo 24.o
+Relação dos bens que não se encontrem em poder do requerente do inventário 1 — Se o requerente do inventário declarar que está impossibilitado de relacionar alguns bens que estejam em poder de outra pessoa, é esta notificada para, no prazo de 10 dias, facultar o acesso a tais bens e fornecer os elementos necessários à respectiva inclusão na relação de bens.
+2 — Se o notificado alegar que os bens não existem ou não têm de ser relacionados, observa -se o disposto no n.o 3 do artigo 29.o
+3 — Se o notificado não cumprir o dever de colabo- ração que lhe cabe, o conservador ou notário efectuam as diligências necessárias, incluindo a apreensão dos bens pelo tempo indispensável à sua inclusão na relação de bens, devendo imediatamente dar conta ao juiz da apreensão efectuada para os efeitos previstos no n.o 1 do artigo 4.o
+4 — Para os efeitos do disposto no número anterior, o conservador ou notário podem solicitar a colaboração de autoridades administrativas ou policiais.
+Artigo 25.o
+Citação dos interessados São citados para o inventário os interessados directos na partilha, o Ministério Público junto do tribunal competente para o controlo geral do processo, quando a sucessão seja deferida a incapazes ou ausentes em parte incerta ou ao Estado, os legatários, os credores da herança e, havendo herdeiros legitimários, os donatários.
+Artigo 26.o
+Forma e conteúdo das citações 1 — As citações são efectuadas por carta registada com aviso de recepção, sendo aplicável o disposto no artigo 12.o do regime aprovado pelo Decreto -Lei n.o 269/98, de 1 de Setembro.
+2 — Frustrando -se a possibilidade de citação pela forma prevista no n.o 1, procede -se à citação edital, efectuada pela publicação de anúncio em sítio na Internet de acesso público, regulado por portaria do membro do Governo responsável pela área da justiça.
+3 — Na citação, os citandos são advertidos do âmbito da sua intervenção, nos termos do artigo 5.o, e da facul- dade de deduzir oposição ou impugnação, nos termos do artigo seguinte.
+________________
+________________
+
+4196 Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009
+4 — Verificada, em qualquer altura, a falta de citação de algum interessado, é este citado com a cominação de que, se nada requerer no prazo de 10 dias, o processo se considera ratificado.
+5 — Dentro do prazo previsto no número anterior, é o citado admitido a exercer os direitos que lhe competiam.
+Artigo 27.o
+Oposição ao inventário 1 — Os interessados directos na partilha e o Ministé- rio Público, quando haja sido citado, podem, nos 15 dias subsequentes à citação:
+a) Apresentar oposição ao inventário; b) Impugnar a legitimidade dos interessados citados, alegar a existência de outros ou os elementos constantes do requerimento do inventário;
+c) Reclamar contra a relação de bens, indicando bens que devam ser relacionados e o respectivo valor, reque- rendo a exclusão de bens indevidamente relacionados, por não fazerem parte do acervo a dividir, ou arguindo qualquer inexactidão na descrição dos bens que releve para a partilha.
+2 — Quando houver herdeiros legitimários, os legatários e donatários podem apresentar oposição relativamente às questões que possam afectar os seus direitos.
+Artigo 28.o
+Tramitação subsequente 1 — Os interessados com legitimidade para intervir nas questões suscitadas nas alíneas a) e b) do n.o 1 do artigo an- terior são notificados para responder, em 10 dias.
+2 — Efectuadas as diligências probatórias necessárias, requeridas pelos interessados ou determinadas oficiosa- mente pelo conservador ou notário, a questão é decidida, sem prejuízo do disposto no artigo 18.o
+Artigo 29.o
+Decisão das reclamações apresentadas 1 — Quando seja apresentada reclamação contra a re- lação de bens, o requerente do inventário é notificado para relacionar os bens em falta ou responder, no prazo de 10 dias.
+2 — Se o requerente do inventário confessar a existência dos bens cuja falta foi indicada, procede imediatamente ao aditamento da relação de bens inicialmente apresentada, notificando -se os restantes interessados e o Ministério Público, nos casos em que tenha intervenção principal no processo, da modificação efectuada.
+3 — Não se verificando a situação prevista no número anterior, notificam -se os restantes interessados com legiti- midade para se pronunciarem e o Ministério Público, nos casos em que tenha intervenção principal no processo, aplicando -se o disposto no n.o 2 do artigo anterior e de- cidindo o conservador ou notário da existência de bens e da pertinência do seu relacionamento, sem prejuízo do disposto no artigo seguinte.
+4 — As alterações e aditamentos ordenados são ofi- ciosamente introduzidos na relação de bens inicialmente apresentada.
+5 — O disposto neste artigo é aplicável, com as neces- sárias adaptações, quando terceiro se arrogue a titulari-
+dade de bens relacionados e requeira a sua exclusão do inventário.
+Artigo 30.o
+Sonegação de bens A existência de sonegação de bens, nos termos da lei civil, é apreciada conjuntamente com a alegação da falta de bens relacionados, podendo o juiz que detém o controlo geral do processo aplicar, quando provada, a sanção civil prevista no artigo 2096.o do Código Civil.
+Artigo 31.o
+Negação de dívidas activas 1 — Se uma dívida activa, relacionada pelo requerente do inventário, for negada pelo pretenso devedor, aplica- -se o disposto na alínea c) do n.o 1 do artigo 27.o, com as necessárias adaptações.
+2 — Sendo mantido o relacionamento do débito, a dí- vida considera -se litigiosa, remetendo -se os interessados para o juiz que detém o controlo geral do processo.
+Artigo 32.o
+Avaliação dos bens previamente à conferência de interessados
+1 — Para garantir uma repartição igualitária e equita- tiva dos bens pelos vários interessados, as verbas podem ser avaliadas por árbitro a pedido dos interessados ou por iniciativa do conservador ou notário.
+2 — A avaliação prevista no número anterior não vin- cula o conservador ou o notário, que dela podem divergir, oficiosamente ou a requerimento dos interessados.
+SECÇÃO III
+Conferência de interessados e partilha
+SUBSECÇÃO I
+Conferência de interessados
+Artigo 33.o
+Marcação da conferência de interessados e da partilha 1 — Resolvidas as questões suscitadas susceptíveis de influenciar a partilha e determinados os bens a partilhar, o conservador ou notário designam imediatamente dia para a realização da conferência de interessados e da partilha. 2 — Os interessados na partilha são notificados para comparecer ou fazer -se representar por mandatário com poderes especiais, podendo confiar o mandato a qualquer outro interessado.
+3 — A conferência e a partilha podem ser adiadas, por determinação do conservador ou notário ou a requerimento de qualquer interessado, por uma só vez, se faltar algum dos convocados e houver razões para considerar viável o acordo sobre a composição dos quinhões.
+4 — Para efeito do disposto no artigo 4.o, o conservador ou notário informam, por via electrónica, o juiz sobre as questões susceptíveis de influenciar a partilha que conside- ram resolvidas e identificam os bens a partilhar, indicando, ainda, o dia designado para a realização da conferência de interessados e da partilha.
+________________
+________________
+
+Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009 4197
+Artigo 34.o
+Actos praticados na conferência de interessados Na conferência de interessados são praticados os se- guintes actos, pela ordem indicada:
+a) Composição dos quinhões dos interessados; b) Aprovação do passivo da herança e da forma de cumprimento dos legados e encargos da herança, caso existam;
+c) Licitações, caso haja lugar às mesmas.
+DIVISÃO I
+Composição dos quinhões, aprovação do passivo e forma de cumprimento dos legados e encargos
+Artigo 35.o
+Composição dos quinhões dos interessados 1 — Os interessados podem acordar, por unanimidade, e ainda com a concordância do Ministério Público, quando este tenha intervenção principal no processo, que a compo- sição dos quinhões se realize através de uma das seguintes formas:
+a) Designando as verbas que hão -de compor, no todo ou em parte, o quinhão de cada um deles e os valores por que devem ser adjudicados;
+b) Indicando as verbas ou lotes e respectivos valores, para que, no todo ou em parte, sejam objecto de sorteio pelos interessados;
+c) Acordando na venda total ou parcial dos bens da herança e na distribuição do produto da alienação pelos diversos interessados.
+2 — Na falta do acordo previsto no número anterior, a conferência deve deliberar sobre:
+a) A atribuição de um valor aos bens relacionados; b) Quaisquer questões cuja resolução possa influenciar a partilha.
+3 — Para efeitos do disposto na alínea a) do número anterior:
+a) O valor dos prédios inscritos na matriz é o respectivo valor matricial, comprovado por acesso à base de dados da entidade competente ou, se tal não for possível, por solicitação oficiosa de documento comprovativo à mesma entidade, a menos que tais prédios tenham sido avaliados no âmbito do processo de inventário, caso em que o valor é o dessa avaliação;
+b) São mencionados como bens ilíquidos: i) Os direitos de crédito ou de outra natureza, cujo valor não seja ainda possível determinar;
+ii) As partes sociais em sociedades cuja dissolução seja determinada pela morte do inventariado, desde que a respectiva liquidação não esteja concluída, mencionando- -se, entretanto, o valor que tinham segundo o último ba- lanço.
+4 — A deliberação dos interessados presentes, rela- tiva às matérias previstas no n.o 2, vincula os que não comparecerem, salvo se não tiverem sido devidamente notificados.
+Artigo 36.o
+Reconhecimento das dívidas aprovadas por todos 1 — As dívidas que sejam aprovadas pelos interessados maiores e por aqueles a quem compete a aprovação por parte dos menores ou equiparados consideram -se reco- nhecidas, devendo a decisão da partilha ordenar o seu pagamento.
+2 — Quando a lei exija prova documental para a de- monstração da sua existência, não pode a dívida ser apro- vada por parte dos menores ou equiparados sem que se junte ou exiba a prova exigida.
+Artigo 37.o
+Verificação de dívidas Se todos os interessados forem contrários à aprovação da dívida, o conservador ou notário decidem da sua existência através da prova documental apresentada.
+Artigo 38.o
+Divergências entre os interessados sobre a aprovação de dívidas
+Havendo divergências sobre a aprovação da dívida, aplica -se o disposto no artigo 36.o à quota -parte relativa aos interessados que a aprovem e quanto à parte restante, observa -se o disposto no artigo anterior.
+Artigo 39.o
+Pagamento das dívidas aprovadas por todos os interessados 1 — As dívidas vencidas e aprovadas por todos os in- teressados são pagas imediatamente, se o credor exigir o pagamento.
+2 — Não havendo na herança dinheiro suficiente e não acordando os interessados noutra forma de pagamento imediato, procede -se à venda de bens para esse efeito, designando o conservador ou notário os que hão -de ser vendidos, quando não haja acordo a tal respeito entre os interessados.
+3 — Se o credor quiser receber em pagamento os bens indicados para a venda, são -lhe adjudicados pelo preço acordado.
+4 — O disposto nos números anteriores é também apli- cável às dívidas cuja existência seja verificada pelo conser- vador ou notário, nos termos dos artigos 37.o e 38.o
+5 — À venda prevista no n.o 2 é aplicável o regime cons- tante dos artigos 886.o e seguintes do Código de Processo Civil, aplicáveis com as necessárias adaptações.
+Artigo 40.o
+Pagamento de dívidas aprovadas por alguns dos interessados
+Sendo as dívidas aprovadas unicamente por alguns dos interessados, compete a quem as aprovou decidir a forma de pagamento, mas a deliberação não vincula os demais interessados.
+Artigo 41.o
+Deliberação dos legatários ou donatários sobre o passivo 1 — Aos legatários compete deliberar sobre o passivo e forma do seu pagamento, quando toda a herança seja dividida em legados, ou quando da aprovação das dívidas resulte redução de legados.
+________________
+________________
+
+4198 Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009
+2 — Os donatários são chamados a pronunciar -se sobre a aprovação das dívidas, sempre que haja sérias probabili- dades de resultar delas a redução das liberalidades.
+Artigo 42.o
+Dívida não aprovada ou não reconhecida Se a dívida que dá causa à redução não for aprovada por todos os herdeiros, donatários e legatários ou não for reco- nhecida pelo conservador ou notário, não pode ser tomada em conta no processo de inventário para esse efeito.
+Artigo 43.o
+Insolvência da herança Quando se verifique a situação de insolvência da he- rança, os interessados são remetidos para o juiz que detém o controlo geral do processo, aproveitando -se, sempre que possível, os actos já praticados no inventário.
+DIVISÃO II
+Licitações
+Artigo 44.o
+Abertura das licitações 1 — Não tendo havido acordo na conferência de in- teressados e resolvidas as questões referidas no n.o 2 do artigo 35.o, quando tenham lugar, abre -se licitação entre os interessados.
+2 — Estão excluídos da licitação os bens que, por força de lei ou de negócio, não possam ser dela objecto, os que devam ser preferencialmente atribuídos a certos interessa- dos e os que tenham sido objecto de pedido de adjudicação, nos termos do artigo 47.o
+3 — É permitido desistir da declaração de que se pre- tende licitar até ao momento em que se inicie a licitação da respectiva verba.
+Artigo 45.o
+Reclamação contra o valor atribuído aos bens 1 — Até ao início das licitações, os interessados e o Ministério Público, quando tenha intervenção principal no inventário, podem reclamar contra o valor atribuído a quaisquer bens relacionados indicando qual o valor que consideram adequado.
+2 — A conferência de interessados delibera, por unani- midade, sobre o valor que se deve atribuir aos bens a que a reclamação se refere.
+3 — O valor não é alterado se algum dos interessados declarar que aceita a coisa pelo valor declarado na relação de bens constante do requerimento do inventário ou na re- clamação apresentada, consoante esta se baseie no excesso ou no insuficiente valor constante da relação, equivalendo tal declaração à licitação.
+4 — No caso previsto no número anterior, se mais de um interessado aceitar, abre -se logo licitação entre eles, sendo a coisa adjudicada ao que oferecer maior lanço.
+5 — Não havendo unanimidade na apreciação da re- clamação deduzida, não se verificando a hipótese prevista no n.o 3 nem tendo havido a avaliação prevista nos termos do artigo 32.o, pode requerer -se a avaliação dos bens cujo valor foi questionado, a qual é efectuada nos termos do artigo 52.o
+Artigo 46.o
+Formalidades da licitação 1 — A licitação consiste numa arrematação a que so- mente são admitidos os herdeiros e o cônjuge meeiro, salvos os casos especiais em que deva ser admitido o do- natário ou o legatário.
+2 — Cada verba é licitada separadamente, salvo se todos concordarem na formação de lotes identificados por letras para este efeito ou se houver algumas que não possam separar -se sem inconveniente.
+3 — Podem diversos interessados, por acordo, licitar na mesma verba ou lote, para lhes ser adjudicado em comum na partilha.
+Artigo 47.o
+Pedidos de adjudicação de bens 1 — Se estiverem relacionados bens indivisíveis de que algum dos interessados seja comproprietário, excedendo a sua quota metade do respectivo valor e fundando -se o seu direito em título que a exclua do inventário ou, não havendo herdeiros legitimários, em doação ou legado do autor da herança, o interessado em causa pode requerer que a parte relacionada lhe seja adjudicada.
+2 — Pode igualmente qualquer interessado formular pedido de adjudicação relativamente a quaisquer bens fungíveis ou títulos de crédito, na proporção da sua quota, salvo se a divisão em espécie puder acarretar prejuízo considerável.
+3 — Os pedidos de adjudicação a que se referem os números anteriores são apresentados na conferência de interessados e os restantes interessados presentes são ou- vidos sobre as questões da indivisibilidade ou do eventual prejuízo causado pela divisão, podendo qualquer dos inte- ressados requerer que se proceda à avaliação.
+Artigo 48.o
+Avaliação de bens doados em caso de inoficiosidade 1 — Se houver herdeiros legitimários e algum interes- sado declarar que pretende licitar os bens doados pelo in- ventariado, a oposição do donatário, seja ou não conferente, tem como consequência poder requerer -se a avaliação dos bens a que se refira a declaração.
+2 — Feita a avaliação e concluídas as licitações nos outros bens, a declaração fica sem efeito se vier a apurar -se que o donatário não é obrigado a repor bens alguns.
+3 — Quando se reconheça, porém, que a doação é ino- ficiosa, observam -se as seguintes regras:
+a) Se a declaração recair sobre prédio susceptível de divisão, é admitida a licitação sobre a parte que o donatário tem de repor, não sendo admitido a ela o donatário;
+b) Se a declaração recair sobre coisa indivisível, abre- -se licitação sobre ela entre os herdeiros legitimários, no caso de a redução exceder metade do seu valor, pois se a redução for igual ou inferior a essa metade, fica o donatário obrigado a repor o excesso;
+c) Não se dando o caso previsto nas alíneas anteriores, o donatário pode escolher, entre os bens doados, os ne- cessários para o preenchimento da sua quota na herança e dos encargos da doação e repõe os que excederem o seu quinhão, abrindo -se licitação sobre os bens repostos, se esta for requerida, não sendo o donatário admitido a licitar.
+________________
+________________
+
+Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009 4199
+4 — A oposição do donatário deve ser declarada no pró- prio acto da conferência, se estiver presente, caso contrário, deve o donatário ser notificado, antes das licitações, para manifestar a sua oposição.
+5 — A avaliação pode ser requerida até à decisão da partilha.
+Artigo 49.o
+Avaliação de bens legados em caso de inoficiosidade 1 — Se algum interessado declarar que pretende licitar sobre bens legados, pode o legatário opor -se nos termos do n.o 4 do artigo anterior.
+2 — Se o legatário se opuser, não tem lugar a licitação, mas é lícito aos herdeiros requerer a avaliação dos bens legados quando a sua baixa avaliação lhes possa causar prejuízo.
+3 — Na falta de oposição por parte do legatário, os bens entram na licitação, tendo o legatário direito ao valor respectivo.
+4 — Ao prazo para requerer a avaliação é aplicável o disposto no n.o 5 do artigo anterior.
+Artigo 50.o
+Avaliação a requerimento do donatário ou legatário 1 — Quando do valor constante da relação de bens resulte que a doação ou o legado são inoficiosos, pode o do- natário ou o legatário, independentemente das declarações a que se referem os artigos anteriores, requerer avaliação dos bens doados ou legados ou de quaisquer outros que ainda o não tenham sido.
+2 — Pode também o donatário ou legatário requerer a avaliação de outros bens da herança quando só em face da avaliação dos bens doados ou legados e das licitações se reconheça que a doação ou legado tem de ser reduzido por inoficiosidade.
+3 — A avaliação a que se refere este artigo pode ser requerida até à decisão da partilha.
+Artigo 51.o
+Consequências da inoficiosidade do legado 1 — Se o legado for inoficioso, o legatário repõe, em substância, a parte que exceder, podendo sobre essa parte haver licitação, a que não é admitido o legatário.
+2 — Sendo a coisa legada indivisível, observam -se as seguintes regras:
+a) Quando a reposição deva ser feita em dinheiro, qual- quer dos interessados pode requerer avaliação da coisa legada;
+b) Quando a reposição possa ser feita em substância, o legatário tem a faculdade de requerer licitação na coisa legada.
+3 — É aplicável também ao legatário o disposto na alínea c) do n.o 3 do artigo 48.o
+Artigo 52.o
+Realização das avaliações As avaliações previstas nos artigos 32.o e 48.o a 51.o são efectuadas por um único perito, nomeado pelo conservador ou notário.
+Artigo 53.o
+Anulação da licitação 1 — Se o Ministério Público entender que o repre- sentante de algum incapaz ou equiparado não defendeu devidamente, na licitação, os direitos e interesses do seu representado, requer que o acto seja anulado na parte res- pectiva.
+2 — No caso previsto no número anterior, o conservador ou notário determinam a anulação da licitação, mandando repetir o acto e passando a representação do incapaz a ser assegurada pelo Ministério Público.
+3 — A decisão de anulação da licitação é notificada ao representante do incapaz ou equiparado e dela cabe recurso para o tribunal competente, no prazo de 10 dias a contar da notificação.
+4 — A interposição do recurso previsto no número an- terior suspende o processo de inventário, nos termos do artigo 18.o
+SUBSECÇÃO II
+Partilha
+Artigo 54.o
+Decisão da partilha 1 — Realizada a conferência de interessados, e as lici- tações, caso tenham lugar, a decisão da partilha é imedia- tamente proferida pelo conservador ou notário.
+2 — Para efeito do disposto no n.o 1 do artigo 4.o, o con- servador ou notário comunicam ao juiz, por via electrónica, a decisão da partilha e as eventuais reclamações.
+Artigo 55.o
+Regras da partilha 1 — Na decisão da partilha observam -se as regras se- guintes:
+a) Em primeiro lugar, apura -se a importância total do activo, somando -se os valores de cada espécie de bens conforme as avaliações e licitações efectuadas e deduzindo- -se as dívidas, legados e encargos que devam ser abatidos; b) Em seguida, determina -se o montante da quota de cada interessado e a parte que lhe cabe em cada espécie de bens;
+c) Por fim, faz -se o preenchimento de cada quota com referência aos números das verbas da descrição.
+2 — Se aos co -herdeiros couberem fracções de verbas, deve mencionar -se esse facto.
+Artigo 56.o
+Preenchimento dos quinhões hereditários 1 — No preenchimento dos quinhões observam -se as seguintes regras:
+a) Os bens licitados são adjudicados ao respectivo lici- tante, tal como os bens doados ou legados são adjudicados ao respectivo donatário ou legatário;
+b) Aos não conferentes ou não licitantes são atribuídos, quando possível, bens da mesma espécie e natureza dos doados e licitados;
+________________
+________________
+
+4200 Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009
+c) Se não for possível observar a regra prevista na alínea anterior, aos não conferentes ou não licitantes são atribuídos outros bens da herança, mas se estes forem de natureza diferente da dos bens doados ou licitados, podem exigir a composição em dinheiro, vendendo -se os bens necessários para obter as devidas quantias, nos termos do n.o 5 do artigo 39.o;
+d) O disposto nas alíneas b) e c) é aplicável em bene- fício dos co -herdeiros não legatários, quando alguns dos herdeiros tenham sido contemplados com legados;
+e) Os bens restantes, se os houver, são repartidos à sorte entre os interessados, por lotes iguais;
+f) Os créditos que sejam litigiosos ou que não estejam suficientemente comprovados e os bens que não tenham valor são distribuídos proporcionalmente pelos interes- sados.
+2 — Se se verificar que os bens doados, legados ou licitados excedem a quota do respectivo interessado ou a parte disponível do inventariado, o conservador ou o notário fazem referência ao facto, indicando o montante do excesso.
+3 — Se houver legados ou doações inoficiosas, o con- servador ou notário ordena a notificação dos interessados para requererem a sua redução, podendo o legatário ou donatário escolher, entre os bens legados ou doados, os necessários a preencher o valor que tenha direito a receber.
+Artigo 57.o
+Opções dos interessados 1 — Os interessados a quem caibam tornas podem re- querer a composição dos seus quinhões ou reclamar o pagamento das mesmas.
+2 — Se algum interessado tiver licitado em mais verbas do que as necessárias para preencher o seu quinhão, a qual- quer dos interessados a quem caibam tornas é permitido requerer que as verbas em excesso ou algumas lhe sejam adjudicadas pelo valor resultante da licitação, até ao limite do seu quinhão.
+3 — O licitante pode escolher, de entre as verbas em que licitou, as necessárias para preencher o seu quinhão.
+4 — Sendo essa a vontade de mais de um interessado e não havendo acordo entre eles sobre a adjudicação, o conservador ou notário decidem, por forma a conseguir o maior equilíbrio dos lotes, podendo mandar proceder a sorteio ou autorizar a adjudicação em comum na proporção que indicar.
+Artigo 58.o
+Pagamento ou garantia das tornas 1 — Reclamado o pagamento das tornas, o interessado devedor deve pagá -las imediatamente, garantir o seu paga- mento ou apresentar proposta para o seu pagamento.
+2 — Não sendo as tornas pagas, nem garantido o seu pagamento, nem aceite a proposta para o seu pagamento, os requerentes podem pedir que das verbas destinadas ao devedor lhes sejam adjudicadas as que escolherem e sejam necessárias para preenchimento das suas quotas, contanto que garantam imediatamente a importância das tornas que, por virtude da adjudicação, tenham de pagar, sendo aplicável o disposto no n.o 4 do artigo anterior.
+3 — Podem também os requerentes pedir que, logo que a decisão da partilha se torne definitiva, se proceda
+à venda dos bens adjudicados ao devedor até onde seja necessário para o pagamento das tornas, nos termos do n.o 5 do artigo 39.o
+4 — Quando o credor for incapaz ou estiver ausente em parte incerta, as tornas são depositadas à ordem do processo ou à ordem e em nome do incapaz ou do ausente, podendo neste último caso, o devedor das tornas ou o Mi- nistério Público abrir depósito bancário em nome daquele, devendo, para o efeito, ser extraída certidão do processo que comprove a dívida.
+Artigo 59.o
+Não reclamação do pagamento das tornas Não sendo reclamado o pagamento das tornas, estas vencem os juros legais desde a data em que a decisão da partilha se tornou definitiva e os credores podem registar hipoteca legal sobre os bens adjudicados ao devedor ou, quando essa garantia se mostre insuficiente, requerer que sejam tomadas, quanto aos móveis, as disposições previstas no artigo 62.o
+Artigo 60.o
+Sentença homologatória da partilha 1 — O processo é remetido, por via electrónica, ao juiz para, no prazo de cinco dias, proferir sentença homologa- tória da partilha.
+2 — A decisão de não homologação deve ser fundamen- tada e propor a forma da realização da nova partilha pelo conservador ou notário.
+3 — Da sentença homologatória da partilha cabe re- curso para o tribunal da Relação, a interpor no prazo de 30 dias, nos termos gerais, não cabendo recurso do acór- dão do tribunal da Relação para o Supremo Tribunal de Justiça, sem prejuízo dos casos em que o recurso é sempre admissível.
+Artigo 61.o
+Entrega de bens antes do trânsito em julgado da sentença homologatória 1 — Se algum dos interessados quiser receber os bens que lhe tenham cabido em partilha, antes do trânsito em julgado da sentença homologatória, observa -se o seguinte: a) No título que se passe para o registo e posse dos bens imóveis declara -se que a decisão da partilha ainda não é definitiva, devendo o registo de transmissão mencionar essa provisoriedade;
+b) Os títulos de crédito sujeitos a averbamento são aver- bados pela entidade competente com a declaração de que o interessado não pode dispor deles enquanto a sentença homologatória não transitar em julgado;
+c) Quaisquer outros bens só são entregues se o interes- sado prestar caução, a qual não compreende os rendimen- tos, juros e dividendos.
+2 — Se o inventário prosseguir quanto a alguns bens, por se reconhecer desde logo que devem ser relacionados, mas subsistirem dúvidas quanto à falta de bens a conferir, o conferente não recebe os que lhe couberem em partilha sem prestar caução ao valor daqueles a que não terá direito se a questão vier a ser decidida contra ele.
+3 — O registo e o averbamento previstos nas alíneas a) e b) do n.o 1 produzem o mesmo efeito que o registo das
+________________
+________________
+
+Diário da República, 1.a série — N.o 123 — 29 de Junho de 2009 4201
+acções e tal efeito subsiste enquanto não for proferida decisão que determine a extinção daquele efeito.
+Artigo 62.o
+Nova partilha 1 — Tendo de proceder -se a nova partilha por efeito da decisão do recurso ou da causa, o cabeça -de -casal entra imediatamente na posse dos bens que deixaram de perten- cer ao interessado que os recebeu.
+2 — O inventário só é reformado na parte estritamente necessária para que a decisão seja cumprida, subsistindo sempre a avaliação e a descrição, ainda que haja completa substituição de herdeiros.
+3 — Na sentença que julgue a nova partilha são man- dados cancelar os registos ou averbamentos que devam caducar.
+4 — Se o interessado não restituir os bens móveis que recebeu, a execução é promovida nos termos gerais.
+SECÇÃO IV
+Emenda e anulação da partilha
+Artigo 63.o
+Emenda por acordo A partilha, mesmo depois do trânsito em julgado da sentença homologatória, pode ser emendada no mesmo inventário por acordo de todos os interessados ou dos seus representantes, se tiver havido erro de facto na descrição ou qualificação dos bens ou qualquer outro erro susceptível de viciar a vontade das partes.
+Artigo 64.o
+Emenda da partilha na falta de acordo 1 — Quando se verifique algum dos casos previstos no artigo anterior e os interessados não estejam de acordo quanto à alteração, pode esta ser pedida em recurso judicial da decisão homologatória da partilha.
+2 — O recurso previsto no número anterior é interposto no prazo de um ano a contar do conhecimento do erro, desde que este conhecimento seja posterior à sentença homologatória da partilha.
+Artigo 65.o
+Anulação judicial A anulação da partilha confirmada por sentença transi- tada em julgado pode ser decretada quando tenha havido preterição ou falta de intervenção de algum dos co -herdeiros e se mostre que os outros interessados procederam com dolo ou má fé, seja quanto à preterição, seja quanto ao modo como a partilha foi preparada.
+Artigo 66.o
+Reabertura judicial do processo de inventário 1 — Não se verificando os requisitos do artigo anterior ou preferindo o herdeiro preterido que o seu quinhão lhe seja composto em dinheiro, o interessado requer a convo- cação da conferência de interessados para se determinar o montante do seu quinhão.
+2 — Se os interessados não chegarem a acordo, observam -se as seguintes regras:
+a) No auto, consignam -se os bens sobre cujo valor há divergência;
+b) Tais bens são avaliados novamente, podendo sobre eles ser requerida segunda avaliação;
+c) Em seguida, fixa -se a importância a que o herdeiro tem direito.
+3 — É proferida nova decisão de partilha para fixação das alterações à decisão anterior em consequência dos pagamentos necessários para o preenchimento do quinhão do preterido.
+4 — Feita a composição do quinhão, o herdeiro pode requerer que os devedores sejam notificados para efectuar o pagamento, sob pena de ficarem obrigados a compor- -lhe em bens a parte respectiva, sem prejuízo, porém, das alienações já efectuadas.
+5 — Se não for exigido o pagamento, é aplicável o disposto no n.o 4 do artigo 57.o
+SECÇÃO V
+Partilhas adicionais
+Artigo 67.o
+Inventário do cônjuge supérstite 1 — Quando o inventário do cônjuge supérstite haja de correr na conservatória ou no cartório em que se procedeu a inventário por óbito do cônjuge predefunto, os termos necessários para a segunda partilha são lavrados no pro- cesso da primeira.
+2 — No inventário a que se proceda por óbito do côn- juge supérstite são descritos e partilhados os bens omitidos no inventário do cônjuge predefunto, quando a omissão só venha a descobrir -se por ocasião daquele inventário.
+Artigo 68.o
+Partilha adicional Quando se reconheça, depois de feita a partilha, que houve omissão de alguns bens, procede -se no mesmo processo a partilha adicional, com observância, na parte aplicável, do que se acha disposto nos artigos anteriores.
+SECÇÃO VI
+Processo de inventário em casos especiais
+Artigo 69.o
+Inventário em consequência de justificação de ausência 1 — Para deferimento da curadoria e entrega dos bens do ausente, o inventário segue os termos previstos nos ca- pítulos anteriores, com intervenção do Ministério Público. 2 — São citadas para o inventário e intervêm nele as pessoas designadas no artigo 100.o do Código Civil.
+3 — Nos 20 dias seguintes à citação, qualquer dos ci- tados pode deduzir oposição quanto à data da ausência ou das últimas notícias, constante do processo, indicando a que considera exacta.
+4 — Quem se julgue com direito à entrega de bens, in- dependentemente da partilha, pode requerer a sua entrega
