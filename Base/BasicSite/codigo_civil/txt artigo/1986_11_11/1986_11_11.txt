@@ -1,0 +1,52 @@
+﻿DL 379/86
+  Artigo único
+Os artigos 410.º, 412.º, 413.º, 421.º, 442.º, 755.º e 830.º do Código Civil passam a ter a seguinte redacção: 
+Artigo 410.º, 
+(Regime aplicável) 
+1 - À convenção pela qual alguém se obriga a celebrar certo contrato são aplicáveis as disposições legais relativas ao contrato prometido, exceptuadas as relativas à forma e as que, por sua razão de ser, não se devam considerar extensivas ao contrato-promessa. 
+2 - Porém, a promessa respeitante à celebração de contrato para o qual a lei exija documento, quer autêntico, quer particular, só vale se constar de documento assinado pela parte que se vincula ou por ambas, consoante o contrato-promessa seja unilateral ou bilateral. 
+3 - No caso de promessa relativa à celebração de contrato oneroso de transmissão ou constituição de direito real sobre edifício, ou fracção autónoma dele, já construído, em construção ou a construir, o documento referido no número anterior deve conter o reconhecimento presencial da assinatura do promitente ou promitentes e a certificação, pelo notário, da existência da licença respectiva de utilização ou de construção; contudo, o contraente que promete transmitir ou constituir o direito só pode invocar a omissão destes requisitos quando a mesma tenha sido culposamente causada pela outra parte. 
+Artigo 412.º 
+(Transmissão dos direitos e obrigações das partes) 
+1 - Os direitos e obrigações resultantes do contrato-promessa, que não sejam exclusivamente pessoais, transmitem-se aos sucessores das partes. 
+2 - A transmissão por acto entre vivos está sujeita às regras gerais. 
+Artigo 413.º 
+(Eficácia real da promessa) 
+1 - À promessa de transmissão ou constituição de direitos reais sobre bens imóveis, ou móveis sujeitos a registo, podem as partes atribuir eficácia real, mediante declaração expressa e inscrição no registo. 
+2 - Deve constar de escritura pública a promessa a que as partes atribuam eficácia real; porém, quando a lei não exija essa forma para o contrato prometido, é bastante documento particular com reconhecimento da assinatura da parte que se vincula ou de ambas, consoante se trate de contrato-promessa unilateral ou bilateral. 
+Artigo 421.º 
+(Eficácia real) 
+1 - O direito de preferência pode, por convenção das partes, gozar de eficácia real se, respeitando a bens imóveis, ou a móveis sujeitos a registo, forem observados os requisitos de forma e de publicidade exigidos no artigo 413.º 
+2 - É aplicável neste caso, com as necessárias adaptações, o disposto no artigo 1410.º 
+Artigo 442.º 
+(Sinal) 
+1 - Quando haja sinal, a coisa entregue deve ser imputada na prestação devida, ou restituída quando a imputação não for possível. 
+2 - Se quem constitui o sinal deixar de cumprir a obrigação por causa que lhe seja imputável, tem o outro contraente a faculdade de fazer sua a coisa entregue; se o não cumprimento do contrato for devido a este último, tem aquele a faculdade de exigir o dobro do que prestou, ou, se houve tradição da coisa a que se refere o contrato prometido, o seu valor, ou o do direito a transmitir ou a constituir sobre ela, determinado objectivamente, à data do não cumprimento da promessa, com dedução do preço convencionado, devendo ainda ser-lhe restituído o sinal e a parte do preço que tenha pago. 
+3 - Em qualquer dos casos previstos no número anterior, o contraente não faltoso pode, em alternativa, requerer a execução específica do contrato, nos termos do artigo 830.º; se o contraente não faltoso optar pelo aumento do valor da coisa ou do direito, como se estabelece no número anterior, pode a outra parte opor-se ao exercício dessa faculdade, oferecendo-se para cumprir a promessa, salvo o disposto no artigo 808.º 
+4 - Na ausência de estipulação em contrário, não há lugar, pelo não cumprimento do contrato, a qualquer outra indemnização, nos casos de perda do sinal ou de pagamento do dobro deste, ou do aumento do valor da coisa ou do direito à data do não cumprimento. 
+Artigo 755.º 
+(Casos especiais) 
+1 - Gozam ainda do direito de retenção: 
+a) O transportador, sobre as coisas transportadas, pelo crédito resultante do transporte; 
+b) O albergueiro, sobre as coisas que as pessoas albergadas hajam trazido para a pousada ou acessórios dela, pelo crédito da hospedagem; 
+c) O mandatário, sobre as coisas que lhe tiverem sido entregues para execução do mandato, pelo crédito resultante da sua actividade; 
+d) O gestor de negócios, sobre as coisas que tenha em seu poder para execução da gestão, pelo crédito proveniente desta; 
+e) O depositário e o comodatário, sobre as coisas que lhes tiverem sido entregues em consequência dos respectivos contratos, pelos créditos deles resultantes; 
+f) O beneficiário da promessa de transmissão ou constituição de direito real que obteve a tradição da coisa a que se refere o contrato prometido, sobre essa coisa, pelo crédito resultante do não cumprimento imputável à outra parte, nos temos do artigo 442.º 
+2 - Quando haja transportes sucessivos, mas todos os transportadores se tenham obrigado em comum, entende-se que o último detém as coisas em nome próprio e em nome dos outros. 
+Artigo 830.º 
+(Contrato-promessa) 
+1 - Se alguém se tiver obrigado a celebrar certo contrato e não cumprir a promessa, pode a outra parte, na falta de convenção em contrário, obter sentença que produza os efeitos da declaração negocial do faltoso, sempre que a isso não se oponha a natureza da obrigação assumida. 
+2 - Entende-se haver convenção em contrário, se existir sinal ou tiver sido fixada uma pena para o caso de não cumprimento da promessa. 
+3 - O direito à execução específica não pode ser afastado pelas partes nas promessas a que se refere o n.º 3 do artigo 410.º; a requerimento do faltoso, porém, a sentença que produza os efeitos da sua declaração negocial pode ordenar a modificação do contrato nos termos do artigo 437.º, ainda que a alteração das circunstâncias seja posterior à mora. 
+4 - Tratando-se de promessa relativa à celebração de contrato oneroso de transmissão ou constituição de direito real sobre edifício, ou fracção autónoma dele, em que caiba ao adquirente, nos termos do artigo 721.º, a faculdade de expurgar hipoteca a que o mesmo se encontre sujeito, pode aquele, caso a extinção de tal garantia não preceda a mencionada transmissão ou constituição, ou não coincida com esta, requerer, para efeito da expurgação, que a sentença referida no n.º 1 condene também o promitente faltoso a entregar-lhe o montante do débito garantido, ou o valor nele correspondente à fracção do edifício ou do direito objecto do contrato, e dos juros respectivos, vencidos e vincendos, até pagamento integral. 
+5 - No caso de contrato em que ao obrigado seja lícito invocar a excepção de não cumprimento, a acção improcede, se o requerente não consignar em depósito a sua prestação no prazo que lhe for fixado pelo tribunal. 
+
+Consultar o Decreto-Lei n.º 47344 de 25 de Novembro de 1966(actualizado face ao diploma em epígrafe) 
+
+Visto e aprovado em Conselho de Ministros de 2 de Outubro de 1986. - Aníbal António Cavaco Silva - Mário Ferreira Bastos Raposo. 
+Promulgado em 25 de Outubro de 1986. 
+Publique-se. 
+O Presidente da República, MÁRIO SOARES. 
+Referendado em 28 de Outubro de 1986. 
+O Primeiro-Ministro, Aníbal António Cavaco Silva.
