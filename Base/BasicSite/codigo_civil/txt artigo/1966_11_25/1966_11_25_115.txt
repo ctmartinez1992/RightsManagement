@@ -1,0 +1,3 @@
+(Efeitos)
+A declaração de morte presumida produz os mesmos efeitos que a morte.
+  
