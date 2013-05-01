@@ -1,12 +1,2 @@
 ﻿DL 59/2004
-  Artigo 1.º
-Alterações
-Artigo 508.º 
-[...] 
-1 - A indemnização fundada em acidente de viação, quando não haja culpa do responsável, tem como limite máximo o capital mínimo do seguro obrigatório de responsabilidade civil automóvel. 
-2 - Se o acidente for causado por veículo utilizado em transporte colectivo, a indemnização tem como limite máximo o capital mínimo do seguro obrigatório de responsabilidade civil automóvel estabelecido para os transportes colectivos. 
-3 - Se o acidente for causado por veículo utilizado em transporte ferroviário, a indemnização tem como limite máximo o capital mínimo do seguro obrigatório de responsabilidade civil estabelecido para essa situação em legislação especial.» 
-2 - O artigo 510.º do Código Civil passa a ter a seguinte redacção: 
-«Artigo 510.º 
-[...] 
-A indemnização fundada na responsabilidade a que se refere o artigo precedente, quando não haja culpa do responsável, tem, para cada acidente, como limite máximo o estabelecido no n.º 1 do artigo 508.º, salvo se, havendo seguro obrigatório, diploma especial estabelecer um capital mínimo de seguro, caso em que a indemnização tem como limite máximo esse capital.
+Altera - 508,510
