@@ -43,6 +43,26 @@ class Site extends CI_Controller {
         $this->load->view("site_footer");
     }
 
+    public function codigo_civil() {
+        $this->load->helper('xml');
+        $this->load->helper('file');
+        $this->load->model("model_codigo_civil");
+        $this->load->model("model_get");
+        $data["result"] = $this->model_get->getData("about");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        $this->load->view("content_codigo_civil", $data);
+        $this->load->view("site_footer");
+    }
+
     public function contact_no() {
         $data["message"] = "";
         $this->load->view("site_header");
