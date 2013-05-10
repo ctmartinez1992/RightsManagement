@@ -1,5 +1,10 @@
-<div id="content">
-    <section id="main_section">
+<div id="main_content">
+    <section id="main_area">
+        <article>
+            <h2>Article 1</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <footer>- Carlos</footer>
+        </article>
         <?php
 //            $file = $this->model_codigo_civil->get_article("/1975_2_19/1975_2_19_1029.txt");
 //            echo "<li><ul>".$file[0];
@@ -73,6 +78,11 @@
 //            echo $this->model_codigo_civil->when_was_article_added("1978-A");
         
 //            echo $this->model_codigo_civil->when_was_article_first_altered("56");
+        
+//            echo $this->model_codigo_civil->was_doc_revoked("1985_9_20");
+            
+//            echo $this->model_codigo_civil->does_doc_revoke("200_9_11");
+            
+//            echo $this->model_codigo_civil->how_many_does_doc_revoke("2009_9_11");
         ?>
     </section>
-</div>

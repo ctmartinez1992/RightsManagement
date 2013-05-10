@@ -46,7 +46,7 @@ class Site extends CI_Controller {
     public function codigo_civil() {
         $this->load->helper('xml');
         $this->load->helper('file');
-        $this->load->model("model_codigo_civil");
+        $this->load->model("model_api");
         $this->load->model("model_get");
         $data["result"] = $this->model_get->getData("about");
 
@@ -59,7 +59,9 @@ class Site extends CI_Controller {
             $this->load->view("site_login");
             $this->load->view("site_nav");
         }
+        $this->load->view("content_navbar", $data);
         $this->load->view("content_codigo_civil", $data);
+        $this->load->view("content_sidebar", $data);
         $this->load->view("site_footer");
     }
 
