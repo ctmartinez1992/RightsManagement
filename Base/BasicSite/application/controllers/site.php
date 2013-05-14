@@ -59,9 +59,14 @@ class Site extends CI_Controller {
             $this->load->view("site_login");
             $this->load->view("site_nav");
         }
+        
+        $search_data['livro'] = array("I"=>"I", "II"=>"II");
+        $search_data['titulo']["I"] = array("I"=>"I", "II"=>"II", "III"=>"III", "IV"=>"IV");
+        $search_data['titulo']["II"] = array("I"=>"I");
+        
         $this->load->view("content_navbar", $data);
         $this->load->view("content_codigo_civil", $data);
-        $this->load->view("content_sidebar", $data);
+        $this->load->view("content_sidebar", $search_data);
         $this->load->view("site_footer");
     }
 
