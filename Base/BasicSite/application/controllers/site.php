@@ -60,9 +60,7 @@ class Site extends CI_Controller {
             $this->load->view("site_nav");
         }
         
-        $search_data['livro'] = array("I"=>"I", "II"=>"II");
-        $search_data['titulo']["I"] = array("I"=>"I", "II"=>"II", "III"=>"III", "IV"=>"IV");
-        $search_data['titulo']["II"] = array("I"=>"I");
+        $search_data['livro'] = $this->model_api->get_first_hierarchy_livro();
         
         $this->load->view("content_navbar", $data);
         $this->load->view("content_codigo_civil", $data);
