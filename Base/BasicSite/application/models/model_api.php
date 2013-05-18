@@ -9,23 +9,25 @@ class Model_api extends CI_Model {
      * Returns: Array with each line of the txt in a diferent index, ranging from 0 to (number of lines-1)
      */
     public function get_article($name) {
-        return explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $name)));
+        return file('C:/wamp/www/BasicSite/codigo_civil/' . $name, FILE_SKIP_EMPTY_LINES);
     }
 
     /*
      * Parameters: $name (the article number); $doc (the date of the document)
      * Returns: Array with each line of the txt in a diferent index, ranging from 0 to (number of lines-1)
      */
+
     public function get_article_given_doc($name, $doc) {
-        return explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt')));
+        return file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
     }
 
     /*
      * Parameters: $name (the name must be in the form of: "docdate/docdate_articlename.txt")
      * Returns: The first line of the txt, which is the title
      */
+
     public function get_article_title($name) {
-        $array = explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $name)));
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $name, FILE_SKIP_EMPTY_LINES);
         return $array[0];
     }
 
@@ -33,8 +35,9 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number); $doc (the date of the document)
      * Returns: The first line of the txt, which is the title
      */
+
     public function get_article_title_given_doc($name, $doc) {
-        $array = explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt')));
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
         return $array[0];
     }
 
@@ -42,8 +45,9 @@ class Model_api extends CI_Model {
      * Parameters: $name (the name must be in the form of: "docdate/docdate_articlename.txt")
      * Returns: Array with each line of the txt except the title in a diferent index, ranging from 0 to (number of lines-2)
      */
+
     public function get_article_text($name) {
-        $array = explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $name)));
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $name, FILE_SKIP_EMPTY_LINES);
         if (sizeof($array) > 2) {
             unset($array[0]);
             return array_values($array);
@@ -55,8 +59,9 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number); $doc (the date of the document)
      * Returns: Array with each line of the txt except the title in a diferent index, ranging from 0 to (number of lines-2)
      */
+
     public function get_article_text_given_doc($name, $doc) {
-        $array = explode("\n", trim(read_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt')));
+        $array = explode("\n", trim(readfile('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES)));
         if (sizeof($array) > 2) {
             unset($array[0]);
             return array_values($array);
@@ -68,6 +73,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number)
      * Returns: Array with the names of the doc in which the article altered/added/revoked
      */
+
     public function get_article_evolution_names($name) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -88,6 +94,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number)
      * Returns: Array with the title evolution ([x][y] - x=doc's date; y=article title)
      */
+
     public function get_article_evolution_title($name) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -110,6 +117,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number)
      * Returns: Array with the title evolution ([x][y] - x=doc's date; y=article text)
      */
+
     public function get_article_evolution_text($name) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -132,6 +140,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the article number)
      * Returns: Array with the title evolution ([x][y] - x=doc's date; y=article text)
      */
+
     public function get_article_evolution_content($name) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -154,6 +163,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with the articles that it contains ([x][y] - x=alteration/adition/revoke; y=number of the article)
      */
+
     public function get_all_articles($name) {
         $array = $this->get_doc_content($name . "/" . $name . ".xml");
         $result['altera'] = array();
@@ -177,6 +187,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with the content of the xml document
      */
+
     public function get_doc_content($name) {
         return simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
     }
@@ -185,6 +196,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: The name of the document
      */
+
     public function get_doc_name($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return $array['nome'];
@@ -194,6 +206,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with only the altered articles
      */
+
     public function get_doc_altered($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         if (sizeof($array->altera) > 0) {
@@ -205,6 +218,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with only the added articles
      */
+
     public function get_doc_added($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         if (sizeof($array->acrescenta) > 0) {
@@ -216,6 +230,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with only the revoked articles
      */
+
     public function get_doc_revoked($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         if (sizeof($array->revoga) > 0) {
@@ -227,6 +242,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with the amount of altered articles
      */
+
     public function get_doc_altered_count($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return sizeof($array->altera);
@@ -236,6 +252,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with the amount of added articles
      */
+
     public function get_doc_added_count($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return sizeof($array->acrescenta);
@@ -245,6 +262,7 @@ class Model_api extends CI_Model {
      * Parameters: $name (the doc's date)
      * Returns: Array with the amount of revoked articles
      */
+
     public function get_doc_revoked_count($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return sizeof($array->revoga);
@@ -253,6 +271,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the names of all the documents existent in the directory
      */
+
     public function get_all_doc_names() {
         return simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos.xml');
     }
@@ -260,6 +279,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the count of all the documents existent in the directory
      */
+
     public function get_all_doc_count() {
         return sizeof($this->get_all_doc_names());
     }
@@ -267,6 +287,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the names of all the documents that suffered an alteration in the hierarchy
      */
+
     public function get_all_doc_changed_hierarchy_names() {
         return simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos_hierarquia.xml');
     }
@@ -274,6 +295,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the count of all the documents that suffered an alteration in the hierarchy
      */
+
     public function get_all_doc_changed_hierarchy_count() {
         return sizeof($this->get_all_doc_changed_hierarchy_names());
     }
@@ -281,6 +303,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the names of all the documents that were revoked or revoke another doc
      */
+
     public function get_all_revokes_names() {
         return simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/revogados.xml');
     }
@@ -288,6 +311,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: An array with the count of all the documents that were revoked or revoke another doc
      */
+
     public function get_all_revokes_count() {
         return sizeof($this->get_all_revokes_names());
     }
@@ -295,6 +319,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: All the numbers of the first hierarchy "Livro"
      */
+
     public function get_first_hierarchy_livro() {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = array();
@@ -305,10 +330,27 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
-    
+
+    /*
+     * Returns: The numbers and the name of the first hierarchy "Livro"
+     */
+
+    public function get_first_hierarchy_livro_name() {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = array();
+        if (sizeof($array->Livro) > 0) {
+            for ($i = 0; $i < sizeof($array->Livro); $i++) {
+                $resposta[$i][0] = $array->Livro[$i]['id'];
+                $resposta[$i][1] = $array->Livro[$i]['nome'];
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "Titulo" given the previous hierarchy "Livro"
      */
+
     public function get_first_hierarchy_titulo_given_livro($p_livro) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = "";
@@ -322,7 +364,33 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+    /*
+     * Returns: The numbers and the name of the first hierarchy "Titulo" given the previous hierarchy "Livro"
+     */
+
+    public function get_first_hierarchy_titulo_name_given_livro($p_livro) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($titulo != null) {
+                        $resposta .= $titulo['id'] . '$' . $titulo['nome'] . '_';
+                        $count++;
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -334,6 +402,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: All the numbers of the first hierarchy "Subtitulo" given the previous hierarchy "Livro" & "Titulo"
      */
+
     public function get_first_hierarchy_subtitulo_given_previous($p_livro, $p_titulo) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = "";
@@ -351,7 +420,37 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+    /*
+     * Returns: The numbers and the name of the first hierarchy "Subtitulo" given the previous hierarchy "Livro" & "Titulo"
+     */
+
+    public function get_first_hierarchy_subtitulo_name_given_previous($p_livro, $p_titulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($subtitulo != null) {
+                                $resposta .= $subtitulo['id'] . '$' . $subtitulo['nome'] . '_';
+                                $count++;
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -363,6 +462,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: All the numbers of the first hierarchy "Capitulo" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo"
      */
+
     public function get_first_hierarchy_capitulo_given_previous($p_livro, $p_titulo, $p_subtitulo) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = "";
@@ -384,7 +484,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -392,9 +492,45 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+
     /*
      * Returns: All the numbers of the first hierarchy "Capitulo" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo"
      */
+
+    public function get_first_hierarchy_capitulo_name_given_previous($p_livro, $p_titulo, $p_subtitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($capitulo != null) {
+                                        $resposta .= $capitulo['id'] . '$' . $capitulo['nome'] . '_';
+                                        $count++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+    /*
+     * Returns: All the numbers of the first hierarchy "Capitulo" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo"
+     */
+
     public function get_first_hierarchy_capitulo_given_previous_no_subtitulo($p_livro, $p_titulo) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = "";
@@ -407,13 +543,42 @@ class Model_api extends CI_Model {
                             if ($capitulo != null) {
                                 $resposta .= $capitulo['id'] . ',';
                                 $count++;
-                                
                             }
                         }
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+    /*
+     * Returns: All the numbers of the first hierarchy "Capitulo" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo"
+     */
+
+    public function get_first_hierarchy_capitulo_name_given_previous_no_subtitulo($p_livro, $p_titulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($capitulo != null) {
+                                $resposta .= $capitulo['id'] . '$' . $capitulo['nome'] . '_';
+                                $count++;
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -425,6 +590,7 @@ class Model_api extends CI_Model {
     /*
      * Returns: All the numbers of the first hierarchy "Seccao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo"
      */
+
     public function get_first_hierarchy_seccao_given_previous($p_livro, $p_titulo, $p_subtitulo, $p_capitulo) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
         $resposta = "";
@@ -450,7 +616,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -458,6 +624,45 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+
+    /*
+     * Returns: The number and the name of the first hierarchy "Seccao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo"
+     */
+
+    public function get_first_hierarchy_seccao_name_given_previous($p_livro, $p_titulo, $p_subtitulo, $p_capitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($seccao != null) {
+                                                $resposta .= $seccao['id'] . '$' . $seccao['nome'] . '_';
+                                                $count++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "Seccao" given the previous hierarchy "Livro" & "Titulo" & "Capitulo"
      */
@@ -475,7 +680,6 @@ class Model_api extends CI_Model {
                                     if ($seccao != null) {
                                         $resposta .= $seccao['id'] . ',';
                                         $count++;
-                                        
                                     }
                                 }
                             }
@@ -483,7 +687,40 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+    /*
+     * Returns: The number and the name of the first hierarchy "Seccao" given the previous hierarchy "Livro" & "Titulo" & "Capitulo"
+     */
+    public function get_first_hierarchy_seccao_name_given_previous_no_subtitulo($p_livro, $p_titulo, $p_capitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($seccao != null) {
+                                        $resposta .= $seccao['id'] . '$' . $seccao['nome'] . '_';
+                                        $count++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -524,7 +761,47 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "Subseccao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao"
+     */
+    public function get_first_hierarchy_subseccao_name_given_previous($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($subseccao != null) {
+                                                        $resposta .= $subseccao['id'] . '$' . $subseccao['nome'] . '_';
+                                                        $count++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -560,7 +837,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -568,7 +845,43 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
-    
+    /*
+     * Returns: All the numbers of the first hierarchy "Subseccao" given the previous hierarchy "Livro" & "Titulo" & "Capitulo" & "Seccao"
+     */
+    public function get_first_hierarchy_subseccao_name_given_previous_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($subseccao != null) {
+                                                $resposta .= $subseccao['id'] . '$' . $subseccao['nome'] . '_';
+                                                $count++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "Divisao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao" & "Subseccao"
      */
@@ -605,7 +918,51 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "Divisao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao" & "Subseccao"
+     */
+    public function get_first_hierarchy_divisao_name_given_previous($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->Divisao as $divisao) {
+                                                            if ($divisao != null) {
+                                                                $resposta .= $divisao['id'] . '$' . $divisao['nome'] . '_';
+                                                                $count++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -645,7 +1002,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -653,7 +1010,47 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
-    
+    /*
+     * Returns: All the numbers of the first hierarchy "Subseccao" given the previous hierarchy "Livro" & "Titulo" & "Capitulo" & "Seccao" & "Subseccao"
+     */
+    public function get_first_hierarchy_divisao_name_given_previous_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->Divisao as $divisao) {
+                                                    if ($divisao != null) {
+                                                        $resposta .= $divisao['id'] . '$' . $divisao['nome'] . '_';
+                                                        $count++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "Subdivisao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao" & "Subseccao" & "Divisao"
      */
@@ -694,7 +1091,55 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "Subdivisao" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao" & "Subseccao" & "Divisao"
+     */
+    public function get_first_hierarchy_subdivisao_name_given_previous($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->Divisao as $divisao) {
+                                                            if ($p_divisao == (string) $divisao['id']) {
+                                                                foreach ($divisao->Subdivisao as $subdivisao) {
+                                                                    if ($subdivisao != null) {
+                                                                        $resposta .= $subdivisao['id'] . '$' . $subdivisao['nome'] . '_';
+                                                                        $count++;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -738,7 +1183,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -746,7 +1191,51 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
-    
+    /*
+     * Returns: All the numbers of the first hierarchy "Subdivisao" given the previous hierarchy "Livro" & "Titulo" & "Capitulo" & "Seccao" & "Subseccao" & "Divisao"
+     */
+    public function get_first_hierarchy_subdivisao_name_given_previous_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->Divisao as $divisao) {
+                                                    if ($p_divisao == (string) $divisao['id']) {
+                                                        foreach ($divisao->Subdivisao as $subdivisao) {
+                                                            if ($subdivisao != null) {
+                                                                $resposta .= $subdivisao['id'] . '$' . $subdivisao['nome'] . '_';
+                                                                $count++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "Artigo" given the previous hierarchy "Livro" & "Titulo" & "Subtitulo" & "Capitulo" & "Seccao" & "Subseccao" & "Divisao" & "Subdivisao"
      */
@@ -791,7 +1280,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -839,7 +1328,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -872,7 +1361,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -880,6 +1369,46 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subtitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_subtitulo($p_livro, $p_titulo, $p_subtitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->artigo as $artigo) {
+                                    if ($artigo != null) {
+                                        $resposta .= $artigo . "$";
+                                        $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                        $resposta .= trim($artigo_texto[0]);
+                                        for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                            $resposta .= "#" . trim($artigo_texto[$i]);
+                                        }
+                                        $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                        $resposta .= '_';
+                                        $count++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Capitulo"
      */
@@ -908,7 +1437,50 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Capitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_capitulo($p_livro, $p_titulo, $p_subtitulo, $p_capitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->artigo as $artigo) {
+                                            if ($artigo != null) {
+                                                $resposta .= $artigo . "$";
+                                                $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                $resposta .= trim($artigo_texto[0]);
+                                                for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                    $resposta .= "#" . trim($artigo_texto[$i]);
+                                                }
+                                                $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                $resposta .= '_';
+                                                $count++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -940,7 +1512,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -948,6 +1520,46 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Capitulo" and it doesnt have the hierarchy "Subtitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_capitulo_no_subtitulo($p_livro, $p_titulo, $p_capitulo) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->artigo as $artigo) {
+                                    if ($artigo != null) {
+                                        $resposta .= $artigo . "$";
+                                        $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                        $resposta .= trim($artigo_texto[0]);
+                                        for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                            $resposta .= "#" . trim($artigo_texto[$i]);
+                                        }
+                                        $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                        $resposta .= '_';
+                                        $count++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Seccao"
      */
@@ -980,7 +1592,54 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Seccao"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_seccao($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->artigo as $artigo) {
+                                                    if ($artigo != null) {
+                                                        $resposta .= $artigo . "$";
+                                                        $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                        $resposta .= trim($artigo_texto[0]);
+                                                        for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                            $resposta .= "#" . trim($artigo_texto[$i]);
+                                                        }
+                                                        $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                        $resposta .= '_';
+                                                        $count++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1016,7 +1675,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1024,6 +1683,50 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Seccao" and it doesnt have the hierarchy "Subtitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_seccao_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->artigo as $artigo) {
+                                            if ($artigo != null) {
+                                                $resposta .= $artigo . "$";
+                                                $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                $resposta .= trim($artigo_texto[0]);
+                                                for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                    $resposta .= "#" . trim($artigo_texto[$i]);
+                                                }
+                                                $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                $resposta .= '_';
+                                                $count++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subseccao"
      */
@@ -1060,7 +1763,58 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subseccao"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_subseccao($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->artigo as $artigo) {
+                                                            if ($artigo != null) {
+                                                                $resposta .= $artigo . "$";
+                                                                $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                                $resposta .= trim($artigo_texto[0]);
+                                                                for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                                    $resposta .= "#" . trim($artigo_texto[$i]);
+                                                                }
+                                                                $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                                $resposta .= '_';
+                                                                $count++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1100,7 +1854,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1108,6 +1862,54 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subseccao" and it doesnt have the hierarchy "Subtitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->artigo as $artigo) {
+                                                    if ($artigo != null) {
+                                                        $resposta .= $artigo . "$";
+                                                        $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                        $resposta .= trim($artigo_texto[0]);
+                                                        for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                            $resposta .= "#" . trim($artigo_texto[$i]);
+                                                        }
+                                                        $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                        $resposta .= '_';
+                                                        $count++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
     /*
      * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Divisao"
      */
@@ -1148,7 +1950,62 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Divisao"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_divisao($p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->Divisao as $divisao) {
+                                                            if ($p_divisao == (string) $divisao['id']) {
+                                                                foreach ($divisao->artigo as $artigo) {
+                                                                    if ($artigo != null) {
+                                                                        $resposta .= $artigo . "$";
+                                                                        $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                                        $resposta .= trim($artigo_texto[0]);
+                                                                        for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                                            $resposta .= "#" . trim($artigo_texto[$i]);
+                                                                        }
+                                                                        $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                                        $resposta .= '_';
+                                                                        $count++;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1192,7 +2049,7 @@ class Model_api extends CI_Model {
                     }
                 }
                 if (strlen($resposta) > 0) {
-                    return substr($resposta, 0, sizeof($resposta)-2);
+                    return substr($resposta, 0, sizeof($resposta) - 2);
                 } else {
                     return $resposta;
                 }
@@ -1200,7 +2057,59 @@ class Model_api extends CI_Model {
         }
         return $resposta;
     }
-    
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subseccao" and it doesnt have the hierarchy "Subtitulo"
+     */
+    public function get_first_hierarchy_artigo_name_given_previous_and_divisao_no_subtitulo($p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/1966_11_25/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->Divisao as $divisao) {
+                                                    if ($p_divisao == (string) $divisao['id']) {
+                                                        foreach ($divisao->artigo as $artigo) {
+                                                            if ($artigo != null) {
+                                                                $resposta .= $artigo . "$";
+                                                                $artigo_texto = $this->get_article_given_doc($artigo, "1966_11_25");
+                                                                $resposta .= trim($artigo_texto[0]);
+                                                                for ($i = 1; $i < sizeof($artigo_texto); $i++) {
+                                                                    $resposta .= "#" . trim($artigo_texto[$i]);
+                                                                }
+                                                                $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                                                                $resposta .= '_';
+                                                                $count++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+
+
     //********************************************  Question  ********************************************
 
     /*
@@ -1224,6 +2133,7 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was altered, false if it doesn't exist/was altered
      */
+
     public function was_article_altered_in_given_doc($article, $doc) {
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->altera); $i++) {
@@ -1238,6 +2148,7 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was added, false if it doesn't exist/was added
      */
+
     public function was_article_added_in_given_doc($article, $doc) {
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->acrescenta); $i++) {
@@ -1252,6 +2163,7 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was revoked, false if it doesn't exist/was revoked
      */
+
     public function was_article_revoked_in_given_doc($article, $doc) {
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->revoga); $i++) {
@@ -1266,6 +2178,7 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article)
      * Returns: the date of the document or "" if it doesn't exist
      */
+
     public function when_was_article_first_altered($article) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -1283,6 +2196,7 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article)
      * Returns: the date of the document or "" if it doesn't exist
      */
+
     public function when_was_article_added($article) {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
@@ -1300,6 +2214,7 @@ class Model_api extends CI_Model {
      * Parameters: $doc (the date of the doc)
      * Returns: true if it was revoked, false if it wasn't
      */
+
     public function was_doc_revoked($doc) {
         $number_docs = $this->get_all_revokes_count();
         $docs = $this->get_all_revokes_names();
@@ -1319,6 +2234,7 @@ class Model_api extends CI_Model {
      * Parameters: $doc (the date of the doc)
      * Returns: true if it revokes, false if it doesn't
      */
+
     public function does_doc_revoke($doc) {
         $number_docs = $this->get_all_revokes_count();
         $docs = $this->get_all_revokes_names();
@@ -1334,6 +2250,7 @@ class Model_api extends CI_Model {
      * Parameters: $doc (the date of the doc)
      * Returns: the amount of revokes that the doc does, 0 if it doesn't revoke any
      */
+
     public function how_many_does_doc_revoke($doc) {
         $number_docs = $this->get_all_revokes_count();
         $docs = $this->get_all_revokes_names();
@@ -1344,4 +2261,5 @@ class Model_api extends CI_Model {
         }
         return 0;
     }
+
 }

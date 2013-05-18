@@ -104,7 +104,7 @@
 }
 
 table.search_form {
-    margin: 10px 0px 10px 5px;
+    margin: 10px 0px 10px -5px;
 }
 
 table.search_form tr{
@@ -116,7 +116,7 @@ table.search_form td{
 }
 
 table.macro_form {
-    margin: 0px 0px 10px 5px;
+    margin: 0px 0px 10px -5px;
 }
 
 table.macro_form tr{

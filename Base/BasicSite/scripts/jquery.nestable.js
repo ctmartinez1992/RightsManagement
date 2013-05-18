@@ -1,16 +1,536 @@
-/*!
- * Nestable jQuery Plugin - Copyright (c) 2012 David Bushell - http://dbushell.com/
- * Dual-licensed under the BSD or MIT licenses
- */
+var xmlHttp = null;
+
+function CreateXmlHttpRequestObject() {   
+    if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } else {
+        xmlHttp = false;
+    }
+    return xmlHttp;
+}
+
+function get_next_hierarchy(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        if (li.attr('id') == "livro") {
+            next_hierarchy_name[0] = "titulo";
+            next_hierarchy_name[1] = "Título";
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_titulo?livro=" + li.attr('data-id'), true);
+        } else if (li.attr('id') == "titulo") {
+            next_hierarchy_name[0] = "subtitulo";
+            next_hierarchy_name[1] = "Subtítulo";
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_subtitulo?livro=" + li.parent().parent().attr('data-id') + 
+                                                                                                        "&titulo=" + li.attr('data-id'), true);
+        } else if (li.attr('id') == "subtitulo") {
+            next_hierarchy_name[0] = "capitulo";
+            next_hierarchy_name[1] = "Capítulo";
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_capitulo?livro=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.attr('data-id'), true);
+        } else if (li.attr('id') == "capitulo") {
+            next_hierarchy_name[0] = "seccao";
+            next_hierarchy_name[1] = "Secção";
+            if (li.parent().parent().attr('id') == "subtitulo") {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_seccao?livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.attr('data-id'), true);
+            } else {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_seccao_no_subtitulo?livro=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.attr('data-id'), true);
+            }
+        } else if (li.attr('id') == "seccao") {
+            next_hierarchy_name[0] = "subseccao";
+            next_hierarchy_name[1] = "Subsecção";
+            if (li.parent().parent().parent().parent().attr('id') == "subtitulo") {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_subseccao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.attr('data-id'), true);
+            } else {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_subseccao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.attr('data-id'), true);
+            }
+        } else if (li.attr('id') == "subseccao") {
+            next_hierarchy_name[0] = "divisao";
+            next_hierarchy_name[1] = "Divisão";
+            if (li.parent().parent().parent().parent().parent().parent().attr('id') == "subtitulo") {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_divisao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.attr('data-id'), true);
+            } else {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_divisao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.attr('data-id'), true);
+            }
+        } else if (li.attr('id') == "divisao") {
+            next_hierarchy_name[0] = "subdivisao";
+            next_hierarchy_name[1] = "Subdivisão";
+            if (li.parent().parent().parent().parent().parent().parent().parent().parent().attr('id') == "subtitulo") {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_subdivisao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&divisao=" + li.attr('data-id'), true);
+            } else {
+                xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_subdivisao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&divisao=" + li.attr('data-id'), true);
+            }
+        }
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseNextHierarchy(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseNextHierarchy(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_name = splited_message[i].split("$");
+                    var truncated_name = id_name[1];
+                    if (id_name[1].length > 45) {
+                        truncated_name = id_name[1].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
+                    } else {
+                    li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                  '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
+                                                                  ' - ' + truncated_name + '</div><ol class="dd-list"></ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            } else if (name[0] == "subtitulo") {
+                get_hierarchy_capitulo_no_subtitulo(li, options);
+            } else if (name[0] == "capitulo") {
+                get_hierarchy_artigo_with_subtitulo(li, options);
+            } else if (name[0] == "seccao") {
+                get_hierarchy_artigo_with_capitulo(li, options);
+            } else if (name[0] == "subseccao") {
+                get_hierarchy_artigo_with_seccao(li, options);
+            } else if (name[0] == "divisao") {
+                get_hierarchy_artigo_with_subseccao(li, options);
+            } else if (name[0] == "subdivisao") {
+                get_hierarchy_artigo_with_divisao(li, options);
+            }
+        }
+    }
+}
+
+function get_hierarchy_capitulo_no_subtitulo(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "capitulo";
+        next_hierarchy_name[1] = "Capítulo";
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_capitulo_no_subtitulo?livro=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.attr('data-id'), true);
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyCapituloNoSubtitulo(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_name = splited_message[i].split("$");
+                    var truncated_name = id_name[1];
+                    if (id_name[1].length > 45) {
+                        truncated_name = id_name[1].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
+                    } else {
+                    li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                  '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
+                                                                  ' - ' + truncated_name + '</div><ol class="dd-list"></ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_subtitulo(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_subtitulo?livro=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.attr('data-id'), true);
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithSubtitulo(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyArtigoWithSubtitulo(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_capitulo(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        if (li.parent().parent().attr('id') == "subtitulo") {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_capitulo?livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.attr('data-id'), true);
+        } else {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_capitulo_no_subtitulo?livro=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.attr('data-id'), true);
+        }
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithSubtitulo(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_seccao(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        if (li.parent().parent().parent().parent().attr('id') == "subtitulo") {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_seccao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.attr('data-id'), true);
+        } else {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_seccao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.attr('data-id'), true);
+        }
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithSeccao(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_subseccao(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        if (li.parent().parent().parent().parent().parent().parent().attr('id') == "subtitulo") {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_subseccao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.attr('data-id'), true);
+        } else {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_subseccao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.attr('data-id'), true);
+        }
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithSubseccao(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_divisao(li, options) {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        if (li.parent().parent().parent().parent().parent().parent().parent().parent().attr('id') == "subtitulo") {
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_divisao?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subtitulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&divisao=" + li.attr('data-id'), true);
+        } else {
+            alert("jh");
+            xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_divisao_no_subtitulo?livro=" + li.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&subseccao=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&divisao=" + li.attr('data-id'), true);
+        }
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithDivisao(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+        setTimeout("get_next_hierarchy(li)", 10000);
+    }
+}
+function handleServerResponseHierarchyArtigoWithDivisao(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            }
+        }
+    }
+}
+
 ;(function($, window, document, undefined)
 {
     var hasTouch = 'ontouchstart' in window;
-
-    /**
-     * Detect CSS pointer-events property
-     * events are normally disabled on the dragging element to avoid conflicts
-     * https://github.com/ausi/Feature-detection-technique-for-pointer-events/blob/master/modernizr-pointerevents.js
-     */
+    
     var hasPointerEvents = (function()
     {
         var el    = document.createElement('div'),
@@ -90,52 +610,7 @@
             });
             
             list.el.on('click', function(e) {
-                alert("jh");
             });
-
-            var onStartEvent = function(e)
-            {
-                var handle = $(e.target);
-                if (!handle.hasClass(list.options.handleClass)) {
-                    if (handle.closest('.' + list.options.noDragClass).length) {
-                        return;
-                    }
-                    handle = handle.closest('.' + list.options.handleClass);
-                }
-                if (!handle.length || list.dragEl || (!hasTouch && e.button !== 0) || (hasTouch && e.touches.length !== 1)) {
-                    return;
-                }
-                e.preventDefault();
-                list.dragStart(hasTouch ? e.touches[0] : e);
-            };
-
-            var onMoveEvent = function(e)
-            {
-                if (list.dragEl) {
-                    e.preventDefault();
-                    list.dragMove(hasTouch ? e.touches[0] : e);
-                }
-            };
-
-            var onEndEvent = function(e)
-            {
-                if (list.dragEl) {
-                    e.preventDefault();
-                    list.dragStop(hasTouch ? e.touches[0] : e);
-                }
-            };
-
-            if (hasTouch) {
-                list.el[0].addEventListener(eStart, onStartEvent, false);
-                window.addEventListener(eMove, onMoveEvent, false);
-                window.addEventListener(eEnd, onEndEvent, false);
-                window.addEventListener(eCancel, onEndEvent, false);
-            } else {
-                list.el.on(eStart, onStartEvent);
-                list.w.on(eMove, onMoveEvent);
-                list.w.on(eEnd, onEndEvent);
-            }
-
         },
 
         serialize: function()
@@ -203,6 +678,7 @@
             li.children('[data-action="expand"]').hide();
             li.children('[data-action="collapse"]').show();
             li.children(this.options.listNodeName).show();
+            get_next_hierarchy(li, this.options);
         },
 
         collapseItem: function(li)
@@ -238,7 +714,7 @@
                 li.prepend($(this.options.expandBtnHTML));
                 li.prepend($(this.options.collapseBtnHTML));
             }
-            li.children('[data-action="expand"]').hide();
+            li.children('[data-action="collapse"]').hide();
         },
 
         unsetParent: function(li)

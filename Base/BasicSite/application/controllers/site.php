@@ -11,6 +11,7 @@ class Site extends CI_Controller {
 
     public function home() {
         $this->load->model("model_get");
+        $this->load->model("model_api");
         $data["result"] = $this->model_get->getData("home");
 
         $this->load->view("site_header");
@@ -24,6 +25,9 @@ class Site extends CI_Controller {
         }
         $this->load->view("content_home", $data);
         $this->load->view("site_footer");
+        
+        $x = $this->model_api->get_article_given_doc(202, "1966_11_25");
+        echo $x[3];
     }
 
     public function about() {
@@ -61,9 +65,10 @@ class Site extends CI_Controller {
         }
         
         $search_data['livro'] = $this->model_api->get_first_hierarchy_livro();
+        $main_data['main'] = $this->model_api->get_first_hierarchy_livro_name();
         
         $this->load->view("content_navbar", $data);
-        $this->load->view("content_codigo_civil", $data);
+        $this->load->view("content_codigo_civil", $main_data);
         $this->load->view("content_sidebar", $search_data);
         $this->load->view("site_footer");
     }

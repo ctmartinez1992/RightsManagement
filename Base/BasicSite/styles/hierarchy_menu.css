@@ -18,9 +18,9 @@ p { line-height: 1.5em; }
  * Nestable
  */
 
-.dd { position: relative; display: block; margin: 0; padding: 0; max-width: 600px; list-style: none; font-size: 13px; line-height: 20px; }
+.dd { position: relative; display: block; margin: 0; padding: 0; max-width: 700px; list-style: none; font-size: 13px; line-height: 20px; }
 
-.dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; width: 500px;}
+.dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; width: 600px;}
 .dd-list .dd-list { padding-left: 30px; }
 .dd-collapsed .dd-list { display: none; }
 
@@ -90,9 +90,9 @@ p { line-height: 1.5em; }
 #nestable2 .dd-item > button:before { color: #fff; }
 #nestable2 .dd-item > button_menu:before { color: #fff; }
 
-@media only screen and (min-width: 700px) { 
+@media only screen and (min-width: 800px) { 
 
-    .dd { float: left; width: 48%; }
+    .dd { float: left; width: 60%; }
     .dd + .dd { margin-left: 2%; }
 
 }
