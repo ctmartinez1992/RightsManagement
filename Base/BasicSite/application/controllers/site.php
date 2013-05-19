@@ -25,9 +25,6 @@ class Site extends CI_Controller {
         }
         $this->load->view("content_home", $data);
         $this->load->view("site_footer");
-        
-        $x = $this->model_api->get_article_given_doc(202, "1966_11_25");
-        echo $x[3];
     }
 
     public function about() {
@@ -64,10 +61,60 @@ class Site extends CI_Controller {
             $this->load->view("site_nav");
         }
         
-        $search_data['livro'] = $this->model_api->get_first_hierarchy_livro();
-        $main_data['main'] = $this->model_api->get_first_hierarchy_livro_name();
+        $array = $this->model_api->get_all_doc_names_array();
+        $doc = null;
+        if ($this->session->userdata('current_doc') == null) {
+            $doc = (string) $array[sizeof($array)-1];
+            $this->session->set_userdata('current_doc', $doc);
+        } else {
+            $doc = $this->session->userdata('current_doc');
+        }
         
-        $this->load->view("content_navbar", $data);
+        $doc_res = $doc;
+        $docs_hierarchy = $this->model_api->get_all_doc_changed_hierarchy_names_array();
+        $doc_match = false;
+        for ($i=0; $i<sizeof($docs_hierarchy); $i++) {
+            if ($doc == (string) $docs_hierarchy[$i]) {
+                $doc_match = true;
+            }
+        }
+        
+        if ($doc_match == false) {
+            $doc_res = $docs_hierarchy[sizeof($docs_hierarchy)-1];
+            for ($i=sizeof($docs_hierarchy)-1; $i>=0; $i--) {
+                $doc1 = str_replace("_", "-", $docs_hierarchy[$i]);
+                $doc2 = str_replace("_", "-", $doc);
+
+                $doc_user = strtotime($doc2);
+                $doc_list = strtotime($doc1);
+
+                if ($doc_list > $doc_user) {
+                    if ($i-1 >= 0) {
+                        $doc_res = $docs_hierarchy[$i-1];
+                        continue;
+                    } else if ($i-1 == 0) {
+                        $doc_res = $docs_hierarchy[0];
+                        continue;
+                    }
+                } else {
+                     $valid = "no";
+                }
+            }
+        }
+        
+        $default_doc = sizeof($array)-1;
+        for ($i=0; $i<sizeof($array); $i++) {
+            if ($doc_res == (string) $array[$i]) {
+                $default_doc = $i;
+            }
+        }
+        
+        $nav_data['docs'] = $array;
+        $nav_data['default_doc'] = $default_doc;
+        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc_res);
+        $main_data['main'] = $this->model_api->get_hierarchy_livro_name($doc_res);
+        
+        $this->load->view("content_navbar", $nav_data);
         $this->load->view("content_codigo_civil", $main_data);
         $this->load->view("content_sidebar", $search_data);
         $this->load->view("site_footer");

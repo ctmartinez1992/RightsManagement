@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<doc nome="2006_2_27">
+<doc nome="1995_8_31">
   <Livro id="I" nome="PARTE GERAL">
     <Titulo id="I" nome="Das leis, sua interpretação e aplicação">
         <Capitulo id="I" nome="Fontes do direito">
@@ -340,13 +340,13 @@
                 <artigo>257</artigo>
             </Subseccao>
             <Subseccao id="VI" nome="Representação">
-              <Divisao id="I" nome="Princípios gerais">
+              <divisao id="I" nome="Princípios gerais">
                 <artigo>258</artigo>
                 <artigo>259</artigo>
                 <artigo>260</artigo>
                 <artigo>261</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Representação voluntária">
+              </divisao>
+              <divisao id="II" nome="Representação voluntária">
                 <artigo>262</artigo>
                 <artigo>263</artigo>
                 <artigo>264</artigo>
@@ -355,7 +355,7 @@
                 <artigo>267</artigo>
                 <artigo>268</artigo>
                 <artigo>269</artigo>
-              </Divisao>
+              </divisao>
             </Subseccao>
             <Subseccao id="VII" nome="Condição e termo">
                 <artigo>270</artigo>
@@ -1122,29 +1122,29 @@
                 <artigo>797</artigo>
             </Subseccao>
             <Subseccao id="II" nome="Falta de cumprimento e mora imputáveis ao devedor">
-              <Divisao id="I" nome="Princípios gerais">
+              <divisao id="I" nome="Princípios gerais">
                 <artigo>798</artigo>
                 <artigo>799</artigo>
                 <artigo>800</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Impossibilidade do cumprimento">
+              </divisao>
+              <divisao id="II" nome="Impossibilidade do cumprimento">
                 <artigo>801</artigo>
                 <artigo>802</artigo>
                 <artigo>803</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Mora do devedor">
+              </divisao>
+              <divisao id="III" nome="Mora do devedor">
                 <artigo>804</artigo>
                 <artigo>805</artigo>
                 <artigo>806</artigo>
                 <artigo>807</artigo>
                 <artigo>808</artigo>
-              </Divisao>
-              <Divisao id="IV" nome="Fixação contratual dos direitos do credor">
+              </divisao>
+              <divisao id="IV" nome="Fixação contratual dos direitos do credor">
                 <artigo>809</artigo>
                 <artigo>810</artigo>
                 <artigo>811</artigo>
                 <artigo>812</artigo>
-              </Divisao>
+              </divisao>
             </Subseccao>
             <Subseccao id="III" nome="Mora do credor">
                 <artigo>813</artigo>
@@ -1497,99 +1497,81 @@
                 <artigo>1062</artigo>
                 <artigo>1063</artigo>
           </Seccao>
-          <Seccao id="VI" nome="Arrendamento de prédios urbanos">
+          <Seccao id="VII" nome="Arrendamento rural">
             <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1064</artigo>
                 <artigo>1065</artigo>
                 <artigo>1066</artigo>
                 <artigo>1067</artigo>
                 <artigo>1068</artigo>
-            </Subseccao>
-            <Subseccao id="II" nome="Celebração">
                 <artigo>1069</artigo>
                 <artigo>1070</artigo>
-            </Subseccao>
-            <Subseccao id="III" nome="Direitos e obrigações das partes">
-              <Divisao id="I" nome="Obrigações não pecuniárias">
                 <artigo>1071</artigo>
                 <artigo>1072</artigo>
                 <artigo>1073</artigo>
                 <artigo>1074</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Renda e encargos">
                 <artigo>1075</artigo>
                 <artigo>1076</artigo>
                 <artigo>1077</artigo>
                 <artigo>1078</artigo>
-              </Divisao>
             </Subseccao>
-            <Subseccao id="IV" nome="Cessação">
-              <Divisao id="I" nome="Disposições comuns">
+            <Subseccao id="II" nome="Arrendamento rural ao cultivador directo">
                 <artigo>1079</artigo>
                 <artigo>1080</artigo>
                 <artigo>1081</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Cessação por acordo entre as partes">
                 <artigo>1082</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Resolução">
+            </Subseccao>
+          </Seccao>
+          <Seccao id="VIII" nome="Arrendamento de prédios urbanos e arrendamento de prédios rústicos não abrangidos na secção precedente">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1083</artigo>
                 <artigo>1084</artigo>
                 <artigo>1085</artigo>
                 <artigo>1086</artigo>
                 <artigo>1087</artigo>
-              </Divisao>
-            </Subseccao>
-            <Subseccao id="V" nome="Subarrendamento">
                 <artigo>1088</artigo>
                 <artigo>1089</artigo>
                 <artigo>1090</artigo>
-            </Subseccao>
-            <Subseccao id="VI" nome="Direito de preferência">
                 <artigo>1091</artigo>
-            </Subseccao>
-            <Subseccao id="VII" nome="Disposições especiais do arrendamento para habitação">
-              <Divisao id="I" nome="Âmbito do contrato">
                 <artigo>1092</artigo>
-                <artigo>1093</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Duração">
-                  <artigo>1094</artigo>
-                <Subdivisao id="I" nome="Contrato com prazo certo">
-                  <artigo>1095</artigo>
-                  <artigo>1096</artigo>
-                  <artigo>1097</artigo>
-                  <artigo>1098</artigo>
-                </Subdivisao>
-                <Subdivisao id="I" nome="Contrato de duração indeterminada">
-                  <artigo>1099</artigo>
-                  <artigo>1100</artigo>
-                  <artigo>1101</artigo>
-                  <artigo>1102</artigo>
-                  <artigo>1103</artigo>
-                  <artigo>1104</artigo>
-                </Subdivisao>
-              </Divisao>
-              <Divisao id="III" nome="Transmissão">
-                  <artigo>1105</artigo>
-                  <artigo>1106</artigo>
-                  <artigo>1107</artigo>
-              </Divisao>
             </Subseccao>
-            <Subseccao id="VIII" nome="Disposições especiais do arrendamento para fins não habitacionais">
-                  <artigo>1108</artigo>
-                  <artigo>1109</artigo>
-                  <artigo>1110</artigo>
-                  <artigo>1111</artigo>
-                  <artigo>1112</artigo>
-                  <artigo>1113</artigo>
-                  <artigo>1112</artigo>
-                  <artigo>1113</artigo>
-                  <artigo>1114</artigo>
-                  <artigo>1115</artigo>
-                  <artigo>1116</artigo>
-                  <artigo>1117</artigo>
-                  <artigo>1118</artigo>
+            <Subseccao id="II" nome="Resolução do contrato">
+                <artigo>1093</artigo>
+                <artigo>1094</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Denúncia do contrato">
+                <artigo>1095</artigo>
+                <artigo>1096</artigo>
+                <artigo>1097</artigo>
+                <artigo>1098</artigo>
+                <artigo>1099</artigo>
+                <artigo>1100</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Subarrendamento">
+                <artigo>1101</artigo>
+                <artigo>1102</artigo>
+                <artigo>1103</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Actualização das rendas">
+                <artigo>1104</artigo>
+                <artigo>1105</artigo>
+                <artigo>1106</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Disposições especiais dos arrendamentos para habitação">
+                <artigo>1107</artigo>
+                <artigo>1108</artigo>
+                <artigo>1109</artigo>
+                <artigo>1110</artigo>
+                <artigo>1111</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Disposições especiais dos arrendamentos para comércio ou indústria">
+                <artigo>1112</artigo>
+                <artigo>1113</artigo>
+                <artigo>1114</artigo>
+                <artigo>1115</artigo>
+                <artigo>1116</artigo>
+                <artigo>1117</artigo>
+                <artigo>1118</artigo>
             </Subseccao>
             <Subseccao id="VIII" nome="Disposições especiais dos arrendamentos para o exercício de profissões liberais">
                 <artigo>1119</artigo>
@@ -2350,30 +2332,30 @@
                 <artigo>1630</artigo>
             </Subseccao>
             <Subseccao id="III" nome="Anulabilidade do casamento">
-              <Divisao id="I" nome="Disposições gerais">
+              <divisao id="I" nome="Disposições gerais">
                 <artigo>1631</artigo>
                 <artigo>1632</artigo>
                 <artigo>1633</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Falta ou vícios da vontade">
+              </divisao>
+              <divisao id="II" nome="Falta ou vícios da vontade">
                 <artigo>1634</artigo>
                 <artigo>1635</artigo>
                 <artigo>1636</artigo>
                 <artigo>1637</artigo>
                 <artigo>1638</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Legitimidade">
+              </divisao>
+              <divisao id="III" nome="Legitimidade">
                 <artigo>1639</artigo>
                 <artigo>1640</artigo>
                 <artigo>1641</artigo>
                 <artigo>1642</artigo>
-              </Divisao>
-              <Divisao id="IV" nome="Prazos">
+              </divisao>
+              <divisao id="IV" nome="Prazos">
                 <artigo>1643</artigo>
                 <artigo>1644</artigo>
                 <artigo>1645</artigo>
                 <artigo>1646</artigo>
-              </Divisao>
+              </divisao>
             </Subseccao>
           </Seccao>
         </Capitulo>
@@ -2668,11 +2650,11 @@
                 <artigo>1846</artigo>
             </Subseccao>
             <Subseccao id="II" nome="Reconhecimento de paternidade">
-              <Divisao id="I" nome="Disposições gerais">
+              <divisao id="I" nome="Disposições gerais">
                 <artigo>1847</artigo>
                 <artigo>1848</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Perfilhação">
+              </divisao>
+              <divisao id="II" nome="Perfilhação">
                 <artigo>1849</artigo>
                 <artigo>1850</artigo>
                 <artigo>1851</artigo>
@@ -2688,21 +2670,21 @@
                 <artigo>1861</artigo>
                 <artigo>1862</artigo>
                 <artigo>1863</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Averiguação oficiosa da paternidade">
+              </divisao>
+              <divisao id="III" nome="Averiguação oficiosa da paternidade">
                 <artigo>1864</artigo>
                 <artigo>1865</artigo>
                 <artigo>1866</artigo>
                 <artigo>1867</artigo>
                 <artigo>1868</artigo>
-              </Divisao>
-              <Divisao id="IV" nome="Reconhecimento judicial">
+              </divisao>
+              <divisao id="IV" nome="Reconhecimento judicial">
                 <artigo>1869</artigo>
                 <artigo>1870</artigo>
                 <artigo>1871</artigo>
                 <artigo>1872</artigo>
                 <artigo>1873</artigo>
-              </Divisao>
+              </divisao>
             </Subseccao>
           </Seccao>
         </Capitulo>
@@ -2784,7 +2766,7 @@
                 <artigo>1926</artigo>
             </Subseccao>
             <Subseccao id="II" nome="Tutela">
-              <Divisao id="I" nome="Designação do tutor">
+              <divisao id="I" nome="Designação do tutor">
                 <artigo>1927</artigo>
                 <artigo>1928</artigo>
                 <artigo>1929</artigo>
@@ -2793,8 +2775,8 @@
                 <artigo>1932</artigo>
                 <artigo>1933</artigo>
                 <artigo>1934</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Direitos e obrigações do tutor">
+              </divisao>
+              <divisao id="II" nome="Direitos e obrigações do tutor">
                 <artigo>1935</artigo>
                 <artigo>1936</artigo>
                 <artigo>1937</artigo>
@@ -2808,13 +2790,13 @@
                 <artigo>1945</artigo>
                 <artigo>1946</artigo>
                 <artigo>1947</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Remoção e exoneração do tutor">
+              </divisao>
+              <divisao id="III" nome="Remoção e exoneração do tutor">
                 <artigo>1948</artigo>
                 <artigo>1949</artigo>
                 <artigo>1950</artigo>
-              </Divisao>
-              <Divisao id="IV" nome="Conselho de família">
+              </divisao>
+              <divisao id="IV" nome="Conselho de família">
                 <artigo>1951</artigo>
                 <artigo>1952</artigo>
                 <artigo>1953</artigo>
@@ -2825,17 +2807,17 @@
                 <artigo>1958</artigo>
                 <artigo>1959</artigo>
                 <artigo>1960</artigo>
-              </Divisao>
-              <Divisao id="V" nome="Termo da tutela">
+              </divisao>
+              <divisao id="V" nome="Termo da tutela">
                 <artigo>1961</artigo>
-              </Divisao>
-              <Divisao id="VI" nome="Especialidade da tutela de filhos ilegítimos e de menores abandonados">
+              </divisao>
+              <divisao id="VI" nome="Especialidade da tutela de filhos ilegítimos e de menores abandonados">
                 <artigo>1962</artigo>
                 <artigo>1963</artigo>
                 <artigo>1964</artigo>
                 <artigo>1965</artigo>
                 <artigo>1966</artigo>
-              </Divisao>
+              </divisao>
             </Subseccao>
             <Subseccao id="III" nome="Administração de bens">
                 <artigo>1967</artigo>
@@ -2856,7 +2838,6 @@
                 <artigo>1976</artigo>
                 <artigo>1977</artigo>
                 <artigo>1978</artigo>
-                <artigo>1978-A</artigo>
         </Capitulo>
         <Capitulo id="II" nome="Adopção plena">
                 <artigo>1979</artigo>

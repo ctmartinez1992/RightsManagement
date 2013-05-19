@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<doc nome="2006_2_27">
+<doc nome="2007_8_24">
   <Livro id="I" nome="PARTE GERAL">
-    <Titulo id="I" nome="Das leis, sua interpretação e aplicação">
+    <Título id="I" nome="Das leis, sua interpretação e aplicação">
         <Capitulo id="I" nome="Fontes do direito">
                 <artigo>1</artigo>
                 <artigo>2</artigo>
@@ -89,9 +89,9 @@
             </Subseccao>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="II" nome="Das relações jurídicas">
-      <Subtitulo id="I" nome="Das pessoas">
+    </Título>
+    <Título id="II" nome="Das relações jurídicas">
+      <Subtítulo id="I" nome="Das pessoas">
         <Capitulo id="I" nome="Pessoas singulares">
           <Seccao id="I" nome="Personalidade e capacidade jurídica">
                 <artigo>66</artigo>
@@ -266,9 +266,10 @@
                 <artigo>199</artigo>
                 <artigo>200</artigo>
                 <artigo>201</artigo>
+                <artigo>201-A</artigo>
         </Capitulo>
-      </Subtitulo>
-      <Subtitulo id="II" nome="Das coisas">
+      </Subtítulo>
+      <Subtítulo id="II" nome="Das coisas">
                 <artigo>202</artigo>
                 <artigo>203</artigo>
                 <artigo>204</artigo>
@@ -284,8 +285,8 @@
                 <artigo>214</artigo>
                 <artigo>215</artigo>
                 <artigo>216</artigo>
-      </Subtitulo>
-      <Subtitulo id="III" nome="Dos factos jurídicos">
+      </Subtítulo>
+      <Subtítulo id="III" nome="Dos factos jurídicos">
         <Capitulo id="I" nome="Negócio jurídico">
           <Seccao id="I" nome="Declaração negocial">
             <Subseccao id="I" nome="Modalidades da declaração">
@@ -449,8 +450,8 @@
                 <artigo>333</artigo>
           </Seccao>
         </Capitulo>
-      </Subtitulo>
-      <Subtitulo id="IV" nome="Do exercício e tutela dos direitos">
+      </Subtítulo>
+      <Subtítulo id="IV" nome="Do exercício e tutela dos direitos">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>334</artigo>
                 <artigo>335</artigo>
@@ -540,11 +541,11 @@
                 <artigo>396</artigo>
           </Seccao>
         </Capitulo>
-      </Subtitulo>
-    </Titulo>
+      </Subtítulo>
+    </Título>
   </Livro>
   <Livro id="II" nome="DIREITO DAS OBRIGAÇÕES">
-    <Titulo id="I" nome="Das obrigações em geral">
+    <Título id="I" nome="Das obrigações em geral">
         <Capitulo id="I" nome="Disposições gerais">
           <Seccao id="I" nome="Conteúdo da obrigação">
                 <artigo>397</artigo>
@@ -1234,8 +1235,8 @@
                 <artigo>873</artigo>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="II" nome="Dos contratos em especial">
+    </Título>
+    <Título id="II" nome="Dos contratos em especial">
         <Capitulo id="I" nome="Compra e venda">
           <Seccao id="I" nome="Disposições gerais">
                 <artigo>874</artigo>
@@ -1787,10 +1788,10 @@
                 <artigo>1249</artigo>
                 <artigo>1250</artigo>
         </Capitulo>
-    </Titulo>
+    </Título>
   </Livro>
   <Livro id="III" nome="DIREITO DAS COISAS">
-    <Titulo id="I" nome="Da posse">
+    <Título id="I" nome="Da posse">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1251</artigo>
                 <artigo>1252</artigo>
@@ -1860,8 +1861,8 @@
                 <artigo>1301</artigo>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="II" nome="Do direito de propriedade">
+    </Título>
+    <Título id="II" nome="Do direito de propriedade">
         <Capitulo id="I" nome="Propriedade em geral">
           <Seccao id="I" nome="Disposições gerais">
                 <artigo>1302</artigo>
@@ -2067,8 +2068,8 @@
                 <artigo>1438-A</artigo>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="III" nome="Do usufruto, uso e habitação">
+    </Título>
+    <Título id="III" nome="Do usufruto, uso e habitação">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1439</artigo>
                 <artigo>1440</artigo>
@@ -2131,8 +2132,8 @@
                 <artigo>1489</artigo>
                 <artigo>1490</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="IV" nome="Da enfiteuse">
+    </Título>
+    <Título id="IV" nome="Da enfiteuse">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1491</artigo>
                 <artigo>1492</artigo>
@@ -2182,8 +2183,8 @@
                 <artigo>1522</artigo>
                 <artigo>1523</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="V" nome="Do direito de superfície">
+    </Título>
+    <Título id="V" nome="Do direito de superfície">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1524</artigo>
                 <artigo>1525</artigo>
@@ -2211,8 +2212,8 @@
                 <artigo>1541</artigo>
                 <artigo>1542</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="VI" nome="Das servidões prediais">
+    </Título>
+    <Título id="VI" nome="Das servidões prediais">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1543</artigo>
                 <artigo>1544</artigo>
@@ -2260,10 +2261,10 @@
                 <artigo>1574</artigo>
                 <artigo>1575</artigo>
         </Capitulo>
-    </Titulo>
+    </Título>
   </Livro>
   <Livro id="IV" nome="DIREITO DA FAMÍLIA">
-    <Titulo id="I" nome="Disposições gerais">
+    <Título id="I" nome="Disposições gerais">
                 <artigo>1576</artigo>
                 <artigo>1577</artigo>
                 <artigo>1578</artigo>
@@ -2275,8 +2276,8 @@
                 <artigo>1584</artigo>
                 <artigo>1585</artigo>
                 <artigo>1586</artigo>
-    </Titulo>
-    <Titulo id="II" nome="Do casamento">
+    </Título>
+    <Título id="II" nome="Do casamento">
         <Capitulo id="I" nome="Modalidades do casamento">
                 <artigo>1587</artigo>
                 <artigo>1588</artigo>
@@ -2601,8 +2602,8 @@
                 <artigo>1795-D</artigo>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="III" nome="Da filiação">
+    </Título>
+    <Título id="III" nome="Da filiação">
         <Capitulo id="I" nome="Estabelecimento da filiação">
           <Seccao id="I" nome="Disposições gerais">
                 <artigo>1796</artigo>
@@ -2847,8 +2848,8 @@
             </Subseccao>
           </Seccao>
         </Capitulo>
-    </Titulo>
-    <Titulo id="IV" nome="Da adopção">
+    </Título>
+    <Título id="IV" nome="Da adopção">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1973</artigo>
                 <artigo>1974</artigo>
@@ -2890,8 +2891,8 @@
                 <artigo>2002-C</artigo>
                 <artigo>2002-D</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="V" nome="Dos alimentos">
+    </Título>
+    <Título id="V" nome="Dos alimentos">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2003</artigo>
                 <artigo>2004</artigo>
@@ -2917,10 +2918,10 @@
                 <artigo>2022</artigo>
                 <artigo>2023</artigo>
         </Capitulo>
-    </Titulo>
+    </Título>
   </Livro>
   <Livro id="V" nome="DIREITO DAS SUCESSÕES">
-    <Titulo id="I" nome="Das sucessões em geral">
+    <Título id="I" nome="Das sucessões em geral">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2024</artigo>
                 <artigo>2025</artigo>
@@ -3069,8 +3070,8 @@
                 <artigo>2129</artigo>
                 <artigo>2130</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="II" nome="Da sucessão legítima">
+    </Título>
+    <Título id="II" nome="Da sucessão legítima">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2131</artigo>
                 <artigo>2132</artigo>
@@ -3110,8 +3111,8 @@
                 <artigo>2154</artigo>
                 <artigo>2155</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="III" nome="Da sucessão legitimária">
+    </Título>
+    <Título id="III" nome="Da sucessão legitimária">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2156</artigo>
                 <artigo>2157</artigo>
@@ -3139,8 +3140,8 @@
                 <artigo>2177</artigo>
                 <artigo>2178</artigo>
         </Capitulo>
-    </Titulo>
-    <Titulo id="IV" nome="Da sucessão testamentária">
+    </Título>
+    <Título id="IV" nome="Da sucessão testamentária">
         <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2179</artigo>
                 <artigo>2180</artigo>
@@ -3337,6 +3338,6 @@
                 <artigo>2333</artigo>
                 <artigo>2334</artigo>
         </Capitulo>
-    </Titulo>
+    </Título>
   </Livro>
 </doc>

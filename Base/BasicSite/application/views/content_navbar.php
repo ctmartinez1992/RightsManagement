@@ -10,7 +10,7 @@
                 </td>
                 <td width ="580px" align="right">
                     <?php
-                        echo form_dropdown('dd_data_doc', array("1966_11_25"), 0, 'id="dd_data_doc"'); 
+                        echo form_dropdown('dd_data_doc', $docs, $default_doc, 'id="dd_data_doc"'); 
                     ?>
                 </td>
             </tr>

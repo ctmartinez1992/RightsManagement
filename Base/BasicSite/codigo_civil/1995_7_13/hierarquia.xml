@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<doc nome="2006_2_27">
+<doc nome="1995_7_13">
   <Livro id="I" nome="PARTE GERAL">
     <Titulo id="I" nome="Das leis, sua interpretação e aplicação">
         <Capitulo id="I" nome="Fontes do direito">
@@ -1497,99 +1497,81 @@
                 <artigo>1062</artigo>
                 <artigo>1063</artigo>
           </Seccao>
-          <Seccao id="VI" nome="Arrendamento de prédios urbanos">
+          <Seccao id="VII" nome="Arrendamento rural">
             <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1064</artigo>
                 <artigo>1065</artigo>
                 <artigo>1066</artigo>
                 <artigo>1067</artigo>
                 <artigo>1068</artigo>
-            </Subseccao>
-            <Subseccao id="II" nome="Celebração">
                 <artigo>1069</artigo>
                 <artigo>1070</artigo>
-            </Subseccao>
-            <Subseccao id="III" nome="Direitos e obrigações das partes">
-              <Divisao id="I" nome="Obrigações não pecuniárias">
                 <artigo>1071</artigo>
                 <artigo>1072</artigo>
                 <artigo>1073</artigo>
                 <artigo>1074</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Renda e encargos">
                 <artigo>1075</artigo>
                 <artigo>1076</artigo>
                 <artigo>1077</artigo>
                 <artigo>1078</artigo>
-              </Divisao>
             </Subseccao>
-            <Subseccao id="IV" nome="Cessação">
-              <Divisao id="I" nome="Disposições comuns">
+            <Subseccao id="II" nome="Arrendamento rural ao cultivador directo">
                 <artigo>1079</artigo>
                 <artigo>1080</artigo>
                 <artigo>1081</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Cessação por acordo entre as partes">
                 <artigo>1082</artigo>
-              </Divisao>
-              <Divisao id="III" nome="Resolução">
+            </Subseccao>
+          </Seccao>
+          <Seccao id="VIII" nome="Arrendamento de prédios urbanos e arrendamento de prédios rústicos não abrangidos na secção precedente">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1083</artigo>
                 <artigo>1084</artigo>
                 <artigo>1085</artigo>
                 <artigo>1086</artigo>
                 <artigo>1087</artigo>
-              </Divisao>
-            </Subseccao>
-            <Subseccao id="V" nome="Subarrendamento">
                 <artigo>1088</artigo>
                 <artigo>1089</artigo>
                 <artigo>1090</artigo>
-            </Subseccao>
-            <Subseccao id="VI" nome="Direito de preferência">
                 <artigo>1091</artigo>
-            </Subseccao>
-            <Subseccao id="VII" nome="Disposições especiais do arrendamento para habitação">
-              <Divisao id="I" nome="Âmbito do contrato">
                 <artigo>1092</artigo>
-                <artigo>1093</artigo>
-              </Divisao>
-              <Divisao id="II" nome="Duração">
-                  <artigo>1094</artigo>
-                <Subdivisao id="I" nome="Contrato com prazo certo">
-                  <artigo>1095</artigo>
-                  <artigo>1096</artigo>
-                  <artigo>1097</artigo>
-                  <artigo>1098</artigo>
-                </Subdivisao>
-                <Subdivisao id="I" nome="Contrato de duração indeterminada">
-                  <artigo>1099</artigo>
-                  <artigo>1100</artigo>
-                  <artigo>1101</artigo>
-                  <artigo>1102</artigo>
-                  <artigo>1103</artigo>
-                  <artigo>1104</artigo>
-                </Subdivisao>
-              </Divisao>
-              <Divisao id="III" nome="Transmissão">
-                  <artigo>1105</artigo>
-                  <artigo>1106</artigo>
-                  <artigo>1107</artigo>
-              </Divisao>
             </Subseccao>
-            <Subseccao id="VIII" nome="Disposições especiais do arrendamento para fins não habitacionais">
-                  <artigo>1108</artigo>
-                  <artigo>1109</artigo>
-                  <artigo>1110</artigo>
-                  <artigo>1111</artigo>
-                  <artigo>1112</artigo>
-                  <artigo>1113</artigo>
-                  <artigo>1112</artigo>
-                  <artigo>1113</artigo>
-                  <artigo>1114</artigo>
-                  <artigo>1115</artigo>
-                  <artigo>1116</artigo>
-                  <artigo>1117</artigo>
-                  <artigo>1118</artigo>
+            <Subseccao id="II" nome="Resolução do contrato">
+                <artigo>1093</artigo>
+                <artigo>1094</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Denúncia do contrato">
+                <artigo>1095</artigo>
+                <artigo>1096</artigo>
+                <artigo>1097</artigo>
+                <artigo>1098</artigo>
+                <artigo>1099</artigo>
+                <artigo>1100</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Subarrendamento">
+                <artigo>1101</artigo>
+                <artigo>1102</artigo>
+                <artigo>1103</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Actualização das rendas">
+                <artigo>1104</artigo>
+                <artigo>1105</artigo>
+                <artigo>1106</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Disposições especiais dos arrendamentos para habitação">
+                <artigo>1107</artigo>
+                <artigo>1108</artigo>
+                <artigo>1109</artigo>
+                <artigo>1110</artigo>
+                <artigo>1111</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Disposições especiais dos arrendamentos para comércio ou indústria">
+                <artigo>1112</artigo>
+                <artigo>1113</artigo>
+                <artigo>1114</artigo>
+                <artigo>1115</artigo>
+                <artigo>1116</artigo>
+                <artigo>1117</artigo>
+                <artigo>1118</artigo>
             </Subseccao>
             <Subseccao id="VIII" nome="Disposições especiais dos arrendamentos para o exercício de profissões liberais">
                 <artigo>1119</artigo>
@@ -2727,7 +2709,6 @@
                 <artigo>1885</artigo>
                 <artigo>1886</artigo>
                 <artigo>1887</artigo>
-                <artigo>1887-A</artigo>
             </Subseccao>
             <Subseccao id="III" nome="Poder paternal relativamente aos bens dos filhos">
                 <artigo>1888</artigo>
@@ -2856,7 +2837,6 @@
                 <artigo>1976</artigo>
                 <artigo>1977</artigo>
                 <artigo>1978</artigo>
-                <artigo>1978-A</artigo>
         </Capitulo>
         <Capitulo id="II" nome="Adopção plena">
                 <artigo>1979</artigo>
