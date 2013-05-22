@@ -3,15 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<title>Base</title>
-        <script src="<?php echo base_url(); ?>scripts/search_values.js"></script>
-        <script src="<?php echo base_url(); ?>scripts/main_content.js"></script>   
         <script src="<?php echo base_url(); ?>scripts/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>scripts/chosen.jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>scripts/chosen.jquery.js"></script>
         <script src="<?php echo base_url(); ?>scripts/jquery.nestable.js"></script>
-        <script src="<?php echo base_url(); ?>scripts/jquery.nestable.methods.js"></script>        
+        <script src="<?php echo base_url(); ?>scripts/jquery.nestable.methods.js"></script>
+        <script src="<?php echo base_url(); ?>scripts/search_values.js"></script>
+        <script src="<?php echo base_url(); ?>scripts/main_content.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>styles/chosen.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>styles/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>styles/main_content.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>styles/hierarchy_menu.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>styles/footer.css">
+        <script type="text/javascript">
+          $(".chzn-select").chosen();
+          $(".chzn-select-deselect").chosen({allow_single_deselect:true});
+        </script>
 </head>
 <body>
     <div id="big_wrapper">

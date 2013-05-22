@@ -12,7 +12,7 @@ function CreateXmlHttpRequestObject() {
 }
 
 function get_next_hierarchy(li, options) {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -448,11 +448,10 @@ function get_hierarchy_artigo_with_subseccao(li, options) {
 }
 function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
     if (xmlHttp.readyState == 4) {
-        if (xmlHttp.status == 200) {            
+        if (xmlHttp.status == 200) {
             xmlResponse = xmlHttp.responseXML;
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
-            
             if (message != "0") {
                 li.children(options.listNodeName).empty();
                 var splited_message = message.split("_");

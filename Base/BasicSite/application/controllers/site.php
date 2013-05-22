@@ -25,6 +25,21 @@ class Site extends CI_Controller {
         }
         $this->load->view("content_home", $data);
         $this->load->view("site_footer");
+        
+//        $array = $this->model_api->get_article_evolution_names("1778");
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            echo $array[$i] . " - ";
+//        }
+        //$resposta = "";
+        //echo $this->model_api->process_article("1778", "1975_5_27", $resposta);
+        echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1975_5_27", "IV", "II", "XI", "II", "II");
+        //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_capitulo_no_subtitulo("1985_11_11", "I", "I", "I")
+//        $artigo_texto = $this->model_api->get_article_given_doc("1778", "1975_5_27");
+//        $old_artigo_texto = $this->model_api->get_article_given_doc("1778", "1966_11_25");
+//        $array = $this->model_api->process_article_versions("1778", "1966_11_25", "1975_5_27", $artigo_texto, $old_artigo_texto);
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            echo $array[$i] . " - ";
+//        }
     }
 
     public function about() {
@@ -70,49 +85,9 @@ class Site extends CI_Controller {
             $doc = $this->session->userdata('current_doc');
         }
         
-        $doc_res = $doc;
-        $docs_hierarchy = $this->model_api->get_all_doc_changed_hierarchy_names_array();
-        $doc_match = false;
-        for ($i=0; $i<sizeof($docs_hierarchy); $i++) {
-            if ($doc == (string) $docs_hierarchy[$i]) {
-                $doc_match = true;
-            }
-        }
-        
-        if ($doc_match == false) {
-            $doc_res = $docs_hierarchy[sizeof($docs_hierarchy)-1];
-            for ($i=sizeof($docs_hierarchy)-1; $i>=0; $i--) {
-                $doc1 = str_replace("_", "-", $docs_hierarchy[$i]);
-                $doc2 = str_replace("_", "-", $doc);
-
-                $doc_user = strtotime($doc2);
-                $doc_list = strtotime($doc1);
-
-                if ($doc_list > $doc_user) {
-                    if ($i-1 >= 0) {
-                        $doc_res = $docs_hierarchy[$i-1];
-                        continue;
-                    } else if ($i-1 == 0) {
-                        $doc_res = $docs_hierarchy[0];
-                        continue;
-                    }
-                } else {
-                     $valid = "no";
-                }
-            }
-        }
-        
-        $default_doc = sizeof($array)-1;
-        for ($i=0; $i<sizeof($array); $i++) {
-            if ($doc_res == (string) $array[$i]) {
-                $default_doc = $i;
-            }
-        }
-        
         $nav_data['docs'] = $array;
-        $nav_data['default_doc'] = $default_doc;
-        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc_res);
-        $main_data['main'] = $this->model_api->get_hierarchy_livro_name($doc_res);
+        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
+        $main_data['main'] = $this->model_api->get_hierarchy_livro_name($doc);
         
         $this->load->view("content_navbar", $nav_data);
         $this->load->view("content_codigo_civil", $main_data);

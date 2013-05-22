@@ -8,10 +8,14 @@
                         <li>tmp2</li>
                     </ul>
                 </td>
-                <td width ="580px" align="right">
-                    <?php
-                        echo form_dropdown('dd_data_doc', $docs, $default_doc, 'id="dd_data_doc"'); 
-                    ?>
+                <td width ="580px" align="right">                    
+                    <select id="dd_data_doc" data-placeholder="Documento" class="chzn-select" style="width: 200px" tabindex="2">
+                        <?php
+                            for ($i=sizeof($docs)-1; $i>=0; $i--) {
+                                echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
+                            }
+                        ?>
+                    </select>
                 </td>
             </tr>
         </table>
