@@ -5,6 +5,23 @@ if (!defined('BASEPATH'))
 
 class Model_get_main_values extends CI_Controller {
     
+    public function get_hierarchy_livro() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $this->session->set_userdata('current_doc', $doc);
+            $resposta = $this->model_api->get_hierarchy_livro_name_string($doc);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
     public function get_hierarchy_titulo() {
         $this->load->model("model_api");
         header('Content-Type: text/xml');
@@ -246,6 +263,24 @@ class Model_get_main_values extends CI_Controller {
         echo '</response>';
     }
     
+    public function get_hierarchy_artigo_with_titulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $valor = array('0' => 'I', '1' => 'II', '2' => 'III', '3' => 'IV', '4' => 'V', '5' => 'VI', '6' => 'VII', '7' => 'VIII', '8' => 'IX', '9' => 'X', '10' => 'XI', '11' => 'XII', '12' => 'XIII', '13' => 'XIV', '14' => 'XV', '15' => 'XVI', '16' => 'XVII', '17' => 'XVIII', '18' => 'XIX', '19' => 'XX');
+            $resposta = $this->model_api->get_hierarchy_artigo_name_given_previous_and_titulo($doc, $valor[$livro-1], $valor[$titulo-1]);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
     public function get_hierarchy_artigo_with_subtitulo() {
         $this->load->model("model_api");
         header('Content-Type: text/xml');

@@ -17,7 +17,16 @@ class Model_api extends CI_Model {
      * Returns: Array with each line of the txt in a diferent index, ranging from 0 to (number of lines-1)
      */
     public function get_article_given_doc($name, $doc) {
-        return file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+        $n_array = array();
+        $j=0;
+        for ($i=0; $i<sizeof($array); $i++) {
+            if (strlen((string) $array[$i]) > 0 && strlen(trim((string) $array[$i])) != 0) {
+                $n_array[$j] = $array[$i];
+                $j++;
+            }
+        }
+        return $n_array;
     }
 
     /*
@@ -340,6 +349,25 @@ class Model_api extends CI_Model {
             for ($i = 0; $i < sizeof($array->Livro); $i++) {
                 $resposta[$i][0] = $array->Livro[$i]['id'];
                 $resposta[$i][1] = $array->Livro[$i]['nome'];
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: The numbers and the name in the form of a stringof the first hierarchy "Livro"
+     */
+    public function get_hierarchy_livro_name_string($p_doc) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        if (sizeof($array->Livro) > 0) {
+            foreach ($array->Livro as $livro) {
+                $resposta .= $livro['id'] . '$' . $livro['nome'] . '_';
+            }
+            if (strlen($resposta) > 0) {
+                return substr($resposta, 0, sizeof($resposta) - 2);
+            } else {
+                return $resposta;
             }
         }
         return $resposta;
@@ -1343,6 +1371,64 @@ class Model_api extends CI_Model {
         return $resposta;
     }
 
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Titulo"
+     */
+    public function get_hierarchy_artigo_given_previous_and_titulo($p_doc, $p_livro, $p_titulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->artigo as $artigo) {
+                            if ($artigo != null) {
+                                $resposta .= $artigo . ',';
+                                $count++;
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    /*
+     * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Titulo"
+     */
+    public function get_hierarchy_artigo_name_given_previous_and_titulo($p_doc, $p_livro, $p_titulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        $count = 0;
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->artigo as $artigo) {
+                            if ($artigo != null) {
+                                $resposta = $this->process_article($artigo, $p_doc, $resposta);
+                            }
+                        }
+                    }
+                }
+                if (strlen($resposta) > 0) {
+                    return substr($resposta, 0, sizeof($resposta) - 2);
+                } else {
+                    return $resposta;
+                }
+            }
+        }
+        return $resposta;
+    }
+    
     /*
      * Returns: All the numbers of the first hierarchy "artigo" given the previous hierarchy all the way up to "Subtitulo"
      */
@@ -2493,12 +2579,11 @@ class Model_api extends CI_Model {
             }
         }
 
-        if ($doc_res_2 != "") {
+        if ($doc_res_2 != $doc_res && strcmp($doc_res_2, "")) {
             $artigo_texto = $this->get_article_given_doc($artigo, (string) $doc_res);
             $old_artigo_texto = $this->get_article_given_doc($artigo, (string) $doc_res_2);
             $resp = array();
             $resp = $this->process_article_versions($artigo, $doc_res, $doc_res_2, $artigo_texto, $old_artigo_texto);
-            
             
             if (sizeof($resp) == 0) {
                 $resposta .= $artigo . "$";
@@ -2541,31 +2626,55 @@ class Model_api extends CI_Model {
         $old_texto = "";
         
         $return = array();
-
+        $return[0] = $artigo_texto[0];
+        $return_count = 1;
+        
         if (sizeof($artigo_texto) == 2) {
             $texto = $artigo_texto[1];
             $old_texto = $old_artigo_texto[1];
-            $return[0] = $artigo_texto[0];
             if ($texto != $old_texto) {
                 $return[1] = $artigo_texto[1] . "«yellow";
             }
         }
         
-        if (sizeof($artigo_texto) > sizeof($old_artigo_texto)) {
-            for ($i = 0; $i < sizeof($artigo_texto); $i++) {
+        if (sizeof($artigo_texto) >= sizeof($old_artigo_texto)) {
+            for ($i = 1; $i < sizeof($artigo_texto); $i++) {
                 if ($i < sizeof($old_artigo_texto)) {
-                    $texto = $artigo_texto[$i];
-                    $old_texto = $old_artigo_texto[$i];
-                    $return[$i] = $texto;
-                    if ($texto != $old_texto) {
+                    $texto = trim($artigo_texto[$i]);
+                    $old_texto = trim($old_artigo_texto[$i]);
+                    $return[$return_count] = $texto;
+                    if (strcmp($texto, $old_texto) != 0) {
                         if (sizeof(explode("...", $texto)) != 1) {
-                            $return[$i] = $old_artigo_texto[$i];
+                            $return[$return_count] = $old_artigo_texto[$i];
+                            $return_count++;
                         } else {
-                            $return[$i] = $artigo_texto[$i] . "«yellow";
+                            $return[$return_count] = $artigo_texto[$i] . "«yellow";
+                            $return_count++;
                         }
                     }
                 } else {
-                    $return[$i] = $artigo_texto[$i] . "«green";
+                    $return[$return_count] = $artigo_texto[$i] . "«green";
+                            $return_count++;
+                }
+            }
+        } else {
+            for ($i = 1; $i < sizeof($old_artigo_texto); $i++) {
+                if ($i < sizeof($artigo_texto)) {
+                    $texto = trim($artigo_texto[$i]);
+                    $old_texto = trim($old_artigo_texto[$i]);
+                    $return[$return_count] = $texto;
+                    if (strcmp($texto, $old_texto) != 0) {
+                        if (sizeof(explode("...", $texto)) != 1) {
+                            $return[$return_count] = $old_artigo_texto[$i];
+                            $return_count++;
+                        } else {
+                            $return[$return_count] = $artigo_texto[$i] . "«yellow";
+                            $return_count++;
+                        }
+                    }
+                } else {
+                    $return[$return_count] = $old_artigo_texto[$i] . "«red";
+                            $return_count++;
                 }
             }
         }

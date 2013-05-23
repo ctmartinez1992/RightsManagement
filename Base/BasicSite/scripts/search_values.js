@@ -12,7 +12,7 @@ function CreateXmlHttpRequestObject() {
 }
 
 function fill_titulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);

@@ -30,10 +30,15 @@ class Site extends CI_Controller {
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " - ";
 //        }
-        //$resposta = "";
-        //echo $this->model_api->process_article("1778", "1975_5_27", $resposta);
-        echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1975_5_27", "IV", "II", "XI", "II", "II");
-        //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_capitulo_no_subtitulo("1985_11_11", "I", "I", "I")
+        $resposta = "";
+//        $array = $this->model_api->get_article_evolution_names(1767);
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            echo $array[$i] . " - ";
+//        }
+        //echo $this->model_api->process_article("1778", "1976_7_17", $resposta);
+        //echo $this->model_api->process_article("1779", "1975_5_27", $resposta);
+        //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1976_7_17", "IV", "II", "XI", "II", "II");
+        echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_capitulo_no_subtitulo("2013_5_3", "I", "I", "I");
 //        $artigo_texto = $this->model_api->get_article_given_doc("1778", "1975_5_27");
 //        $old_artigo_texto = $this->model_api->get_article_given_doc("1778", "1966_11_25");
 //        $array = $this->model_api->process_article_versions("1778", "1966_11_25", "1975_5_27", $artigo_texto, $old_artigo_texto);
@@ -64,6 +69,7 @@ class Site extends CI_Controller {
         $this->load->helper('file');
         $this->load->model("model_api");
         $this->load->model("model_get");
+        $this->load->library('session');
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
@@ -77,12 +83,10 @@ class Site extends CI_Controller {
         }
         
         $array = $this->model_api->get_all_doc_names_array();
-        $doc = null;
-        if ($this->session->userdata('current_doc') == null) {
+        $doc = $this->session->userdata('current_doc');
+        if ($doc == null) {
             $doc = (string) $array[sizeof($array)-1];
             $this->session->set_userdata('current_doc', $doc);
-        } else {
-            $doc = $this->session->userdata('current_doc');
         }
         
         $nav_data['docs'] = $array;

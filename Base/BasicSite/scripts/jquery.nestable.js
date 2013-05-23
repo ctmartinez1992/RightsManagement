@@ -176,7 +176,7 @@ function handleServerResponseNextHierarchy(li, options, name) {
 }
 
 function get_hierarchy_capitulo_no_subtitulo(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -215,6 +215,65 @@ function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
                     li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
                                                                   '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
                                                                   ' - ' + truncated_name + '</div><ol class="dd-list"></ol></li>');
+                    }
+                    if (li.children(options.listNodeName).length) {
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+                    }
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                }
+            } else {
+                get_hierarchy_artigo_with_titulo(li, options);
+            }
+        }
+    }
+}
+
+function get_hierarchy_artigo_with_titulo(li, options) {
+    alert("jhg");
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        var next_hierarchy_name = [];
+        next_hierarchy_name[0] = "artigo";
+        next_hierarchy_name[1] = "Artigo";
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_titulo?doc=" + doc + "&livro=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.attr('data-id'), true);
+        xmlHttp.onreadystatechange = function () {
+            handleServerResponseHierarchyArtigoWithTitulo(li, options, next_hierarchy_name);
+        };
+        xmlHttp.send(null);
+    } else {
+    }
+}
+function handleServerResponseHierarchyArtigoWithTitulo(li, options, name) {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            
+            if (message != "0") {
+                li.children(options.listNodeName).empty();
+                var splited_message = message.split("_");
+                for (i=0; i<splited_message.length; i++) {
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text += title_text[$j] + "<br>";
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
+                        truncated_name += "...";
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+                    } else {
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
                     }
                     if (li.children(options.listNodeName).length) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
@@ -303,7 +362,7 @@ function get_hierarchy_artigo_with_capitulo(li, options) {
                                                                                                        "&capitulo=" + li.attr('data-id'), true);
         }
         xmlHttp.onreadystatechange = function () {
-            handleServerResponseHierarchyArtigoWithSubtitulo(li, options, next_hierarchy_name);
+            handleServerResponseHierarchyArtigoWithCapitulo(li, options, next_hierarchy_name);
         };
         xmlHttp.send(null);
     } else {
@@ -459,8 +518,23 @@ function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#025076";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#FF0000";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#00FF00";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<font color="' + text_color[1] + ';">' + text_color[0] + '</font><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
