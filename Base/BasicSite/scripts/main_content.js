@@ -1,5 +1,19 @@
 var xmlHttp = null;
 
+$(function() {
+ //We initially hide the all dropdown menus
+ $('#item_menu li').find('.sub_item_menu').hide();
+ 
+ //When hovering over the main nav link we find the dropdown menu to the corresponding link.
+ $('#item_menu li').hover(function() {
+  //Find a child of 'this' with a class of .sub_item_menu and make the beauty fadeIn.
+  $(this).find('.sub_item_menu').fadeIn(100);
+ }, function() {
+  //Do the same again, only fadeOut this time.
+  $(this).find('.sub_item_menu').fadeOut(50);
+ });
+});
+
 function CreateXmlHttpRequestObject() {   
     if (window.XMLHttpRequest) {
         xmlHttp = new XMLHttpRequest();

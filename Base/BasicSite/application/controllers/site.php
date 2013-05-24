@@ -38,7 +38,9 @@ class Site extends CI_Controller {
         //echo $this->model_api->process_article("1778", "1976_7_17", $resposta);
         //echo $this->model_api->process_article("1779", "1975_5_27", $resposta);
         //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1976_7_17", "IV", "II", "XI", "II", "II");
-        echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_capitulo_no_subtitulo("2013_5_3", "I", "I", "I");
+        //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_seccao_no_subtitulo("1966_11_25", "III", "VI", "III", "II");
+
+        //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_seccao_no_subtitulo("1966_11_25", "IV", "III", "III", "III");
 //        $artigo_texto = $this->model_api->get_article_given_doc("1778", "1975_5_27");
 //        $old_artigo_texto = $this->model_api->get_article_given_doc("1778", "1966_11_25");
 //        $array = $this->model_api->process_article_versions("1778", "1966_11_25", "1975_5_27", $artigo_texto, $old_artigo_texto);

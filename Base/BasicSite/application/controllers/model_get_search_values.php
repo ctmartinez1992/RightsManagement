@@ -287,6 +287,23 @@ class Model_get_search_values extends CI_Controller {
         echo '</response>';
     }
 
+    public function get_artigo_with_titulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $resposta = $this->model_api->get_hierarchy_artigo_given_previous_and_titulo($doc, $livro, $titulo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
     public function get_artigo_with_subtitulo() {
         $this->load->model("model_api");
         header('Content-Type: text/xml');

@@ -125,4 +125,8 @@ class main_program extends CI_Controller {
             echo $return["subseccao"][$i] . "-";
         }
     }
+    
+    public function criar_doc() {
+        echo "kj";
+    }
 }

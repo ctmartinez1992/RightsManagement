@@ -2592,7 +2592,7 @@ class Model_api extends CI_Model {
                 for ($i = 1; $i < sizeof($artigo_texto); $i++) {
                     $resposta .= "#" . trim($artigo_texto[$i]);
                 }
-                $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+                $resposta = $resposta;
                 $resposta .= '_';
                 return $resposta;
             } else {
@@ -2613,7 +2613,8 @@ class Model_api extends CI_Model {
                 $resposta .= "#" . trim($artigo_texto[$i]);
             }
             
-            $resposta = substr($resposta, 0, sizeof($resposta) - 2);
+            //$resposta = substr($resposta, 0, sizeof($resposta) - 2);
+            $resposta = $resposta;
             $resposta .= '_';
             return $resposta;
         }

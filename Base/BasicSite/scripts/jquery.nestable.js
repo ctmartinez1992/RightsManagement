@@ -139,18 +139,38 @@ function handleServerResponseNextHierarchy(li, options, name) {
                 li.children(options.listNodeName).empty();
                 var splited_message = message.split("_");
                 for (i=0; i<splited_message.length; i++) {
-                    var id_name = splited_message[i].split("$");
-                    var truncated_name = id_name[1];
-                    if (id_name[1].length > 45) {
-                        truncated_name = id_name[1].substring(0, 45);
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    var text_color = null;
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
                         truncated_name += "...";
                         li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
                     } else {
-                    li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                  '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
-                                                                  ' - ' + truncated_name + '</div><ol class="dd-list"></ol></li>');
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
                     }
                     if (li.children(options.listNodeName).length) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
@@ -203,18 +223,38 @@ function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
                 li.children(options.listNodeName).empty();
                 var splited_message = message.split("_");
                 for (i=0; i<splited_message.length; i++) {
-                    var id_name = splited_message[i].split("$");
-                    var truncated_name = id_name[1];
-                    if (id_name[1].length > 45) {
-                        truncated_name = id_name[1].substring(0, 45);
+                    var id_text = splited_message[i].split("$");
+                    var title_text = id_text[1].split("#");
+                    var text = "";
+                    var text_color = null;
+                    for ($j=1; $j<title_text.length; $j++) {
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
+                    }
+                    var truncated_name = title_text[0];
+                    if (id_text[0].length > 45) {
+                        truncated_name = id_text[0].substring(0, 45);
                         truncated_name += "...";
                         li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
                     } else {
-                    li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                  '"><div class="dd-handle">' + name[1] + ':' + id_name[0] + 
-                                                                  ' - ' + truncated_name + '</div><ol class="dd-list"></ol></li>');
+                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
+                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
+                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
                     }
                     if (li.children(options.listNodeName).length) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
@@ -260,8 +300,23 @@ function handleServerResponseHierarchyArtigoWithTitulo(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -279,7 +334,7 @@ function handleServerResponseHierarchyArtigoWithTitulo(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -318,8 +373,23 @@ function handleServerResponseHierarchyArtigoWithSubtitulo(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -337,7 +407,7 @@ function handleServerResponseHierarchyArtigoWithSubtitulo(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -383,8 +453,23 @@ function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -402,7 +487,7 @@ function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -423,6 +508,10 @@ function get_hierarchy_artigo_with_seccao(li, options) {
                                                                                                        "&capitulo=" + li.parent().parent().attr('data-id') +
                                                                                                        "&seccao=" + li.attr('data-id'), true);
         } else {
+            alert(doc + "&livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
+                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
+                                                                                                       "&seccao=" + li.attr('data-id'));
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_seccao_no_subtitulo?doc=" + doc + "&livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
                                                                                                        "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
                                                                                                        "&capitulo=" + li.parent().parent().attr('data-id') +
@@ -442,7 +531,7 @@ function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
             xmlResponse = xmlHttp.responseXML;
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
-            
+            alert(message);
             if (message != "0") {
                 li.children(options.listNodeName).empty();
                 var splited_message = message.split("_");
@@ -450,8 +539,23 @@ function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -469,7 +573,7 @@ function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -523,15 +627,15 @@ function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
                         text_color = title_text[$j].split("«");
                         if (text_color.length >= 2) {
                             if (text_color[1] == "yellow") {
-                                text_color[1] = "#025076";
+                                text_color[1] = "#2691FE";
                             } else if (text_color[1] == "red") {
-                                text_color[1] = "#FF0000";
+                                text_color[1] = "#881102";
                             } else if (text_color[1] == "green") {
-                                text_color[1] = "#00FF00";
+                                text_color[1] = "#106912";
                             } else {
                                 text_color[1] = "#000000";
                             }
-                            text += '<font color="' + text_color[1] + ';">' + text_color[0] + '</font><br>';
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
                         } else {
                             text += title_text[$j] + '<br>';
                         }
@@ -552,7 +656,7 @@ function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -604,8 +708,23 @@ function handleServerResponseHierarchyArtigoWithDivisao(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -623,7 +742,7 @@ function handleServerResponseHierarchyArtigoWithDivisao(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -643,8 +762,23 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
                     var id_text = splited_message[i].split("$");
                     var title_text = id_text[1].split("#");
                     var text = "";
+                    var text_color = null;
                     for ($j=1; $j<title_text.length; $j++) {
-                        text += title_text[$j] + "<br>";
+                        text_color = title_text[$j].split("«");
+                        if (text_color.length >= 2) {
+                            if (text_color[1] == "yellow") {
+                                text_color[1] = "#2691FE";
+                            } else if (text_color[1] == "red") {
+                                text_color[1] = "#881102";
+                            } else if (text_color[1] == "green") {
+                                text_color[1] = "#106912";
+                            } else {
+                                text_color[1] = "#000000";
+                            }
+                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                        } else {
+                            text += title_text[$j] + '<br>';
+                        }
                     }
                     var truncated_name = title_text[0];
                     if (id_text[0].length > 45) {
@@ -662,7 +796,7 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
                         li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
                     }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
                 }
             }
         }
@@ -707,6 +841,7 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
             emptyClass      : 'dd-empty',
             expandBtnHTML   : '<button data-action="expand" type="button">Expand</button>',
             collapseBtnHTML : '<button data-action="collapse" type="button">Collapse</button>',
+            menuBtnHTML     : '<button data-action="menu" type="button">Menu</button>',
             group           : 0,
             maxDepth        : 5,
             threshold       : 20
@@ -748,6 +883,9 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
                 }
                 if (action === 'expand') {
                     list.expandItem(item);
+                }
+                if (action === 'menu') {
+                    list.menu(item);
                 }
             });
             
@@ -824,6 +962,17 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
         },
 
         collapseItem: function(li)
+        {
+            var lists = li.children(this.options.listNodeName);
+            if (lists.length) {
+                li.addClass(this.options.collapsedClass);
+                li.children('[data-action="collapse"]').hide();
+                li.children('[data-action="expand"]').show();
+                li.children(this.options.listNodeName).hide();
+            }
+        },
+
+        menu: function(li)
         {
             var lists = li.children(this.options.listNodeName);
             if (lists.length) {

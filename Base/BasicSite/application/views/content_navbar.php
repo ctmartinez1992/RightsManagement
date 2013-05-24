@@ -8,14 +8,19 @@
                         <li>tmp2</li>
                     </ul>
                 </td>
-                <td width ="580px" align="right">                    
-                    <select id="dd_data_doc" data-placeholder="Documento" class="chzn-select" style="width: 200px" onChange="change_hierarchy()">
-                        <?php
-                            for ($i=sizeof($docs)-1; $i>=0; $i--) {
-                                echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
-                            }
-                        ?>
-                    </select>
+                <td width ="580px" align="right">    
+                    <div>
+                        <script type="text/javascript">
+                            $(".chzn-select").chosen();
+                        </script>
+                        <select id="dd_data_doc" data-placeholder="Documento" class="chzn-select" style="width: 200px" onChange="change_hierarchy()">
+                            <?php
+                                for ($i=sizeof($docs)-1; $i>=0; $i--) {
+                                    echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
                 </td>
             </tr>
         </table>

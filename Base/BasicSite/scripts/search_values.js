@@ -16,7 +16,7 @@ function fill_titulo() {
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_titulo?doc=" + doc + "&livro=" + array_values[livro], true);
         xmlHttp.onreadystatechange = handleServerResponseTitulo;
         xmlHttp.send(null);
@@ -69,7 +69,7 @@ function fill_subtitulo() {
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo, true);
         xmlHttp.onreadystatechange = handleServerResponseSubtitulo;
         xmlHttp.send(null);
@@ -123,7 +123,7 @@ function fill_capitulo() {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_capitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo, true);
         xmlHttp.onreadystatechange = handleServerResponseCapitulo;
         xmlHttp.send(null);
@@ -174,7 +174,7 @@ function fill_capitulo_no_subtitulo() {
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_capitulo_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo, true);
         xmlHttp.onreadystatechange = handleServerResponseCapituloNoSubtitulo;
         xmlHttp.send(null);
@@ -210,10 +210,7 @@ function handleServerResponseCapituloNoSubtitulo() {
                     opt.appendChild(text);
                 }
             } else {                
-                var opt = document.createElement("option");
-                var text = document.createTextNode("0");
-                element.appendChild(opt);
-                opt.appendChild(text);
+                fill_artigo_with_titulo();
             }
         }
     }
@@ -227,7 +224,7 @@ function fill_seccao() {
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         if (subtitulo === "0") {
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_seccao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo, true); 
         } else {
@@ -290,7 +287,7 @@ function fill_subseccao() {
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         if (subtitulo === "0") {
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_subseccao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao, true); 
         } else {
@@ -353,7 +350,7 @@ function fill_divisao() {
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         if (subtitulo === "0") {
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_divisao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao, true); 
         } else {
@@ -416,7 +413,7 @@ function fill_subdivisao() {
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
         divisao = encodeURIComponent(document.getElementById("dd_divisao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         if (subtitulo === "0") {
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_subdivisao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao + "&divisao=" + divisao, true); 
         } else {
@@ -468,7 +465,7 @@ function handleServerResponseSubdivisao() {
 }
 
 function fill_artigo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -479,7 +476,7 @@ function fill_artigo() {
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
         divisao = encodeURIComponent(document.getElementById("dd_divisao").value);
         subdivisao = encodeURIComponent(document.getElementById("dd_subdivisao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         if (subtitulo === "0") {
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_subdivisao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao + "&divisao=" + divisao + "&subdivisao=" + subdivisao, true); 
         } else {
@@ -523,6 +520,57 @@ function handleServerResponseArtigo() {
     }
 }
 
+function fill_artigo_with_titulo() {
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        livro = encodeURIComponent(document.getElementById("dd_livro").value);
+        titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_titulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo, true);
+        xmlHttp.onreadystatechange = handleServerResponseArtigoWithTitulo;
+        xmlHttp.send(null);
+    } else {
+        setTimeout("fill_artigo_with_titulo()", 10000);
+    }
+}
+function handleServerResponseArtigoWithTitulo() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {
+            zeroSubtitulo();
+            zeroCapitulo();
+            zeroSeccao();
+            zeroSubseccao();
+            zeroDivisao();
+            zeroSubdivisao();
+            zeroArtigo();
+            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            var element = document.getElementById("dd_artigo");
+            
+            if (message !== "0") {
+                var splited_message = message.split(",");
+                while(element.firstChild){
+                    element.removeChild(element.firstChild);
+                }
+
+                for (i=0; i<splited_message.length; i++) {
+                    var opt = document.createElement("option");
+                    var text = document.createTextNode(splited_message[i]);
+                    element.appendChild(opt);
+                    opt.appendChild(text);
+                }
+            } else {                
+                var opt = document.createElement("option");
+                var text = document.createTextNode("0");
+                element.appendChild(opt);
+                opt.appendChild(text);
+            }
+        }
+    }
+}
 function fill_artigo_with_subtitulo() {
         var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
@@ -530,7 +578,7 @@ function fill_artigo_with_subtitulo() {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithSubtitulo;
         xmlHttp.send(null);
@@ -582,7 +630,7 @@ function fill_artigo_with_capitulo() {
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_capitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo + "&capitulo=" + capitulo, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithCapitulo;
         xmlHttp.send(null);
@@ -632,7 +680,7 @@ function fill_artigo_with_capitulo_no_subtitulo() {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_capitulo_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithCapituloNoSubtitulo;
         xmlHttp.send(null);
@@ -684,7 +732,7 @@ function fill_artigo_with_seccao() {
         subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_seccao?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo + "&capitulo=" + capitulo + "&seccao=" + seccao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithSeccao;
         xmlHttp.send(null);
@@ -734,7 +782,7 @@ function fill_artigo_with_seccao_no_subtitulo() {
         titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_seccao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithSeccaoNoSubtitulo;
         xmlHttp.send(null);
@@ -786,7 +834,7 @@ function fill_artigo_with_subseccao() {
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_subseccao?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithSubseccao;
         xmlHttp.send(null);
@@ -836,7 +884,7 @@ function fill_artigo_with_subseccao_no_subtitulo() {
         capitulo = encodeURIComponent(document.getElementById("dd_capitulo").value);
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_subseccao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithSubseccaoNoSubtitulo;
         xmlHttp.send(null);
@@ -888,7 +936,7 @@ function fill_artigo_with_divisao() {
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
         divisao = encodeURIComponent(document.getElementById("dd_divisao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_divisao?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&subtitulo=" + subtitulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao + "&divisao=" + divisao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithDivisao;
         xmlHttp.send(null);
@@ -938,7 +986,7 @@ function fill_artigo_with_divisao_no_subtitulo() {
         seccao = encodeURIComponent(document.getElementById("dd_seccao").value);
         subseccao = encodeURIComponent(document.getElementById("dd_subseccao").value);
         divisao = encodeURIComponent(document.getElementById("dd_divisao").value);
-        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV'};
+        var array_values = {0:'I', 1:'II', 2:'III', 3:'IV', 4:'V', 5:'VI', 6:'VII', 7:'VIII', 8:'IX', 9:'X', 10:'XI', 11:'XII', 12:'XIII', 13:'XIV', 14:'XV', 15:'XVI', 16:'XVII', 17:'XVIII', 18:'XIX', 19:'XX'};
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_artigo_with_subseccao_no_subtitulo?doc=" + doc + "&livro=" + array_values[livro] + "&titulo=" + titulo + "&capitulo=" + capitulo + "&seccao=" + seccao + "&subseccao=" + subseccao + "&divisao=" + divisao, true);
         xmlHttp.onreadystatechange = handleServerResponseArtigoWithDivisaoNoSubtitulo;
         xmlHttp.send(null);
