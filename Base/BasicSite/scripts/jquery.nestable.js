@@ -135,49 +135,8 @@ function handleServerResponseNextHierarchy(li, options, name) {
             xmlResponse = xmlHttp.responseXML;
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
-                }
+            if (message != "0") {                
+                add_item(li, options, name, message);
             } else if (name[0] == "subtitulo") {
                 get_hierarchy_capitulo_no_subtitulo(li, options);
             } else if (name[0] == "capitulo") {
@@ -219,49 +178,8 @@ function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
             
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
-                }
+            if (message != "0") {                
+                add_item(li, options, name, message);
             } else {
                 get_hierarchy_artigo_with_titulo(li, options);
             }
@@ -293,49 +211,8 @@ function handleServerResponseHierarchyArtigoWithTitulo(li, options, name) {
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
             
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+            if (message != "0") {                
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -366,49 +243,8 @@ function handleServerResponseHierarchyArtigoWithSubtitulo(li, options, name) {
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
             
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+            if (message != "0") {                
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -447,48 +283,7 @@ function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
             message = xmlDocumentElement.firstChild.data;
             
             if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -531,50 +326,9 @@ function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
             xmlResponse = xmlHttp.responseXML;
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
-            alert(message);
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+            
+            if (message != "0") {                
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -615,49 +369,8 @@ function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
             xmlResponse = xmlHttp.responseXML;
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
-            if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+            if (message != "0") {                
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -702,48 +415,7 @@ function handleServerResponseHierarchyArtigoWithDivisao(li, options, name) {
             message = xmlDocumentElement.firstChild.data;
             
             if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+                add_item_article(li, options, name, message);
             }
         }
     }
@@ -756,53 +428,136 @@ function handleServerResponseHierarchyArtigoWithSubdivisao(li, options, name) {
             message = xmlDocumentElement.firstChild.data;
             
             if (message != "0") {
-                li.children(options.listNodeName).empty();
-                var splited_message = message.split("_");
-                for (i=0; i<splited_message.length; i++) {
-                    var id_text = splited_message[i].split("$");
-                    var title_text = id_text[1].split("#");
-                    var text = "";
-                    var text_color = null;
-                    for ($j=1; $j<title_text.length; $j++) {
-                        text_color = title_text[$j].split("«");
-                        if (text_color.length >= 2) {
-                            if (text_color[1] == "yellow") {
-                                text_color[1] = "#2691FE";
-                            } else if (text_color[1] == "red") {
-                                text_color[1] = "#881102";
-                            } else if (text_color[1] == "green") {
-                                text_color[1] = "#106912";
-                            } else {
-                                text_color[1] = "#000000";
-                            }
-                            text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
-                        } else {
-                            text += title_text[$j] + '<br>';
-                        }
-                    }
-                    var truncated_name = title_text[0];
-                    if (id_text[0].length > 45) {
-                        truncated_name = id_text[0].substring(0, 45);
-                        truncated_name += "...";
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
-                    } else {
-                        li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i+1) + 
-                                                                 '"><div class="dd-handle">' + name[1] + ':' + id_text[0] + 
-                                                                 ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
-                    }
-                    if (li.children(options.listNodeName).length) {
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
-                        li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
-                    }
-                    li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
-                }
+                add_item_article(li, options, name, message);
             }
         }
     }
 }
 
+function add_item(li, options, name, message) {
+    li.children(options.listNodeName).empty();
+    var splited_message = message.split("_");
+    for (i = 0; i < splited_message.length; i++) {
+        var id_text = splited_message[i].split("$");
+        var title_text = id_text[1].split("#");
+        var text = "";
+        var text_color = null;
+        for ($j = 1; $j < title_text.length; $j++) {
+            text_color = title_text[$j].split("«");
+            if (text_color.length >= 2) {
+                if (text_color[1] == "yellow") {
+                    text_color[1] = "#2691FE";
+                } else if (text_color[1] == "red") {
+                    text_color[1] = "#881102";
+                } else if (text_color[1] == "green") {
+                    text_color[1] = "#106912";
+                } else {
+                    text_color[1] = "#000000";
+                }
+                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+            } else {
+                text += title_text[$j] + '<br>';
+            }
+        }
+        var truncated_name = title_text[0];
+        if (id_text[0].length > 45) {
+            truncated_name = id_text[0].substring(0, 45);
+            truncated_name += "...";
+            li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i + 1) +
+                    '"><div class="dd-handle"><ul id="item_menu">' +
+                    '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                    '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                    '<button type="button" class="button_menu_item" onClick="">Partilhar</button></li>' +
+                    '</ul></li></ul>' + name[1] + ':' + id_text[0] +
+                    ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+        } else {
+            li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + (i + 1) +
+                    '"><div class="dd-handle"><ul id="item_menu">' +
+                    '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                    '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                    '<button type="button" class="button_menu_item" onClick="">Partilhar</button></li>' +
+                    '</ul></li></ul>' + name[1] + ':' + id_text[0] +
+                    ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+        }
+        if (li.children(options.listNodeName).length) {
+            li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+            li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+        }
+        li.children(options.listNodeName).children('li').eq(i).children('[data-action="collapse"]').hide();
+            
+        $(function() {
+            $('#item_menu li').find('.sub_item_menu').hide();
+            $('#item_menu li').hover(function() {
+                $(this).find('.sub_item_menu').fadeIn(100);
+            }, function() {
+                $(this).find('.sub_item_menu').fadeOut(50);
+            });
+        });
+    }
+}
+function add_item_article(li, options, name, message) {
+    li.children(options.listNodeName).empty();
+    var splited_message = message.split("_");
+    for (i = 0; i < splited_message.length; i++) {
+        var id_text = splited_message[i].split("$");
+        var title_text = id_text[1].split("#");
+        var text = "";
+        var text_color = null;
+        for ($j = 1; $j < title_text.length; $j++) {
+            text_color = title_text[$j].split("«");
+            if (text_color.length >= 2) {
+                if (text_color[1] == "yellow") {
+                    text_color[1] = "#2691FE";
+                } else if (text_color[1] == "red") {
+                    text_color[1] = "#881102";
+                } else if (text_color[1] == "green") {
+                    text_color[1] = "#106912";
+                } else {
+                    text_color[1] = "#000000";
+                }
+                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+            } else {
+                text += title_text[$j] + '<br>';
+            }
+        }
+        var truncated_name = title_text[0];
+        if (id_text[0].length > 45) {
+            truncated_name = id_text[0].substring(0, 45);
+            truncated_name += "...";
+            li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + id_text[0] +
+                    '"><div class="dd-handle"><ul id="item_menu">' +
+                    '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                    '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                    '<button type="button" class="button_menu_item" onClick="">Partilhar</button>' +
+                    '<button type="button" class="button_menu_item" onClick="show_evolution(this)">Ver Evolução</button></li>' +
+                    '</ul></li></ul>' + name[1] + ':' + id_text[0] +
+                    ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
+        } else {
+            li.children(options.listNodeName).append('<li class="dd-item" id="' + name[0] + '"data-id="' + id_text[0] +
+                    '"><div class="dd-handle"><ul id="item_menu">' +
+                    '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                    '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                    '<button type="button" class="button_menu_item" onClick="">Partilhar</button>' +
+                    '<button type="button" class="button_menu_item" onClick="show_evolution(this)">Ver Evolução</button></li>' +
+                    '</ul></li></ul>' + name[1] + ':' + id_text[0] +
+                    ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');
+        }
+        if (li.children(options.listNodeName).length) {
+            li.children(options.listNodeName).children('li').eq(i).prepend($(options.expandBtnHTML));
+            li.children(options.listNodeName).children('li').eq(i).prepend($(options.collapseBtnHTML));
+        }
+        li.children(options.listNodeName).children('li').eq(i).children('[data-action="expand"]').hide();
+        
+        $(function() {
+            $('#item_menu li').find('.sub_item_menu').hide();
+            $('#item_menu li').hover(function() {
+                $(this).find('.sub_item_menu').fadeIn(100);
+            }, function() {
+                $(this).find('.sub_item_menu').fadeOut(50);
+            });
+        });
+    }
+}
 ;(function($, window, document, undefined)
 {
     var hasTouch = 'ontouchstart' in window;

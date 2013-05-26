@@ -16,7 +16,11 @@
                         <select id="dd_data_doc" data-placeholder="Documento" class="chzn-select" style="width: 200px" onChange="change_hierarchy()">
                             <?php
                                 for ($i=sizeof($docs)-1; $i>=0; $i--) {
-                                    echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
+                                    if ($current_doc == $docs[$i]) {
+                                        echo '<option value="' . $docs[$i] . '" selected>' . $docs[$i] . '</option>';
+                                    } else {
+                                        echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
+                                    }
                                 }
                             ?>
                         </select>

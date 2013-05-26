@@ -20,6 +20,8 @@ p { line-height: 1.5em; }
 
 .dd { position: relative; display: block; margin: 0; padding: 0; max-width: 700px; list-style: none; font-size: 13px; line-height: 20px; }
 
+.dd-title { font: bold 20px Times New Roman; margin: -20px 0px 10px 25px; }
+
 .dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; width: 600px;}
 .dd-list .dd-list { padding-left: 30px; }
 .dd-collapsed .dd-list { display: none; }
@@ -166,23 +168,38 @@ p { line-height: 1.5em; }
     padding: 0px;
 }
 
-#item_menu .sub_item_menu li a {
-    padding: 10px 15px 10px 15px;
-    margin: 5px 10px 0px 0px;
-    display:block;
-    border-top: 1px solid #ccc;
-    color: white;
-    text-decoration: none;
+.button_menu_item {
+    width: 100%;
+    padding: 5px 10px;
+    display: inline;
+    background: #777 url(../images/button.png) repeat-x bottom;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    -webkit-border-radius: 10px;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius: 10px;
+    -moz-border-radius-topleft: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    text-shadow: 1px 1px #666;
+    z-index: 100;
 }
-#item_menu .sub_item_menu li a.first {
-    border-top: 0px;
-    display:block;
-    color: white;
-    text-decoration: none;
+
+.button_menu_item:hover {
+    background-position: 0 -48px;
 }
-#item_menu .sub_item_menu li a:hover {
-    color: white;
-    text-decoration: underline;
+
+.button_menu_item:active {
+    background-position: 0 top;
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+}
+    
+.button_menu_item.black {
+    background-color: #333;
 }
 
 .circle {

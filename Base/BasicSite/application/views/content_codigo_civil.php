@@ -1,18 +1,30 @@
 <div id="main_content">
     <section id="main_area">
         <article>
+            <?php
+                if ($revogado != null) {
+                    echo '<p class="alert">Este documento for revogado integralmente pelo documento com a data ' . str_replace("_", "-", $revogado[1]) . '</p>';
+                } else {
+                }
+            ?>
             <div class="cf nestable-lists">
                 <div class="dd" id="nestable">
+                    <div class="dd-title">
+                        <?php
+                            echo $title . ' : ' . str_replace("_", "-", $current_doc);
+                        ?>
+                    </div>
                     <ol class="dd-list">
                         <?php
                             for ($i=0; $i<count($main); $i++) {
+                                echo '<li class="dd-item" id="livro" data-id="' . ($i+1) . '">';
+                                echo '<div class="dd-handle">';
                                 echo '<ul id="item_menu">';
                                 echo '<li><div class="circle"><a></a></div>';
                                 echo '<ul class="sub_item_menu">';
-                                echo '<li><a href="'. base_url() . 'main_program/criar_doc">Criar LaTeX</a></li>';
+                                echo '<li><button type="button" class="button_menu_item" onclick="" value>Criar LaTeX</button>';
+                                echo '<button type="button" class="button_menu_item" onclick="" value>Partilhar</button></li>';
                                 echo '</ul></li></ul>';
-                                echo '<li class="dd-item" id="livro" data-id="' . ($i+1) . '">';
-                                echo '<div class="dd-handle">';
                                 echo 'Livro:' . $main[$i][0] . ' - ' . $main[$i][1] . '</div>';
                                 echo '<ol class="dd-list">';
                                 echo '</ol>';

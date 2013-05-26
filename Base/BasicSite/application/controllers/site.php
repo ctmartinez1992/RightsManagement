@@ -31,6 +31,12 @@ class Site extends CI_Controller {
 //            echo $array[$i] . " - ";
 //        }
         $resposta = "";
+//        $resposta = $this->model_api->was_doc_revoked_get_names("1981_12_4");
+//        if ($resposta != null) {
+//            echo $resposta[0] . " - " . $resposta[1];
+//        } else {
+//            echo "kjskjskj";
+//        }
 //        $array = $this->model_api->get_article_evolution_names(1767);
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " - ";
@@ -43,9 +49,14 @@ class Site extends CI_Controller {
         //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_seccao_no_subtitulo("1966_11_25", "IV", "III", "III", "III");
 //        $artigo_texto = $this->model_api->get_article_given_doc("1778", "1975_5_27");
 //        $old_artigo_texto = $this->model_api->get_article_given_doc("1778", "1966_11_25");
-//        $array = $this->model_api->process_article_versions("1778", "1966_11_25", "1975_5_27", $artigo_texto, $old_artigo_texto);
+//        echo $this->model_api->does_article_exist_in_given_doc("1", "1966_11_25");
+//        $array = $this->model_api->get_article_evolution_text("1051");
 //        for ($i=0; $i<sizeof($array); $i++) {
-//            echo $array[$i] . " - ";
+//            echo $array[$i][0] . " - ";
+//            for ($j=0; $j<sizeof($array[$i][1]); $j++) {
+//                echo $array[$i][1][$j] . "<br>";
+//            }
+//            echo "<br><br><br>";
 //        }
     }
 
@@ -91,12 +102,51 @@ class Site extends CI_Controller {
             $this->session->set_userdata('current_doc', $doc);
         }
         
+        $revogado = $this->model_api->was_doc_revoked_get_names($doc);
+        $title = $this->model_api->get_doc_name($doc);
+        
         $nav_data['docs'] = $array;
+        $nav_data['current_doc'] = $doc;
+        $nav_data['revogado'] = $revogado;
+        $nav_data['title'] = $title;
         $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
         $main_data['main'] = $this->model_api->get_hierarchy_livro_name($doc);
         
         $this->load->view("content_navbar", $nav_data);
         $this->load->view("content_codigo_civil", $main_data);
+        $this->load->view("content_sidebar", $search_data);
+        $this->load->view("site_footer");
+    }
+    
+    public function evolucao() {
+        $this->load->helper('xml');
+        $this->load->helper('file');
+        $this->load->model("model_api");
+        $this->load->model("model_get");
+        $this->load->library('session');
+        $data["result"] = $this->model_get->getData("about");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        
+        $array = $this->model_api->get_all_doc_names_array();
+        $doc = $this->session->userdata('current_doc');
+        if ($doc == null) {
+            $doc = (string) $array[sizeof($array)-1];
+            $this->session->set_userdata('current_doc', $doc);
+        }
+        
+        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
+        $main_data['main'] = $this->model_api->get_article_evolution_text($_GET['artigo']);
+        
+        $this->load->view("content_evolucao", $main_data);
         $this->load->view("content_sidebar", $search_data);
         $this->load->view("site_footer");
     }

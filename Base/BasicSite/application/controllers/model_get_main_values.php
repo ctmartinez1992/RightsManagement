@@ -515,4 +515,41 @@ class Model_get_main_values extends CI_Controller {
             }
         echo '</response>';
     }
+    
+    public function was_doc_revoked_get_names() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $array = $this->model_api->was_doc_revoked_get_names($doc);
+            if ($array != null) {
+                $resposta = $array[0] . "$" . $array[1];
+            } else {
+                $resposta = "0";
+            }
+            if ($resposta == "" || $resposta == null) {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_doc_title() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $resposta = $this->model_api->get_doc_name($doc);
+            if ($resposta == "" || $resposta == null) {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
 }

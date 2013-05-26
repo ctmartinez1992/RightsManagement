@@ -53,11 +53,7 @@ class Model_api extends CI_Model {
      */
     public function get_article_text($name) {
         $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $name, FILE_SKIP_EMPTY_LINES);
-        if (sizeof($array) > 2) {
-            unset($array[0]);
-            return array_values($array);
-        }
-        return $array[1];
+        $array;
     }
 
     /*
@@ -123,13 +119,13 @@ class Model_api extends CI_Model {
         $number_docs = $this->get_all_doc_count();
         $docs = $this->get_all_doc_names();
         $evolution[0][0] = "1966_11_25";
-        $evolution[0][1] = $this->get_article_text("/1966_11_25/1966_11_25_" . $name . ".txt");
+        $evolution[0][1] = $this->get_article_given_doc($name, "1966_11_25");;
         $count = 1;
         for ($i = 1; $i <= $number_docs; $i++) {
             if ($docs->doc[$i] != null) {
                 if ($this->does_article_exist_in_given_doc($name, $docs->doc[$i]) == 1) {
                     $evolution[$count][0] = $docs->doc[$i];
-                    $evolution[$count][1] = $this->get_article_text("/" . $docs->doc[$i] . "/" . $docs->doc[$i] . "_" . $name . ".txt");
+                    $evolution[$count][1] = $this->get_article_given_doc($name, $docs->doc[$i]);
                     $count++;
                 }
             }
@@ -2373,8 +2369,10 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was altered, false if it doesn't exist/was altered
      */
-
     public function was_article_altered_in_given_doc($article, $doc) {
+        if ($doc == "1966_11_25" && ($article >= 1 && $article <= 2334)) {
+            return true;
+        }
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->altera); $i++) {
             if ($article == $array->altera[$i]) {
@@ -2388,8 +2386,10 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was added, false if it doesn't exist/was added
      */
-
     public function was_article_added_in_given_doc($article, $doc) {
+        if ($doc == "1966_11_25") {
+            return false;
+        }
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->acrescenta); $i++) {
             if ($article == $array->acrescenta[$i]) {
@@ -2403,8 +2403,10 @@ class Model_api extends CI_Model {
      * Parameters: $article (the number of the article); $doc (the date of the article)
      * Returns: true if it exists and it was revoked, false if it doesn't exist/was revoked
      */
-
     public function was_article_revoked_in_given_doc($article, $doc) {
+        if ($doc == "1966_11_25") {
+            return false;
+        }
         $array = $this->get_doc_content($doc);
         for ($i = 0; $i <= sizeof($array->revoga); $i++) {
             if ($article == $array->revoga[$i]) {
@@ -2454,7 +2456,6 @@ class Model_api extends CI_Model {
      * Parameters: $doc (the date of the doc)
      * Returns: true if it was revoked, false if it wasn't
      */
-
     public function was_doc_revoked($doc) {
         $number_docs = $this->get_all_revokes_count();
         $docs = $this->get_all_revokes_names();
@@ -2468,6 +2469,27 @@ class Model_api extends CI_Model {
             }
         }
         return false;
+    }
+
+    /*
+     * Parameters: $doc (the date of the doc)
+     * Returns: true if it was revoked, false if it wasn't
+     */
+    public function was_doc_revoked_get_names($doc) {
+        $number_docs = $this->get_all_revokes_count();
+        $docs = $this->get_all_revokes_names();
+        $return = null;
+        for ($i = 0; $i <= $number_docs; $i++) {
+            for ($j = 0; $j <= sizeof($docs->doc[$i]); $j++) {
+                if ($docs->doc[$i] != null) {
+                    if ($docs->doc[$i]->revoga[$j] == $doc) {
+                        $return[0] = $doc;
+                        $return[1] = $docs->doc[$i]['name'];
+                    }
+                }
+            }
+        }
+        return $return;
     }
 
     /*

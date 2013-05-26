@@ -290,41 +290,50 @@ table.macro_form td{
 }
 
 .alter_square{
-display:block;
-width:20px;
-height:20px;
-background-color:#2691FE;
--moz-border-radius:2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #2691FE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .add_square{
-display:block;
-width:20px;
-height:20px;
-background-color:#106912;
--moz-border-radius:2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #106912;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .revoke_square{
-display:block;
-width:20px;
-height:20px;
-background-color:#881102;
--moz-border-radius:2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #881102;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .default_square{
-display:block;
-width:20px;
-height:20px;
-background-color:#000000;
--moz-border-radius:2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.alert {
+    background: #fff6bf url(../images/exclamation.png) center no-repeat;
+    background-position: 15px 50%;
+    text-align: left;
+    padding: 20px 20px 20px 80px;
+    border-top: 2px solid #ffd324;
+    border-bottom: 2px solid #ffd324;
 }
