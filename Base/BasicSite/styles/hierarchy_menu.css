@@ -21,6 +21,7 @@ p { line-height: 1.5em; }
 .dd { position: relative; display: block; margin: 0; padding: 0; max-width: 700px; list-style: none; font-size: 13px; line-height: 20px; }
 
 .dd-title { font: bold 20px Times New Roman; margin: -20px 0px 10px 25px; }
+.dd-subtitle { font: bold 16px Times New Roman; margin: 20px 0px 10px 35px; }
 
 .dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; width: 600px;}
 .dd-list .dd-list { padding-left: 30px; }

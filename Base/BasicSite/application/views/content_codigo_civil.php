@@ -9,11 +9,10 @@
             ?>
             <div class="cf nestable-lists">
                 <div class="dd" id="nestable">
-                    <div class="dd-title">
-                        <?php
-                            echo $title . ' : ' . str_replace("_", "-", $current_doc);
-                        ?>
-                    </div>
+                    <?php
+                        echo '<table id="doc_titulo"><tr><td><div class="dd-title">' . $title . ' : ' . str_replace("_", "-", $current_doc) . '</div></td>';
+                        echo '<td><button type="button" onclick="show_document()">Ver apenas documento</button></td></tr></table>';
+                    ?>
                     <ol class="dd-list">
                         <?php
                             for ($i=0; $i<count($main); $i++) {

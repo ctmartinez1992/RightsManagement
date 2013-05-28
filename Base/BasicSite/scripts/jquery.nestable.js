@@ -188,7 +188,6 @@ function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_titulo(li, options) {
-    alert("jhg");
     var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
@@ -290,7 +289,7 @@ function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_seccao(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -303,10 +302,6 @@ function get_hierarchy_artigo_with_seccao(li, options) {
                                                                                                        "&capitulo=" + li.parent().parent().attr('data-id') +
                                                                                                        "&seccao=" + li.attr('data-id'), true);
         } else {
-            alert(doc + "&livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
-                                                                                                       "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
-                                                                                                       "&capitulo=" + li.parent().parent().attr('data-id') +
-                                                                                                       "&seccao=" + li.attr('data-id'));
             xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_artigo_with_seccao_no_subtitulo?doc=" + doc + "&livro=" + li.parent().parent().parent().parent().parent().parent().attr('data-id') +
                                                                                                        "&titulo=" + li.parent().parent().parent().parent().attr('data-id') +
                                                                                                        "&capitulo=" + li.parent().parent().attr('data-id') +
@@ -454,7 +449,7 @@ function add_item(li, options, name, message) {
                 } else {
                     text_color[1] = "#000000";
                 }
-                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div>';
             } else {
                 text += title_text[$j] + '<br>';
             }
@@ -515,7 +510,7 @@ function add_item_article(li, options, name, message) {
                 } else {
                     text_color[1] = "#000000";
                 }
-                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div><br>';
+                text += '<div style="color:' + text_color[1] + ';">' + text_color[0] + '</div>';
             } else {
                 text += title_text[$j] + '<br>';
             }

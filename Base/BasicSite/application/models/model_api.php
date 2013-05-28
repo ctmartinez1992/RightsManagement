@@ -204,6 +204,7 @@ class Model_api extends CI_Model {
         if (sizeof($array->altera) > 0) {
             return $array->altera;
         }
+        return null;
     }
 
     /*
@@ -233,7 +234,7 @@ class Model_api extends CI_Model {
      * Returns: Array with the amount of altered articles
      */
     public function get_doc_altered_count($name) {
-        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . '/' . $name . '.xml');
         return sizeof($array->altera);
     }
 
@@ -253,6 +254,44 @@ class Model_api extends CI_Model {
     public function get_doc_revoked_count($name) {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return sizeof($array->revoga);
+    }
+    
+    public function get_doc_only($doc) {
+        $resposta = array();
+        $resposta[0] = null;
+        $resposta[1] = null;
+        $resposta[2] = null;
+        
+        $count = 0;
+        $alts = $this->get_doc_altered($doc);
+        if ($alts != null) {
+            foreach ($alts as $alt) {
+                $resposta[0][$count][0] = $alt;
+                $resposta[0][$count][1] = $this->get_article_given_doc($alt, $doc);
+                $count++;
+            }
+        }
+        
+        $count = 0;
+        $adds = $this->get_doc_added($doc);
+        if ($adds != null) {
+            foreach ($adds as $add) {
+                $resposta[1][$count][0] = $add;
+                $resposta[1][$count][1] = $this->get_article_given_doc($add, $doc);
+                $count++;
+            }
+        }
+        
+        $count = 0;
+        $revs = $this->get_doc_revoked($doc);
+        if ($revs != null) {
+            foreach ($revs as $rev) {
+                $resposta[2][$count] = $rev;
+                $count++;
+            }
+        }
+        
+        return $resposta;
     }
 
     /*

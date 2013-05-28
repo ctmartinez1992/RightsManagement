@@ -49,12 +49,20 @@ function handleServerResponseHierarchyLivro() {
                     truncated_name = id_name[1].substring(0, 45);
                     truncated_name += "...";
                     $('#nestable').children('ol').append('<li class="dd-item" id="livro"data-id="' + (i+1) + '">');
-                    $('#nestable').children('ol').children('li').eq(i).append('<div class="dd-handle">Livro:' + id_name[0] + ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
+                    $('#nestable').children('ol').children('li').eq(i).append('<div class="dd-handle"><ul id="item_menu">' +
+                            '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                            '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                            '<button type="button" class="button_menu_item" onClick="">Partilhar</button></li>' +
+                            '</ul></li></ul>Livro:' + id_name[0] + ' - <span style="font-weight: bold;" title="' + id_name[1] + '">' + truncated_name + '</span></div><ol class="dd-list"></ol></li>');
                     $('#nestable').children('ol').children('li').eq(i).append('<ol class="dd-list"></ol>');
                     $('#nestable').children('ol').append('</li>');
                 } else {
                     $('#nestable').children('ol').append('<li class="dd-item" id="livro"data-id="' + (i+1) + '">');
-                    $('#nestable').children('ol').children('li').eq(i).append('<div class="dd-handle">Livro:' + id_name[0] + ' - ' + truncated_name + '</div>');
+                    $('#nestable').children('ol').children('li').eq(i).append('<div class="dd-handle"><ul id="item_menu">' +
+                            '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
+                            '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
+                            '<button type="button" class="button_menu_item" onClick="">Partilhar</button></li>' +
+                            '</ul></li></ul>Livro:' + id_name[0] + ' - ' + truncated_name + '</div>');
                     $('#nestable').children('ol').children('li').eq(i).append('<ol class="dd-list"></ol>');
                     $('#nestable').children('ol').append('</li>');
                 }
@@ -63,6 +71,15 @@ function handleServerResponseHierarchyLivro() {
                     $('#nestable').children('ol').children('li').eq(i).prepend('<button data-action="collapse" type="button">Collapse</button>');
                 }
                 $('#nestable').children('ol').children('li').eq(i).children('[data-action="collapse"]').hide();
+                
+                $(function() {
+                    $('#item_menu li').find('.sub_item_menu').hide();
+                    $('#item_menu li').hover(function() {
+                        $(this).find('.sub_item_menu').fadeIn(100);
+                    }, function() {
+                        $(this).find('.sub_item_menu').fadeOut(50);
+                    });
+                });
             }
             $('#nestable').append('</ol>');
             
@@ -121,8 +138,10 @@ function handleServerResponseGetDocTitle() {
             $('.dd_title').remove();
             if (message != "0") {
                 var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
-                $('.dd').prepend('<div class="dd-title">' + message + ' : ' + doc.replace("_", "-").replace("_", "-") + '</div>');
+                $('.dd').prepend('<table id="doc_titulo"><tr><td><div class="dd-title">' + message + ' : ' + doc.replace("_", "-").replace("_", "-") + 
+                                 '</div></div></td><td><button type="button" onclick="show_document()">Ver apenas documento</button></td></tr></table>');
             }
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
             
             check_doc_revoke();
         }
@@ -131,7 +150,15 @@ function handleServerResponseGetDocTitle() {
 
 function show_evolution(el) {
     var numero = $(el).parent().parent().parent().parent().parent().parent().attr('data-id');
-    alert(numero);
     var split = window.location.pathname.split("/");
-    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/evolucao?artigo=" + numero);
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/main_program/evolucao?artigo=" + numero);
+}
+
+function show_document() {
+    var td = $('#doc_titulo tr').find("td:first .dd-title").html();
+    var nome_data = td.split(":");
+    var nome = nome_data[0].trim();
+    var data = nome_data[1].trim();
+    var split = window.location.pathname.split("/");
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/main_program/ver_document?nome=" + nome + "&data=" + data.replace("-", "_").replace("-", "_"));
 }

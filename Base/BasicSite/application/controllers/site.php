@@ -30,7 +30,9 @@ class Site extends CI_Controller {
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " - ";
 //        }
-        $resposta = "";
+//        $resposta = "";
+//        $resposta = $this->model_api->get_doc_only("1981_12_4");
+//        echo $resposta;
 //        $resposta = $this->model_api->was_doc_revoked_get_names("1981_12_4");
 //        if ($resposta != null) {
 //            echo $resposta[0] . " - " . $resposta[1];
@@ -114,39 +116,6 @@ class Site extends CI_Controller {
         
         $this->load->view("content_navbar", $nav_data);
         $this->load->view("content_codigo_civil", $main_data);
-        $this->load->view("content_sidebar", $search_data);
-        $this->load->view("site_footer");
-    }
-    
-    public function evolucao() {
-        $this->load->helper('xml');
-        $this->load->helper('file');
-        $this->load->model("model_api");
-        $this->load->model("model_get");
-        $this->load->library('session');
-        $data["result"] = $this->model_get->getData("about");
-
-        $this->load->view("site_header");
-        if ($this->session->userdata('is_logged_in')) {
-            $data["logged_user"] = $this->session->userdata('nome');
-            $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
-        } else {
-            $this->load->view("site_login");
-            $this->load->view("site_nav");
-        }
-        
-        $array = $this->model_api->get_all_doc_names_array();
-        $doc = $this->session->userdata('current_doc');
-        if ($doc == null) {
-            $doc = (string) $array[sizeof($array)-1];
-            $this->session->set_userdata('current_doc', $doc);
-        }
-        
-        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
-        $main_data['main'] = $this->model_api->get_article_evolution_text($_GET['artigo']);
-        
-        $this->load->view("content_evolucao", $main_data);
         $this->load->view("content_sidebar", $search_data);
         $this->load->view("site_footer");
     }

@@ -126,6 +126,74 @@ class main_program extends CI_Controller {
         }
     }
     
+    public function evolucao() {
+        $this->load->helper('xml');
+        $this->load->helper('file');
+        $this->load->model("model_api");
+        $this->load->model("model_get");
+        $this->load->library('session');
+        $data["result"] = $this->model_get->getData("about");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        
+        $array = $this->model_api->get_all_doc_names_array();
+        $doc = $this->session->userdata('current_doc');
+        if ($doc == null) {
+            $doc = (string) $array[sizeof($array)-1];
+            $this->session->set_userdata('current_doc', $doc);
+        }
+        
+        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
+        $main_data['main'] = $this->model_api->get_article_evolution_text($_GET['artigo']);
+        
+        $this->load->view("content_evolucao", $main_data);
+        $this->load->view("content_sidebar", $search_data);
+        $this->load->view("site_footer");
+    }
+    
+    public function ver_document() {
+        $this->load->helper('xml');
+        $this->load->helper('file');
+        $this->load->model("model_api");
+        $this->load->model("model_get");
+        $this->load->library('session');
+        $data["result"] = $this->model_get->getData("about");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        
+        $array = $this->model_api->get_all_doc_names_array();
+        $doc = $this->session->userdata('current_doc');
+        if ($doc == null) {
+            $doc = (string) $array[sizeof($array)-1];
+            $this->session->set_userdata('current_doc', $doc);
+        }
+        
+        $search_data['livro'] = $this->model_api->get_hierarchy_livro($doc);
+        $main_data['main'] = $this->model_api->get_doc_only($_GET['data']);
+        
+        $this->load->view("content_document_only", $main_data);
+        $this->load->view("content_sidebar", $search_data);
+        $this->load->view("site_footer");
+        
+        echo $_GET['data'];
+    }
+    
     public function criar_doc() {
         echo "kj";
     }
