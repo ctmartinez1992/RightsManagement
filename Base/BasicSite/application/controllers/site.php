@@ -30,6 +30,24 @@ class Site extends CI_Controller {
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " - ";
 //        }
+//        
+//        
+        $array = $this->model_api->get_full_article("2");
+        for ($i=0; $i<sizeof($array); $i++) {
+            if (is_array($array[$i])) {
+                for ($j=0; $j<sizeof($array[$i]); $j++) {
+                    echo $array[$i][$j] . "<br>";
+                }
+            } else {
+                echo $array[$i] . "<br>";
+            }
+        }
+//        
+//        
+//        $array = $this->model_api->get_last_doc_given_article("52", "2013_3_5");
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            echo $array[$i] . " <br> ";
+//        }
 //        $resposta = "";
 //        $resposta = $this->model_api->get_doc_only("1981_12_4");
 //        echo $resposta;
@@ -39,10 +57,10 @@ class Site extends CI_Controller {
 //        } else {
 //            echo "kjskjskj";
 //        }
-//        $array = $this->model_api->get_article_evolution_names(1767);
-//        for ($i=0; $i<sizeof($array); $i++) {
-//            echo $array[$i] . " - ";
-//        }
+        $array = $this->model_api->get_article_evolution_names(2);
+        for ($i=0; $i<sizeof($array); $i++) {
+            echo $array[$i] . " - ";
+        }
         //echo $this->model_api->process_article("1778", "1976_7_17", $resposta);
         //echo $this->model_api->process_article("1779", "1975_5_27", $resposta);
         //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1976_7_17", "IV", "II", "XI", "II", "II");

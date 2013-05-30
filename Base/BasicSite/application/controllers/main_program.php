@@ -194,7 +194,27 @@ class main_program extends CI_Controller {
         echo $_GET['data'];
     }
     
-    public function criar_doc() {
-        echo "kj";
+    public function alteration() {
+        $this->load->helper('xml');
+        $this->load->helper('file');
+        $this->load->model("model_api");
+        $this->load->model("model_get");
+        $this->load->library('session');
+        $data["result"] = $this->model_get->getData("about");
+
+        $this->load->view("site_header");
+        if ($this->session->userdata('is_logged_in')) {
+            $data["logged_user"] = $this->session->userdata('nome');
+            $this->load->view("site_logged", $data);
+            $this->load->view("site_nav_logged");
+        } else {
+            $this->load->view("site_login");
+            $this->load->view("site_nav");
+        }
+        
+        $main_data['main'] = $this->model_api->get_full_article($_GET['artigo']);
+        
+        $this->load->view("content_alteration", $main_data);
+        $this->load->view("site_footer");
     }
 }

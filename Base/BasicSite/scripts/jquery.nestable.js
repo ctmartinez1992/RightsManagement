@@ -524,6 +524,7 @@ function add_item_article(li, options, name, message) {
                     '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
                     '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
                     '<button type="button" class="button_menu_item" onClick="">Partilhar</button>' +
+                    '<button type="button" class="button_menu_item" onClick="alteration(this)">Modificar</button>' +
                     '<button type="button" class="button_menu_item" onClick="show_evolution(this)">Ver Evolução</button></li>' +
                     '</ul></li></ul>' + name[1] + ':' + id_text[0] +
                     ' - <span style="font-weight: bold;" title="' + title_text[0] + '">' + truncated_name + '</span></div><ol class="dd-list">' + text + '</ol></li>');
@@ -533,6 +534,7 @@ function add_item_article(li, options, name, message) {
                     '<li><div class="circle"><a></a></div><ul class="sub_item_menu">' +
                     '<li><button type="button" class="button_menu_item" onClick="">Criar LaTeX</button>' +
                     '<button type="button" class="button_menu_item" onClick="">Partilhar</button>' +
+                    '<button type="button" class="button_menu_item" onClick="alteration(this)">Modificar</button>' +
                     '<button type="button" class="button_menu_item" onClick="show_evolution(this)">Ver Evolução</button></li>' +
                     '</ul></li></ul>' + name[1] + ':' + id_text[0] +
                     ' - ' + truncated_name + '</div><ol class="dd-list">' + text + '</ol></li>');

@@ -162,3 +162,152 @@ function show_document() {
     var split = window.location.pathname.split("/");
     window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/main_program/ver_document?nome=" + nome + "&data=" + data.replace("-", "_").replace("-", "_"));
 }
+
+function alteration(el) {
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var numero = $(el).parent().parent().parent().parent().parent().parent().attr('data-id');
+    var split = window.location.pathname.split("/");
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/main_program/alteration?artigo=" + numero);
+}
+
+function validate_alteration() {
+    var l_lines = $('#left_area').val().split('\n');
+    var r_lines = $('#right_area').val().split('\n');
+    
+    left_lines = [];
+    right_lines = [];
+    j=0;
+    for (i=0; i<l_lines.length; i++) {
+        l_string = new String(l_lines[i]);
+        if (l_string.length > 0 && l_string.trim().length != 0) {
+            left_lines[j] = l_lines[i];
+            j++;
+        }
+    }
+    j=0;
+    for (i=0; i<r_lines.length; i++) {
+        r_string = new String(r_lines[i]);
+        if (r_string.length > 0 && r_string.trim().length != 0) {
+            right_lines[j] = r_lines[i];
+            j++;
+        }
+    }
+    
+    left_count = 1;
+    right_count = 1;
+    for_size = (left_lines.length > right_lines.length) ? left_lines.length-1 : right_lines.length-1;
+    output = [];
+    
+    if (right_lines.length <= 1) {
+        output[0] = "revogado";
+    } else {
+        output[0] = right_lines[0];
+        if (left_lines.length <= 2) {
+            for (var i=1; i<right_lines.length; i++) {
+                left_string = new String(left_lines[i]);
+                right_string = new String(right_lines[i]);
+                alert(left_string + "   -   " + right_string);
+                if (typeof left_lines[i] === "undefined") {
+                    output[i] = right_string + "   verde";
+                } else if (left_string.trim() != right_string.trim()) {
+                    output[i] = right_string + "   amarelo";
+                } else {
+                    output[i] = "...";
+                }
+            }
+        } 
+    }
+    
+    for (var i=0; i<output.length; i++) {
+        alert(output[i]);
+    }
+}
+
+//function validate_alteration() {
+//    var left_lines = $('#left_area').val().split('\n');
+//    for(var i=0; i<left_lines.length; i++) {
+//        
+//    }
+//    var right_lines = $('#right_area').val().split('\n');
+//    for(var i=0; i<right_lines.length; i++) {
+//    }
+//    
+//    left_count = 1;
+//    right_count = 1;
+//    for_size = (left_lines.length > right_lines.length) ? left_lines.length-1 : right_lines.length-1;
+//    for_count = 0;
+//    output = [];
+//    
+//    if (right_lines.length <= 1) {
+//        output[0] = "revogado";
+//    } else {
+//        output[0] = right_lines[0];
+//        for (var i=1; i<for_size; i++) {
+//            left_string = new String(left_lines[left_count]);
+//            right_string = new String(right_lines[right_count]);
+//            
+//            if (typeof right_lines[right_count] === "undefined") {
+//                output[for_count] = left_lines[left_count] + " a vermelho";
+//                left_count++; right_count++; for_count++;
+//            } else if (typeof left_lines[left_count] === "undefined") {
+//                output[for_count] = right_lines[right_count] + " a verde";
+//                left_count++; right_count++; for_count++;
+//            } else {
+//                if (left_string.trim() == right_string.trim()) {
+//                    if (right_string.trim().match("/'/[0-9]*\./'/") == 0 && right_string.trim().match("/'/[a-z]*\./'/") == 0) {
+//                        output[for_count] = right_string.trim() + " ...";
+//                        left_count++; right_count++;
+//                    } else {
+//                        output[for_count] = right_string.trim().substring(0, 2) + " ...";
+//                        left_count++; right_count++;
+//                    }
+//                    for_count++;
+//                } else {
+////                    if (right_string.trim().match("/'/[0-9]*\./'/") == 0 && right_string.trim().match("/'/[a-z]*\./'/") == 0) {
+////                        if (right_string.trim().substring(0, 2) == left_string.trim().substring(0, 2)) {
+////                            output[for_count] = right_string.trim() + " a amarelo";
+////                            left_count++; right_count++;
+////                        } else {
+////                            output[for_count] = left_string.trim() + " a vermelho";
+////                            left_count++;
+////                        }
+////                        for_count++;
+//                    /*} else*/ if (right_string.trim().match("/'/[0-9]*\./'/") != 0) {
+//                        alert(parseInt(right_string.trim().substring(0, 1)));
+//                        alert(parseInt(left_string.trim().substring(0, 1)));
+//                        if (parseInt(right_string.trim().substring(0, 1)) > parseInt(left_string.trim().substring(0, 1))) {
+//                            output[for_count] = left_string.trim() + " a vermelho";
+//                            left_count++;
+//                        } else {
+//                            output[for_count] = right_string.trim() + " a amarelo";
+//                            right_count++;
+//                            left_count++;
+//                        }
+//                        for_count++;
+//                    } else if (right_string.trim().match("/'/[a-z]*\./'/") != 0) {
+//                        alert(right_string.trim().substring(0, 1));
+//                        alert(left_string.trim().substring(0, 1));
+//                        if (right_string.trim().substring(0, 1) > left_string.trim().substring(0, 1)) {
+//                            output[for_count] = left_string.trim() + " a vermelho";
+//                            left_count++;
+//                        } else {
+//                            output[for_count] = right_string.trim() + " a amarelo";
+//                            right_count++;
+//                            left_count++;
+//                        }
+//                        for_count++;
+//                    } else {
+//                        alert("jh");
+//                        output[for_count] = right_string.trim() + " a amarelo";
+//                        left_count++; right_count++;
+//                        for_count++;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    
+//    for (var i=0; i<for_count; i++) {
+//        alert(output[i]);
+//    }
+//}

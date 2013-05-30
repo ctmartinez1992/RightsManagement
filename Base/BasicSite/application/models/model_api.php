@@ -5,6 +5,120 @@ class Model_api extends CI_Model {
     //**********************************************  Gets  **********************************************
 
     /*
+     * Parameters: $name (the name of the article)
+     * Returns: Array with an organized content of the article
+     */
+    public function get_full_article($name) {
+        $resposta = array();
+        $docs = $this->get_all_doc_names_array();
+        $doc = $docs[sizeof($docs)-1];
+        $new_old_docs = $this->get_last_doc_given_article($name, $doc);
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[0] . '/' . $new_old_docs[0] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+        if ($new_old_docs[1] != null) {
+            $array_old = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[1] . '/' . $new_old_docs[1] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+        }
+        
+        $n_array = array();
+        $n_array_old = array();
+        $j=0;
+        for ($i=0; $i<sizeof($array); $i++) {
+            if (strlen((string) $array[$i]) > 0 && strlen(trim((string) $array[$i])) != 0) {
+                $n_array[$j] = $array[$i];
+                $j++;
+            }
+        }
+        
+        $j=0;
+        if ($new_old_docs[1] != null) {
+            for ($i=0; $i<sizeof($array_old); $i++) {
+                if (strlen((string) $array_old[$i]) > 0 && strlen(trim((string) $array_old[$i])) != 0) {
+                    $n_array_old[$j] = $array_old[$i];
+                    $j++;
+                }
+            }
+        }
+        
+        if (sizeof($n_array) <= 2) {
+            $resposta[0] = $n_array[0];
+            $resposta[1] = $n_array[1];
+        } else {
+            for ($i=0; $i<sizeof($n_array); $i++) {
+                $splited = explode("...", $n_array[$i]);
+                if (sizeof($splited) >= 2) {
+                    if (strlen(trim($splited[0])) < 8) {
+                        $resposta[$i] = $n_array_old[$i];
+                    }
+                } else {
+                    $resposta[$i] = $n_array[$i];
+                }
+            }
+        }
+        
+        $sub_count = 1;
+        $item_count = 1;
+        $return[0] = $resposta[0];
+        for ($i=1; $i<sizeof($resposta); $i++) {
+            $return[1] = $resposta[1];
+            $sub_resposta = substr($resposta[$i], 0, 2);
+            if (preg_match('/[0-9]*\./', $sub_resposta)) {
+                $return[$item_count][0] = $resposta[$i];
+                $sub_count = 1;
+                $item_count++;
+            }
+            if (preg_match('/[a-z]*\)/', $sub_resposta)) {
+                $return[$item_count-1][$sub_count] = $resposta[$i];
+                $sub_count++;
+            }
+        }
+        
+        return $return;
+    }
+    
+    public function get_last_doc_given_article($artigo, $doc) {
+        $docs_hierarchy = $this->get_article_evolution_names((string) $artigo);
+        $doc_match = false;
+        $doc_res_2 = null;
+        for ($i = 0; $i < sizeof($docs_hierarchy); $i++) {
+            if ((string) $artigo == (string) $docs_hierarchy[$i]) {
+                $doc_match = true;
+            }
+        }
+
+        if ($doc_match == false) {
+            $doc_res = $docs_hierarchy[sizeof($docs_hierarchy) - 1];
+            if (sizeof($docs_hierarchy) - 2 >= 0) {
+                $doc_res_2 = $docs_hierarchy[sizeof($docs_hierarchy) - 2];
+            }
+            
+            for ($i = sizeof($docs_hierarchy) - 1; $i >= 0; $i--) {
+                $doc1 = str_replace("_", "-", $docs_hierarchy[$i]);
+                $doc2 = str_replace("_", "-", $doc);
+                $doc_user = strtotime($doc2);
+                $doc_list = strtotime($doc1);
+
+                if ($doc_list > $doc_user) {
+                    if ($i - 1 >= 0) {
+                        $doc_res = $docs_hierarchy[$i - 1];
+                        if ($i - 2 >= 0) {
+                            $doc_res_2 = $docs_hierarchy[$i - 2];
+                        }
+                        continue;
+                    } else if ($i - 1 == 0) {
+                        $doc_res = $docs_hierarchy[0];
+                        continue;
+                    }
+                } else {
+                    $valid = "no";
+                }
+            }
+        }
+        $doc_2[0] = $doc_res;
+        $doc_2[1] = $doc_res_2;
+        
+        return $doc_2;
+    }
+
+    /*
      * Parameters: $name (the name must be in the form of: "docdate/docdate_articlename.txt")
      * Returns: Array with each line of the txt in a diferent index, ranging from 0 to (number of lines-1)
      */
