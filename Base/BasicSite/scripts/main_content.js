@@ -196,26 +196,198 @@ function validate_alteration() {
     left_count = 1;
     right_count = 1;
     for_size = (left_lines.length > right_lines.length) ? left_lines.length-1 : right_lines.length-1;
+    left_ids = [[]];
+    right_ids = [[]];
     output = [];
-    
+    letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        
+    // Se não tem nada é porque pretendeme revogá-lo
     if (right_lines.length <= 1) {
         output[0] = "revogado";
     } else {
         output[0] = right_lines[0];
+        //Se só tem 2 linhas no lado esquerdo, podemos facilmente calcular uma vez que só pode haver alteração e/ou aditamentos
         if (left_lines.length <= 2) {
             for (var i=1; i<right_lines.length; i++) {
                 left_string = new String(left_lines[i]);
                 right_string = new String(right_lines[i]);
-                alert(left_string + "   -   " + right_string);
                 if (typeof left_lines[i] === "undefined") {
-                    output[i] = right_string + "   verde";
+                    output[i] = right_string + "$verde";
                 } else if (left_string.trim() != right_string.trim()) {
-                    output[i] = right_string + "   amarelo";
+                    output[i] = right_string + "$amarelo";
                 } else {
                     output[i] = "...";
                 }
             }
-        } 
+        // Se tem mais do que 2 linhas então vamos percorrer o que tiver mais linhas e comparar diferenças
+        } else {
+            ns = 0;
+            ls = 1;
+            for (i=1; i<left_lines.length; i++) {
+                left_string = new String(left_lines[i]);
+                left_id = left_string.substr(0, 1);
+                if (!isNaN(left_id)) {
+                    left_ids[ns] = [];
+                    left_ids[ns][0] = left_id;
+                    ns++; ls=1;
+                } else {
+                    left_ids[ns-1][ls] = left_id;
+                    ls++;
+                }
+            }
+            
+            ns = 0;
+            ls = 1;
+            for (i=1; i<right_lines.length; i++) {
+                right_string = new String(right_lines[i]);
+                right_id = right_string.substr(0, 1);
+                if (!isNaN(right_id)) {
+                    right_ids[ns] = [];
+                    right_ids[ns][0] = right_id;
+                    ns++; ls=1;
+                } else {
+                    right_ids[ns-1][ls] = right_id;
+                    ls++;
+                }
+            }
+            
+//            for (i=0; i<left_ids.length; i++) {
+//                for (j=0; j<left_ids[i].length; j++) {
+//                    alert(left_ids[i][j]);
+//                }
+//            }
+//            
+//            for (i=0; i<right_ids.length; i++) {
+//                for (j=0; j<right_ids[i].length; j++) {
+//                    alert(right_ids[i][j]);
+//                }
+//            }
+            
+            outc = 0;
+            lcount = 0; lcount2 = 0; la = 1;
+            rcount = 0; rcount2 = 0; ra = 1;
+            if (left_ids.length >= right_ids.length) {
+                // Percorrer ids
+                for (var i=0; i<left_ids.length; i++) {
+                    // Se já não há mais na coluna da direita, quer dizer que removido o último em que ficou
+                    if (typeof right_ids[rcount] === "undefined") {
+                        output[outc] = left_lines[la] + "$vermelho";
+                        outc++;
+                        ra++;
+                        la++;
+                    } else { 
+                        if (left_ids[lcount].length >= right_ids[rcount].length) {
+                            //Percorrer sub ids
+                            //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                            for (var j=0; j<left_ids[lcount].length; j++) {
+                                //alert("j:" + j);
+                                //alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
+                                //alert(left_lines[la] + " - " + right_lines[ra]);
+                                //compara os ids
+                                if(left_ids[lcount][lcount2] == right_ids[rcount][rcount2]) {
+                                    //compara os conteudos
+                                    if (left_lines[la] == right_lines[ra]) {
+                                        //alert(right_lines[ra].substr(0, 2) + " ...");
+                                        output[outc] = right_lines[ra].substr(0, 2) + " ...";
+                                    } else {
+                                        //alert(right_lines[ra] + "$amarelo");
+                                        output[outc] = right_lines[ra] + "$amarelo";
+                                    }
+                                } else {
+                                    if (!searchArray(right_ids[rcount], left_ids[lcount][lcount2])) {
+                                        //alert(left_lines[la] + "$vermelho");
+                                        output[outc] = left_lines[la] + "$vermelho";
+                                        ra--;
+                                        rcount2--;
+                                    } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
+                                        //alert(right_lines[ra] + "$verde");
+                                        output[outc] = right_lines[ra] + "$verde";
+                                        la--;
+                                        lcount2--;
+                                    }
+                                }
+
+                                outc++;
+                                lcount2++; rcount2++; la++; ra++;
+                            }
+                        } else {
+                            if (left_ids[lcount]. length == "1") {
+                                if (!searchArray(left_ids[lcount][0], right_ids[rcount])) {
+                                    //alert(left_lines[la] + "$vermelho");
+                                    output[outc] = left_lines[la] + "$vermelho";
+                                    la++;
+                                    rcount--;
+                                    outc++;
+                                }
+                            } else {
+                                //Percorrer sub ids
+                                //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                for (var j=0; j<right_ids[rcount].length; j++) {
+                                    //alert("j:" + j);
+                                    //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                    //alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
+                                    //alert(left_lines[la] + " - " + right_lines[ra]);
+                                    //compara os ids
+                                    if(left_ids[lcount][lcount2] == right_ids[rcount][rcount2]) {
+                                        //compara os conteudos
+                                        if (left_lines[la] == right_lines[ra]) {
+                                            //alert(right_lines[ra].substr(0, 2) + " ...");
+                                            output[outc] = right_lines[ra].substr(0, 2) + " ...";
+                                        } else {
+                                            //alert(right_lines[ra] + "$amarelo");
+                                            output[outc] = right_lines[ra] + "$amarelo";
+                                        }
+                                    } else {
+                                        if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
+                                            //alert(right_lines[ra] + "$verde");
+                                            output[outc] = right_lines[ra] + "$verde";
+                                            la++;
+                                            rcount--;
+                                            break;
+                                        } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
+                                            //alert(right_lines[ra] + "$verde");
+                                            output[outc] = right_lines[ra] + "$verde";
+                                            la--;
+                                        }
+                                    }
+
+                                    outc++;
+                                    lcount2++; rcount2++; la++; ra++;
+                                }
+                            }
+                        }
+                    
+                        lcount++; rcount++; lcount2=0; rcount2=0;
+                    }
+                }
+            }
+            
+            
+//            length = (left_lines.length > right_lines.length) ? left_lines.length : right_lines.length;
+//            for (var i=1; i<length; i++) {
+//                left_string = new String(left_lines[i]);
+//                right_string = new String(right_lines[i]);
+//                left_id = left_string.substr(0, 1);
+//                right_id = right_string.substr(0, 1);
+//                // Se são os mesmos, então vamos ver se foram alterados ou não (apenas isso)
+//                if (left_id === right_id) {
+//                    if (left_string.trim() == right_string.trim()) {
+//                        // Nas redações mais recentes já não é um id seguido de um ponto mas sim um id seguido de um espaço e um traço
+//                        if (left_string.substr(1, 2) === ".") {
+//                            output[i] = left_string.substr(0, 2) + " ...";
+//                        } else {
+//                            output[i] = left_string.substr(0, 3) + " ...";
+//                        }
+//                    } else {
+//                        output[i] = right_string + "$amarelo";
+//                    }
+//                // Se são diferentes, quer dizer que algo foi apagado ou adicionado algures
+//                } else {
+//                    
+//                }
+//            }
+        }
     }
     
     for (var i=0; i<output.length; i++) {
@@ -311,3 +483,18 @@ function validate_alteration() {
 //        alert(output[i]);
 //    }
 //}
+
+function searchArray(ArrayObj, SearchFor) {
+    var Found = false;
+    for (var i = 0; i < ArrayObj.length; i++) {
+        if (ArrayObj[i] == SearchFor){
+            return true;
+            var Found = true;
+            break;
+        } else if ((i == (ArrayObj.length - 1)) && (!Found)) {
+            if (ArrayObj[i] != SearchFor) {
+                return false;
+            }
+        }
+    }
+}

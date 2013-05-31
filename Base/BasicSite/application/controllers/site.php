@@ -26,13 +26,13 @@ class Site extends CI_Controller {
         $this->load->view("content_home", $data);
         $this->load->view("site_footer");
         
-//        $array = $this->model_api->get_article_evolution_names("1778");
+//        $array = $this->model_api->get_article_evolution_names("158");
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " - ";
 //        }
 //        
 //        
-        $array = $this->model_api->get_full_article("2");
+        $array = $this->model_api->get_full_article("158");
         for ($i=0; $i<sizeof($array); $i++) {
             if (is_array($array[$i])) {
                 for ($j=0; $j<sizeof($array[$i]); $j++) {
@@ -44,7 +44,7 @@ class Site extends CI_Controller {
         }
 //        
 //        
-//        $array = $this->model_api->get_last_doc_given_article("52", "2013_3_5");
+//        $array = $this->model_api->get_last_doc_given_article("158", "2013_3_5");
 //        for ($i=0; $i<sizeof($array); $i++) {
 //            echo $array[$i] . " <br> ";
 //        }
@@ -57,10 +57,10 @@ class Site extends CI_Controller {
 //        } else {
 //            echo "kjskjskj";
 //        }
-        $array = $this->model_api->get_article_evolution_names(2);
-        for ($i=0; $i<sizeof($array); $i++) {
-            echo $array[$i] . " - ";
-        }
+//        $array = $this->model_api->get_article_evolution_names(2);
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            echo $array[$i] . " - ";
+//        }
         //echo $this->model_api->process_article("1778", "1976_7_17", $resposta);
         //echo $this->model_api->process_article("1779", "1975_5_27", $resposta);
         //echo $this->model_api->get_hierarchy_artigo_name_given_previous_and_subseccao_no_subtitulo("1976_7_17", "IV", "II", "XI", "II", "II");

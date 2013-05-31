@@ -45,7 +45,7 @@ class Model_api extends CI_Model {
             for ($i=0; $i<sizeof($n_array); $i++) {
                 $splited = explode("...", $n_array[$i]);
                 if (sizeof($splited) >= 2) {
-                    if (strlen(trim($splited[0])) < 8) {
+                    if (strlen(trim($splited[0])) < 10) {
                         $resposta[$i] = $n_array_old[$i];
                     }
                 } else {
@@ -53,21 +53,21 @@ class Model_api extends CI_Model {
                 }
             }
         }
-        
+                
         $sub_count = 1;
         $item_count = 1;
         $return[0] = $resposta[0];
         for ($i=1; $i<sizeof($resposta); $i++) {
-            $return[1] = $resposta[1];
-            $sub_resposta = substr($resposta[$i], 0, 2);
-            if (preg_match('/[0-9]*\./', $sub_resposta)) {
+            $sub_resposta = substr($resposta[$i], 0, 3);
+            if (preg_match('/[0-9]*\. /', $sub_resposta) || preg_match('/[0-9]* -/', $sub_resposta)) {
                 $return[$item_count][0] = $resposta[$i];
                 $sub_count = 1;
                 $item_count++;
-            }
-            if (preg_match('/[a-z]*\)/', $sub_resposta)) {
+            } else if (preg_match('/[a-z]*\) /', $sub_resposta) || preg_match('/[a-z]* -/', $sub_resposta)) {
                 $return[$item_count-1][$sub_count] = $resposta[$i];
                 $sub_count++;
+            } else {
+                $return[$i] = $resposta[$i];
             }
         }
         
