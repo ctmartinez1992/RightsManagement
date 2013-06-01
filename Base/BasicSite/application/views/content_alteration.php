@@ -1,6 +1,7 @@
 <div id="main_content">
     <section id="main_area">
         <article>
+            <?php if ($main[0][0] == "revogado") { echo "O documento <b>" . $main[0][2] . "</b> da data <b>" . $main[0][1] . "</b> foi revogado integralmente.";} ?>
             <div id="compare_area">
                 <table id="alteration_table">
                     <tr>
@@ -9,7 +10,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <textarea name="left_area" id="left_area" class="alteration_area" cols="30" rows="15" disabled><?php
+                            <div class="same_scroll_area">
+                                <?php if ($main[0][0] == "revogado") { ?>
+                                <textarea name="right_area" id="right_area" class="alteration_area" cols="30" rows="15" disabled><?php echo $main[0][0]; ?></textarea><?php } else { ?>
+                                <textarea name="left_area" id="left_area" class="alteration_area" cols="30" rows="15" disabled><?php
                                     for ($i=0; $i<sizeof($main); $i++) {
                                         if (is_array($main[$i])) {
                                             for ($j=0; $j<sizeof($main[$i]); $j++) {
@@ -19,10 +23,14 @@
                                             echo trim($main[$i], " ");
                                         }
                                     }
-                                ?></textarea>
+                                ?></textarea><?php } ?>
+                            </div>
                         </td>
                         <td>
-                            <textarea name="right_area" id="right_area" class="alteration_area" cols="30" rows="15"><?php
+                            <div class="same_scroll_area">
+                                <?php if ($main[0][0] == "revogado") { ?>
+                                <textarea name="right_area" id="right_area" class="alteration_area" cols="30" rows="15" disabled><?php echo $main[0][0]; ?></textarea><?php } else { ?>
+                                <textarea name="right_area" id="right_area" class="alteration_area" cols="30" rows="15"><?php
                                     for ($i=0; $i<sizeof($main); $i++) {
                                         if (is_array($main[$i])) {
                                             for ($j=0; $j<sizeof($main[$i]); $j++) {
@@ -32,7 +40,8 @@
                                             echo trim($main[$i], " ");
                                         }
                                     }
-                                ?></textarea>
+                                ?></textarea><?php } ?>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -42,6 +51,13 @@
                     </tr>
                 </table>
             </div>
+            <script>
+            $(function(){
+                $('.same_scroll_area').scroll(function(){
+                    $('.same_scroll_area').scrollTop($(this).scrollTop());    
+                });
+            });
+            </script>
         </article>
     </section>
     

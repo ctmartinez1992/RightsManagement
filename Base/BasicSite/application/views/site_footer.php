@@ -109,6 +109,14 @@
                                         <li><a href="#">Private Messenger</a></li>
                                         <li><a href="#">Text Editor</a></li>
                                 </ul>
+                        </li>
+                        
+                        <li>
+                                <a href="#">Funções de Admin</a>
+                                <ul class="dropup">
+                                        <li><a href="<?php echo base_url(); ?>/backend/main_alteration">Alterações</a></li>
+                                        <li><a href="#">Group Chat</a></li>
+                                </ul>
                         </li>                   
  
                         <li class="right"><a href="<?php echo base_url() . "site/logout"; ?>" class="drop">Log Out</a>

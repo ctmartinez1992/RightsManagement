@@ -7,4 +7,9 @@ class Model_get extends CI_Model {
         return $query->result();
     }
 
+    function getUndoneDocs() {
+        $query = $this->db->query('SELECT nome,data FROM temp_docs WHERE estado="0"');
+        return $query->result();
+    }
+
 }

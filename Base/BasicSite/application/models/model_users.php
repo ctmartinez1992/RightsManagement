@@ -89,4 +89,9 @@ class Model_users extends CI_Model {
         $query = $this->db->query('SELECT id FROM users WHERE email="'.$email.'"');
         return $query->row();
     }
+    
+    public function get_tipo_given_email($email) {
+        $query = $this->db->query('SELECT tipo FROM users WHERE email="'.$email.'"');
+        return $query->row();
+    }
 }

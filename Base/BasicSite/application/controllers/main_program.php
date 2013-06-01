@@ -131,14 +131,16 @@ class main_program extends CI_Controller {
         $this->load->helper('file');
         $this->load->model("model_api");
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $this->load->library('session');
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -164,14 +166,16 @@ class main_program extends CI_Controller {
         $this->load->helper('file');
         $this->load->model("model_api");
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $this->load->library('session');
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -199,14 +203,16 @@ class main_program extends CI_Controller {
         $this->load->helper('file');
         $this->load->model("model_api");
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $this->load->library('session');
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");

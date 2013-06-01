@@ -9,65 +9,74 @@ class Model_api extends CI_Model {
      * Returns: Array with an organized content of the article
      */
     public function get_full_article($name) {
-        $resposta = array();
-        $docs = $this->get_all_doc_names_array();
-        $doc = $docs[sizeof($docs)-1];
-        $new_old_docs = $this->get_last_doc_given_article($name, $doc);
-        $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[0] . '/' . $new_old_docs[0] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
-        if ($new_old_docs[1] != null) {
-            $array_old = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[1] . '/' . $new_old_docs[1] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
-        }
-        
-        $n_array = array();
-        $n_array_old = array();
-        $j=0;
-        for ($i=0; $i<sizeof($array); $i++) {
-            if (strlen((string) $array[$i]) > 0 && strlen(trim((string) $array[$i])) != 0) {
-                $n_array[$j] = $array[$i];
-                $j++;
+        $revogado = array();
+        $doc_revoga = $this->was_article_revoked($name);
+        if ($doc_revoga != "") {
+            $revogado[0][0] = "revogado";
+            $revogado[0][1] = $doc_revoga;
+            $revogado[0][2] = $this->get_doc_name($doc_revoga);
+            return $revogado;
+        } else {
+            $resposta = array();
+            $docs = $this->get_all_doc_names_array();
+            $doc = $docs[sizeof($docs)-1];
+            $new_old_docs = $this->get_last_doc_given_article($name, $doc);
+            $array = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[0] . '/' . $new_old_docs[0] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+            if ($new_old_docs[1] != null) {
+                $array_old = file('C:/wamp/www/BasicSite/codigo_civil/' . $new_old_docs[1] . '/' . $new_old_docs[1] . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
             }
-        }
-        
-        $j=0;
-        if ($new_old_docs[1] != null) {
-            for ($i=0; $i<sizeof($array_old); $i++) {
-                if (strlen((string) $array_old[$i]) > 0 && strlen(trim((string) $array_old[$i])) != 0) {
-                    $n_array_old[$j] = $array_old[$i];
+
+            $n_array = array();
+            $n_array_old = array();
+            $j=0;
+            for ($i=0; $i<sizeof($array); $i++) {
+                if (strlen((string) $array[$i]) > 0 && strlen(trim((string) $array[$i])) != 0) {
+                    $n_array[$j] = $array[$i];
                     $j++;
                 }
             }
-        }
-        
-        if (sizeof($n_array) <= 2) {
-            $resposta[0] = $n_array[0];
-            $resposta[1] = $n_array[1];
-        } else {
-            for ($i=0; $i<sizeof($n_array); $i++) {
-                $splited = explode("...", $n_array[$i]);
-                if (sizeof($splited) >= 2) {
-                    if (strlen(trim($splited[0])) < 10) {
-                        $resposta[$i] = $n_array_old[$i];
+
+            $j=0;
+            if ($new_old_docs[1] != null) {
+                for ($i=0; $i<sizeof($array_old); $i++) {
+                    if (strlen((string) $array_old[$i]) > 0 && strlen(trim((string) $array_old[$i])) != 0) {
+                        $n_array_old[$j] = $array_old[$i];
+                        $j++;
                     }
-                } else {
-                    $resposta[$i] = $n_array[$i];
                 }
             }
-        }
-                
-        $sub_count = 1;
-        $item_count = 1;
-        $return[0] = $resposta[0];
-        for ($i=1; $i<sizeof($resposta); $i++) {
-            $sub_resposta = substr($resposta[$i], 0, 3);
-            if (preg_match('/[0-9]*\. /', $sub_resposta) || preg_match('/[0-9]* -/', $sub_resposta)) {
-                $return[$item_count][0] = $resposta[$i];
-                $sub_count = 1;
-                $item_count++;
-            } else if (preg_match('/[a-z]*\) /', $sub_resposta) || preg_match('/[a-z]* -/', $sub_resposta)) {
-                $return[$item_count-1][$sub_count] = $resposta[$i];
-                $sub_count++;
+
+            if (sizeof($n_array) <= 2) {
+                $resposta[0] = $n_array[0];
+                $resposta[1] = $n_array[1];
             } else {
-                $return[$i] = $resposta[$i];
+                for ($i=0; $i<sizeof($n_array); $i++) {
+                    $splited = explode("...", $n_array[$i]);
+                    if (sizeof($splited) >= 2) {
+                        if (strlen(trim($splited[0])) < 10) {
+                            $resposta[$i] = $n_array_old[$i];
+                        }
+                    } else {
+                        $resposta[$i] = $n_array[$i];
+                    }
+                }
+            }
+
+            $sub_count = 1;
+            $item_count = 1;
+            $return[0] = $resposta[0];
+            for ($i=1; $i<sizeof($resposta); $i++) {
+                $sub_resposta = substr($resposta[$i], 0, 3);
+                if (preg_match('/[0-9]*\. /', $sub_resposta) || preg_match('/[0-9]* -/', $sub_resposta)) {
+                    $return[$item_count][0] = $resposta[$i];
+                    $sub_count = 1;
+                    $item_count++;
+                } else if (preg_match('/[a-z]*\) /', $sub_resposta) || preg_match('/[a-z]* -/', $sub_resposta)) {
+                    $return[$item_count-1][$sub_count] = $resposta[$i];
+                    $sub_count++;
+                } else {
+                    $return[$i] = $resposta[$i];
+                }
             }
         }
         
@@ -205,6 +214,23 @@ class Model_api extends CI_Model {
 
     /*
      * Parameters: $name (the article number)
+     * Returns: Array with the names of the doc in which the article altered/added/revoked
+     */
+    public function get_article_revoked_names($name) {
+        $number_docs = $this->get_all_doc_count();
+        $docs = $this->get_all_doc_names();
+        for ($i = 1; $i <= $number_docs; $i++) {
+            if ($docs->doc[$i] != null) {
+                if ($this->was_article_revoked_in_given_doc($name, $docs->doc[$i]) == 1) {
+                    return $docs->doc[$i];
+                }
+            }
+        }
+        return "";
+    }
+
+    /*
+     * Parameters: $name (the article number)
      * Returns: Array with the title evolution ([x][y] - x=doc's date; y=article title)
      */
     public function get_article_evolution_title($name) {
@@ -239,7 +265,14 @@ class Model_api extends CI_Model {
             if ($docs->doc[$i] != null) {
                 if ($this->does_article_exist_in_given_doc($name, $docs->doc[$i]) == 1) {
                     $evolution[$count][0] = $docs->doc[$i];
-                    $evolution[$count][1] = $this->get_article_given_doc($name, $docs->doc[$i]);
+                    $content = $this->was_article_revoked($name);
+                    if (strcmp($content, $docs->doc[$i]) == 0) {
+                        $evolution[$count][1][0] = "revogado";
+                        $evolution[$count][1][1] = $content;
+                        $evolution[$count][1][2] = $this->get_doc_name($content);
+                    } else {
+                        $evolution[$count][1] = $this->get_article_given_doc($name, $docs->doc[$i]);
+                    }
                     $count++;
                 }
             }
@@ -2550,6 +2583,18 @@ class Model_api extends CI_Model {
             }
         }
         return false;
+    }
+
+    /*
+     * Parameters: $article (the number of the article)
+     * Returns: true if it exists and it was revoked, false if it doesn't exist/was revoked
+     */
+    public function was_article_revoked($article) {
+        $content = $this->get_article_revoked_names($article);
+        if ($content != "") {
+            return $content;
+        }
+        return "";
     }
 
     /*

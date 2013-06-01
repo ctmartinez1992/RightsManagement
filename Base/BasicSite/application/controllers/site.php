@@ -11,14 +11,16 @@ class Site extends CI_Controller {
 
     public function home() {
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $this->load->model("model_api");
         $data["result"] = $this->model_get->getData("home");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -32,16 +34,16 @@ class Site extends CI_Controller {
 //        }
 //        
 //        
-        $array = $this->model_api->get_full_article("158");
-        for ($i=0; $i<sizeof($array); $i++) {
-            if (is_array($array[$i])) {
-                for ($j=0; $j<sizeof($array[$i]); $j++) {
-                    echo $array[$i][$j] . "<br>";
-                }
-            } else {
-                echo $array[$i] . "<br>";
-            }
-        }
+//        $array = $this->model_api->get_full_article("158");
+//        for ($i=0; $i<sizeof($array); $i++) {
+//            if (is_array($array[$i])) {
+//                for ($j=0; $j<sizeof($array[$i]); $j++) {
+//                    echo $array[$i][$j] . "<br>";
+//                }
+//            } else {
+//                echo $array[$i] . "<br>";
+//            }
+//        }
 //        
 //        
 //        $array = $this->model_api->get_last_doc_given_article("158", "2013_3_5");
@@ -78,17 +80,26 @@ class Site extends CI_Controller {
 //            }
 //            echo "<br><br><br>";
 //        }
+        
+        //echo $this->model_api->was_article_revoked("1");
+        
+//        $docs = $this->model_get->getUndoneDocs();
+//        foreach ($docs as $doc) {
+//            echo $doc->nome . '(' . $doc->data . ')';
+//        }
     }
 
     public function about() {
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -102,14 +113,16 @@ class Site extends CI_Controller {
         $this->load->helper('file');
         $this->load->model("model_api");
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $this->load->library('session');
         $data["result"] = $this->model_get->getData("about");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -140,11 +153,13 @@ class Site extends CI_Controller {
 
     public function contact_no() {
         $data["message"] = "";
+        $this->load->model("model_users");
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -155,11 +170,13 @@ class Site extends CI_Controller {
 
     public function contact($message) {
         $data["message"] = $message;
+        $this->load->model("model_users");
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -170,13 +187,14 @@ class Site extends CI_Controller {
 
     public function profile() {
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $data["result"] = $this->model_get->getData("home");
-
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -209,13 +227,15 @@ class Site extends CI_Controller {
 
     public function signup() {
         $this->load->model("model_get");
+        $this->load->model("model_users");
         $data["result"] = $this->model_get->getData("home");
 
         $this->load->view("site_header");
         if ($this->session->userdata('is_logged_in')) {
             $data["logged_user"] = $this->session->userdata('nome');
+            $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
             $this->load->view("site_logged", $data);
-            $this->load->view("site_nav_logged");
+            $this->load->view("site_nav_logged", $data);
         } else {
             $this->load->view("site_login");
             $this->load->view("site_nav");
@@ -261,13 +281,15 @@ class Site extends CI_Controller {
             }
             
             $this->load->model("model_get");
+            $this->load->model("model_users");
             $data["result"] = $this->model_get->getData("home");
 
             $this->load->view("site_header");
             if ($this->session->userdata('is_logged_in')) {
-                $data["logged_user"] = $this->session->userdata('email');
+                $data["logged_user"] = $this->session->userdata('nome');
+                $data["tipo"] = $this->model_users->get_tipo_given_email($this->session->userdata('email'));
                 $this->load->view("site_logged", $data);
-                $this->load->view("site_nav_logged");
+                $this->load->view("site_nav_logged", $data);
             } else {
                 $this->load->view("site_login");
                 $this->load->view("site_nav");
