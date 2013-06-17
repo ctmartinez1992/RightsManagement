@@ -364,7 +364,15 @@ table.macro_form td{
 }
 
 #mdd_article_alteration {
-    width: 400px;
+    width: 300px;
+}
+
+#mdd_article_addition {
+    width: 300px;
+}
+
+#mdd_article_revoke {
+    width: 300px;
 }
 
 .table_alteration {

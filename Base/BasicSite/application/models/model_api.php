@@ -1,6 +1,118 @@
 <?php
 
 class Model_api extends CI_Model {
+    
+    //**********************************************  Gets For Temporary Docs  **********************************************
+    public function get_all_articles_ever() {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/todos_artigos.xml');
+        $resp = array();
+        $i = 0;
+        foreach($array->artigo as $artigo) {
+            $resp[$i] = $artigo;
+            $i++;
+        }
+        
+        return $resp;
+    }
+    
+    public function get_article_given_temp_doc($name, $doc) {
+        $array = file('C:/wamp/www/BasicSite/codigo_civil/temp/' . $doc . '/' . $doc . '_' . $name . '.txt', FILE_SKIP_EMPTY_LINES);
+        $n_array = array();
+        $j=0;
+        for ($i=0; $i<sizeof($array); $i++) {
+            if (strlen((string) $array[$i]) > 0 && strlen(trim((string) $array[$i])) != 0) {
+                $n_array[$j] = $array[$i];
+                $j++;
+            }
+        }
+        return $n_array;
+    }
+    
+    public function get_temp_doc_only($doc) {
+        $resposta = array();
+        $resposta[0] = null;
+        $resposta[1] = null;
+        $resposta[2] = null;
+        
+        $count = 0;
+        $alts = $this->get_temp_doc_altered($doc);
+        if ($alts != null) {
+            foreach ($alts as $alt) {
+                $resposta[0][$count][0] = $alt;
+                $resposta[0][$count][1] = $this->get_article_given_temp_doc($alt, $doc);
+                $count++;
+            }
+        }
+        
+        $count = 0;
+        $adds = $this->get_temp_doc_added($doc);
+        if ($adds != null) {
+            foreach ($adds as $add) {
+                $resposta[1][$count][0] = $add;
+                $resposta[1][$count][1] = $this->get_article_given_temp_doc($add, $doc);
+                $count++;
+            }
+        }
+        
+        $count = 0;
+        $revs = $this->get_temp_doc_revoked($doc);
+        if ($revs != null) {
+            foreach ($revs as $rev) {
+                $resposta[2][$count] = $rev;
+                $count++;
+            }
+        }
+        
+        return $resposta;
+    }
+    
+    public function get_temp_doc_altered($name) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/temp/' . $name . "/" . $name . ".xml");
+        if (sizeof($array->altera) > 0) {
+            return $array->altera;
+        }
+        return null;
+    }
+
+    public function get_temp_doc_added($name) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/temp/' . $name . "/" . $name . ".xml");
+        if (sizeof($array->acrescenta) > 0) {
+            return $array->acrescenta;
+        }
+    }
+
+    public function get_temp_doc_revoked($name) {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/temp/' . $name . "/" . $name . ".xml");
+        if (sizeof($array->revoga) > 0) {
+            return $array->revoga;
+        }
+    }
+    
+    public function get_articles_given_temp_doc($doc) {
+        $array = $this->get_temp_doc_only($doc);
+        $resp = '';
+        for ($i=0; $i<sizeof($array[0]); $i++) {
+            $resp .= $array[0][$i][0] . " - " . trim($array[0][$i][1][0]) . '$';
+            if ($i == sizeof($array[0])-1) {
+                $resp = substr($resp, 0, -1);
+            }
+        }
+        $resp .= '=';
+        for ($i=0; $i<sizeof($array[1]); $i++) {
+            $resp .= $array[1][$i][0] . " - " . trim($array[1][$i][1][0]) . '$';
+            if ($i == sizeof($array[1])-1) {
+                $resp = substr($resp, 0, -1);
+            }
+        }        
+        $resp .= '=';
+        for ($i=0; $i<sizeof($array[2]); $i++) {
+            $resp .= $array[2][$i][0] . " - " . trim($array[2][$i][1][0]) . '$';
+            if ($i == sizeof($array[2])-1) {
+                $resp = substr($resp, 0, -1);
+            }
+        }
+        return $resp;
+    }
 
     //**********************************************  Gets  **********************************************
 

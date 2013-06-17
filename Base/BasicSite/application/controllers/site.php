@@ -11,6 +11,7 @@ class Site extends CI_Controller {
 
     public function home() {
         $this->load->model("model_get");
+        $this->load->model("model_put");
         $this->load->model("model_users");
         $this->load->model("model_api");
         $data["result"] = $this->model_get->getData("home");
@@ -86,6 +87,11 @@ class Site extends CI_Controller {
 //        $docs = $this->model_get->getUndoneDocs();
 //        foreach ($docs as $doc) {
 //            echo $doc->nome . '(' . $doc->data . ')';
+//        }
+//        echo $this->model_api->get_articles_given_temp_doc("2013_5_25");
+//        $a = $this->model_api->get_all_articles_ever("2013_5_25");
+//        for ($i=0; $i<sizeof($a); $i++) {
+//            echo $a[$i] . "<br>";
 //        }
     }
 

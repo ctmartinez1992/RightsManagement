@@ -1,6 +1,16 @@
 <div id="main_content">
     <section id="main_area">
         <article>
+            Escolha o artigo:
+            <select id="dd_choose_article" onchange="display_change_of_article();">
+                <?php
+                    echo '<option selected></option>';
+                    for ($i=0; $i<sizeof($artigos); $i++) {
+                        echo '<option>' . $docs[$i]->nome . ' (' . $docs[$i]->data . ')' . '</option>';
+                    }
+                ?>
+            </select>
+            
             <?php if ($main[0][0] == "revogado") { echo "O documento <b>" . $main[0][2] . "</b> da data <b>" . $main[0][1] . "</b> foi revogado integralmente.";} ?>
             <div id="compare_area">
                 <table id="alteration_table">
