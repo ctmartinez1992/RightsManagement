@@ -93,6 +93,8 @@ class Site extends CI_Controller {
 //        for ($i=0; $i<sizeof($a); $i++) {
 //            echo $a[$i] . "<br>";
 //        }
+        
+        $arr = $this->model_api->get_all_articles_ever();
     }
 
     public function about() {

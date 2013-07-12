@@ -4,9 +4,8 @@
             Escolha o artigo:
             <select id="dd_choose_article" onchange="display_change_of_article();">
                 <?php
-                    echo '<option selected></option>';
                     for ($i=0; $i<sizeof($artigos); $i++) {
-                        echo '<option>' . $docs[$i]->nome . ' (' . $docs[$i]->data . ')' . '</option>';
+                        echo '<option>' . $artigos[$i] . '</option>';
                     }
                 ?>
             </select>

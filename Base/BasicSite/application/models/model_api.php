@@ -58,7 +58,9 @@ class Model_api extends CI_Model {
         $revs = $this->get_temp_doc_revoked($doc);
         if ($revs != null) {
             foreach ($revs as $rev) {
-                $resposta[2][$count] = $rev;
+                $resposta[2][$count][0] = $rev;
+                $titulo = $this->get_full_article($rev);
+                $resposta[2][$count][1] = $titulo;
                 $count++;
             }
         }

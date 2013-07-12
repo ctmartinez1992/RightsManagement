@@ -21,6 +21,24 @@ class Model_get_backend_values extends CI_Controller {
         echo '</response>';
     }
     
+    public function get_full_article() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $artigo = (string)$_GET['artigo'];
+            $resposta = $this->model_api->get_full_article($artigo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                for ($i=0; $i<sizeof($resposta); $i++) {
+                    echo $resposta[$i] . "#";
+                }
+            }
+        echo '</response>';
+    }
+    
     public function put_doc_in_db() {
         $this->load->model("model_put");
         header('Content-Type: text/xml');

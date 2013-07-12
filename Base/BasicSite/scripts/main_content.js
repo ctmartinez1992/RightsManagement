@@ -242,37 +242,60 @@ function handleServerResponseGetArticles() {
             message = xmlDocumentElement.firstChild.data;
             
             splited = message.split("=");
+            alert(splited);
             alts = splited[0].split("$");
             adds = splited[1].split("$");
             revs = splited[2].split("$");
             
             if (alts.length >= 2) {
-                alert(alts);
+                for (i=0; i<alts.length; i++) {
+                    number = alts[i].split(" - ");
+                    $('#mdd_article_alteration').append($("<option/>", {
+                        value: number[0],
+                        text: alts[i]
+                    }));
+                }
             } else if (alts.length == 1) {
-                alert(splited[0]);
                 number = splited[0].split(" - ");
                 $('#mdd_article_alteration').append($("<option/>", {
                     value: number[0],
                     text: splited[0]
                 }));
             } else {
-                alert("vazio");
             }
             
             if (adds.length >= 2) {
-                alert(adds);
+                for (i=0; i<adds.length; i++) {
+                    number = adds[i].split(" - ");
+                    $('#mdd_article_addition').append($("<option/>", {
+                        value: number[0],
+                        text: adds[i]
+                    }));
+                }
             } else if (adds.length == 1) {
-                alert(splited[1]);
+                number = splited[1].split(" - ");
+                $('#mdd_article_addition').append($("<option/>", {
+                    value: number[0],
+                    text: splited[1]
+                }));
             } else {
-                alert("vazio");
             }
             
             if (revs.length >= 2) {
-                alert(revs);
+                for (i=0; i<revs.length; i++) {
+                    number = revs[i].split(" - ");
+                    $('#mdd_article_revoke').append($("<option/>", {
+                        value: number[0],
+                        text: revs[i]
+                    }));
+                }
             } else if (revs.length == 1) {
-                alert(splited[2]);
+                number = splited[2].split(" - ");
+                $('#mdd_article_revoke').append($("<option/>", {
+                    value: number[0],
+                    text: splited[2]
+                }));
             } else {
-                alert("vazio");
             }
         }
     }
@@ -313,6 +336,64 @@ function handleServerResponseSaveDoc() {
         }
     }
 }
+
+
+
+
+function add_article_alt() {
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    
+    var split = window.location.pathname.split("/");
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/add_doc_alt?doc=" + res + "&artigo=1");
+}
+
+function display_change_of_article() {
+    var artigo = document.getElementById('dd_choose_article').options[document.getElementById('dd_choose_article').selectedIndex].text;
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_backend_values/get_full_article?artigo=" + artigo, true);
+        xmlHttp.onreadystatechange = handleServerResponseDisplayChangeArticle;
+        xmlHttp.send(null);
+    } else {
+        setTimeout("display_change_of_article", 10000);
+    }
+}
+
+function handleServerResponseDisplayChangeArticle() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            if (message != "0") {
+                //Tou aqui a fazer quando muda o artigo na alteracao
+                var selectObj = document.getElementById('mdd_article_alteration');
+                var selectParentNode = selectObj.parentNode;
+                var newSelectObj = selectObj.cloneNode(false);
+                selectParentNode.replaceChild(newSelectObj, selectObj);
+                
+                splited = message.split("#");
+                nome = document.getElementById('new_doc_name').value;
+                nome2 = document.getElementById('new_doc_name').value.replace(/ /g, "").replace(/\//g, "");
+                data = document.getElementById('new_doc_data').value;
+                $('#dd_doc_alteration').append($("<option/>", {
+                    value: nome2,
+                    text: nome + " (" + data + ")"
+                }));
+                var $opt = $('option[value='+ nome2 +']'); 
+                $opt.attr('selected', 'selected');
+                document.getElementById('new_doc_name').value = "";
+                document.getElementById('new_doc_data').value = "";
+            }
+        }
+    }
+}
+
 
 
 
