@@ -115,11 +115,11 @@ function handleServerResponseDocRevoke() {
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
             
-            $('.alert').remove();
+            $('.//alert').remove();
             if (message != "0") {
                 docs = message.split("$");
                 if (docs.length >= 2) {
-                    $('#main_area').children().prepend('<p class="alert">Este documento for revogado integralmente pelo documento com a data ' + docs[1].replace("_", "-").replace("_", "-") + '</p>');
+                    $('#main_area').children().prepend('<p class="//alert">Este documento for revogado integralmente pelo documento com a data ' + docs[1].replace("_", "-").replace("_", "-") + '</p>');
                 }
             }
         }
@@ -173,7 +173,7 @@ function show_document() {
 }
 
 function blass() {
-    alert("#");
+    //alert("#");
 }
 
 function clearOptionsFast() {
@@ -217,6 +217,20 @@ function add_article_alt() {
     window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/add_doc_alt?doc=" + res + "&artigo=1");
 }
 
+function alt_article_alt() {    
+    var art = document.getElementById('mdd_article_alteration').value;
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    var split = window.location.pathname.split("/");
+    if (art.length > 0) {
+        window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/alt_doc_alt?doc=" + res + "&artigo=" + art);
+    }
+}
+
 function get_articles() {
     var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
     var filter = doc.split("(");
@@ -242,7 +256,7 @@ function handleServerResponseGetArticles() {
             message = xmlDocumentElement.firstChild.data;
             
             splited = message.split("=");
-            alert(splited);
+            //alert(splited);
             alts = splited[0].split("$");
             adds = splited[1].split("$");
             revs = splited[2].split("$");
@@ -371,24 +385,21 @@ function handleServerResponseDisplayChangeArticle() {
             xmlDocumentElement = xmlResponse.documentElement;
             message = xmlDocumentElement.firstChild.data;
             if (message != "0") {
-                //Tou aqui a fazer quando muda o artigo na alteracao
-                var selectObj = document.getElementById('mdd_article_alteration');
-                var selectParentNode = selectObj.parentNode;
-                var newSelectObj = selectObj.cloneNode(false);
-                selectParentNode.replaceChild(newSelectObj, selectObj);
+                document.getElementById("left_area").value = "";
+                document.getElementById("right_area").value = "";
                 
                 splited = message.split("#");
-                nome = document.getElementById('new_doc_name').value;
-                nome2 = document.getElementById('new_doc_name').value.replace(/ /g, "").replace(/\//g, "");
-                data = document.getElementById('new_doc_data').value;
-                $('#dd_doc_alteration').append($("<option/>", {
-                    value: nome2,
-                    text: nome + " (" + data + ")"
-                }));
-                var $opt = $('option[value='+ nome2 +']'); 
-                $opt.attr('selected', 'selected');
-                document.getElementById('new_doc_name').value = "";
-                document.getElementById('new_doc_data').value = "";
+                
+                for (i=0; i<splited.length;i++) {
+                    document.getElementById("left_area").value += splited[i];
+                    document.getElementById("right_area").value += splited[i];
+                    if (splited[0] == "revogado") {
+                        document.getElementById("alteration_submit").disabled = true;
+                        return;
+                    } else {
+                        document.getElementById("alteration_submit").disabled = false;
+                    }
+                }
             }
         }
     }
@@ -489,9 +500,9 @@ function validate_alteration() {
             
             for (i=0; i<right_ids.length; i++) {
                 for (j=0; j<right_ids[i].length; j++) {
-                    //alert(right_ids[i][j] + " - ");
+                    ////alert(right_ids[i][j] + " - ");
                 }
-                //alert(" . ");
+                ////alert(" . ");
             }
             
             outc = 1;
@@ -529,11 +540,13 @@ function validate_alteration() {
                                         //alert(left_lines[la] + "$vermelho");
                                         output[outc] = left_lines[la] + "$vermelho";
                                         ra--;
+                                        if (right_ids[rcount].length <= 1) rcount--; 
                                         rcount2--;
                                     } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
                                         //alert(right_lines[ra] + "$verde");
                                         output[outc] = right_lines[ra] + "$verde";
                                         la--;
+                                        if (left_ids[lcount].length <= 1) lcount--; 
                                         lcount2--;
                                     }
                                 }
@@ -543,36 +556,36 @@ function validate_alteration() {
                             }
                         } else {
                             if (left_ids[lcount].length == "1" && !searchArray(right_ids[rcount], left_ids[lcount][0])) {
-                                //alert(left_lines[la] + "$vermelho");
+                                ////alert(left_lines[la] + "$vermelho");
                                 output[outc] = left_lines[la] + "$vermelho";
                                 la++;
                                 rcount--;
                                 outc++;
                             } else {
-                                //alert("jhjkhkjhkhjk");
+                                ////alert("jhjkhkjhkhjk");
                                 //Percorrer sub ids
-                                //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                ////alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
                                 for (var j=0; j<right_ids[rcount].length; j++) {
-                                    //alert("j:" + j);
-                                    //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
-                                    //alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
-                                    //alert(left_lines[la] + " - " + right_lines[ra]);
+                                    ////alert("j:" + j);
+                                    ////alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                    ////alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
+                                    ////alert(left_lines[la] + " - " + right_lines[ra]);
                                     //compara os ids
                                     if(left_ids[lcount][lcount2] == right_ids[rcount][rcount2]) {
                                         //compara os conteudos
                                         if (left_lines[la] == right_lines[ra]) {
-                                            //alert(right_lines[ra].substr(0, 2) + " ...");
+                                            ////alert(right_lines[ra].substr(0, 2) + " ...");
                                             output[outc] = right_lines[ra].substr(0, 2) + " ...";
                                         } else {
-                                            //alert(right_lines[ra] + "$amarelo");
+                                            ////alert(right_lines[ra] + "$amarelo");
                                             output[outc] = right_lines[ra] + "$amarelo";
                                         }
                                     } else {
                                         if (!searchArray(right_ids[rcount], left_ids[lcount][lcount2])) {
-                                            //alert(right_lines[ra] + "$verde");
+                                            ////alert(right_lines[ra] + "$verde");
                                             output[outc] = right_lines[ra] + "$verde";
                                         } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
-                                            //alert(right_lines[ra] + "$verde");
+                                            ////alert(right_lines[ra] + "$verde");
                                             output[outc] = right_lines[ra] + "$verde";
                                             la++;
                                             rcount--;
@@ -602,29 +615,29 @@ function validate_alteration() {
                     } else { 
                         if (left_ids[lcount].length >= right_ids[rcount].length) {
                             //Percorrer sub ids
-                            //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                            ////alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
                             for (var j=0; j<left_ids[lcount].length; j++) {
-                                //alert("j:" + j);
-                                //alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
-                                //alert(left_lines[la] + " - " + right_lines[ra]);
+                                ////alert("j:" + j);
+                                ////alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
+                                ////alert(left_lines[la] + " - " + right_lines[ra]);
                                 //compara os ids
                                 if(left_ids[lcount][lcount2] == right_ids[rcount][rcount2]) {
                                     //compara os conteudos
                                     if (left_lines[la] == right_lines[ra]) {
-                                        //alert(right_lines[ra].substr(0, 2) + " ...");
+                                        ////alert(right_lines[ra].substr(0, 2) + " ...");
                                         output[outc] = right_lines[ra].substr(0, 2) + " ...";
                                     } else {
-                                        //alert(right_lines[ra] + "$amarelo");
+                                        ////alert(right_lines[ra] + "$amarelo");
                                         output[outc] = right_lines[ra] + "$amarelo";
                                     }
                                 } else {
                                     if (!searchArray(right_ids[rcount], left_ids[lcount][lcount2])) {
-                                        //alert(left_lines[la] + "$vermelho");
+                                        ////alert(left_lines[la] + "$vermelho");
                                         output[outc] = left_lines[la] + "$vermelho";
                                         ra--;
                                         rcount2--;
                                     } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
-                                        //alert(right_lines[ra] + "$verde");
+                                        ////alert(right_lines[ra] + "$verde");
                                         output[outc] = right_lines[ra] + "$verde";
                                         la--;
                                         lcount2--;
@@ -637,7 +650,7 @@ function validate_alteration() {
                         } else {
                             if (left_ids[lcount]. length == "1") {
                                 if (!searchArray(left_ids[lcount][0], right_ids[rcount])) {
-                                    //alert(left_lines[la] + "$vermelho");
+                                    ////alert(left_lines[la] + "$vermelho");
                                     output[outc] = left_lines[la] + "$vermelho";
                                     la++;
                                     rcount--;
@@ -645,28 +658,28 @@ function validate_alteration() {
                                 }
                             } else {
                                 //Percorrer sub ids
-                                //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                ////alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
                                 for (var j=0; j<right_ids[rcount].length; j++) {
-                                    //alert("j:" + j);
-                                    //alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
-                                    //alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
-                                    //alert(left_lines[la] + " - " + right_lines[ra]);
+                                    ////alert("j:" + j);
+                                    ////alert("lc = " + lcount + "   lc2 = " + lcount2 + "   rc = " + rcount + "   rc2 = " + rcount2 + "   la = " + la + "   ra = " + ra);
+                                    ////alert(left_ids[lcount][lcount2] + " - " + right_ids[rcount][rcount2]);
+                                    ////alert(left_lines[la] + " - " + right_lines[ra]);
                                     //compara os ids
                                     if(left_ids[lcount][lcount2] == right_ids[rcount][rcount2]) {
                                         //compara os conteudos
                                         if (left_lines[la] == right_lines[ra]) {
-                                            //alert(right_lines[ra].substr(0, 2) + " ...");
+                                            ////alert(right_lines[ra].substr(0, 2) + " ...");
                                             output[outc] = right_lines[ra].substr(0, 2) + " ...";
                                         } else {
-                                            //alert(right_lines[ra] + "$amarelo");
+                                            ////alert(right_lines[ra] + "$amarelo");
                                             output[outc] = right_lines[ra] + "$amarelo";
                                         }
                                     } else {
                                         if (!searchArray(right_ids[rcount], left_ids[lcount][lcount2])) {
-                                            //alert(right_lines[ra] + "$verde");
+                                            ////alert(right_lines[ra] + "$verde");
                                             output[outc] = right_lines[ra] + "$verde";
                                         } else if (!searchArray(left_ids[lcount], right_ids[rcount][rcount2])) {
-                                            //alert(right_lines[ra] + "$verde");
+                                            ////alert(right_lines[ra] + "$verde");
                                             output[outc] = right_lines[ra] + "$verde";
                                             la++;
                                             rcount--;
@@ -686,8 +699,48 @@ function validate_alteration() {
         }
     }
     
-    for (var i=0; i<output.length; i++) {
+    for (i=0; i<output.length; i++) {
+        sVermelho = output[i].split("$vermelho");
+        if(sVermelho.length > 1) {
+            output[i] = output[i].substring(0, 2) + "revogado";
+        }
+        
+        sAmarelo = output[i].split("$amarelo");
+        if(sAmarelo.length > 1) {
+            output[i] = output[i].substring(0, output[i].length - 8);
+        }
+        
+        sVerde = output[i].split("$verde");
+        if(sVerde.length > 1) {
+            output[i] = output[i].substring(0, output[i].length - 6);
+        }
+    }
+    
+    for (i=0; i<output.length; i++) {
         alert(output[i]);
+    }
+    
+    art = document.getElementById('dd_choose_article').options[document.getElementById('dd_choose_article').selectedIndex].text;
+    output[output.length] = art;
+    
+    docname = document.getElementById('doc_name').innerHTML;
+    splitdocname = docname.split("Documento: ");
+    output[output.length] = splitdocname[1];
+    
+    if (confirm("Tem a certeza?")) {
+        var jsonString = JSON.stringify(output);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/BasicSite/model_save_file/save_file",
+            data: {data : jsonString}, 
+            cache: false,
+
+            success: function(){
+                var split = window.location.pathname.split("/");
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+            }
+        });
+    } else {
     }
 }
 

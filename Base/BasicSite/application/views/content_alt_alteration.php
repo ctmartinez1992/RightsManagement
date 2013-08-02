@@ -2,14 +2,7 @@
     <section id="main_area">
         <article>
             <div id="doc_name">Documento: <?php echo $_GET['doc'] ?></div>
-            Escolha o artigo:
-            <select id="dd_choose_article" onchange="display_change_of_article();">
-                <?php
-                    for ($i=0; $i<sizeof($artigos); $i++) {
-                        echo '<option>' . $artigos[$i] . '</option>';
-                    }
-                ?>
-            </select>
+            <div id="art_name">Artigo: <?php echo $_GET['artigo'] ?></div>
             
             <?php if ($main[0][0] == "revogado") { echo "O documento <b>" . $main[0][2] . "</b> da data <b>" . $main[0][1] . "</b> foi revogado integralmente.";} ?>
             <div id="compare_area">

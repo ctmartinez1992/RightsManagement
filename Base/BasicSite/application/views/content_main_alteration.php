@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <a href="#" id="edit_article_alteration" class="button black" onclick="blass();">Alterar</a>
+                        <a href="#" id="edit_article_alteration" class="button black" onclick="alt_article_alt();">Alterar</a>
                     </td>
                 </tr>
                 <tr>

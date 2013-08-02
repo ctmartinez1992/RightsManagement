@@ -31,9 +31,15 @@ class Model_get_backend_values extends CI_Controller {
             $resposta = $this->model_api->get_full_article($artigo);
             if ($resposta == "") {
                 echo "0";
-            } else {
+            } else {                
                 for ($i=0; $i<sizeof($resposta); $i++) {
-                    echo $resposta[$i] . "#";
+                    if (is_array($resposta[$i])) {
+                        for ($j=0; $j<sizeof($resposta[$i]); $j++) {
+                            echo $resposta[$i][$j] . "#";
+                        }
+                    } else {
+                        echo $resposta[$i] . "#";
+                    }
                 }
             }
         echo '</response>';
