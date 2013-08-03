@@ -347,6 +347,15 @@ table.macro_form td{
     width: 100%;
 }
 
+#addition_table {
+    margin: 15px;
+    width: 350px;
+}
+
+#addition_table tr td {
+    padding: 5px;
+}
+
 #left_area {
     margin-right: 10px;
     padding: 10px;

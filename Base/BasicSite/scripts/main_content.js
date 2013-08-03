@@ -231,6 +231,138 @@ function alt_article_alt() {
     }
 }
 
+function rem_article_alt() {    
+    var art = document.getElementById('mdd_article_alteration').value;
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    
+    output = [];
+    output[0] = art;
+    output[1] = res;
+    
+    if (art.length > 0) {
+        if (confirm("Tem a certeza?")) {
+            var jsonString = JSON.stringify(output);
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/BasicSite/model_save_file/save_rem_alteration_file",
+                data: {data : jsonString}, 
+                cache: false,
+
+                success: function(){
+                    var split = window.location.pathname.split("/");
+                    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+                }
+            });
+        } else {
+        }
+    }
+}
+
+function add_article_add() {    
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    var split = window.location.pathname.split("/");
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/add_doc_add?doc=" + res);
+}
+
+function alt_article_add() {
+    var art = document.getElementById('mdd_article_addition').value;
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    var split = window.location.pathname.split("/");
+    if (art.length > 0) {
+        window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/alt_doc_add?doc=" + res + "&artigo=" + art);
+    }
+}
+
+function rem_article_add() {    
+    var art = document.getElementById('mdd_article_addition').value;
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    
+    output = [];
+    output[0] = art;
+    output[1] = res;
+    
+    if (art.length > 0) {
+        if (confirm("Tem a certeza?")) {
+            var jsonString = JSON.stringify(output);
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/BasicSite/model_save_file/save_rem_addition_file",
+                data: {data : jsonString}, 
+                cache: false,
+
+                success: function(){
+                    var split = window.location.pathname.split("/");
+                    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+                }
+            });
+        } else {
+        }
+    }
+}
+
+function add_article_rem() {    
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    var split = window.location.pathname.split("/");
+    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/add_doc_rem?doc=" + res);
+}
+
+function rem_article_rem() {    
+    var art = document.getElementById('mdd_article_revoke').value;
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var filter = doc.split("(");
+    var filter2 = filter[1].split(")");
+    var doc_res = filter2[0].replace("/", "_").replace("/", "_");
+    var dia_mes_ano = doc_res.split("_");
+    var res = String(dia_mes_ano[2] + "_" + dia_mes_ano[1] + "_" + dia_mes_ano[0]);
+    
+    output = [];
+    output[0] = art;
+    output[1] = res;
+    
+    if (art.length > 0) {
+        if (confirm("Tem a certeza?")) {
+            var jsonString = JSON.stringify(output);
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/BasicSite/model_save_file/save_rem_remove_file",
+                data: {data : jsonString}, 
+                cache: false,
+
+                success: function(){
+                    var split = window.location.pathname.split("/");
+                    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+                }
+            });
+        } else {
+        }
+    }
+}
+
 function get_articles() {
     var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
     var filter = doc.split("(");
@@ -398,6 +530,43 @@ function handleServerResponseDisplayChangeArticle() {
                         return;
                     } else {
                         document.getElementById("alteration_submit").disabled = false;
+                    }
+                }
+            }
+        }
+    }
+}
+
+function display_change_of_article_on_remove() {
+    var artigo = document.getElementById('dd_choose_article').options[document.getElementById('dd_choose_article').selectedIndex].text;
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_backend_values/get_full_article?artigo=" + artigo, true);
+        xmlHttp.onreadystatechange = handleServerResponseDisplayChangeArticleOnRemove;
+        xmlHttp.send(null);
+    } else {
+        setTimeout("display_change_of_article_on_remove", 10000);
+    }
+}
+
+function handleServerResponseDisplayChangeArticleOnRemove() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            if (message != "0") {
+                document.getElementById("text_area").value = "";
+                
+                splited = message.split("#");
+                
+                for (i=0; i<splited.length;i++) {
+                    document.getElementById("text_area").value += splited[i];
+                    if (splited[0] == "revogado") {
+                        document.getElementById("remove_submit").disabled = true;
+                        return;
+                    } else {
+                        document.getElementById("remove_submit").disabled = false;
                     }
                 }
             }
@@ -731,7 +900,7 @@ function validate_alteration() {
         var jsonString = JSON.stringify(output);
         $.ajax({
             type: "POST",
-            url: "http://localhost/BasicSite/model_save_file/save_file",
+            url: "http://localhost/BasicSite/model_save_file/save_alteration_file",
             data: {data : jsonString}, 
             cache: false,
 
@@ -741,6 +910,202 @@ function validate_alteration() {
             }
         });
     } else {
+    }
+}
+
+function validate_alt_alteration() {
+    output = [];
+    
+    var lines = $('textarea#right_area').val().split(/\n/);
+    for (var i=0; i < lines.length; i++) {
+    if (/\S/.test(lines[i])) {
+            output.push($.trim(lines[i]));
+        }
+    }
+    
+    artname = document.getElementById('art_name').innerHTML;
+    splitartname = artname.split("Artigo: ");
+    output[output.length] = splitartname[1];
+    
+    docname = document.getElementById('doc_name').innerHTML;
+    splitdocname = docname.split("Documento: ");
+    output[output.length] = splitdocname[1];
+    
+    var jsonString = JSON.stringify(output);
+    if (confirm("Tem a certeza?")) {
+        var jsonString = JSON.stringify(output);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/BasicSite/model_save_file/save_alt_alteration_file",
+            data: {data : jsonString}, 
+            cache: false,
+
+            success: function(){
+                var split = window.location.pathname.split("/");
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+            }
+        });
+    } else {
+    }
+}
+
+function validate_addition() {
+    output = [];
+    
+    output[0] = "(" + document.getElementById('choose_article_title').value + ")";
+    
+    var lines = $('textarea#text_area').val().split(/\n/);
+    for (var i=0; i < lines.length; i++) {
+    if (/\S/.test(lines[i])) {
+            output.push($.trim(lines[i]));
+        }
+    }
+    
+    output[output.length] = document.getElementById('choose_article_n').value;
+    
+    docname = document.getElementById('doc_name').innerHTML;
+    splitdocname = docname.split("Documento: ");
+    output[output.length] = splitdocname[1];
+    
+    var jsonString = JSON.stringify(output);
+    if (confirm("Tem a certeza?")) {
+        var jsonString = JSON.stringify(output);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/BasicSite/model_save_file/save_addition_file",
+            data: {data : jsonString}, 
+            cache: false,
+
+            success: function(){
+                var split = window.location.pathname.split("/");
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+            }
+        });
+    } else {
+    }
+}
+
+function validate_alt_addition() {
+    output = [];
+    
+    var lines = $('textarea#right_area').val().split(/\n/);
+    for (var i=0; i < lines.length; i++) {
+    if (/\S/.test(lines[i])) {
+            output.push($.trim(lines[i]));
+        }
+    }
+    
+    artname = document.getElementById('art_name').innerHTML;
+    splitartname = artname.split("Artigo: ");
+    output[output.length] = splitartname[1];
+    
+    docname = document.getElementById('doc_name').innerHTML;
+    splitdocname = docname.split("Documento: ");
+    output[output.length] = splitdocname[1];
+    
+    var jsonString = JSON.stringify(output);
+    if (confirm("Tem a certeza?")) {
+        var jsonString = JSON.stringify(output);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/BasicSite/model_save_file/save_alt_addition_file",
+            data: {data : jsonString}, 
+            cache: false,
+
+            success: function(){
+                var split = window.location.pathname.split("/");
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+            }
+        });
+    } else {
+    }
+}
+
+function validate_remove() {
+    output = [];
+    
+    art = document.getElementById('dd_choose_article').options[document.getElementById('dd_choose_article').selectedIndex].text;
+    output[0] = document.getElementById('dd_choose_article').options[document.getElementById('dd_choose_article').selectedIndex].text;
+    
+    docname = document.getElementById('doc_name').innerHTML;
+    splitdocname = docname.split("Documento: ");
+    output[1] = splitdocname[1];
+    
+    var jsonString = JSON.stringify(output);
+    if (confirm("Tem a certeza?")) {
+        var jsonString = JSON.stringify(output);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/BasicSite/model_save_file/save_remove_file",
+            data: {data : jsonString}, 
+            cache: false,
+
+            success: function(){
+                var split = window.location.pathname.split("/");
+                window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/backend/main_alteration");
+            }
+        });
+    } else {
+    }
+}
+
+function done_doc() {
+    if (doc.length >= 1) {
+        if (confirm("Tem a certeza que não quer fazer mais alterações?")) {
+            var split = window.location.pathname.split("/");
+            window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+        } else {
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
+    }
+}
+
+function finish_doc() {
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var split = doc.split("(");
+    var res = split[0].trim();    
+    if (doc.length >= 1) {
+        if (confirm("Tem a certeza que não quer fazer mais alterações?\nATENÇÂO! Depois de o fechar, não pode fazer mais alterações ao documento.")) {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/BasicSite/model_save_file/save_doc_but_dont_send",
+                data: {doc: res}, 
+                cache: false,
+
+                success: function(){
+                    var split = window.location.pathname.split("/");
+                    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+                }
+            });
+        } else {
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
+    }
+}
+
+function send_doc() {
+    var doc = document.getElementById('dd_doc_alteration').options[document.getElementById('dd_doc_alteration').selectedIndex].text;
+    var split = doc.split("(");
+    var res = split[0].trim();    
+    if (doc.length >= 1) {
+        if (confirm("Tem a certeza que não quer fazer mais alterações?\nATENÇÂO! Depois de o enviar para aprovação, não pode fazer mais alterações ao documento.")) {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/BasicSite/model_save_file/save_doc_and_send",
+                data: {doc: res}, 
+                cache: false,
+
+                success: function(){
+                    var split = window.location.pathname.split("/");
+                    window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+                }
+            });
+        } else {
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
     }
 }
 
@@ -756,5 +1121,11 @@ function searchArray(ArrayObj, SearchFor) {
                 return false;
             }
         }
+    }
+}
+
+function alertArray(output) {
+    for (i=0; i<output.length; i++) {
+        alert(output[i]);
     }
 }

@@ -193,6 +193,34 @@ table.signup_form td{
     text-decoration: underline;
 }
 
+.alteration_nav{
+    background: #036;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.alteration_nav li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px 10px 5px 20px;
+}
+
+.alteration_nav li a{
+    font: bold 20px Tahoma;
+    text-decoration-color: white;
+}
+
+.alteration_nav li a:link, #nav li a:visited, #nav li a:active{
+    color: white;
+    text-decoration: none;
+}
+
+.alteration_nav li a:hover {
+    text-decoration: underline;
+}
+
 #content{
     display: -webkit-box;
     -webkit-box-orient: horizontal;
