@@ -1161,3 +1161,49 @@ function appendTodosToElement(element) {
     element.appendChild(opt);
     opt.appendChild(text);
 }
+
+
+
+
+
+//Backend functions
+function change_doc_alteration() {
+    var xmlHttp = CreateXmlHttpRequestObject();
+    if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
+        xmlHttp.open("GET", "http://localhost/BasicSite/model_get_search_values/get_livro_last_doc", true);
+        xmlHttp.onreadystatechange = handleServerResponseDocAlteration;
+        xmlHttp.send(null);
+    } else {
+        setTimeout("fill_titulo()", 10000);
+    }
+}
+
+function handleServerResponseDocAlteration() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {            
+            xmlResponse = xmlHttp.responseXML;
+            xmlDocumentElement = xmlResponse.documentElement;
+            message = xmlDocumentElement.firstChild.data;
+            var element = document.getElementById("dd_livro");
+            
+            if (message !== "0") {
+                var splited_message = message.split("_");
+                while(element.firstChild){
+                        element.removeChild(element.firstChild);
+                }
+
+                for (i=0; i<splited_message.length; i++) {
+                    var opt = document.createElement("option");
+                    var text = document.createTextNode(splited_message[i]);
+                    element.appendChild(opt);
+                    opt.appendChild(text);
+                }
+            } else {                
+                var opt = document.createElement("option");
+                var text = document.createTextNode("0");
+                element.appendChild(opt);
+                opt.appendChild(text);
+            }
+        }
+    }
+}

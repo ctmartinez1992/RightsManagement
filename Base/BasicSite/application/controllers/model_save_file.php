@@ -133,6 +133,71 @@ class Model_save_file extends CI_Controller {
         $this->db->query("UPDATE temp_docs SET estado=2 WHERE nome='" . $doc . "';");
         return $this->db->affected_rows();
     }
+
+    public function approve_temp_doc() {
+        $doc = $_POST['doc'];
+        $name = $_POST['name'];
+        
+        $this->rcopy("codigo_civil/temp/" . $doc . "/", "codigo_civil/" . $doc . "/");
+        $this->rmdir_recursive("codigo_civil/temp/" . $doc . "/");
+        
+        $this->db->query("UPDATE temp_docs SET estado=3 WHERE nome='" . $name . "';");
+        
+        $xml = simplexml_load_file("codigo_civil/documentos.xml");
+        $sxe = new SimpleXMLElement($xml->asXML());
+        $sxe->addChild("doc", $doc);
+        $sxe->asXML("codigo_civil/documentos.xml");
+        
+        $array = simplexml_load_file("codigo_civil/" . $doc . "/" . $doc . ".xml");
+        $xml2 = simplexml_load_file("codigo_civil/todos_artigos.xml");
+        for($i=0; $i<count($array->acrescenta); $i++) {
+            $sxe2 = new SimpleXMLElement($xml2->asXML());
+            $sxe2->addChild("artigo", $array->acrescenta[$i]);
+            $sxe2->asXML("codigo_civil/todos_artigos.xml");
+        } 
+        
+        return $this->db->affected_rows();
+    }
+
+    public function disapprove_temp_doc() {
+        $doc = $_POST['doc'];
+        $name = $_POST['name'];
+        
+        $this->db->query("UPDATE temp_docs SET estado=0 WHERE nome='" . $name . "';");
+        return $this->db->affected_rows();
+    }
+
+    public function delete_temp_doc() {
+        $doc = $_POST['doc'];
+        $name = $_POST['name'];  
+        
+        $this->rmdir_recursive("codigo_civil/temp/" . $doc . "/");
+        
+        $this->db->query("DELETE FROM temp_docs WHERE nome='" . $name . "';");
+        return $this->db->affected_rows();
+    }
+
+    //Copia ficheiros de um diretorio para outro.
+    public function rcopy($src, $dst) {
+        if (is_dir ( $src )) {
+            mkdir ( $dst );
+            $files = scandir ( $src );
+            foreach ( $files as $file )
+                if ($file != "." && $file != "..")
+                    $this->rcopy ( "$src/$file", "$dst/$file" );
+        } else if (file_exists ( $src ))
+            copy ( $src, $dst );
+    }
+
+    //Recursivamente elimina um diretorio e o seu conteudo.
+    public function rmdir_recursive($dir) {
+        foreach(scandir($dir) as $file) {
+            if ('.' === $file || '..' === $file) continue;
+            if (is_dir("$dir/$file")) $this->rmdir_recursive("$dir/$file");
+            else unlink("$dir/$file");
+        }
+        rmdir($dir);
+    }
 }
 
 ?>

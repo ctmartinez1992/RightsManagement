@@ -193,7 +193,9 @@ table.signup_form td{
     text-decoration: underline;
 }
 
-.alteration_nav{
+ul.alteration_nav{
+    height: 20px;
+    margin: 10px 10px 25px 10px;
     background: #036;
     padding: 10px;
     -webkit-border-radius: 15px;
@@ -201,23 +203,23 @@ table.signup_form td{
     border-radius: 15px;
 }
 
-.alteration_nav li{
+ul.alteration_nav li{
     display: inline-block;
     list-style: none;
-    padding: 5px 10px 5px 20px;
+    padding: 0px 10px 5px 20px;
 }
 
-.alteration_nav li a{
-    font: bold 20px Tahoma;
+ul.alteration_nav li a{
+    font: 14px Tahoma;
     text-decoration-color: white;
 }
 
-.alteration_nav li a:link, #nav li a:visited, #nav li a:active{
+ul.alteration_nav li a:link, ul.alteration_nav li a:visited, ul.alteration_nav li a:active{
     color: white;
     text-decoration: none;
 }
 
-.alteration_nav li a:hover {
+ul.alteration_nav li a:hover {
     text-decoration: underline;
 }
 

@@ -1,15 +1,11 @@
 <div id="main_content">
-    <div id="alteration_nav">
-        <ul>
-            <li><a href="<?php echo base_url(); ?>site/home">Home</a></li>
-            <li><a href="<?php echo base_url(); ?>site/codigo_civil">Código Civil</a></li>
-            <?php if($tipo->tipo == 2) { ?><li><a href="<?php echo base_url(); ?>backend/main_alteration">Alterações</a></li><?php } ?>
-            <li><a href="<?php echo base_url(); ?>site/about">About</a></li>
-            <li><a href="<?php echo base_url(); ?>site/contact_no">Contact</a></li>
-        </ul>
-    </div>
     <section id="main_area">
         <article>
+        <ul id="alteration_nav" class="alteration_nav">
+            <li><a href="<?php echo base_url(); ?>backend/main_alteration">Novo/Editar Documento</a></li>
+            <li><a href="<?php echo base_url(); ?>backend/hierarchy_alteration">Editar Hierarquia</a></li>
+            <?php if($tipo->tipo == 2) { ?><li><a href="<?php echo base_url(); ?>backend/manage_docs">Gerir Documentos</a></li><?php } ?>
+        </ul>
             <table id="id_table_options_alteration" class="table_options_alteration">
                 <tr>
                     <td>Selecionar um documento já criado</td>
@@ -109,7 +105,7 @@
                 </tr>
             </table>
             <a href="#" id="done_editing" class="button black" onclick="done_doc();">Gravar</a>
-            <a href="#" id="finish_editing" class="button black" onclick="finish_doc();">Gravar e Fechar</a>
+<!--            <a href="#" id="finish_editing" class="button black" onclick="finish_doc();">Gravar e Fechar</a>-->
             <a href="#" id="send_doc" class="button black" onclick="send_doc();">Gravar e Enviar</a>
         </article>
     </section>

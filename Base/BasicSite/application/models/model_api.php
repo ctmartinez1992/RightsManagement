@@ -619,6 +619,32 @@ class Model_api extends CI_Model {
     public function get_all_revokes_count() {
         return sizeof($this->get_all_revokes_names());
     }
+    
+    public function get_last_doc_added() {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos.xml');
+        return $array->doc[sizeof($array->doc) - 1];
+    }
+
+    /*
+     * Returns: All the numbers of the first hierarchy "Livro"
+     */
+    public function get_hierarchy_livro_last_doc() {
+        $p_doc = $this->get_last_doc_added();
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        if (sizeof($array->Livro) > 0) {
+            for ($i = 0; $i < sizeof($array->Livro); $i++) {
+                $resposta .= $array->Livro[$i]['id'] . " - " . $array->Livro[$i]['nome'] . "_";
+            }
+            if (strlen($resposta) > 0) {
+                return substr($resposta, 0, sizeof($resposta) - 2);
+            } else {
+                return $resposta;
+            }
+        }
+        return $resposta;
+    }
 
     /*
      * Returns: All the numbers of the first hierarchy "Livro"

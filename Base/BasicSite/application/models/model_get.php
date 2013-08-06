@@ -12,4 +12,9 @@ class Model_get extends CI_Model {
         return $query->result();
     }
 
+    function getUndoneDocsAll() {
+        $query = $this->db->query('SELECT * FROM temp_docs');
+        return $query->result();
+    }
+
 }

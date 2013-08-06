@@ -1109,6 +1109,119 @@ function send_doc() {
     }
 }
 
+
+
+function approve_temp_doc() {
+    var dat = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].value;
+    var d_res = dat.replace("/", "_").replace("/", "_");
+    var dia_mes_ano = d_res.split("_");
+    var res = dia_mes_ano[2].trim() + "_" + dia_mes_ano[1].trim() + "_" + dia_mes_ano[0].trim();
+    
+    var doc = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].text;
+    var split = doc.split("(");
+    var split2 = split[1].split(")");
+    var nome_doc = split[0].trim();
+    var estado = split2[0].trim();
+    
+    if (doc.length >= 1) {
+        if (estado === "2") {
+            if (confirm("Tem a certeza que quer APROVAR este documento?\nATENÇÂO! Depois de o aprovar, não dá para voltar atrás.")) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/BasicSite/model_save_file/approve_temp_doc",
+                    data: {doc: res, name: nome_doc},
+
+                    success: function() {
+                        alert("Documento aprovado com sucesso.");
+                        var split = window.location.pathname.split("/");
+                        window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+                    }
+                });
+            } else {
+                //alert("Problemas de Coneção ao Servidor...");
+            }
+        } else {
+            alert("Apenas documentos com estado 2 é que podem ser aprovados.");
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
+    }
+}
+
+function disapprove_temp_doc() {
+    var dat = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].value;
+    var d_res = dat.replace("/", "_").replace("/", "_");
+    var dia_mes_ano = d_res.split("_");
+    var res = dia_mes_ano[2].trim() + "_" + dia_mes_ano[1].trim() + "_" + dia_mes_ano[0].trim();
+    
+    var doc = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].text;
+    var split = doc.split("(");
+    var split2 = split[1].split(")");
+    var nome_doc = split[0].trim();
+    var estado = split2[0].trim();
+    
+    if (doc.length >= 1) {
+        if (estado === "2") {
+            if (confirm("Tem a certeza que quer REPROVAR este documento?\nATENÇÂO! Depois de o reprovar, pode voltar a fazer alterações ao documento e enviá-lo de novo para aprovação.")) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/BasicSite/model_save_file/disapprove_temp_doc",
+                    data: {doc: res, name: nome_doc},
+
+                    success: function() {
+                        alert("Documento reprovado com sucesso.");
+                        var split = window.location.pathname.split("/");
+                        window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+                    }
+                });
+            } else {
+                //alert("Problemas de Coneção ao Servidor...");
+            }
+        } else {
+            alert("Apenas documentos com estado 2 é que podem ser reprovados.");
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
+    }
+}
+
+function delete_temp_doc() {
+    var dat = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].value;
+    var d_res = dat.replace("/", "_").replace("/", "_");
+    var dia_mes_ano = d_res.split("_");
+    var res = dia_mes_ano[2].trim() + "_" + dia_mes_ano[1].trim() + "_" + dia_mes_ano[0].trim();
+    
+    var doc = document.getElementById('select_doc_manage').options[document.getElementById('select_doc_manage').selectedIndex].text;
+    var split = doc.split("(");
+    var split2 = split[1].split(")");
+    var nome_doc = split[0].trim();
+    var estado = split2[0].trim();
+    
+    if (doc.length >= 1) {
+        if (estado != "2") {
+            if (confirm("Tem a certeza que quer ELIMINAR este documento?\nATENÇÂO! Depois de o eliminar, não dá para voltar atrás.")) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/BasicSite/model_save_file/delete_temp_doc",
+                    data: {doc: res, name: nome_doc},
+
+                    success: function() {
+                        alert("Documento eliminado com sucesso.");
+                        var split = window.location.pathname.split("/");
+                        window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/site/home");
+                    }
+                });
+            } else {
+                //alert("Problemas de Coneção ao Servidor...");
+            }
+        } else {
+            alert("Apenas pode eliminar documentos com estado inferior a 2.");
+        }
+    } else {
+        alert("Carregue um documento primeiro!");
+    }
+}
+
 function searchArray(ArrayObj, SearchFor) {
     var Found = false;
     for (var i = 0; i < ArrayObj.length; i++) {

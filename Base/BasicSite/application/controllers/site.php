@@ -94,9 +94,14 @@ class Site extends CI_Controller {
 //            echo $a[$i] . "<br>";
 //        }
         
-        $arr = $this->model_api->get_all_articles_ever();
+        echo $this->model_api->get_last_doc_added();
+//        $arr = $this->model_api->get_all_articles_ever();
+//        $arr = $this->model_api->get_hierarchy_livro_last_doc();
+//        for ($i=0; $i<sizeof($arr); $i++) {
+//            echo $arr[$i][0] . " - " . $arr[$i][1] . "<br>";
+//        }
     }
-
+    
     public function about() {
         $this->load->model("model_get");
         $this->load->model("model_users");

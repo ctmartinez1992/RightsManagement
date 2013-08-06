@@ -482,6 +482,25 @@ class Model_get_search_values extends CI_Controller {
             }
         echo '</response>';
     }
+    
+    
+    
+    
+    //backend functions
+    public function get_livro_last_doc() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $resposta = $this->model_api->get_hierarchy_livro_last_doc();
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
 }
 
 ?>
