@@ -6,14 +6,12 @@
             <li><a href="<?php echo base_url(); ?>backend/hierarchy_alteration">Editar Hierarquia</a></li>
             <?php if($tipo->tipo == 2) { ?><li><a href="<?php echo base_url(); ?>backend/manage_docs">Gerir Documentos</a></li><?php } ?>
         </ul>
-            
-            <select id="dd_data_doc" style="visibility:hidden;">
-                <?php
-                    echo '<option value="' . $doc . '" selected>' . $doc . '</option>';
-                ?>
-            </select>
-            
+                        
             <table class="search_form">
+                <tr colspan="2">
+                    <td>Escolha a hierarquia:</td><td></td>
+                    <td><p style="margin-left: 100px;">Visualização:</p></td></td><td></td>
+                </tr>
                 <tr>
                     <td>Documento:</td>
                     <td>
@@ -26,6 +24,10 @@
                             ?>
                         </select>
                     </td>
+                    <td><p style="margin-left: 100px;">Hierarquia:</p></td>
+                    <td>
+                         <input type="text" name="tb_hierarquia" id="tb_hierarquia" style="margin-bottom: 10px;" disabled></input>
+                    </td>
                 </tr>
                 <tr>
                     <td>Livro:</td>
@@ -34,17 +36,28 @@
                             echo form_dropdown('dd_livro', array(), 0, 'id="dd_livro" onChange="fill_titulo()"'); 
                         ?>
                     </td>
+                    <td><p style="margin-left: 100px;">Número:</p></td>
+                    <td>
+                         <input type="text" name="tb_numero" id="tb_numero" style="margin-bottom: 10px;"></input>
+                    </td>
                 </tr>
                 <tr>
                     <td>Título:</td>
                     <td>
                         <?php echo form_dropdown('dd_titulo', array(), 0, 'id="dd_titulo" onChange="fill_subtitulo()"'); ?>
                     </td>
+                    <td><p style="margin-left: 100px;">Nome:</p></td>
+                    <td>
+                         <input type="text" name="tb_nome" id="tb_nome" style="margin-bottom: 10px; width: 250px;"></input>
+                    </td>
                  </tr>
                 <tr>
                     <td>Subtítulo:</td>
                     <td>
                         <?php echo form_dropdown('dd_subtitulo', array(), 0, 'id="dd_subtitulo" onChange="fill_capitulo()"'); ?>
+                    </td>
+                    <td>
+                        <a href="#" id="save_hierarchy_alteration" class="button black" onclick="save_hierarchy_alteration();" style="margin-top: 25px;">Gravar Alterações</a>
                     </td>
                  </tr>
                 <tr>
@@ -77,28 +90,33 @@
                         <?php echo form_dropdown('dd_subdivisao', array(), 0, 'id="dd_subdivisao" onChange="fill_artigo()"'); ?>
                     </td>
                  </tr>
-                <tr>
-                    <td>Artigo:</td>
-                    <td>
-                        <?php echo form_dropdown('dd_artigo', array(), 0, 'id="dd_artigo"'); ?>
+                 <tr>
+                     <td>
+                        <select id="dd_data_doc" style="visibility:hidden;">
+                            <?php
+                                echo '<option value="' . $doc . '" selected>' . $doc . '</option>';
+                            ?>
+                        </select>
+                    </td>
+                     <td>
+                        <select id="dd_data_hierarchy_doc" style="visibility:hidden;">
+                            <?php
+                                echo '<option value="' . $hdoc . '" selected>' . $hdoc . '</option>';
+                            ?>
+                        </select>
                     </td>
                  </tr>
                  <tr>
-                     <td colspan="2">
-                        <div id="main_search_button">
-                            <p>
-                                <input type="submit" name="searchSubmit" value="Pesquisar" class="button_search" />
-                            </p>
-                        </div>
+                     <td>
+                        <a href="#" id="done_editing" class="button black" onclick="save_hierarchy();">Gravar</a>
                     </td>
                  </tr>
                  <?php
                     echo form_close();
                  ?>
             </table>
-            <a href="#" id="done_editing" class="button black" onclick="done_doc();">Gravar</a>
-<!--            <a href="#" id="finish_editing" class="button black" onclick="finish_doc();">Gravar e Fechar</a>-->
-            <a href="#" id="send_doc" class="button black" onclick="send_doc();">Gravar e Enviar</a>
         </article>
+        <select id="dd_artigo" style="visibility:hidden;"></select>
+        <select id="is_backend" style="visibility:hidden;"><option value="true" selected>stupid way to know that i am in backend</option></select>
     </section>
     

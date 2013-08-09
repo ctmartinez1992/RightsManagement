@@ -44,9 +44,14 @@
                 <tr>
                     <td>Livro:</td>
                     <td>
-                        <?php
-                            echo form_dropdown('dd_livro', $livro, 0, 'id="dd_livro" onChange="fill_titulo()"'); 
-                        ?>
+                        <select id="dd_livro" onChange="fill_titulo();">
+                            <?php
+                                echo '<option value="' . $livro[0] . '" selected>' . $livro[0] . '</option>';
+                                for ($i=1; $i<sizeof($livro); $i++) {
+                                    echo '<option value="' . $livro[$i] . '">' . $livro[$i] . '</option>';
+                                }
+                            ?>
+                        </select>
                     </td>
                  </tr>
                 <tr>
@@ -110,6 +115,7 @@
                     echo form_close();
                  ?>
             </table>
+            <select id="is_backend" style="visibility:hidden;"><option value="false">stupid way to know that i am in backend</option></select>
         </div>
     </aside>
 </div>

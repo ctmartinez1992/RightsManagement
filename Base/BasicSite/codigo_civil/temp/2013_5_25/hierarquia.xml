@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doc>
+<doc nome="2008_10_31">
+  <Livro id="I" nome="PARTE GEAL">
+    <Titulo id="I" nome="Das leis, sua interpretação e aplicação">
+        <Capitulo id="I" nome="Foo">
                 <artigo>1</artigo>
                 <artigo>2</artigo>
                 <artigo>3</artigo>
                 <artigo>4</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Vigência, interpretação e aplicação das leis">
                 <artigo>5</artigo>
                 <artigo>6</artigo>
                 <artigo>7</artigo>
@@ -13,6 +18,9 @@
                 <artigo>11</artigo>
                 <artigo>12</artigo>
                 <artigo>13</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Direitos dos estrangeiros e conflitos de leis">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>14</artigo>
                 <artigo>15</artigo>
                 <artigo>16</artigo>
@@ -24,6 +32,9 @@
                 <artigo>22</artigo>
                 <artigo>23</artigo>
                 <artigo>24</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Normas de conflitos">
+            <Subseccao id="I" nome="Âmbito e determinação da lei pessoal">
                 <artigo>25</artigo>
                 <artigo>26</artigo>
                 <artigo>27</artigo>
@@ -34,20 +45,28 @@
                 <artigo>32</artigo>
                 <artigo>33</artigo>
                 <artigo>34</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Lei reguladora dos negócios jurídicos">
                 <artigo>35</artigo>
                 <artigo>36</artigo>
                 <artigo>37</artigo>
                 <artigo>38</artigo>
                 <artigo>39</artigo>
                 <artigo>40</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Lei reguladora das obrigações">
                 <artigo>41</artigo>
                 <artigo>42</artigo>
                 <artigo>43</artigo>
                 <artigo>44</artigo>
                 <artigo>45</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Lei reguladora das coisas">
                 <artigo>46</artigo>
                 <artigo>47</artigo>
                 <artigo>48</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Lei reguladora das relações de família">
                 <artigo>49</artigo>
                 <artigo>50</artigo>
                 <artigo>51</artigo>
@@ -61,14 +80,26 @@
                 <artigo>59</artigo>
                 <artigo>60</artigo>
                 <artigo>61</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Lei reguladora das sucessões">
                 <artigo>62</artigo>
                 <artigo>63</artigo>
                 <artigo>64</artigo>
                 <artigo>65</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="II" nome="Das relações jurídicas">
+      <Subtitulo id="I" nome="Das pessoas">
+        <Capitulo id="I" nome="Pessoas singulares">
+          <Seccao id="I" nome="Personalidade e capacidade jurídica">
                 <artigo>66</artigo>
                 <artigo>67</artigo>
                 <artigo>68</artigo>
                 <artigo>69</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Direitos de personalidade">
                 <artigo>70</artigo>
                 <artigo>71</artigo>
                 <artigo>72</artigo>
@@ -81,6 +112,8 @@
                 <artigo>79</artigo>
                 <artigo>80</artigo>
                 <artigo>81</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Domicílio">
                 <artigo>82</artigo>
                 <artigo>83</artigo>
                 <artigo>84</artigo>
@@ -88,6 +121,9 @@
                 <artigo>86</artigo>
                 <artigo>87</artigo>
                 <artigo>88</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Ausência">
+            <Subseccao id="I" nome="Curadoria provisória">
                 <artigo>89</artigo>
                 <artigo>90</artigo>
                 <artigo>91</artigo>
@@ -98,6 +134,8 @@
                 <artigo>96</artigo>
                 <artigo>97</artigo>
                 <artigo>98</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Curadoria definitiva">
                 <artigo>99</artigo>
                 <artigo>100</artigo>
                 <artigo>101</artigo>
@@ -113,14 +151,22 @@
                 <artigo>111</artigo>
                 <artigo>112</artigo>
                 <artigo>113</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Morte presumida">
                 <artigo>114</artigo>
                 <artigo>115</artigo>
                 <artigo>116</artigo>
                 <artigo>117</artigo>
                 <artigo>118</artigo>
                 <artigo>119</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Direitos eventuais do ausente">
                 <artigo>120</artigo>
                 <artigo>121</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Incapacidades">
+            <Subseccao id="I" nome="Condição jurídica dos menores">
                 <artigo>122</artigo>
                 <artigo>123</artigo>
                 <artigo>124</artigo>
@@ -129,6 +175,8 @@
                 <artigo>127</artigo>
                 <artigo>128</artigo>
                 <artigo>129</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Maioridade e emancipação">
                 <artigo>130</artigo>
                 <artigo>131</artigo>
                 <artigo>132</artigo>
@@ -137,6 +185,8 @@
                 <artigo>135</artigo>
                 <artigo>136</artigo>
                 <artigo>137</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Interdições">
                 <artigo>138</artigo>
                 <artigo>139</artigo>
                 <artigo>140</artigo>
@@ -151,11 +201,18 @@
                 <artigo>149</artigo>
                 <artigo>150</artigo>
                 <artigo>151</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Inabilitações">
                 <artigo>152</artigo>
                 <artigo>153</artigo>
                 <artigo>154</artigo>
                 <artigo>155</artigo>
                 <artigo>156</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Pessoas colectivas">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>157</artigo>
                 <artigo>158</artigo>
                 <artigo>158-A</artigo>
@@ -167,6 +224,8 @@
                 <artigo>164</artigo>
                 <artigo>165</artigo>
                 <artigo>166</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Associações">
                 <artigo>167</artigo>
                 <artigo>168</artigo>
                 <artigo>169</artigo>
@@ -185,6 +244,8 @@
                 <artigo>182</artigo>
                 <artigo>183</artigo>
                 <artigo>184</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Fundações">
                 <artigo>185</artigo>
                 <artigo>186</artigo>
                 <artigo>187</artigo>
@@ -196,6 +257,9 @@
                 <artigo>192</artigo>
                 <artigo>193</artigo>
                 <artigo>194</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="III" nome="Associações sem personalidade jurídica e comissões especiais">
                 <artigo>195</artigo>
                 <artigo>196</artigo>
                 <artigo>197</artigo>
@@ -204,6 +268,9 @@
                 <artigo>200</artigo>
                 <artigo>201</artigo>
                 <artigo>201-A</artigo>
+        </Capitulo>
+      </Subtitulo>
+      <Subtitulo id="II" nome="Das coisas">
                 <artigo>202</artigo>
                 <artigo>203</artigo>
                 <artigo>204</artigo>
@@ -219,13 +286,22 @@
                 <artigo>214</artigo>
                 <artigo>215</artigo>
                 <artigo>216</artigo>
+      </Subtitulo>
+      <Subtitulo id="III" nome="Dos factos jurídicos">
+        <Capitulo id="I" nome="Negócio jurídico">
+          <Seccao id="I" nome="Declaração negocial">
+            <Subseccao id="I" nome="Modalidades da declaração">
                 <artigo>217</artigo>
                 <artigo>218</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Forma">
                 <artigo>219</artigo>
                 <artigo>220</artigo>
                 <artigo>221</artigo>
                 <artigo>222</artigo>
                 <artigo>223</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Perfeição da declaração negocial">
                 <artigo>224</artigo>
                 <artigo>225</artigo>
                 <artigo>226</artigo>
@@ -238,10 +314,14 @@
                 <artigo>233</artigo>
                 <artigo>234</artigo>
                 <artigo>235</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Interpretação e integração">
                 <artigo>236</artigo>
                 <artigo>237</artigo>
                 <artigo>238</artigo>
                 <artigo>239</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Falta e vícios da vontade">
                 <artigo>240</artigo>
                 <artigo>241</artigo>
                 <artigo>242</artigo>
@@ -260,10 +340,15 @@
                 <artigo>255</artigo>
                 <artigo>256</artigo>
                 <artigo>257</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Representação">
+              <Divisao id="I" nome="Princípios gerais">
                 <artigo>258</artigo>
                 <artigo>259</artigo>
                 <artigo>260</artigo>
                 <artigo>261</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Representação voluntária">
                 <artigo>262</artigo>
                 <artigo>263</artigo>
                 <artigo>264</artigo>
@@ -272,6 +357,9 @@
                 <artigo>267</artigo>
                 <artigo>268</artigo>
                 <artigo>269</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="VII" nome="Condição e termo">
                 <artigo>270</artigo>
                 <artigo>271</artigo>
                 <artigo>272</artigo>
@@ -282,11 +370,16 @@
                 <artigo>277</artigo>
                 <artigo>278</artigo>
                 <artigo>279</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="II" nome="Objecto negocial. Negócios usurários">
                 <artigo>280</artigo>
                 <artigo>281</artigo>
                 <artigo>282</artigo>
                 <artigo>283</artigo>
                 <artigo>284</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Nulidade e anulabilidade do negócio jurídico">
                 <artigo>285</artigo>
                 <artigo>286</artigo>
                 <artigo>287</artigo>
@@ -297,11 +390,20 @@
                 <artigo>292</artigo>
                 <artigo>293</artigo>
                 <artigo>294</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Actos jurídicos">
                 <artigo>295</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="O tempo e sua repercussão nas relações jurídicas">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>296</artigo>
                 <artigo>297</artigo>
                 <artigo>298</artigo>
                 <artigo>299</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Prescrição">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>300</artigo>
                 <artigo>301</artigo>
                 <artigo>302</artigo>
@@ -311,31 +413,47 @@
                 <artigo>306</artigo>
                 <artigo>307</artigo>
                 <artigo>308</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Prazos da prescrição">
                 <artigo>309</artigo>
                 <artigo>310</artigo>
                 <artigo>311</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Prescrições presuntivas">
                 <artigo>312</artigo>
                 <artigo>313</artigo>
                 <artigo>314</artigo>
                 <artigo>315</artigo>
                 <artigo>316</artigo>
                 <artigo>317</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Suspensão da prescrição">
                 <artigo>318</artigo>
                 <artigo>319</artigo>
                 <artigo>320</artigo>
                 <artigo>321</artigo>
                 <artigo>322</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Interrupção da prescrição">
                 <artigo>323</artigo>
                 <artigo>324</artigo>
                 <artigo>325</artigo>
                 <artigo>326</artigo>
                 <artigo>327</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Caducidade">
                 <artigo>328</artigo>
                 <artigo>329</artigo>
                 <artigo>330</artigo>
                 <artigo>331</artigo>
                 <artigo>332</artigo>
                 <artigo>333</artigo>
+          </Seccao>
+        </Capitulo>
+      </Subtitulo>
+      <Subtitulo id="IV" nome="Do exercício e tutela dos direitos">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>334</artigo>
                 <artigo>335</artigo>
                 <artigo>336</artigo>
@@ -343,6 +461,9 @@
                 <artigo>338</artigo>
                 <artigo>339</artigo>
                 <artigo>340</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Provas">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>341</artigo>
                 <artigo>342</artigo>
                 <artigo>343</artigo>
@@ -351,9 +472,13 @@
                 <artigo>346</artigo>
                 <artigo>347</artigo>
                 <artigo>348</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Presunções">
                 <artigo>349</artigo>
                 <artigo>350</artigo>
                 <artigo>351</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Confissão">
                 <artigo>352</artigo>
                 <artigo>353</artigo>
                 <artigo>354</artigo>
@@ -364,6 +489,9 @@
                 <artigo>359</artigo>
                 <artigo>360</artigo>
                 <artigo>361</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Prova documental">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>362</artigo>
                 <artigo>363</artigo>
                 <artigo>364</artigo>
@@ -371,10 +499,14 @@
                 <artigo>366</artigo>
                 <artigo>367</artigo>
                 <artigo>368</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Documentos autênticos">
                 <artigo>369</artigo>
                 <artigo>370</artigo>
                 <artigo>371</artigo>
                 <artigo>372</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Documentos particulares">
                 <artigo>373</artigo>
                 <artigo>374</artigo>
                 <artigo>375</artigo>
@@ -382,6 +514,8 @@
                 <artigo>377</artigo>
                 <artigo>378</artigo>
                 <artigo>379</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Disposições especiais">
                 <artigo>380</artigo>
                 <artigo>381</artigo>
                 <artigo>382</artigo>
@@ -390,32 +524,59 @@
                 <artigo>385</artigo>
                 <artigo>386</artigo>
                 <artigo>387</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Prova pericial">
                 <artigo>388</artigo>
                 <artigo>389</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Prova por inspecção">
                 <artigo>390</artigo>
                 <artigo>391</artigo>
+          </Seccao>
+          <Seccao id="VII" nome="Prova testemunhal">
                 <artigo>392</artigo>
                 <artigo>393</artigo>
                 <artigo>394</artigo>
                 <artigo>395</artigo>
                 <artigo>396</artigo>
+          </Seccao>
+        </Capitulo>
+      </Subtitulo>
+    </Titulo>
+  </Livro>
+  <Livro id="II" nome="DIREIÇÕES">
+    <Titulo id="I" nome="Das obrigações em geral">
+        <Capitulo id="I" nome="Disposições gerais">
+          <Seccao id="I" nome="Conteúdo da obrigação">
                 <artigo>397</artigo>
                 <artigo>398</artigo>
                 <artigo>399</artigo>
                 <artigo>400</artigo>
                 <artigo>401</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Obrigações naturais">
                 <artigo>402</artigo>
                 <artigo>403</artigo>
                 <artigo>404</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Fontes das obrigações">
+          <Seccao id="I" nome="Contratos">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>405</artigo>
                 <artigo>406</artigo>
                 <artigo>407</artigo>
                 <artigo>408</artigo>
                 <artigo>409</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Contrato">
                 <artigo>410</artigo>
                 <artigo>411</artigo>
                 <artigo>412</artigo>
                 <artigo>413</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Pactos de preferência">
                 <artigo>414</artigo>
                 <artigo>415</artigo>
                 <artigo>416</artigo>
@@ -426,25 +587,37 @@
                 <artigo>421</artigo>
                 <artigo>422</artigo>
                 <artigo>423</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Cessão da posição contratual">
                 <artigo>424</artigo>
                 <artigo>425</artigo>
                 <artigo>426</artigo>
                 <artigo>427</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Excepção de não cumprimento do contrato">
                 <artigo>428</artigo>
                 <artigo>429</artigo>
                 <artigo>430</artigo>
                 <artigo>431</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Resolução do contrato">
                 <artigo>432</artigo>
                 <artigo>433</artigo>
                 <artigo>434</artigo>
                 <artigo>435</artigo>
                 <artigo>436</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Resolução ou modificação do contrato por alteração das circunstâncias">
                 <artigo>437</artigo>
                 <artigo>438</artigo>
                 <artigo>439</artigo>
+            </Subseccao>
+            <Subseccao id="VIII" nome="Antecipação do cumprimento. Sinal">
                 <artigo>440</artigo>
                 <artigo>441</artigo>
                 <artigo>442</artigo>
+            </Subseccao>
+            <Subseccao id="IX" nome="Contrato a favor de terceiro">
                 <artigo>443</artigo>
                 <artigo>444</artigo>
                 <artigo>445</artigo>
@@ -454,11 +627,16 @@
                 <artigo>449</artigo>
                 <artigo>450</artigo>
                 <artigo>451</artigo>
+            </Subseccao>
+            <Subseccao id="X" nome="Contrato para pessoa a nomear">
                 <artigo>452</artigo>
                 <artigo>453</artigo>
                 <artigo>454</artigo>
                 <artigo>455</artigo>
                 <artigo>456</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="II" nome="Negócios unilaterais">
                 <artigo>457</artigo>
                 <artigo>458</artigo>
                 <artigo>459</artigo>
@@ -466,6 +644,8 @@
                 <artigo>461</artigo>
                 <artigo>462</artigo>
                 <artigo>463</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Gestão de negócios">
                 <artigo>464</artigo>
                 <artigo>465</artigo>
                 <artigo>466</artigo>
@@ -475,6 +655,8 @@
                 <artigo>470</artigo>
                 <artigo>471</artigo>
                 <artigo>472</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Enriquecimento sem causa">
                 <artigo>473</artigo>
                 <artigo>474</artigo>
                 <artigo>475</artigo>
@@ -485,6 +667,9 @@
                 <artigo>480</artigo>
                 <artigo>481</artigo>
                 <artigo>482</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Responsabilidade civil">
+            <Subseccao id="I" nome="Responsabilidade por factos ilícitos">
                 <artigo>483</artigo>
                 <artigo>484</artigo>
                 <artigo>485</artigo>
@@ -501,6 +686,8 @@
                 <artigo>496</artigo>
                 <artigo>497</artigo>
                 <artigo>498</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Responsabilidade pelo risco">
                 <artigo>499</artigo>
                 <artigo>500</artigo>
                 <artigo>501</artigo>
@@ -513,13 +700,23 @@
                 <artigo>508</artigo>
                 <artigo>509</artigo>
                 <artigo>510</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="III" nome="Modalidades das obrigações">
+          <Seccao id="I" nome="Obrigações de sujeito activo indeterminado">
                 <artigo>511</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Obrigações solidárias">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>512</artigo>
                 <artigo>513</artigo>
                 <artigo>514</artigo>
                 <artigo>515</artigo>
                 <artigo>516</artigo>
                 <artigo>517</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Solidariedade entre devedores">
                 <artigo>518</artigo>
                 <artigo>519</artigo>
                 <artigo>520</artigo>
@@ -530,21 +727,30 @@
                 <artigo>525</artigo>
                 <artigo>526</artigo>
                 <artigo>527</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Solidariedade entre credores">
                 <artigo>528</artigo>
                 <artigo>529</artigo>
                 <artigo>530</artigo>
                 <artigo>531</artigo>
                 <artigo>532</artigo>
                 <artigo>533</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Obrigações divisíveis e indivisíveis">
                 <artigo>534</artigo>
                 <artigo>535</artigo>
                 <artigo>536</artigo>
                 <artigo>537</artigo>
                 <artigo>538</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Obrigações genéricas">
                 <artigo>539</artigo>
                 <artigo>540</artigo>
                 <artigo>541</artigo>
                 <artigo>542</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Obrigações alternativas">
                 <artigo>543</artigo>
                 <artigo>544</artigo>
                 <artigo>545</artigo>
@@ -552,19 +758,31 @@
                 <artigo>547</artigo>
                 <artigo>548</artigo>
                 <artigo>549</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Obrigações pecuniárias">
+            <Subseccao id="I" nome="Obrigações de quantidade">
                 <artigo>550</artigo>
                 <artigo>551</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Obrigações de moeda específica">
                 <artigo>552</artigo>
                 <artigo>553</artigo>
                 <artigo>554</artigo>
                 <artigo>555</artigo>
                 <artigo>556</artigo>
                 <artigo>557</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Obrigações em moeda estrangeira">
                 <artigo>558</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="VII" nome="Obrigações de juros">
                 <artigo>559</artigo>
                 <artigo>559-A</artigo>
                 <artigo>560</artigo>
                 <artigo>561</artigo>
+          </Seccao>
+          <Seccao id="VIII" nome="Obrigação de indemnização">
                 <artigo>562</artigo>
                 <artigo>563</artigo>
                 <artigo>564</artigo>
@@ -576,10 +794,16 @@
                 <artigo>570</artigo>
                 <artigo>571</artigo>
                 <artigo>572</artigo>
+          </Seccao>
+          <Seccao id="IX" nome="Obrigação de informação e de apresentação de coisas ou documentos">
                 <artigo>573</artigo>
                 <artigo>574</artigo>
                 <artigo>575</artigo>
                 <artigo>576</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Transmissão de créditos e de dívidas">
+          <Seccao id="I" nome="Cessão de créditos">
                 <artigo>577</artigo>
                 <artigo>578</artigo>
                 <artigo>579</artigo>
@@ -592,27 +816,42 @@
                 <artigo>586</artigo>
                 <artigo>587</artigo>
                 <artigo>588</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Sub">
                 <artigo>589</artigo>
                 <artigo>590</artigo>
                 <artigo>591</artigo>
                 <artigo>592</artigo>
                 <artigo>593</artigo>
                 <artigo>594</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Transmissão singular de dívidas">
                 <artigo>595</artigo>
                 <artigo>596</artigo>
                 <artigo>597</artigo>
                 <artigo>598</artigo>
                 <artigo>599</artigo>
                 <artigo>600</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="V" nome="Garantia geral das obrigações">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>601</artigo>
                 <artigo>602</artigo>
                 <artigo>603</artigo>
                 <artigo>604</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Conservação da garantia patrimonial">
+            <Subseccao id="I" nome="Declaração de nulidade">
                 <artigo>605</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Sub">
                 <artigo>606</artigo>
                 <artigo>607</artigo>
                 <artigo>608</artigo>
                 <artigo>609</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Impugnação pauliana">
                 <artigo>610</artigo>
                 <artigo>611</artigo>
                 <artigo>612</artigo>
@@ -622,14 +861,24 @@
                 <artigo>616</artigo>
                 <artigo>617</artigo>
                 <artigo>618</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Arresto">
                 <artigo>619</artigo>
                 <artigo>620</artigo>
                 <artigo>621</artigo>
                 <artigo>622</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VI" nome="Garantias especiais das obrigações">
+          <Seccao id="I" nome="Prestação de caução">
                 <artigo>623</artigo>
                 <artigo>624</artigo>
                 <artigo>625</artigo>
                 <artigo>626</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Fiança">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>627</artigo>
                 <artigo>628</artigo>
                 <artigo>629</artigo>
@@ -637,6 +886,8 @@
                 <artigo>631</artigo>
                 <artigo>632</artigo>
                 <artigo>633</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Relações entre o credor e o fiador">
                 <artigo>634</artigo>
                 <artigo>635</artigo>
                 <artigo>636</artigo>
@@ -647,18 +898,27 @@
                 <artigo>641</artigo>
                 <artigo>642</artigo>
                 <artigo>643</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Relações entre o devedor e o fiador">
                 <artigo>644</artigo>
                 <artigo>645</artigo>
                 <artigo>646</artigo>
                 <artigo>647</artigo>
                 <artigo>648</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Pluralidade de fiadores">
                 <artigo>649</artigo>
                 <artigo>650</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Extinção da fiança">
                 <artigo>651</artigo>
                 <artigo>652</artigo>
                 <artigo>653</artigo>
                 <artigo>654</artigo>
                 <artigo>655</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Consignação de rendimentos">
                 <artigo>656</artigo>
                 <artigo>657</artigo>
                 <artigo>658</artigo>
@@ -669,9 +929,14 @@
                 <artigo>663</artigo>
                 <artigo>664</artigo>
                 <artigo>665</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Penhor">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>666</artigo>
                 <artigo>667</artigo>
                 <artigo>668</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Penhor de coisas">
                 <artigo>669</artigo>
                 <artigo>670</artigo>
                 <artigo>671</artigo>
@@ -682,6 +947,8 @@
                 <artigo>676</artigo>
                 <artigo>677</artigo>
                 <artigo>678</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Penhor de direitos">
                 <artigo>679</artigo>
                 <artigo>680</artigo>
                 <artigo>681</artigo>
@@ -689,6 +956,10 @@
                 <artigo>683</artigo>
                 <artigo>684</artigo>
                 <artigo>685</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Hipoteca">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>686</artigo>
                 <artigo>687</artigo>
                 <artigo>688</artigo>
@@ -707,47 +978,73 @@
                 <artigo>701</artigo>
                 <artigo>702</artigo>
                 <artigo>703</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Hipotecas legais">
                 <artigo>704</artigo>
                 <artigo>705</artigo>
                 <artigo>706</artigo>
                 <artigo>707</artigo>
                 <artigo>708</artigo>
                 <artigo>709</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Hipotecas judiciais">
                 <artigo>710</artigo>
                 <artigo>711</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Hipotecas voluntárias">
                 <artigo>712</artigo>
                 <artigo>713</artigo>
                 <artigo>714</artigo>
                 <artigo>715</artigo>
                 <artigo>716</artigo>
                 <artigo>717</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Redução da hipoteca">
                 <artigo>718</artigo>
                 <artigo>719</artigo>
                 <artigo>720</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Transmissão dos bens hipotecados">
                 <artigo>721</artigo>
                 <artigo>722</artigo>
                 <artigo>723</artigo>
                 <artigo>724</artigo>
                 <artigo>725</artigo>
                 <artigo>726</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Transmissão da hipoteca">
                 <artigo>727</artigo>
                 <artigo>728</artigo>
                 <artigo>729</artigo>
+            </Subseccao>
+            <Subseccao id="VIII" nome="Extinção da hipoteca">
                 <artigo>730</artigo>
                 <artigo>731</artigo>
                 <artigo>732</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="VI" nome="Privilégios creditórios">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>733</artigo>
                 <artigo>734</artigo>
                 <artigo>735</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Privilégios mobiliários gerais">
                 <artigo>736</artigo>
                 <artigo>737</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Privilégios mobiliários especiais">
                 <artigo>738</artigo>
                 <artigo>739</artigo>
                 <artigo>740</artigo>
                 <artigo>741</artigo>
                 <artigo>742</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Privilégios imobiliários">
                 <artigo>743</artigo>
                 <artigo>744</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Efeitos e extinção dos privilégios">
                 <artigo>745</artigo>
                 <artigo>746</artigo>
                 <artigo>747</artigo>
@@ -757,6 +1054,9 @@
                 <artigo>751</artigo>
                 <artigo>752</artigo>
                 <artigo>753</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="VII" nome="Direito de retenção">
                 <artigo>754</artigo>
                 <artigo>755</artigo>
                 <artigo>756</artigo>
@@ -765,34 +1065,55 @@
                 <artigo>759</artigo>
                 <artigo>760</artigo>
                 <artigo>761</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VII" nome="Cumprimento e não cumprimento das obrigações">
+          <Seccao id="I" nome="Cumprimento">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>762</artigo>
                 <artigo>763</artigo>
                 <artigo>764</artigo>
                 <artigo>765</artigo>
                 <artigo>766</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Quem pode fazer e a quem pode ser feita a prestação">
                 <artigo>767</artigo>
                 <artigo>768</artigo>
                 <artigo>769</artigo>
                 <artigo>770</artigo>
                 <artigo>771</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Lugar da prestação">
                 <artigo>772</artigo>
                 <artigo>773</artigo>
                 <artigo>774</artigo>
                 <artigo>775</artigo>
                 <artigo>776</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Prazo da prestação">
                 <artigo>777</artigo>
                 <artigo>778</artigo>
                 <artigo>779</artigo>
                 <artigo>780</artigo>
                 <artigo>781</artigo>
                 <artigo>782</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Imputação do cumprimento">
                 <artigo>783</artigo>
                 <artigo>784</artigo>
                 <artigo>785</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Prova do cumprimento">
                 <artigo>786</artigo>
                 <artigo>787</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Direito à restituição do título ou à menção do cumprimento">
                 <artigo>788</artigo>
                 <artigo>789</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="II" nome="Não cumprimento">
+            <Subseccao id="I" nome="Impossibilidade do cumprimento e mora não imputáveis ao devedor">
                 <artigo>790</artigo>
                 <artigo>791</artigo>
                 <artigo>792</artigo>
@@ -801,25 +1122,41 @@
                 <artigo>795</artigo>
                 <artigo>796</artigo>
                 <artigo>797</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Falta de cumprimento e mora imputáveis ao devedor">
+              <Divisao id="I" nome="Princípios gerais">
                 <artigo>798</artigo>
                 <artigo>799</artigo>
                 <artigo>800</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Impossibilidade do cumprimento">
                 <artigo>801</artigo>
                 <artigo>802</artigo>
                 <artigo>803</artigo>
+              </Divisao>
+              <Divisao id="III" nome="Mora do devedor">
                 <artigo>804</artigo>
                 <artigo>805</artigo>
                 <artigo>806</artigo>
                 <artigo>807</artigo>
                 <artigo>808</artigo>
+              </Divisao>
+              <Divisao id="IV" nome="Fixação contratual dos direitos do credor">
                 <artigo>809</artigo>
                 <artigo>810</artigo>
                 <artigo>811</artigo>
                 <artigo>812</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="III" nome="Mora do credor">
                 <artigo>813</artigo>
                 <artigo>814</artigo>
                 <artigo>815</artigo>
                 <artigo>816</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Realização coactiva da prestação">
+            <Subseccao id="I" nome="Acção de cumprimento e execução">
                 <artigo>817</artigo>
                 <artigo>818</artigo>
                 <artigo>819</artigo>
@@ -830,27 +1167,40 @@
                 <artigo>824</artigo>
                 <artigo>825</artigo>
                 <artigo>826</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Execução específica">
                 <artigo>827</artigo>
                 <artigo>828</artigo>
                 <artigo>829</artigo>
                 <artigo>829-A</artigo>
                 <artigo>830</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="IV" nome="Cessão de bens aos credores">
                 <artigo>831</artigo>
                 <artigo>832</artigo>
                 <artigo>833</artigo>
                 <artigo>834</artigo>
                 <artigo>835</artigo>
                 <artigo>836</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VIII" nome="Causas de extinção das obrigações além do cumprimento">
+          <Seccao id="I" nome="Dação em cumprimento">
                 <artigo>837</artigo>
                 <artigo>838</artigo>
                 <artigo>839</artigo>
                 <artigo>840</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Consignação em depósito">
                 <artigo>841</artigo>
                 <artigo>842</artigo>
                 <artigo>843</artigo>
                 <artigo>844</artigo>
                 <artigo>845</artigo>
                 <artigo>846</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Compensação">
                 <artigo>847</artigo>
                 <artigo>848</artigo>
                 <artigo>849</artigo>
@@ -861,28 +1211,42 @@
                 <artigo>854</artigo>
                 <artigo>855</artigo>
                 <artigo>856</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Novação">
                 <artigo>857</artigo>
                 <artigo>858</artigo>
                 <artigo>859</artigo>
                 <artigo>860</artigo>
                 <artigo>861</artigo>
                 <artigo>862</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Remissão">
                 <artigo>863</artigo>
                 <artigo>864</artigo>
                 <artigo>865</artigo>
                 <artigo>866</artigo>
                 <artigo>867</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Confusão">
                 <artigo>868</artigo>
                 <artigo>869</artigo>
                 <artigo>870</artigo>
                 <artigo>871</artigo>
                 <artigo>872</artigo>
                 <artigo>873</artigo>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="II" nome="Dos contratos em especial">
+        <Capitulo id="I" nome="Compra e venda">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>874</artigo>
                 <artigo>875</artigo>
                 <artigo>876</artigo>
                 <artigo>877</artigo>
                 <artigo>878</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Efeitos da compra e venda">
                 <artigo>879</artigo>
                 <artigo>880</artigo>
                 <artigo>881</artigo>
@@ -891,11 +1255,15 @@
                 <artigo>884</artigo>
                 <artigo>885</artigo>
                 <artigo>886</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Venda de coisas sujeitas a contagem, pesagem ou medição">
                 <artigo>887</artigo>
                 <artigo>888</artigo>
                 <artigo>889</artigo>
                 <artigo>890</artigo>
                 <artigo>891</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Venda de bens alheios">
                 <artigo>892</artigo>
                 <artigo>893</artigo>
                 <artigo>894</artigo>
@@ -909,6 +1277,8 @@
                 <artigo>902</artigo>
                 <artigo>903</artigo>
                 <artigo>904</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Venda de bens onerados">
                 <artigo>905</artigo>
                 <artigo>906</artigo>
                 <artigo>907</artigo>
@@ -917,6 +1287,8 @@
                 <artigo>910</artigo>
                 <artigo>911</artigo>
                 <artigo>912</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Venda de coisas defeituosas">
                 <artigo>913</artigo>
                 <artigo>914</artigo>
                 <artigo>915</artigo>
@@ -927,10 +1299,14 @@
                 <artigo>920</artigo>
                 <artigo>921</artigo>
                 <artigo>922</artigo>
+          </Seccao>
+          <Seccao id="VII" nome="Venda a contento e venda sujeita a prova">
                 <artigo>923</artigo>
                 <artigo>924</artigo>
                 <artigo>925</artigo>
                 <artigo>926</artigo>
+          </Seccao>
+          <Seccao id="VIII" nome="Venda a retro">
                 <artigo>927</artigo>
                 <artigo>928</artigo>
                 <artigo>929</artigo>
@@ -938,12 +1314,22 @@
                 <artigo>931</artigo>
                 <artigo>932</artigo>
                 <artigo>933</artigo>
+          </Seccao>
+          <Seccao id="IX" nome="Venda a prestações">
                 <artigo>934</artigo>
                 <artigo>935</artigo>
                 <artigo>936</artigo>
+          </Seccao>
+          <Seccao id="X" nome="Venda sobre documentos">
                 <artigo>937</artigo>
                 <artigo>938</artigo>
+          </Seccao>
+          <Seccao id="XI" nome="Outros contratos onerosos">
                 <artigo>939</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Doação">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>940</artigo>
                 <artigo>941</artigo>
                 <artigo>942</artigo>
@@ -952,12 +1338,16 @@
                 <artigo>945</artigo>
                 <artigo>946</artigo>
                 <artigo>947</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Capacidade para fazer ou receber doações">
                 <artigo>948</artigo>
                 <artigo>949</artigo>
                 <artigo>950</artigo>
                 <artigo>951</artigo>
                 <artigo>952</artigo>
                 <artigo>953</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Efeitos das doações">
                 <artigo>954</artigo>
                 <artigo>955</artigo>
                 <artigo>956</artigo>
@@ -973,6 +1363,8 @@
                 <artigo>966</artigo>
                 <artigo>967</artigo>
                 <artigo>968</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Revogação das doações">
                 <artigo>969</artigo>
                 <artigo>970</artigo>
                 <artigo>971</artigo>
@@ -984,9 +1376,15 @@
                 <artigo>977</artigo>
                 <artigo>978</artigo>
                 <artigo>979</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="III" nome="Sociedade">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>980</artigo>
                 <artigo>981</artigo>
                 <artigo>982</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Relações entre os sócios">
                 <artigo>983</artigo>
                 <artigo>984</artigo>
                 <artigo>985</artigo>
@@ -1000,20 +1398,28 @@
                 <artigo>993</artigo>
                 <artigo>994</artigo>
                 <artigo>995</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Relações com terceiros">
                 <artigo>996</artigo>
                 <artigo>997</artigo>
                 <artigo>998</artigo>
                 <artigo>999</artigo>
                 <artigo>1000</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Morte, exoneração ou exclusão de sócios">
                 <artigo>1001</artigo>
                 <artigo>1002</artigo>
                 <artigo>1003</artigo>
                 <artigo>1004</artigo>
                 <artigo>1005</artigo>
                 <artigo>1006</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Dissolução da sociedade">
                 <artigo>1007</artigo>
                 <artigo>1008</artigo>
                 <artigo>1009</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Liquidação da sociedade e de quotas">
                 <artigo>1010</artigo>
                 <artigo>1011</artigo>
                 <artigo>1012</artigo>
@@ -1026,6 +1432,10 @@
                 <artigo>1019</artigo>
                 <artigo>1020</artigo>
                 <artigo>1021</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Locação">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1022</artigo>
                 <artigo>1023</artigo>
                 <artigo>1024</artigo>
@@ -1035,6 +1445,8 @@
                 <artigo>1028</artigo>
                 <artigo>1029</artigo>
                 <artigo>1030</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Obrigações do locador">
                 <artigo>1031</artigo>
                 <artigo>1032</artigo>
                 <artigo>1033</artigo>
@@ -1042,76 +1454,131 @@
                 <artigo>1035</artigo>
                 <artigo>1036</artigo>
                 <artigo>1037</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Obrigações do locatário">
+            <Subseccao id="I" nome="Disposição geral">
                 <artigo>1038</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Pagamento da renda ou aluguer">
                 <artigo>1039</artigo>
                 <artigo>1040</artigo>
                 <artigo>1041</artigo>
                 <artigo>1042</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Restituição da coisa locada">
                 <artigo>1043</artigo>
                 <artigo>1044</artigo>
                 <artigo>1045</artigo>
                 <artigo>1046</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="IV" nome="Resolução e caducidade do contrato">
+            <Subseccao id="I" nome="Resolução">
                 <artigo>1047</artigo>
                 <artigo>1048</artigo>
                 <artigo>1049</artigo>
                 <artigo>1050</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Caducidade">
                 <artigo>1051</artigo>
                 <artigo>1052</artigo>
                 <artigo>1053</artigo>
                 <artigo>1054</artigo>
                 <artigo>1055</artigo>
                 <artigo>1056</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Transmissão da posição contratual">
                 <artigo>1057</artigo>
                 <artigo>1058</artigo>
                 <artigo>1059</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Sublocação">
                 <artigo>1060</artigo>
                 <artigo>1061</artigo>
                 <artigo>1062</artigo>
                 <artigo>1063</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Arrendamento de prédios urbanos">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1064</artigo>
                 <artigo>1065</artigo>
                 <artigo>1066</artigo>
                 <artigo>1067</artigo>
                 <artigo>1068</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Celebração">
                 <artigo>1069</artigo>
                 <artigo>1070</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Direitos e obrigações das partes">
+              <Divisao id="I" nome="Obrigações não pecuniárias">
                 <artigo>1071</artigo>
                 <artigo>1072</artigo>
                 <artigo>1073</artigo>
                 <artigo>1074</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Renda e encargos">
                 <artigo>1075</artigo>
                 <artigo>1076</artigo>
                 <artigo>1077</artigo>
                 <artigo>1078</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="IV" nome="Cessação">
+              <Divisao id="I" nome="Disposições comuns">
                 <artigo>1079</artigo>
                 <artigo>1080</artigo>
                 <artigo>1081</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Cessação por acordo entre as partes">
                 <artigo>1082</artigo>
+              </Divisao>
+              <Divisao id="III" nome="Resolução">
                 <artigo>1083</artigo>
                 <artigo>1084</artigo>
                 <artigo>1085</artigo>
                 <artigo>1086</artigo>
                 <artigo>1087</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="V" nome="Subarrendamento">
                 <artigo>1088</artigo>
                 <artigo>1089</artigo>
                 <artigo>1090</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Direito de preferência">
                 <artigo>1091</artigo>
+            </Subseccao>
+            <Subseccao id="VII" nome="Disposições especiais do arrendamento para habitação">
+              <Divisao id="I" nome="Âmbito do contrato">
                 <artigo>1092</artigo>
                 <artigo>1093</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Duração">
                   <artigo>1094</artigo>
+                <Subdivisao id="I" nome="Contrato com prazo certo">
                   <artigo>1095</artigo>
                   <artigo>1096</artigo>
                   <artigo>1097</artigo>
                   <artigo>1098</artigo>
+                </Subdivisao>
+                <Subdivisao id="I" nome="Contrato de duração indeterminada">
                   <artigo>1099</artigo>
                   <artigo>1100</artigo>
                   <artigo>1101</artigo>
                   <artigo>1102</artigo>
                   <artigo>1103</artigo>
                   <artigo>1104</artigo>
+                </Subdivisao>
+              </Divisao>
+              <Divisao id="III" nome="Transmissão">
                   <artigo>1105</artigo>
                   <artigo>1106</artigo>
                   <artigo>1107</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="VIII" nome="Disposições especiais do arrendamento para fins não habitacionais">
                   <artigo>1108</artigo>
                   <artigo>1109</artigo>
                   <artigo>1110</artigo>
@@ -1125,8 +1592,14 @@
                   <artigo>1116</artigo>
                   <artigo>1117</artigo>
                   <artigo>1118</artigo>
-                  <artigo>1119</artigo>
+            </Subseccao>
+            <Subseccao id="VIII" nome="Disposições especiais dos arrendamentos para o exercício de profissões liberais">
+                <artigo>1119</artigo>
                 <artigo>1120</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="V" nome="Parceria pecuária">
                 <artigo>1121</artigo>
                 <artigo>1122</artigo>
                 <artigo>1123</artigo>
@@ -1135,6 +1608,8 @@
                 <artigo>1126</artigo>
                 <artigo>1127</artigo>
                 <artigo>1128</artigo>
+        </Capitulo>
+        <Capitulo id="VI" nome="Comodato">
                 <artigo>1129</artigo>
                 <artigo>1130</artigo>
                 <artigo>1131</artigo>
@@ -1148,6 +1623,8 @@
                 <artigo>1139</artigo>
                 <artigo>1140</artigo>
                 <artigo>1141</artigo>
+        </Capitulo>
+        <Capitulo id="VII" nome="Mútuo">
                 <artigo>1142</artigo>
                 <artigo>1143</artigo>
                 <artigo>1144</artigo>
@@ -1158,41 +1635,68 @@
                 <artigo>1149</artigo>
                 <artigo>1150</artigo>
                 <artigo>1151</artigo>
+        </Capitulo>
+        <Capitulo id="VIII" nome="Contrato de trabalho">
                 <artigo>1152</artigo>
                 <artigo>1153</artigo>
+        </Capitulo>
+        <Capitulo id="IX" nome="Prestação de serviço">
                 <artigo>1154</artigo>
                 <artigo>1155</artigo>
                 <artigo>1156</artigo>
+        </Capitulo>
+        <Capitulo id="X" nome="Mandato">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1157</artigo>
                 <artigo>1158</artigo>
                 <artigo>1159</artigo>
                 <artigo>1160</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Direitos e obrigações do mandatário">
                 <artigo>1161</artigo>
                 <artigo>1162</artigo>
                 <artigo>1163</artigo>
                 <artigo>1164</artigo>
                 <artigo>1165</artigo>
                 <artigo>1166</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Obrigações do mandante">
                 <artigo>1167</artigo>
                 <artigo>1168</artigo>
                 <artigo>1169</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Revogação e caducidade do mandato">
+            <Subseccao id="I" nome="Revogação">
                 <artigo>1170</artigo>
                 <artigo>1171</artigo>
                 <artigo>1172</artigo>
                 <artigo>1173</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Caducidade">
                 <artigo>1174</artigo>
                 <artigo>1175</artigo>
                 <artigo>1176</artigo>
                 <artigo>1177</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Mandato com representação">
                 <artigo>1178</artigo>
                 <artigo>1179</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Mandato sem representação">
                 <artigo>1180</artigo>
                 <artigo>1181</artigo>
                 <artigo>1182</artigo>
                 <artigo>1183</artigo>
                 <artigo>1184</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="XI" nome="Depósito">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1185</artigo>
                 <artigo>1186</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Direitos e obrigações do depositário">
                 <artigo>1187</artigo>
                 <artigo>1188</artigo>
                 <artigo>1189</artigo>
@@ -1205,14 +1709,24 @@
                 <artigo>1196</artigo>
                 <artigo>1197</artigo>
                 <artigo>1198</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Obrigações do depositante">
                 <artigo>1199</artigo>
                 <artigo>1200</artigo>
                 <artigo>1201</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Depósito de coisa controvertida">
                 <artigo>1202</artigo>
                 <artigo>1203</artigo>
                 <artigo>1204</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Depósito irregular">
                 <artigo>1205</artigo>
                 <artigo>1206</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="XII" nome="Empreitada">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1207</artigo>
                 <artigo>1208</artigo>
                 <artigo>1209</artigo>
@@ -1220,10 +1734,14 @@
                 <artigo>1211</artigo>
                 <artigo>1212</artigo>
                 <artigo>1213</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Alterações e obras novas">
                 <artigo>1214</artigo>
                 <artigo>1215</artigo>
                 <artigo>1216</artigo>
                 <artigo>1217</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Defeitos da obra">
                 <artigo>1218</artigo>
                 <artigo>1219</artigo>
                 <artigo>1220</artigo>
@@ -1233,10 +1751,17 @@
                 <artigo>1224</artigo>
                 <artigo>1225</artigo>
                 <artigo>1226</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Impossibilidade de cumprimento e risco pela perda ou deterioração da obra">
                 <artigo>1227</artigo>
                 <artigo>1228</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Extinção do contrato">
                 <artigo>1229</artigo>
                 <artigo>1230</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="XIII" nome="Renda perpétua">
                 <artigo>1231</artigo>
                 <artigo>1232</artigo>
                 <artigo>1233</artigo>
@@ -1244,6 +1769,8 @@
                 <artigo>1235</artigo>
                 <artigo>1236</artigo>
                 <artigo>1237</artigo>
+        </Capitulo>
+        <Capitulo id="XIV" nome="Renda vitalícia">
                 <artigo>1238</artigo>
                 <artigo>1239</artigo>
                 <artigo>1240</artigo>
@@ -1251,12 +1778,22 @@
                 <artigo>1242</artigo>
                 <artigo>1243</artigo>
                 <artigo>1244</artigo>
+        </Capitulo>
+        <Capitulo id="XV" nome="Jogo e aposta">
                 <artigo>1245</artigo>
                 <artigo>1246</artigo>
                 <artigo>1247</artigo>
+        </Capitulo>
+        <Capitulo id="XVI" nome="Transacção">
                 <artigo>1248</artigo>
                 <artigo>1249</artigo>
                 <artigo>1250</artigo>
+        </Capitulo>
+    </Titulo>
+  </Livro>
+  <Livro id="III" nome="DIREITO DAS COISAS">
+    <Titulo id="I" nome="Da posse">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1251</artigo>
                 <artigo>1252</artigo>
                 <artigo>1253</artigo>
@@ -1264,16 +1801,22 @@
                 <artigo>1255</artigo>
                 <artigo>1256</artigo>
                 <artigo>1257</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Caracteres da posse">
                 <artigo>1258</artigo>
                 <artigo>1259</artigo>
                 <artigo>1260</artigo>
                 <artigo>1261</artigo>
                 <artigo>1262</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Aquisição e perda da posse">
                 <artigo>1263</artigo>
                 <artigo>1264</artigo>
                 <artigo>1265</artigo>
                 <artigo>1266</artigo>
                 <artigo>1267</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Efeitos da posse">
                 <artigo>1268</artigo>
                 <artigo>1269</artigo>
                 <artigo>1270</artigo>
@@ -1282,6 +1825,8 @@
                 <artigo>1273</artigo>
                 <artigo>1274</artigo>
                 <artigo>1275</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Defesa da posse">
                 <artigo>1276</artigo>
                 <artigo>1277</artigo>
                 <artigo>1278</artigo>
@@ -1293,21 +1838,34 @@
                 <artigo>1284</artigo>
                 <artigo>1285</artigo>
                 <artigo>1286</artigo>
+        </Capitulo>
+        <Capitulo id="VI" nome="Usucapião">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1287</artigo>
                 <artigo>1288</artigo>
                 <artigo>1289</artigo>
                 <artigo>1290</artigo>
                 <artigo>1291</artigo>
                 <artigo>1292</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Usucapião de imóveis">
                 <artigo>1293</artigo>
                 <artigo>1294</artigo>
                 <artigo>1295</artigo>
                 <artigo>1296</artigo>
                 <artigo>1297</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Usucapião de móveis">
                 <artigo>1298</artigo>
                 <artigo>1299</artigo>
                 <artigo>1300</artigo>
                 <artigo>1301</artigo>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="II" nome="Do direito de propriedade">
+        <Capitulo id="I" nome="Propriedade em geral">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1302</artigo>
                 <artigo>1303</artigo>
                 <artigo>1304</artigo>
@@ -1317,13 +1875,21 @@
                 <artigo>1308</artigo>
                 <artigo>1309</artigo>
                 <artigo>1310</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Defesa da propriedade">
                 <artigo>1311</artigo>
                 <artigo>1312</artigo>
                 <artigo>1313</artigo>
                 <artigo>1314</artigo>
                 <artigo>1315</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Aquisição da propriedade">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1316</artigo>
                 <artigo>1317</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Ocupação">
                 <artigo>1318</artigo>
                 <artigo>1319</artigo>
                 <artigo>1320</artigo>
@@ -1331,25 +1897,39 @@
                 <artigo>1322</artigo>
                 <artigo>1323</artigo>
                 <artigo>1324</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Acessão">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1325</artigo>
                 <artigo>1326</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Acessão natural">
                 <artigo>1327</artigo>
                 <artigo>1328</artigo>
                 <artigo>1329</artigo>
                 <artigo>1330</artigo>
                 <artigo>1331</artigo>
                 <artigo>1332</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Acessão industrial mobiliária">
                 <artigo>1333</artigo>
                 <artigo>1334</artigo>
                 <artigo>1335</artigo>
                 <artigo>1336</artigo>
                 <artigo>1337</artigo>
                 <artigo>1338</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Acessão industrial imobiliária">
                 <artigo>1339</artigo>
                 <artigo>1340</artigo>
                 <artigo>1341</artigo>
                 <artigo>1342</artigo>
                 <artigo>1343</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="III" nome="Propriedade de imóveis">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1344</artigo>
                 <artigo>1345</artigo>
                 <artigo>1346</artigo>
@@ -1359,29 +1939,41 @@
                 <artigo>1350</artigo>
                 <artigo>1351</artigo>
                 <artigo>1352</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Direito de demarcação">
                 <artigo>1353</artigo>
                 <artigo>1354</artigo>
                 <artigo>1355</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Direito de tapagem">
                 <artigo>1356</artigo>
                 <artigo>1357</artigo>
                 <artigo>1358</artigo>
                 <artigo>1359</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Construções e edificações">
                 <artigo>1360</artigo>
                 <artigo>1361</artigo>
                 <artigo>1362</artigo>
                 <artigo>1363</artigo>
                 <artigo>1364</artigo>
                 <artigo>1365</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Plantação de árvores e arbustos">
                 <artigo>1366</artigo>
                 <artigo>1367</artigo>
                 <artigo>1368</artigo>
                 <artigo>1369</artigo>
+          </Seccao>
+          <Seccao id="VI" nome="Paredes e muros de meação">
                 <artigo>1370</artigo>
                 <artigo>1371</artigo>
                 <artigo>1372</artigo>
                 <artigo>1373</artigo>
                 <artigo>1374</artigo>
                 <artigo>1375</artigo>
+          </Seccao>
+          <Seccao id="VII" nome="Fraccionamento e emparcelamento de prédios rústicos">
                 <artigo>1376</artigo>
                 <artigo>1377</artigo>
                 <artigo>1378</artigo>
@@ -1389,12 +1981,20 @@
                 <artigo>1380</artigo>
                 <artigo>1381</artigo>
                 <artigo>1382</artigo>
+          </Seccao>
+          <Seccao id="VIII" nome="Atravessadouros">
                 <artigo>1383</artigo>
                 <artigo>1384</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Propriedade das águas">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1385</artigo>
                 <artigo>1386</artigo>
                 <artigo>1387</artigo>
                 <artigo>1388</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Aproveitamento das águas">
                 <artigo>1389</artigo>
                 <artigo>1390</artigo>
                 <artigo>1391</artigo>
@@ -1404,14 +2004,22 @@
                 <artigo>1395</artigo>
                 <artigo>1396</artigo>
                 <artigo>1397</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Condomínio das águas">
                 <artigo>1398</artigo>
                 <artigo>1399</artigo>
                 <artigo>1400</artigo>
                 <artigo>1401</artigo>
                 <artigo>1402</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="V" nome="Compropriedade">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1403</artigo>
                 <artigo>1404</artigo>
                 <artigo>1405</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Direitos e encargos do comproprietário">
                 <artigo>1406</artigo>
                 <artigo>1407</artigo>
                 <artigo>1408</artigo>
@@ -1420,12 +2028,20 @@
                 <artigo>1411</artigo>
                 <artigo>1412</artigo>
                 <artigo>1413</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VI" nome="Propriedade horizontal">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1414</artigo>
                 <artigo>1415</artigo>
                 <artigo>1416</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Constituição">
                 <artigo>1417</artigo>
                 <artigo>1418</artigo>
                 <artigo>1419</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Direitos e encargos dos condóminos">
                 <artigo>1420</artigo>
                 <artigo>1421</artigo>
                 <artigo>1422</artigo>
@@ -1438,6 +2054,8 @@
                 <artigo>1428</artigo>
                 <artigo>1429</artigo>
                 <artigo>1429-A</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Administração das partes comuns do edifício">
                 <artigo>1430</artigo>
                 <artigo>1431</artigo>
                 <artigo>1432</artigo>
@@ -1449,6 +2067,11 @@
                 <artigo>1437</artigo>
                 <artigo>1438</artigo>
                 <artigo>1438-A</artigo>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="III" nome="Do usufruto, uso e habitação">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1439</artigo>
                 <artigo>1440</artigo>
                 <artigo>1441</artigo>
@@ -1456,6 +2079,8 @@
                 <artigo>1443</artigo>
                 <artigo>1444</artigo>
                 <artigo>1445</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Direitos do usufrutuário">
                 <artigo>1446</artigo>
                 <artigo>1447</artigo>
                 <artigo>1448</artigo>
@@ -1478,6 +2103,8 @@
                 <artigo>1465</artigo>
                 <artigo>1466</artigo>
                 <artigo>1467</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Obrigações do usufrutuário">
                 <artigo>1468</artigo>
                 <artigo>1469</artigo>
                 <artigo>1470</artigo>
@@ -1486,6 +2113,8 @@
                 <artigo>1473</artigo>
                 <artigo>1474</artigo>
                 <artigo>1475</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Extinção do usufruto">
                 <artigo>1476</artigo>
                 <artigo>1477</artigo>
                 <artigo>1478</artigo>
@@ -1494,6 +2123,8 @@
                 <artigo>1481</artigo>
                 <artigo>1482</artigo>
                 <artigo>1483</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Uso e habitação">
                 <artigo>1484</artigo>
                 <artigo>1485</artigo>
                 <artigo>1486</artigo>
@@ -1501,31 +2132,49 @@
                 <artigo>1488</artigo>
                 <artigo>1489</artigo>
                 <artigo>1490</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="IV" nome="Da enfiteuse">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1491</artigo>
                 <artigo>1492</artigo>
                 <artigo>1493</artigo>
                 <artigo>1494</artigo>
                 <artigo>1495</artigo>
                 <artigo>1496</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Constituição da enfiteuse">
                 <artigo>1497</artigo>
                 <artigo>1498</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Direitos e encargos do senhorio e do enfiteuta">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1499</artigo>
                 <artigo>1500</artigo>
                 <artigo>1501</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Pagamento do foro">
                 <artigo>1502</artigo>
                 <artigo>1503</artigo>
                 <artigo>1504</artigo>
                 <artigo>1505</artigo>
                 <artigo>1506</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Outros direitos e encargos">
                 <artigo>1507</artigo>
                 <artigo>1508</artigo>
                 <artigo>1509</artigo>
                 <artigo>1510</artigo>
                 <artigo>1511</artigo>
                 <artigo>1512</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Extinção da enfiteuse">
                 <artigo>1513</artigo>
                 <artigo>1514</artigo>
                 <artigo>1515</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Disposições transitórias">
                 <artigo>1516</artigo>
                 <artigo>1517</artigo>
                 <artigo>1518</artigo>
@@ -1534,18 +2183,28 @@
                 <artigo>1521</artigo>
                 <artigo>1522</artigo>
                 <artigo>1523</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="V" nome="Do direito de superfície">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1524</artigo>
                 <artigo>1525</artigo>
                 <artigo>1526</artigo>
                 <artigo>1527</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Constituição do direito de superfície">
                 <artigo>1528</artigo>
                 <artigo>1529</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Direitos e encargos do superficiário e do proprietário">
                 <artigo>1530</artigo>
                 <artigo>1531</artigo>
                 <artigo>1532</artigo>
                 <artigo>1533</artigo>
                 <artigo>1534</artigo>
                 <artigo>1535</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Extinção do direito de superfície">
                 <artigo>1536</artigo>
                 <artigo>1537</artigo>
                 <artigo>1538</artigo>
@@ -1553,13 +2212,22 @@
                 <artigo>1540</artigo>
                 <artigo>1541</artigo>
                 <artigo>1542</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="VI" nome="Das servidões prediais">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1543</artigo>
                 <artigo>1544</artigo>
                 <artigo>1545</artigo>
                 <artigo>1546</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Constituição das servidões">
                 <artigo>1547</artigo>
                 <artigo>1548</artigo>
                 <artigo>1549</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Servidões legais">
+          <Seccao id="I" nome="Servidões legais de passagem">
                 <artigo>1550</artigo>
                 <artigo>1551</artigo>
                 <artigo>1552</artigo>
@@ -1567,6 +2235,8 @@
                 <artigo>1554</artigo>
                 <artigo>1555</artigo>
                 <artigo>1556</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Servidões legais de águas">
                 <artigo>1557</artigo>
                 <artigo>1558</artigo>
                 <artigo>1559</artigo>
@@ -1574,11 +2244,16 @@
                 <artigo>1561</artigo>
                 <artigo>1562</artigo>
                 <artigo>1563</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Exercício das servidões">
                 <artigo>1564</artigo>
                 <artigo>1565</artigo>
                 <artigo>1566</artigo>
                 <artigo>1567</artigo>
                 <artigo>1568</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Extinção das servidões">
                 <artigo>1569</artigo>
                 <artigo>1570</artigo>
                 <artigo>1571</artigo>
@@ -1586,6 +2261,11 @@
                 <artigo>1573</artigo>
                 <artigo>1574</artigo>
                 <artigo>1575</artigo>
+        </Capitulo>
+    </Titulo>
+  </Livro>
+  <Livro id="IV" nome="DIREITO DA FAMÍLIA">
+    <Titulo id="I" nome="Disposições gerais">
                 <artigo>1576</artigo>
                 <artigo>1577</artigo>
                 <artigo>1578</artigo>
@@ -1597,19 +2277,30 @@
                 <artigo>1584</artigo>
                 <artigo>1585</artigo>
                 <artigo>1586</artigo>
+    </Titulo>
+    <Titulo id="II" nome="Do casamento">
+        <Capitulo id="I" nome="Modalidades do casamento">
                 <artigo>1587</artigo>
                 <artigo>1588</artigo>
                 <artigo>1589</artigo>
                 <artigo>1590</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Promessa de casamento">
                 <artigo>1591</artigo>
                 <artigo>1592</artigo>
                 <artigo>1593</artigo>
                 <artigo>1594</artigo>
                 <artigo>1595</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Pressupostos da celebração do casamento">
+          <Seccao id="I" nome="Casamento católico">
                 <artigo>1596</artigo>
                 <artigo>1597</artigo>
                 <artigo>1598</artigo>
                 <artigo>1599</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Casamento civil">
+            <Subseccao id="I" nome="Impedimentos matrimoniais">
                 <artigo>1600</artigo>
                 <artigo>1601</artigo>
                 <artigo>1602</artigo>
@@ -1620,11 +2311,18 @@
                 <artigo>1607</artigo>
                 <artigo>1608</artigo>
                 <artigo>1609</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Processo preliminar de casamento">
                 <artigo>1610</artigo>
                 <artigo>1611</artigo>
                 <artigo>1612</artigo>
                 <artigo>1613</artigo>
                 <artigo>1614</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IV" nome="Celebração do casamento civil">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1615</artigo>
                 <artigo>1616</artigo>
                 <artigo>1617</artigo>
@@ -1632,39 +2330,74 @@
                 <artigo>1619</artigo>
                 <artigo>1620</artigo>
                 <artigo>1621</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Casamentos urgentes">
                 <artigo>1622</artigo>
                 <artigo>1623</artigo>
                 <artigo>1624</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="V" nome="Invalidade do casamento">
+          <Seccao id="I" nome="Casamento católico">
                 <artigo>1625</artigo>
                 <artigo>1626</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Casamento civil">
+            <Subseccao id="I" nome="Disposição geral">
                 <artigo>1627</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Inexistência do casamento">
                 <artigo>1628</artigo>
                 <artigo>1629</artigo>
                 <artigo>1630</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Anulabilidade do casamento">
+              <Divisao id="I" nome="Disposições gerais">
                 <artigo>1631</artigo>
                 <artigo>1632</artigo>
                 <artigo>1633</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Falta ou vícios da vontade">
                 <artigo>1634</artigo>
                 <artigo>1635</artigo>
                 <artigo>1636</artigo>
                 <artigo>1637</artigo>
                 <artigo>1638</artigo>
+              </Divisao>
+              <Divisao id="III" nome="Legitimidade">
                 <artigo>1639</artigo>
                 <artigo>1640</artigo>
                 <artigo>1641</artigo>
                 <artigo>1642</artigo>
+              </Divisao>
+              <Divisao id="IV" nome="Prazos">
                 <artigo>1643</artigo>
                 <artigo>1644</artigo>
                 <artigo>1645</artigo>
                 <artigo>1646</artigo>
+              </Divisao>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VI" nome="Casamento putativo">
                 <artigo>1647</artigo>
                 <artigo>1648</artigo>
+        </Capitulo>
+        <Capitulo id="VII" nome="Sanções especiais">
                 <artigo>1649</artigo>
                 <artigo>1650</artigo>
+        </Capitulo>
+        <Capitulo id="VIII" nome="Registo do casamento">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1651</artigo>
                 <artigo>1652</artigo>
                 <artigo>1653</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Registo por transcrição">
+            <Subseccao id="I" nome="Disposição geral">
                 <artigo>1654</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Transcrição dos casamentos católicos celebrados em Portugal">
                 <artigo>1655</artigo>
                 <artigo>1656</artigo>
                 <artigo>1657</artigo>
@@ -1672,15 +2405,28 @@
                 <artigo>1659</artigo>
                 <artigo>1660</artigo>
                 <artigo>1661</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Transcrição dos casamentos civis urgentes">
                 <artigo>1662</artigo>
                 <artigo>1663</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Transcrição dos casamentos de portugueses no estrangeiro">
                 <artigo>1664</artigo>
                 <artigo>1665</artigo>
                 <artigo>1666</artigo>
                 <artigo>1667</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Transcrição dos casamentos admitidos a registo">
                 <artigo>1668</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Efeitos do registo">
                 <artigo>1669</artigo>
                 <artigo>1670</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="IX" nome="Efeitos do casamento quanto às pessoas e aos bens dos cônjuges">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1671</artigo>
                 <artigo>1672</artigo>
                 <artigo>1673</artigo>
@@ -1706,6 +2452,8 @@
                 <artigo>1687</artigo>
                 <artigo>1688</artigo>
                 <artigo>1689</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Dívidas dos cônjuges">
                 <artigo>1690</artigo>
                 <artigo>1691</artigo>
                 <artigo>1692</artigo>
@@ -1714,6 +2462,8 @@
                 <artigo>1695</artigo>
                 <artigo>1696</artigo>
                 <artigo>1697</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Convenções antenupciais">
                 <artigo>1698</artigo>
                 <artigo>1699</artigo>
                 <artigo>1700</artigo>
@@ -1733,10 +2483,15 @@
                 <artigo>1714</artigo>
                 <artigo>1715</artigo>
                 <artigo>1716</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Regimes de bens">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1717</artigo>
                 <artigo>1718</artigo>
                 <artigo>1719</artigo>
                 <artigo>1720</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Regime da comunhão de adquiridos">
                 <artigo>1721</artigo>
                 <artigo>1722</artigo>
                 <artigo>1723</artigo>
@@ -1748,12 +2503,18 @@
                 <artigo>1729</artigo>
                 <artigo>1730</artigo>
                 <artigo>1731</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Regime da comunhão geral">
                 <artigo>1732</artigo>
                 <artigo>1733</artigo>
                 <artigo>1734</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Regime da separação">
                 <artigo>1735</artigo>
                 <artigo>1736</artigo>
                 <artigo>1737</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Regime dotal">
                 <artigo>1738</artigo>
                 <artigo>1739</artigo>
                 <artigo>1740</artigo>
@@ -1769,6 +2530,11 @@
                 <artigo>1750</artigo>
                 <artigo>1751</artigo>
                 <artigo>1752</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="X" nome="Doações para casamento e entre casados">
+          <Seccao id="I" nome="Doações para casamento">
                 <artigo>1753</artigo>
                 <artigo>1754</artigo>
                 <artigo>1755</artigo>
@@ -1777,26 +2543,39 @@
                 <artigo>1758</artigo>
                 <artigo>1759</artigo>
                 <artigo>1760</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Doações entre casados">
                 <artigo>1761</artigo>
                 <artigo>1762</artigo>
                 <artigo>1763</artigo>
                 <artigo>1764</artigo>
                 <artigo>1765</artigo>
                 <artigo>1766</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="XI" nome="Simples separação judicial de bens">
                 <artigo>1767</artigo>
                 <artigo>1768</artigo>
                 <artigo>1769</artigo>
                 <artigo>1770</artigo>
                 <artigo>1771</artigo>
                 <artigo>1772</artigo>
+        </Capitulo>
+        <Capitulo id="XII" nome="Divórcio e separação judicial de pessoas e bens">
+          <Seccao id="I" nome="Divórcio">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1773</artigo>
                 <artigo>1774</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Divórcio por mútuo consentimento">
                 <artigo>1775</artigo>
                 <artigo>1776</artigo>
-                <artigo>1776-A</artigo>
+                <artigo>1776-a</artigo>
                 <artigo>1777</artigo>
                 <artigo>1778</artigo>
                 <artigo>1778-A</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Divórcio litigioso">
                 <artigo>1779</artigo>
                 <artigo>1780</artigo>
                 <artigo>1781</artigo>
@@ -1806,18 +2585,29 @@
                 <artigo>1785</artigo>
                 <artigo>1786</artigo>
                 <artigo>1787</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Efeitos do divórcio">
                 <artigo>1788</artigo>
                 <artigo>1789</artigo>
                 <artigo>1790</artigo>
                 <artigo>1791</artigo>
                 <artigo>1792</artigo>
                 <artigo>1793</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="I" nome="Divórcio">
                 <artigo>1794</artigo>
                 <artigo>1795</artigo>
                 <artigo>1795-A</artigo>
                 <artigo>1795-B</artigo>
                 <artigo>1795-C</artigo>
                 <artigo>1795-D</artigo>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="III" nome="Da filiação">
+        <Capitulo id="I" nome="Estabelecimento da filiação">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1796</artigo>
                 <artigo>1797</artigo>
                 <artigo>1798</artigo>
@@ -1825,17 +2615,24 @@
                 <artigo>1800</artigo>
                 <artigo>1801</artigo>
                 <artigo>1802</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Estabelecimento da maternidade">
+            <Subseccao id="I" nome="Declaração de maternidade">
                 <artigo>1803</artigo>
                 <artigo>1804</artigo>
                 <artigo>1805</artigo>
                 <artigo>1806</artigo>
                 <artigo>1807</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Averiguação oficiosa">
                 <artigo>1808</artigo>
                 <artigo>1809</artigo>
                 <artigo>1810</artigo>
                 <artigo>1811</artigo>
                 <artigo>1812</artigo>
                 <artigo>1813</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Reconhecimento judicial">
                 <artigo>1814</artigo>
                 <artigo>1815</artigo>
                 <artigo>1816</artigo>
@@ -1847,6 +2644,10 @@
                 <artigo>1822</artigo>
                 <artigo>1823</artigo>
                 <artigo>1824</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Estabelecimento da paternidade">
+            <Subseccao id="I" nome="Presunção de paternidade">
                 <artigo>1826</artigo>
                 <artigo>1827</artigo>
                 <artigo>1828</artigo>
@@ -1868,8 +2669,13 @@
                 <artigo>1844</artigo>
                 <artigo>1845</artigo>
                 <artigo>1846</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Reconhecimento de paternidade">
+              <Divisao id="I" nome="Disposições gerais">
                 <artigo>1847</artigo>
                 <artigo>1848</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Perfilhação">
                 <artigo>1849</artigo>
                 <artigo>1850</artigo>
                 <artigo>1851</artigo>
@@ -1885,19 +2691,32 @@
                 <artigo>1861</artigo>
                 <artigo>1862</artigo>
                 <artigo>1863</artigo>
+              </Divisao>
+              <Divisao id="III" nome="Averiguação oficiosa da paternidade">
                 <artigo>1864</artigo>
                 <artigo>1865</artigo>
                 <artigo>1866</artigo>
                 <artigo>1867</artigo>
                 <artigo>1868</artigo>
+              </Divisao>
+              <Divisao id="IV" nome="Reconhecimento judicial">
                 <artigo>1869</artigo>
                 <artigo>1870</artigo>
                 <artigo>1871</artigo>
                 <artigo>1872</artigo>
                 <artigo>1873</artigo>
+              </Divisao>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="II" nome="Efeitos da filiação">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>1874</artigo>
                 <artigo>1875</artigo>
                 <artigo>1876</artigo>
+          </Seccao>
+          <Seccao id="II" nome="responsabilidades parentais">
+            <Subseccao id="I" nome="Princípios gerais">
                 <artigo>1877</artigo>
                 <artigo>1878</artigo>
                 <artigo>1879</artigo>
@@ -1906,10 +2725,14 @@
                 <artigo>1882</artigo>
                 <artigo>1883</artigo>
                 <artigo>1884</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Poder paternal relativamente à pessoa dos filhos">
                 <artigo>1885</artigo>
                 <artigo>1886</artigo>
                 <artigo>1887</artigo>
                 <artigo>1887-A</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Poder paternal relativamente aos bens dos filhos">
                 <artigo>1888</artigo>
                 <artigo>1889</artigo>
                 <artigo>1890</artigo>
@@ -1923,6 +2746,8 @@
                 <artigo>1898</artigo>
                 <artigo>1899</artigo>
                 <artigo>1900</artigo>
+            </Subseccao>
+            <Subseccao id="IV" nome="Exercício das responsabilidades parentais">
                 <artigo>1901</artigo>
                 <artigo>1902</artigo>
                 <artigo>1903</artigo>
@@ -1935,6 +2760,8 @@
                 <artigo>1910</artigo>
                 <artigo>1911</artigo>
                 <artigo>1912</artigo>
+            </Subseccao>
+            <Subseccao id="V" nome="Inibição e limitações ao exercício do poder paternal">
                 <artigo>1913</artigo>
                 <artigo>1914</artigo>
                 <artigo>1915</artigo>
@@ -1944,14 +2771,23 @@
                 <artigo>1919</artigo>
                 <artigo>1920</artigo>
                 <artigo>1920-A</artigo>
+            </Subseccao>
+            <Subseccao id="VI" nome="Registo das decisões relativas ao poder paternal">
                 <artigo>1920-B</artigo>
                 <artigo>1920-C</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="III" nome="Meios de suprir o poder paternal">
+            <Subseccao id="I" nome="Disposições gerais">
                 <artigo>1921</artigo>
                 <artigo>1922</artigo>
                 <artigo>1923</artigo>
                 <artigo>1924</artigo>
                 <artigo>1925</artigo>
                 <artigo>1926</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Tutela">
+              <Divisao id="I" nome="Designação do tutor">
                 <artigo>1927</artigo>
                 <artigo>1928</artigo>
                 <artigo>1929</artigo>
@@ -1960,6 +2796,8 @@
                 <artigo>1932</artigo>
                 <artigo>1933</artigo>
                 <artigo>1934</artigo>
+              </Divisao>
+              <Divisao id="II" nome="Direitos e obrigações do tutor">
                 <artigo>1935</artigo>
                 <artigo>1936</artigo>
                 <artigo>1937</artigo>
@@ -1973,9 +2811,13 @@
                 <artigo>1945</artigo>
                 <artigo>1946</artigo>
                 <artigo>1947</artigo>
+              </Divisao>
+              <Divisao id="III" nome="Remoção e exoneração do tutor">
                 <artigo>1948</artigo>
                 <artigo>1949</artigo>
                 <artigo>1950</artigo>
+              </Divisao>
+              <Divisao id="IV" nome="Conselho de família">
                 <artigo>1951</artigo>
                 <artigo>1952</artigo>
                 <artigo>1953</artigo>
@@ -1986,18 +2828,31 @@
                 <artigo>1958</artigo>
                 <artigo>1959</artigo>
                 <artigo>1960</artigo>
+              </Divisao>
+              <Divisao id="V" nome="Termo da tutela">
                 <artigo>1961</artigo>
+              </Divisao>
+              <Divisao id="VI" nome="Especialidade da tutela de filhos ilegítimos e de menores abandonados">
                 <artigo>1962</artigo>
                 <artigo>1963</artigo>
                 <artigo>1964</artigo>
                 <artigo>1965</artigo>
                 <artigo>1966</artigo>
+              </Divisao>
+            </Subseccao>
+            <Subseccao id="III" nome="Administração de bens">
                 <artigo>1967</artigo>
                 <artigo>1968</artigo>
                 <artigo>1969</artigo>
                 <artigo>1970</artigo>
                 <artigo>1971</artigo>
                 <artigo>1972</artigo>
+            </Subseccao>
+          </Seccao>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="IV" nome="Da adopção">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>1973</artigo>
                 <artigo>1974</artigo>
                 <artigo>1975</artigo>
@@ -2005,6 +2860,8 @@
                 <artigo>1977</artigo>
                 <artigo>1978</artigo>
                 <artigo>1978-A</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Adopção plena">
                 <artigo>1979</artigo>
                 <artigo>1980</artigo>
                 <artigo>1981</artigo>
@@ -2018,6 +2875,8 @@
                 <artigo>1989</artigo>
                 <artigo>1990</artigo>
                 <artigo>1991</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Adopção restrita">
                 <artigo>1992</artigo>
                 <artigo>1993</artigo>
                 <artigo>1994</artigo>
@@ -2033,6 +2892,10 @@
                 <artigo>2002-B</artigo>
                 <artigo>2002-C</artigo>
                 <artigo>2002-D</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="V" nome="Dos alimentos">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2003</artigo>
                 <artigo>2004</artigo>
                 <artigo>2005</artigo>
@@ -2045,6 +2908,8 @@
                 <artigo>2012</artigo>
                 <artigo>2013</artigo>
                 <artigo>2014</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Disposições especiais">
                 <artigo>2015</artigo>
                 <artigo>2016</artigo>
                 <artigo>2016-A</artigo>
@@ -2055,6 +2920,12 @@
                 <artigo>2021</artigo>
                 <artigo>2022</artigo>
                 <artigo>2023</artigo>
+        </Capitulo>
+    </Titulo>
+  </Livro>
+  <Livro id="V" nome="DIREITO DAS SUCESSÕES">
+    <Titulo id="I" nome="Das sucessões em geral">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2024</artigo>
                 <artigo>2025</artigo>
                 <artigo>2026</artigo>
@@ -2062,14 +2933,21 @@
                 <artigo>2028</artigo>
                 <artigo>2029</artigo>
                 <artigo>2030</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Abertura da sucessão e chamamento dos herdeiros e legatários">
+          <Seccao id="I" nome="Abertura da sucessão">
                 <artigo>2031</artigo>
                 <artigo>2032</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Capacidade sucessória">
                 <artigo>2033</artigo>
                 <artigo>2034</artigo>
                 <artigo>2035</artigo>
                 <artigo>2036</artigo>
                 <artigo>2037</artigo>
                 <artigo>2038</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Direito de representação">
                 <artigo>2039</artigo>
                 <artigo>2040</artigo>
                 <artigo>2041</artigo>
@@ -2077,10 +2955,15 @@
                 <artigo>2043</artigo>
                 <artigo>2044</artigo>
                 <artigo>2045</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="III" nome="Herança jacente">
                 <artigo>2046</artigo>
                 <artigo>2047</artigo>
                 <artigo>2048</artigo>
                 <artigo>2049</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Aceitação da herança">
                 <artigo>2050</artigo>
                 <artigo>2051</artigo>
                 <artigo>2052</artigo>
@@ -2093,12 +2976,16 @@
                 <artigo>2059</artigo>
                 <artigo>2060</artigo>
                 <artigo>2061</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Repúdio da herança">
                 <artigo>2062</artigo>
                 <artigo>2063</artigo>
                 <artigo>2064</artigo>
                 <artigo>2065</artigo>
                 <artigo>2066</artigo>
                 <artigo>2067</artigo>
+        </Capitulo>
+        <Capitulo id="VI" nome="Encargos da herança">
                 <artigo>2068</artigo>
                 <artigo>2069</artigo>
                 <artigo>2070</artigo>
@@ -2106,10 +2993,14 @@
                 <artigo>2072</artigo>
                 <artigo>2073</artigo>
                 <artigo>2074</artigo>
+        </Capitulo>
+        <Capitulo id="VII" nome="Petição da herança">
                 <artigo>2075</artigo>
                 <artigo>2076</artigo>
                 <artigo>2077</artigo>
                 <artigo>2078</artigo>
+        </Capitulo>
+        <Capitulo id="VIII" nome="Administração da herança">
                 <artigo>2079</artigo>
                 <artigo>2080</artigo>
                 <artigo>2081</artigo>
@@ -2128,16 +3019,25 @@
                 <artigo>2094</artigo>
                 <artigo>2095</artigo>
                 <artigo>2096</artigo>
+        </Capitulo>
+        <Capitulo id="IX" nome="Liquidação da herança">
                 <artigo>2097</artigo>
                 <artigo>2098</artigo>
                 <artigo>2099</artigo>
                 <artigo>2100</artigo>
+        </Capitulo>
+        <Capitulo id="X" nome="Partilha da herança">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>2101</artigo>
                 <artigo>2102</artigo>
                 <artigo>2103</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Atribuições preferenciais">
                 <artigo>2103-A</artigo>
                 <artigo>2103-B</artigo>
                 <artigo>2103-C</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Colação">
                 <artigo>2104</artigo>
                 <artigo>2105</artigo>
                 <artigo>2106</artigo>
@@ -2153,11 +3053,18 @@
                 <artigo>2116</artigo>
                 <artigo>2117</artigo>
                 <artigo>2118</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Efeitos da partilha">
                 <artigo>2119</artigo>
                 <artigo>2120</artigo>
+          </Seccao>
+          <Seccao id="V" nome="Impugnação da partilha">
                 <artigo>2121</artigo>
                 <artigo>2122</artigo>
                 <artigo>2123</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="XI" nome="Alienação de herança">
                 <artigo>2124</artigo>
                 <artigo>2125</artigo>
                 <artigo>2126</artigo>
@@ -2165,6 +3072,10 @@
                 <artigo>2128</artigo>
                 <artigo>2129</artigo>
                 <artigo>2130</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="II" nome="Da sucessão legítima">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2131</artigo>
                 <artigo>2132</artigo>
                 <artigo>2133</artigo>
@@ -2173,23 +3084,39 @@
                 <artigo>2136</artigo>
                 <artigo>2137</artigo>
                 <artigo>2138</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Sucessão do cônjuge e dos descendentes">
                 <artigo>2139</artigo>
                 <artigo>2140</artigo>
                 <artigo>2141</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Sucessão dos ascendentes">
                 <artigo>2142</artigo>
                 <artigo>2143</artigo>
                 <artigo>2144</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Sucessão dos irmãos e seus descendentes">
                 <artigo>2145</artigo>
                 <artigo>2146</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Sucessão do cônjuge">
                 <artigo>2147</artigo>
                 <artigo>2148</artigo>
+        </Capitulo>
+        <Capitulo id="VI" nome="Sucessão dos outros colaterais">
                 <artigo>2149</artigo>
                 <artigo>2150</artigo>
                 <artigo>2151</artigo>
+        </Capitulo>
+        <Capitulo id="VI" nome="Sucessão do Estado">
                 <artigo>2152</artigo>
                 <artigo>2153</artigo>
                 <artigo>2154</artigo>
                 <artigo>2155</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="III" nome="Da sucessão legitimária">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2156</artigo>
                 <artigo>2157</artigo>
                 <artigo>2158</artigo>
@@ -2202,6 +3129,8 @@
                 <artigo>2165</artigo>
                 <artigo>2166</artigo>
                 <artigo>2167</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Redução de liberalidades">
                 <artigo>2168</artigo>
                 <artigo>2169</artigo>
                 <artigo>2170</artigo>
@@ -2213,6 +3142,10 @@
                 <artigo>2176</artigo>
                 <artigo>2177</artigo>
                 <artigo>2178</artigo>
+        </Capitulo>
+    </Titulo>
+    <Titulo id="IV" nome="Da sucessão testamentária">
+        <Capitulo id="I" nome="Disposições gerais">
                 <artigo>2179</artigo>
                 <artigo>2180</artigo>
                 <artigo>2181</artigo>
@@ -2222,10 +3155,14 @@
                 <artigo>2185</artigo>
                 <artigo>2186</artigo>
                 <artigo>2187</artigo>
+        </Capitulo>
+        <Capitulo id="II" nome="Capacidade testamentária">
                 <artigo>2188</artigo>
                 <artigo>2189</artigo>
                 <artigo>2190</artigo>
                 <artigo>2191</artigo>
+        </Capitulo>
+        <Capitulo id="III" nome="Casos de indisponibilidade relativa">
                 <artigo>2192</artigo>
                 <artigo>2193</artigo>
                 <artigo>2194</artigo>
@@ -2233,17 +3170,24 @@
                 <artigo>2196</artigo>
                 <artigo>2197</artigo>
                 <artigo>2198</artigo>
+        </Capitulo>
+        <Capitulo id="IV" nome="Falta e vícios da vontade">
                 <artigo>2199</artigo>
                 <artigo>2200</artigo>
                 <artigo>2201</artigo>
                 <artigo>2202</artigo>
                 <artigo>2203</artigo>
+        </Capitulo>
+        <Capitulo id="V" nome="Forma do testamento">
+          <Seccao id="I" nome="Formas comuns">
                 <artigo>2204</artigo>
                 <artigo>2205</artigo>
                 <artigo>2206</artigo>
                 <artigo>2207</artigo>
                 <artigo>2208</artigo>
                 <artigo>2209</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Formas especiais">
                 <artigo>2210</artigo>
                 <artigo>2211</artigo>
                 <artigo>2212</artigo>
@@ -2258,11 +3202,17 @@
                 <artigo>2221</artigo>
                 <artigo>2222</artigo>
                 <artigo>2223</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VI" nome="Conteúdo do testamento">
+          <Seccao id="I" nome="Disposições gerais">
                 <artigo>2224</artigo>
                 <artigo>2225</artigo>
                 <artigo>2226</artigo>
                 <artigo>2227</artigo>
                 <artigo>2228</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Disposições condicionais, a termo e modais">
                 <artigo>2229</artigo>
                 <artigo>2230</artigo>
                 <artigo>2231</artigo>
@@ -2283,6 +3233,8 @@
                 <artigo>2246</artigo>
                 <artigo>2247</artigo>
                 <artigo>2248</artigo>
+          </Seccao>
+          <Seccao id="III" nome="Legados">
                 <artigo>2249</artigo>
                 <artigo>2250</artigo>
                 <artigo>2251</artigo>
@@ -2315,11 +3267,16 @@
                 <artigo>2278</artigo>
                 <artigo>2279</artigo>
                 <artigo>2280</artigo>
+          </Seccao>
+          <Seccao id="IV" nome="Substituições">
+            <Subseccao id="I" nome="Substituição directa">
                 <artigo>2281</artigo>
                 <artigo>2282</artigo>
                 <artigo>2283</artigo>
                 <artigo>2284</artigo>
                 <artigo>2285</artigo>
+            </Subseccao>
+            <Subseccao id="II" nome="Substituição fideicomissária">
                 <artigo>2286</artigo>
                 <artigo>2287</artigo>
                 <artigo>2288</artigo>
@@ -2331,10 +3288,15 @@
                 <artigo>2294</artigo>
                 <artigo>2295</artigo>
                 <artigo>2296</artigo>
+            </Subseccao>
+            <Subseccao id="III" nome="Substituições pupilar e quase">
                 <artigo>2297</artigo>
                 <artigo>2298</artigo>
                 <artigo>2299</artigo>
                 <artigo>2300</artigo>
+            </Subseccao>
+          </Seccao>
+          <Seccao id="V" nome="Direito de acrescer">
                 <artigo>2301</artigo>
                 <artigo>2302</artigo>
                 <artigo>2303</artigo>
@@ -2342,9 +3304,15 @@
                 <artigo>2305</artigo>
                 <artigo>2306</artigo>
                 <artigo>2307</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VII" nome="Nulidade, anulabilidade, revogação e caducidade dos testamentos e disposições testamentárias">
+          <Seccao id="I" nome="Nulidade e anulabilidade">
                 <artigo>2308</artigo>
                 <artigo>2309</artigo>
                 <artigo>2310</artigo>
+          </Seccao>
+          <Seccao id="II" nome="Revogação e caducidade">
                 <artigo>2311</artigo>
                 <artigo>2312</artigo>
                 <artigo>2313</artigo>
@@ -2354,6 +3322,9 @@
                 <artigo>2317</artigo>
                 <artigo>2318</artigo>
                 <artigo>2319</artigo>
+          </Seccao>
+        </Capitulo>
+        <Capitulo id="VIII" nome="Testamentaria">
                 <artigo>2320</artigo>
                 <artigo>2321</artigo>
                 <artigo>2322</artigo>
@@ -2369,4 +3340,7 @@
                 <artigo>2332</artigo>
                 <artigo>2333</artigo>
                 <artigo>2334</artigo>
-  <artigo>2-a</artigo><artigo>2-a</artigo><artigo>2-a</artigo></doc>
+        </Capitulo>
+    </Titulo>
+  </Livro>
+</doc>

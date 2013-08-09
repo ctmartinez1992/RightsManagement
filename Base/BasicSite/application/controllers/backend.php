@@ -53,6 +53,7 @@ class backend extends CI_Controller {
             $this->load->view("site_nav");
         }
         
+        $main_data["hdoc"] = $this->model_api->get_last_hierarchy_doc_added();
         $main_data["doc"] = $this->model_api->get_last_doc_added();
         $main_data["docs"] = $this->model_get->getUndoneDocs();
         
@@ -160,7 +161,11 @@ class backend extends CI_Controller {
             $this->load->view("site_nav");
         }
         
-        $this->load->view("content_addition");
+        $main_data["hdoc"] = $this->model_api->get_last_hierarchy_doc_added();
+        $main_data["doc"] = $this->model_api->get_last_doc_added();
+        $main_data["docs"] = $this->model_get->getUndoneDocs();
+        
+        $this->load->view("content_addition", $main_data);
         $this->load->view("site_footer");
     }
     

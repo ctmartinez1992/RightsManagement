@@ -624,6 +624,414 @@ class Model_api extends CI_Model {
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos.xml');
         return $array->doc[sizeof($array->doc) - 1];
     }
+    
+    public function get_last_hierarchy_doc_added() {
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos_hierarquia.xml');
+        return $array->doc[sizeof($array->doc) - 1];
+    }
+    
+    /* 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     * BackEND 
+     */
+    
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_livro_given_livro($p_doc, $p_livro) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        if (sizeof($array->Livro) > 0) {
+            foreach ($array->Livro as $livro) {
+                if ($livro['id'] == $p_livro) {
+                    $resposta .= $livro['id'] . '#' . $livro['nome'];
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_titulo_given_titulo($p_doc, $p_livro, $p_titulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        $resposta = $titulo['id'] . '#' . $titulo['nome'];
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_subtitulo_given_subtitulo($p_doc, $p_livro, $p_titulo, $p_subtitulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                $resposta = $subtitulo['id'] . '#' . $subtitulo['nome'];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_capitulo_given_capitulo($p_doc, $p_livro, $p_titulo, $p_subtitulo, $p_capitulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        $resposta = $capitulo['id'] . '#' . $capitulo['nome'];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_capitulo_given_capitulo_no_subtitulo($p_doc, $p_livro, $p_titulo, $p_capitulo) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                $resposta = $capitulo['id'] . '#' . $capitulo['nome'];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_seccao_given_seccao($p_doc, $p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                $resposta = $seccao['id'] . '#' . $seccao['nome'];
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_seccao_given_seccao_no_subtitulo($p_doc, $p_livro, $p_titulo, $p_capitulo, $p_seccao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        $resposta = $seccao['id'] . '#' . $seccao['nome'];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_subseccao_given_subseccao($p_doc, $p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        $resposta = $subseccao['id'] . '#' . $subseccao['nome'];
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_subseccao_given_subseccao_no_subtitulo($p_doc, $p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                $resposta = $subseccao['id'] . '#' . $subseccao['nome'];
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_divisao_given_divisao($p_doc, $p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->Divisao as $divisao) {
+                                                            if ($p_divisao == (string) $divisao['id']) {
+                                                                $resposta = $divisao['id'] . '#' . $divisao['nome'];
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_divisao_given_divisao_no_subtitulo($p_doc, $p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->Divisao as $divisao) {
+                                                    if ($p_divisao == (string) $divisao['id']) {
+                                                        $resposta = $divisao['id'] . '#' . $divisao['nome'];
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_subdivisao_given_subdivisao($p_doc, $p_livro, $p_titulo, $p_subtitulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao, $p_subdivisao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Subtitulo as $subtitulo) {
+                            if ($p_subtitulo == (string) $subtitulo['id']) {
+                                foreach ($subtitulo->Capitulo as $capitulo) {
+                                    if ($p_capitulo == (string) $capitulo['id']) {
+                                        foreach ($capitulo->Seccao as $seccao) {
+                                            if ($p_seccao == (string) $seccao['id']) {
+                                                foreach ($seccao->Subseccao as $subseccao) {
+                                                    if ($p_subseccao == (string) $subseccao['id']) {
+                                                        foreach ($subseccao->Divisao as $divisao) {
+                                                            if ($p_divisao == (string) $divisao['id']) {
+                                                                foreach ($divisao->Subdivisao as $subdivisao) {
+                                                                    if ($p_subdivisao == (string) $subdivisao['id']) {
+                                                                        $resposta = $subdivisao['id'] . '#' . $subdivisao['nome'];
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    /*
+     * Returns: ...
+     */
+    public function get_hierarchy_info_subdivisao_given_subdivisao_no_subtitulo($p_doc, $p_livro, $p_titulo, $p_capitulo, $p_seccao, $p_subseccao, $p_divisao, $p_subdivisao) {
+        $doc = $this->get_last_hierarchy_given_doc($p_doc);
+        $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $doc . '/hierarquia.xml');
+        $resposta = "";
+        foreach ($array->Livro as $livro) {
+            if ($p_livro == (string) $livro['id']) {
+                foreach ($livro->Titulo as $titulo) {
+                    if ($p_titulo == (string) $titulo['id']) {
+                        foreach ($titulo->Capitulo as $capitulo) {
+                            if ($p_capitulo == (string) $capitulo['id']) {
+                                foreach ($capitulo->Seccao as $seccao) {
+                                    if ($p_seccao == (string) $seccao['id']) {
+                                        foreach ($seccao->Subseccao as $subseccao) {
+                                            if ($p_subseccao == (string) $subseccao['id']) {
+                                                foreach ($subseccao->Divisao as $divisao) {
+                                                    if ($p_divisao == (string) $divisao['id']) {
+                                                        foreach ($divisao->Subdivisao as $subdivisao) {
+                                                            if ($p_subdivisao == (string) $subdivisao['id']) {
+                                                                $resposta = $subdivisao['id'] . '#' . $subdivisao['nome'];
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $resposta;
+    }
+    
+    
 
     /*
      * Returns: All the numbers of the first hierarchy "Livro"

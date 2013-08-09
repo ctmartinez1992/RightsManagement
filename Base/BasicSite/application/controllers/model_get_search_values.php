@@ -501,6 +501,275 @@ class Model_get_search_values extends CI_Controller {
             }
         echo '</response>';
     }
+    
+    public function get_livro_info_given_livro() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $resposta = $this->model_api->get_hierarchy_info_livro_given_livro($doc, $livro);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_titulo_info_given_titulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $resposta = $this->model_api->get_hierarchy_info_titulo_given_titulo($doc, $livro, $titulo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_subtitulo_info_given_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $resposta = $this->model_api->get_hierarchy_info_subtitulo_given_subtitulo($doc, $livro, $titulo, $subtitulo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_capitulo_info_given_capitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $capitulo = $_GET['capitulo'];
+            $resposta = $this->model_api->get_hierarchy_info_capitulo_given_capitulo($doc, $livro, $titulo, $subtitulo, $capitulo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_capitulo_info_given_capitulo_no_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $capitulo = $_GET['capitulo'];
+            $resposta = $this->model_api->get_hierarchy_info_capitulo_given_capitulo_no_subtitulo($doc, $livro, $titulo, $capitulo);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_seccao_info_given_seccao() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $resposta = $this->model_api->get_hierarchy_info_seccao_given_seccao($doc, $livro, $titulo, $subtitulo, $capitulo, $seccao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_seccao_info_given_seccao_no_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $resposta = $this->model_api->get_hierarchy_info_seccao_given_seccao_no_subtitulo($doc, $livro, $titulo, $capitulo, $seccao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_subseccao_info_given_subseccao() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $resposta = $this->model_api->get_hierarchy_info_subseccao_given_subseccao($doc, $livro, $titulo, $subtitulo, $capitulo, $seccao, $subseccao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_subseccao_info_given_subseccao_no_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $resposta = $this->model_api->get_hierarchy_info_subseccao_given_subseccao_no_subtitulo($doc, $livro, $titulo, $capitulo, $seccao, $subseccao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_divisao_info_given_divisao() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $divisao = $_GET['divisao'];
+            $resposta = $this->model_api->get_hierarchy_info_divisao_given_divisao($doc, $livro, $titulo, $subtitulo, $capitulo, $seccao, $subseccao, $divisao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_divisao_info_given_divisao_no_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $divisao = $_GET['divisao'];
+            $resposta = $this->model_api->get_hierarchy_info_divisao_given_divisao_no_subtitulo($doc, $livro, $titulo, $capitulo, $seccao, $subseccao, $divisao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_subdivisao_info_given_subdivisao() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $subtitulo = $_GET['subtitulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $divisao = $_GET['divisao'];
+            $subdivisao = $_GET['subdivisao'];
+            $resposta = $this->model_api->get_hierarchy_info_subdivisao_given_subdivisao($doc, $livro, $titulo, $subtitulo, $capitulo, $seccao, $subseccao, $divisao, $subdivisao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
+    
+    public function get_subdivisao_info_given_subdivisao_no_subtitulo() {
+        $this->load->model("model_api");
+        header('Content-Type: text/xml');
+        echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
+
+        echo '<response>';
+            $doc = $_GET['doc'];
+            $livro = $_GET['livro'];
+            $titulo = $_GET['titulo'];
+            $capitulo = $_GET['capitulo'];
+            $seccao = $_GET['seccao'];
+            $subseccao = $_GET['subseccao'];
+            $divisao = $_GET['divisao'];
+            $subdivisao = $_GET['subdivisao'];
+            $resposta = $this->model_api->get_hierarchy_info_subdivisao_given_subdivisao_no_subtitulo($doc, $livro, $titulo, $capitulo, $seccao, $subseccao, $divisao, $subdivisao);
+            if ($resposta == "") {
+                echo "0";
+            } else {
+                echo $resposta;
+            }
+        echo '</response>';
+    }
 }
 
 ?>

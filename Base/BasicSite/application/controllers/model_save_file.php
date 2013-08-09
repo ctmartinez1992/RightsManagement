@@ -138,6 +138,14 @@ class Model_save_file extends CI_Controller {
         $doc = $_POST['doc'];
         $name = $_POST['name'];
         
+        if (file_exists("codigo_civil/temp/" . $doc . "/hierarquia.xml")) {
+            $xml3 = simplexml_load_file("codigo_civil/documentos_hierarquia.xml");
+            $sxe3 = new SimpleXMLElement($xml3->asXML());
+            $sxe3->addChild("doc", $doc);
+            $sxe3->asXML("codigo_civil/documentos_hierarquia.xml");
+        } else {
+        }
+        
         $this->rcopy("codigo_civil/temp/" . $doc . "/", "codigo_civil/" . $doc . "/");
         $this->rmdir_recursive("codigo_civil/temp/" . $doc . "/");
         
@@ -175,6 +183,97 @@ class Model_save_file extends CI_Controller {
         
         $this->db->query("DELETE FROM temp_docs WHERE nome='" . $name . "';");
         return $this->db->affected_rows();
+    }
+    
+    /*
+     * output description array:
+     * 0 : doc that we are changing;
+     * 1 : Last doc that had a change in hierarchy, meanign that the current hierarchy is inside there;
+     * 2 : The hierarchy we are changing;
+     * 3 : The new number of the hierarchy;
+     * 4 : The new name of the hierarchy;
+     * 5 to 12 : The path to such hierarchy (5 the highest - 12 the lowest)
+     * 
+     */
+    public function save_hierarchy_file() {
+        $data = json_decode(stripslashes($_POST['data']));
+        
+        $ourFileHandle = fopen("codigo_civil/log.txt", 'w') or die("can't open file");
+        
+        if (file_exists("codigo_civil/temp/" . $data[0] . "/hierarquia.xml")) {
+            
+        } else {
+            copy("codigo_civil/" . $data[1] . "/hierarquia.xml", "codigo_civil/temp/" . $data[0] . "/hierarquia.xml");
+        }
+        
+        $array = simplexml_load_file("codigo_civil/temp/" . $data[0] . "/hierarquia.xml");
+        
+        $conv = array("0" => -1, "I" => 0, "II" => 1, "III" => 2, "IV" => 3, "V" => 4, "VI" => 5, "VII" => 6, "VIII" => 7, "IX" => 8, "X" => 9, "XI" => 10, "XII" => 11, "XIII" => 12, "XIV" => 13, "XV" => 14,  "XVI" => 15,  "XVII" => 16,  "XVIII" => 17,  "XIX" => 18,  "XX" => 19);
+        $inds = array();
+        
+        $inds[0] = $conv[$data[5]];
+        $inds[1] = $conv[$data[6]];
+        $inds[2] = $conv[$data[7]];
+        $inds[3] = $conv[$data[8]];
+        $inds[4] = $conv[$data[9]];
+        $inds[5] = $conv[$data[10]];
+        $inds[6] = $conv[$data[11]];
+        $inds[7] = $conv[$data[12]];
+        
+        if ($inds[7] != -1) {
+            if ($inds[2] == -1) {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao[$inds[7]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao[$inds[7]]['nome'] = $data[4];
+            } else {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao[$inds[7]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao[$inds[7]]['nome'] = $data[4];
+            }
+        } else if ($inds[6] != -1) {
+            if ($inds[2] == -1) {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]['nome'] = $data[4];
+            } else {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]['nome'] = $data[4];
+            }
+        } else if ($inds[5] != -1) {
+            if ($inds[2] == -1) {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]['nome'] = $data[4];
+            } else {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]['nome'] = $data[4];
+            }
+        } else if ($inds[4] != -1) {
+            if ($inds[2] == -1) {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]['nome'] = $data[4];
+            } else {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]['nome'] = $data[4];
+            }
+        } else if ($inds[3] != -1) {
+            if ($inds[2] == -1) {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]['nome'] = $data[4];
+            } else {
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]['id'] = $data[3];
+                $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]['nome'] = $data[4];
+            }
+        } else if ($inds[2] != -1) {
+            $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]['id'] = $data[3];
+            $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]['nome'] = $data[4];
+        } else if ($inds[1] != -1) {
+            $array->Livro[$inds[0]]->Titulo[$inds[1]]['id'] = $data[3];
+            $array->Livro[$inds[0]]->Titulo[$inds[1]]['nome'] = $data[4];
+        } else if ($inds[0] != -1) {
+            $array->Livro[$inds[0]]['id'] = $data[3];
+            $array->Livro[$inds[0]]['nome'] = $data[4];
+        }
+           
+        $array->asXML("codigo_civil/temp/" . $data[0] . "/hierarquia.xml");
+        
+        fclose($ourFileHandle);
     }
 
     //Copia ficheiros de um diretorio para outro.
