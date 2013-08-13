@@ -8,12 +8,14 @@
 <altera>61</altera>
 <altera>85</altera>
 <altera>115</altera>
+<altera>116</altera>
 <altera>122</altera>
 <altera>125</altera>
 <altera>127</altera>
 <altera>130</altera>
 <altera>132</altera>
 <altera>133</altera>
+<altera>138</altera>
 <altera>141</altera>
 <altera>143</altera>
 <altera>144</altera>
@@ -330,10 +332,8 @@
 <revoga>58</revoga>
 <revoga>59</revoga>
 <revoga>86</revoga>
-<revoga>116-2</revoga>
 <revoga>134</revoga>
 <revoga>137</revoga>
-<revoga>138-3</revoga>
 <revoga>161</revoga>
 <revoga>169</revoga>
 <revoga>971</revoga>
@@ -341,9 +341,7 @@
 <revoga>1583</revoga>
 <revoga>1606</revoga>
 <revoga>1637</revoga>
-<revoga>1649-3</revoga>
 <revoga>1686</revoga>
-<revoga>1691-4</revoga>
 <revoga>1737</revoga>
 <revoga>1752</revoga>
 <revoga>1930</revoga>
@@ -356,5 +354,4 @@
 <revoga>2193</revoga>
 <revoga>2318</revoga>
 <revoga>2319</revoga>
-<revoga>2233-2</revoga>
 </doc>

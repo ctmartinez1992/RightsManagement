@@ -155,7 +155,7 @@ function handleServerResponseNextHierarchy(li, options, name) {
 }
 
 function get_hierarchy_capitulo_no_subtitulo(li, options) {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -188,7 +188,7 @@ function handleServerResponseHierarchyCapituloNoSubtitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_titulo(li, options) {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -218,7 +218,7 @@ function handleServerResponseHierarchyArtigoWithTitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_subtitulo(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -250,7 +250,7 @@ function handleServerResponseHierarchyArtigoWithSubtitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_capitulo(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -289,7 +289,7 @@ function handleServerResponseHierarchyArtigoWithCapitulo(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_seccao(li, options) {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -330,7 +330,7 @@ function handleServerResponseHierarchyArtigoWithSeccao(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_subseccao(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];
@@ -372,7 +372,7 @@ function handleServerResponseHierarchyArtigoWithSubseccao(li, options, name) {
 }
 
 function get_hierarchy_artigo_with_divisao(li, options) {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         var next_hierarchy_name = [];

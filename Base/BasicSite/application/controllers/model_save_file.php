@@ -48,12 +48,30 @@ class Model_save_file extends CI_Controller {
         file_put_contents("codigo_civil/temp/" . $doc_name . "/" . $doc_name . ".xml", $array->saveXML());
     }
 
+    /*
+     * 0 a tamanho do artigo - conteudo do artigo
+     * tamanho do artigo +1 - o artigo
+     * tamanho do artigo +2 - o documento a alterar
+     * tamanho do artigo +3 - o documento que tem a hierarquia mais recente
+     * tamanho do artigo +4 a +10 - a hierarquia
+     * 
+     */
     public function save_addition_file() {
         $data = json_decode(stripslashes($_POST['data']));
-        $doc_name = $data[sizeof($data)-1];
-        $art_name = $data[sizeof($data)-2];
+        
+        $ourFileHandle2 = fopen("codigo_civil/log.txt", 'w') or die("can't open file");
+        
+        $doc_name = $data[sizeof($data)-10];
+        $hdoc_name = $data[sizeof($data)-9];
+        $art_name = $data[sizeof($data)-11];
+        
+            fwrite($ourFileHandle2, $doc_name . "\n");
+            fwrite($ourFileHandle2, $hdoc_name . "\n");
+            fwrite($ourFileHandle2, $art_name . "\n");
+        fclose($ourFileHandle2);
+        
         $ourFileHandle = fopen("codigo_civil/temp/" . $doc_name . "/" . $doc_name . "_" . $art_name . ".txt", 'w') or die("can't open file");
-        for ($i=0; $i<sizeof($data)-2; $i++) {
+        for ($i=0; $i<sizeof($data)-11; $i++) {
             fwrite($ourFileHandle, $data[$i] . "\n");
         }
         fclose($ourFileHandle);
@@ -62,6 +80,81 @@ class Model_save_file extends CI_Controller {
         $sxe = new SimpleXMLElement($xml->asXML());
         $sxe->addChild("acrescenta", $art_name);
         $sxe->asXML("codigo_civil/temp/" . $doc_name . "/" . $doc_name . ".xml");
+        
+        if (file_exists("codigo_civil/temp/" . $doc_name . "/hierarquia.xml")) {
+            
+        } else {
+        copy("codigo_civil/" . $hdoc_name . "/hierarquia.xml", "codigo_civil/temp/" . $doc_name . "/hierarquia.xml");
+        }
+        
+        $array = simplexml_load_file("codigo_civil/temp/" . $doc_name . "/hierarquia.xml");
+        $sxe2 = new SimpleXMLElement($array->asXML());
+        
+        $conv = array("0" => -1, "I" => 0, "II" => 1, "III" => 2, "IV" => 3, "V" => 4, "VI" => 5, "VII" => 6, "VIII" => 7, "IX" => 8, "X" => 9, "XI" => 10, "XII" => 11, "XIII" => 12, "XIV" => 13, "XV" => 14,  "XVI" => 15,  "XVII" => 16,  "XVIII" => 17,  "XIX" => 18,  "XX" => 19);
+        $inds = array();
+        
+        $inds[0] = $conv[$data[sizeof($data)-8]];
+        $inds[1] = $conv[$data[sizeof($data)-7]];
+        $inds[2] = $conv[$data[sizeof($data)-6]];
+        $inds[3] = $conv[$data[sizeof($data)-5]];
+        $inds[4] = $conv[$data[sizeof($data)-4]];
+        $inds[5] = $conv[$data[sizeof($data)-3]];
+        $inds[6] = $conv[$data[sizeof($data)-2]];
+        $inds[7] = $conv[$data[sizeof($data)-1]];
+        
+        if ($inds[7] != -1) {
+            if ($inds[2] == -1) {
+                $sd = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao;
+                $sd->addChild("artigo", $art_name);
+            } else {
+                $sd = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao[$inds[6]]->Subdivisao;
+                $sd->addChild("artigo", $art_name);
+                
+            }
+        } else if ($inds[6] != -1) {
+            if ($inds[2] == -1) {
+                $d = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao;
+                $d->addChild("artigo", $art_name);
+            } else {
+                $d = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao[$inds[5]]->Divisao;
+                $d->addChild("artigo", $art_name);
+            }
+        } else if ($inds[5] != -1) {
+            if ($inds[2] == -1) {
+                $ss = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao;
+                $ss->addChild("artigo", $art_name);
+            } else {
+                $ss = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao[$inds[4]]->Subseccao;
+                $ss->addChild("artigo", $art_name);
+            }
+        } else if ($inds[4] != -1) {
+            if ($inds[2] == -1) {
+                $s = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo[$inds[3]]->Seccao;
+                $s->addChild("artigo", $art_name);
+            } else {
+                $s = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo[$inds[3]]->Seccao;
+                $s->addChild("artigo", $art_name);
+            }
+        } else if ($inds[3] != -1) {
+            if ($inds[2] == -1) {
+                $c = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Capitulo;
+                $c->addChild("artigo", $art_name);
+            } else {
+                $c = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo[$inds[2]]->Capitulo;
+                $c->addChild("artigo", $art_name);
+            }
+        } else if ($inds[2] != -1) {
+            $st = $array->Livro[$inds[0]]->Titulo[$inds[1]]->Subtitulo;
+            $st->addChild("artigo", $art_name);
+        } else if ($inds[1] != -1) {
+            $t = $array->Livro[$inds[0]]->Titulo;
+            $t->addChild("artigo", $art_name);
+        } else if ($inds[0] != -1) {
+            $l = $array->Livro;
+            $l->addChild("artigo", $art_name);
+        }
+           
+        $array->asXML("codigo_civil/temp/" . $doc_name . "/hierarquia.xml");
     }
 
     public function save_alt_addition_file() {

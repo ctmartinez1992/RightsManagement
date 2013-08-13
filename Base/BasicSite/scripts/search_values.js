@@ -24,7 +24,7 @@ function CreateXmlHttp2RequestObject() {
 }
 
 function fill_titulo() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -59,12 +59,10 @@ function handleServerResponseTitulo() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -84,7 +82,7 @@ function handleServerResponseTitulo() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             xmlHttp2.open("GET", "http://localhost/BasicSite/model_get_search_values/get_livro_info_given_livro?doc=" + doc + "&livro=" + livro, true);
             xmlHttp2.onreadystatechange = handleServerResponseBackendFillWithLivro;
@@ -112,7 +110,7 @@ function handleServerResponseBackendFillWithLivro() {
 }
 
 function fill_subtitulo() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -147,12 +145,10 @@ function handleServerResponseSubtitulo() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -173,7 +169,7 @@ function handleServerResponseSubtitulo() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             xmlHttp2.open("GET", "http://localhost/BasicSite/model_get_search_values/get_titulo_info_given_titulo?doc=" + doc + "&livro=" + livro + "&titulo=" + titulo, true);
@@ -202,7 +198,7 @@ function handleServerResponseBackendFillWithTitulo() {
 }
 
 function fill_capitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -237,12 +233,10 @@ function handleServerResponseCapitulo() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -265,7 +259,7 @@ function handleServerResponseCapitulo() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -295,7 +289,7 @@ function handleServerResponseBackendFillWithSubtitulo() {
 
 
 function fill_capitulo_no_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -329,12 +323,10 @@ function handleServerResponseCapituloNoSubtitulo() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -349,7 +341,7 @@ function handleServerResponseCapituloNoSubtitulo() {
 }
 
 function fill_seccao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -388,12 +380,10 @@ function handleServerResponseSeccao() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -419,7 +409,7 @@ function handleServerResponseSeccao() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -453,7 +443,7 @@ function handleServerResponseBackendFillWithCapitulo() {
 }
 
 function fill_subseccao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -492,12 +482,10 @@ function handleServerResponseSubseccao() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -523,7 +511,7 @@ function handleServerResponseSubseccao() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -558,7 +546,7 @@ function handleServerResponseBackendFillWithSeccao() {
 }
 
 function fill_divisao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -597,12 +585,10 @@ function handleServerResponseDivisao() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -628,7 +614,7 @@ function handleServerResponseDivisao() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -664,7 +650,7 @@ function handleServerResponseBackendFillWithSubseccao() {
 }
 
 function fill_subdivisao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -703,12 +689,10 @@ function handleServerResponseSubdivisao() {
                         element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -734,7 +718,7 @@ function handleServerResponseSubdivisao() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -771,7 +755,7 @@ function handleServerResponseBackendFillWithDivisao() {
 }
 
 function fill_artigo() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -810,12 +794,10 @@ function handleServerResponseArtigo() {
                     element.removeChild(element.firstChild);
                 }
 
-                if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
                     var opt = document.createElement("option");
                     var text = document.createTextNode("");
                     element.appendChild(opt);
                     opt.appendChild(text);
-                }
                 for (i=0; i<splited_message.length; i++) {
                     var opt = document.createElement("option");
                     var text = document.createTextNode(splited_message[i]);
@@ -835,7 +817,7 @@ function handleServerResponseArtigo() {
     if (document.getElementById('is_backend').options[document.getElementById('is_backend').selectedIndex].value == "true") {
         var xmlHttp2 = CreateXmlHttp2RequestObject();
         if (xmlHttp2.readyState == 0 || xmlHttp2.readystate == 4) {
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             livro = encodeURIComponent(document.getElementById("dd_livro").value);
             titulo = encodeURIComponent(document.getElementById("dd_titulo").value);
             subtitulo = encodeURIComponent(document.getElementById("dd_subtitulo").value);
@@ -874,7 +856,7 @@ function handleServerResponseBackendFillWithSubdivisao() {
 }
 
 function fill_artigo_with_titulo() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -925,7 +907,7 @@ function handleServerResponseArtigoWithTitulo() {
     }
 }
 function fill_artigo_with_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -976,7 +958,7 @@ function handleServerResponseArtigoWithSubtitulo() {
     }
 }
 function fill_artigo_with_capitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1027,7 +1009,7 @@ function handleServerResponseArtigoWithCapitulo() {
     }
 }
 function fill_artigo_with_capitulo_no_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1077,7 +1059,7 @@ function handleServerResponseArtigoWithCapituloNoSubtitulo() {
     }
 }
 function fill_artigo_with_seccao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1128,7 +1110,7 @@ function handleServerResponseArtigoWithSeccao() {
     }
 }
 function fill_artigo_with_seccao_no_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1178,7 +1160,7 @@ function handleServerResponseArtigoWithSeccaoNoSubtitulo() {
     }
 }
 function fill_artigo_with_subseccao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1229,7 +1211,7 @@ function handleServerResponseArtigoWithSubseccao() {
     }
 }
 function fill_artigo_with_subseccao_no_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1279,7 +1261,7 @@ function handleServerResponseArtigoWithSubseccaoNoSubtitulo() {
     }
 }
 function fill_artigo_with_divisao() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);
@@ -1330,7 +1312,7 @@ function handleServerResponseArtigoWithDivisao() {
     }
 }
 function fill_artigo_with_divisao_no_subtitulo() {
-        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+        var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         livro = encodeURIComponent(document.getElementById("dd_livro").value);

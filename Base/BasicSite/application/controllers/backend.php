@@ -163,6 +163,7 @@ class backend extends CI_Controller {
         
         $main_data["hdoc"] = $this->model_api->get_last_hierarchy_doc_added();
         $main_data["doc"] = $this->model_api->get_last_doc_added();
+        $main_data['livro'] = $this->model_api->get_hierarchy_livro($main_data["doc"]);
         $main_data["docs"] = $this->model_get->getUndoneDocs();
         
         $this->load->view("content_addition", $main_data);

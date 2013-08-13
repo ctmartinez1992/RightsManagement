@@ -30,7 +30,8 @@ function CreateXmlHttpRequestObject() {
 }
 
 function change_hierarchy() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    alert(document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value);
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_hierarchy_livro?doc=" + doc, true);
@@ -98,7 +99,7 @@ function handleServerResponseHierarchyLivro() {
 }
 
 function check_doc_revoke() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/was_doc_revoked_get_names?doc=" + doc, true);
@@ -127,7 +128,7 @@ function handleServerResponseDocRevoke() {
 }
 
 function get_doc_title() {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var xmlHttp = CreateXmlHttpRequestObject();
     if (xmlHttp.readyState == 0 || xmlHttp.readystate == 4) {
         xmlHttp.open("GET", "http://localhost/BasicSite/model_get_main_values/get_doc_title?doc=" + doc, true);
@@ -146,11 +147,11 @@ function handleServerResponseGetDocTitle() {
             
             $('.dd_title').remove();
             if (message != "0") {
-                var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+                var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
                 $('.dd').prepend('<table id="doc_titulo"><tr><td><div class="dd-title">' + message + ' : ' + doc.replace("_", "-").replace("_", "-") + 
                                  '</div></div></td><td><button type="button" onclick="show_document()">Ver apenas documento</button></td></tr></table>');
             }
-            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+            var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
             
             check_doc_revoke();
         }
@@ -579,7 +580,7 @@ function handleServerResponseDisplayChangeArticleOnRemove() {
 
 
 function alteration(el) {
-    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].text;
+    var doc = document.getElementById('dd_data_doc').options[document.getElementById('dd_data_doc').selectedIndex].value;
     var numero = $(el).parent().parent().parent().parent().parent().parent().attr('data-id');
     var split = window.location.pathname.split("/");
     window.location.replace(window.location.protocol + "//" + window.location.host + "/" + split[1] + "/main_program/alteration?artigo=" + numero);
@@ -949,6 +950,14 @@ function validate_alt_alteration() {
     }
 }
 
+/*
+ * 0 a tamanho do artigo - conteudo do artigo
+ * tamanho do artigo +1 - o artigo
+ * tamanho do artigo +2 - o documento a alterar
+ * tamanho do artigo +3 - o documento que tem a hierarquia mais recente
+ * tamanho do artigo +4 a +10 - a hierarquia
+ * 
+ */
 function validate_addition() {
     output = [];
     
@@ -966,6 +975,33 @@ function validate_addition() {
     docname = document.getElementById('doc_name').innerHTML;
     splitdocname = docname.split("Documento: ");
     output[output.length] = splitdocname[1];
+    
+    output[output.length] = document.getElementById('dd_data_hierarchy_doc').options[document.getElementById('dd_data_hierarchy_doc').selectedIndex].text;
+    
+    if (document.getElementById('dd_livro').options.length > 0 && document.getElementById('dd_livro').options[document.getElementById('dd_livro').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_livro').options[document.getElementById('dd_livro').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_titulo').options.length > 0 && document.getElementById('dd_titulo').options[document.getElementById('dd_titulo').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_titulo').options[document.getElementById('dd_titulo').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_subtitulo').options.length > 0 && document.getElementById('dd_subtitulo').options[document.getElementById('dd_subtitulo').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_subtitulo').options[document.getElementById('dd_subtitulo').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_capitulo').options.length > 0 && document.getElementById('dd_capitulo').options[document.getElementById('dd_capitulo').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_capitulo').options[document.getElementById('dd_capitulo').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_seccao').options.length > 0 && document.getElementById('dd_seccao').options[document.getElementById('dd_seccao').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_seccao').options[document.getElementById('dd_seccao').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_subseccao').options.length > 0 && document.getElementById('dd_subseccao').options[document.getElementById('dd_subseccao').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_subseccao').options[document.getElementById('dd_subseccao').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_divisao').options.length > 0 && document.getElementById('dd_divisao').options[document.getElementById('dd_divisao').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_divisao').options[document.getElementById('dd_divisao').selectedIndex].text;
+    } else { output[output.length] = '0'; }
+    if (document.getElementById('dd_subdivisao').options.length > 0 && document.getElementById('dd_subdivisao').options[document.getElementById('dd_subdivisao').selectedIndex].text != "") {
+        output[output.length] = document.getElementById('dd_subdivisao').options[document.getElementById('dd_subdivisao').selectedIndex].text;
+    } else { output[output.length] = '0'; }
     
     var jsonString = JSON.stringify(output);
     if (confirm("Tem a certeza?")) {

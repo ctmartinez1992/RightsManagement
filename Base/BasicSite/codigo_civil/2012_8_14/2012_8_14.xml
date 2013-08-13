@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <doc nome="﻿Lei 31/2012">
 <altera>1048</altera>
 <altera>1054</altera>
@@ -21,7 +21,5 @@
 <altera>1103</altera>
 <altera>1106</altera>
 <altera>1110</altera>
-<revoga>1095-3</revoga>
-<revoga>1102-2</revoga>
 <revoga>1104</revoga>
 </doc>

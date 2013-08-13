@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <doc nome="﻿Lei 29/2009">
 <altera>1770</altera>
 <altera>2053</altera>
@@ -7,6 +7,4 @@
 <altera>2085</altera>
 <altera>2086</altera>
 <altera>2102</altera>
-<revoga>2085-1.c</revoga>
-<revoga>2086-1.c</revoga>
 </doc>

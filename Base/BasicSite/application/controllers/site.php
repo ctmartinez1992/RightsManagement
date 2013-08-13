@@ -141,6 +141,7 @@ class Site extends CI_Controller {
         }
         
         $array = $this->model_api->get_all_doc_names_array();
+        $array2 = $this->model_api->get_all_doc_names_titles_array();
         $doc = $this->session->userdata('current_doc');
         if ($doc == null) {
             $doc = (string) $array[sizeof($array)-1];
@@ -151,6 +152,7 @@ class Site extends CI_Controller {
         $title = $this->model_api->get_doc_name($doc);
         
         $nav_data['docs'] = $array;
+        $nav_data['docs_names'] = $array2;
         $nav_data['current_doc'] = $doc;
         $nav_data['revogado'] = $revogado;
         $nav_data['title'] = $title;

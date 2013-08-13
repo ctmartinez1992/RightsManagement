@@ -17,9 +17,9 @@
                             <?php
                                 for ($i=sizeof($docs)-1; $i>=0; $i--) {
                                     if ($current_doc == $docs[$i]) {
-                                        echo '<option value="' . $docs[$i] . '" selected>' . $docs[$i] . '</option>';
+                                        echo '<option value="' . $docs[$i] . '" selected>' . $docs_names[$i] . '</option>';
                                     } else {
-                                        echo '<option value="' . $docs[$i] . '">' . $docs[$i] . '</option>';
+                                        echo '<option value="' . $docs[$i] . '">' . $docs_names[$i] . '</option>';
                                     }
                                 }
                             ?>

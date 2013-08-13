@@ -32,9 +32,14 @@
                 <tr>
                     <td><p >Livro:</td>
                     <td>
-                        <?php
-                            echo form_dropdown('dd_livro', array(), 0, 'id="dd_livro" onChange="fill_titulo()"'); 
-                        ?>
+                        <select id="dd_livro" onChange="fill_titulo();">
+                            <?php
+                                echo '<option value="' . $livro[0] . '" selected>' . $livro[0] . '</option>';
+                                for ($i=1; $i<sizeof($livro); $i++) {
+                                    echo '<option value="' . $livro[$i] . '">' . $livro[$i] . '</option>';
+                                }
+                            ?>
+                        </select>
                     </td>
                     <td><p style="margin-left: -300px;">Título:</td>
                     <td>
@@ -80,5 +85,17 @@
                 </tr>
             </table>
         </article>
+        <select id="dd_artigo" style="visibility:hidden;"></select>
+        <select id="is_backend" style="visibility:hidden;"><option value="false" selected>stupid way to know that i am in backend</option></select>
+                        <select id="dd_data_doc" style="visibility:hidden;">
+                            <?php
+                                echo '<option value="' . $doc . '" selected>' . $doc . '</option>';
+                            ?>
+                        </select>
+                        <select id="dd_data_hierarchy_doc" style="visibility:hidden;">
+                            <?php
+                                echo '<option value="' . $hdoc . '" selected>' . $hdoc . '</option>';
+                            ?>
+                        </select>
     </section>
     

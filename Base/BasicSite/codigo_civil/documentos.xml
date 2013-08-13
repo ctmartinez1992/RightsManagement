@@ -1,65 +1,65 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <docs>
-    <doc>1966_11_25</doc>
-    <doc>1975_2_19</doc>
-    <doc>1975_5_27</doc>
-    <doc>1976_7_17</doc>
-    <doc>1976_7_24</doc>
-    <doc>1977_11_25</doc>
-    <doc>1977_7_20</doc>
-    <doc>1980_6_24</doc>
-    <doc>1980_7_18</doc>
-    <doc>1980_8_12</doc>
-    <doc>1981_12_4</doc>
-    <doc>1983_6_16</doc>
-    <doc>1985_6_24</doc>
-    <doc>1985_7_6</doc>
-    <doc>1985_9_20</doc>
-    <doc>1986_11_11</doc>
-    <doc>1986_12_31</doc>
-    <doc>1989_8_1</doc>
-    <doc>1990_10_15</doc>
-    <doc>1991_10_30</doc>
-    <doc>1991_7_18</doc>
-    <doc>1993_5_22</doc>
-    <doc>1994_10_25</doc>
-    <doc>1994_9_8</doc>
-    <doc>1995_12_12</doc>
-    <doc>1995_7_13</doc>
-    <doc>1995_8_31</doc>
-    <doc>1996_3_6</doc>
-    <doc>1996_5_31</doc>
-    <doc>1997_1_31</doc>
-    <doc>1998_11_6</doc>
-    <doc>1998_5_12</doc>
-    <doc>1998_5_8</doc>
-    <doc>1998_6_30</doc>
-    <doc>1998_8_10</doc>
-    <doc>1999_6_30</doc>
-    <doc>2001_10_13</doc>
-    <doc>2001_10_14</doc>
-    <doc>2001_11_30</doc>
-    <doc>2001_12_17</doc>
-    <doc>2001_6_22</doc>
-    <doc>2003_3_8</doc>
-    <doc>2003_8_22</doc>
-    <doc>2003_9_10</doc>
-    <doc>2004_3_19</doc>
-    <doc>2006_2_27</doc>
-    <doc>2006_4_24</doc>
-    <doc>2007_7_23</doc>
-    <doc>2007_8_24</doc>
-    <doc>2007_9_28</doc>
-    <doc>2008_10_31</doc>
-    <doc>2008_7_4</doc>
-    <doc>2009_4_1</doc>
-    <doc>2009_5_11</doc>
-    <doc>2009_6_29</doc>
-    <doc>2009_9_11</doc>
-    <doc>2010_5_31</doc>
-    <doc>2010_8_30</doc>
-    <doc>2012_7_9</doc>
-    <doc>2012_8_14</doc>
-    <doc>2012_8_15</doc>
-    <doc>2013_3_5</doc>
-    </docs>
+    <doc nome="Código Civil">1966_11_25</doc>
+    <doc nome="DL 67/75">1975_2_19</doc>
+    <doc nome="﻿DL 261/75">1975_5_27</doc>
+    <doc nome="﻿DL 561/76">1976_7_17</doc>
+    <doc nome="DL 605/76">1976_7_24</doc>
+    <doc nome="DL 293/77">1977_7_20</doc>
+    <doc nome="DL 496/77">1977_11_25</doc>
+    <doc nome="DL 200-C/80">1980_6_24</doc>
+    <doc nome="DL 236/80">1980_7_18</doc>
+    <doc nome="DL 236/80">1980_8_12</doc>
+    <doc nome="﻿DL 328/81">1981_12_4</doc>
+    <doc nome="DL 262/83">1983_6_16</doc>
+    <doc nome="DL 190/85">1985_6_24</doc>
+    <doc nome="﻿DL 225/84">1985_7_6</doc>
+    <doc nome="Lei 46/85">1985_9_20</doc>
+    <doc nome="DL 379/86">1986_11_11</doc>
+    <doc nome="R 31/12/86">1986_12_31</doc>
+    <doc nome="﻿Lei 24/89">1989_8_1</doc>
+    <doc nome="DL 321-B/90">1990_10_15</doc>
+    <doc nome="DL 257/91">1991_10_30</doc>
+    <doc nome="Lei 423/91">1991_7_18</doc>
+    <doc nome="DL 185/93">1993_5_22</doc>
+    <doc nome="DL 227/94">1994_9_8</doc>
+    <doc nome="DL 267/94">1994_10_25</doc>
+    <doc nome="DL 163/95">1995_7_13</doc>
+    <doc nome="﻿Lei 84/95">1995_8_31</doc>
+    <doc nome="DL 329-A/95">1995_12_12</doc>
+    <doc nome="DL 14/96">1996_3_6</doc>
+    <doc nome="﻿DL 68/96">1996_5_31</doc>
+    <doc nome="﻿DL 35/97">1997_1_31</doc>
+    <doc nome="DL 120/98">1998_5_8</doc>
+    <doc nome="Lei 21/98">1998_5_12</doc>
+    <doc nome="R 11-C/98">1998_6_30</doc>
+    <doc nome="Lei 47/98">1998_8_10</doc>
+    <doc nome="﻿DL 343/98">1998_11_6</doc>
+    <doc nome="﻿Lei 59/99">1999_6_30</doc>
+    <doc nome="Lei 16/2001">2001_6_22</doc>
+    <doc nome="DL 272/2001">2001_10_13</doc>
+    <doc nome="DL 273/2001">2001_10_14</doc>
+    <doc nome="R 20-AS/2001">2001_11_30</doc>
+    <doc nome="﻿DL 323/2001">2001_12_17</doc>
+    <doc nome="DL 38/2003">2003_3_8</doc>
+    <doc nome="Lei 31/2003">2003_8_22</doc>
+    <doc nome="DL 199/2003">2003_9_10</doc>
+    <doc nome="﻿DL 59/2004">2004_3_19</doc>
+    <doc nome="Lei 6/2006">2006_2_27</doc>
+    <doc nome="﻿R 24/2006">2006_4_24</doc>
+    <doc nome="DL 263-A/2007">2007_7_23</doc>
+    <doc nome="Lei 40/2007">2007_8_24</doc>
+    <doc nome="﻿DL 324/2007">2007_9_28</doc>
+    <doc nome="DL 116/2008">2008_7_4</doc>
+    <doc nome="Lei 61/2008">2008_10_31</doc>
+    <doc nome="Lei 14/2009">2009_4_1</doc>
+    <doc nome="DL 100/2009">2009_5_11</doc>
+    <doc nome="Lei 29/2009">2009_6_29</doc>
+    <doc nome="﻿Lei 103/2009">2009_9_11</doc>
+    <doc nome="Lei 9/2010">2010_5_31</doc>
+    <doc nome="Lei 23/2010">2010_8_30</doc>
+    <doc nome="Lei 24/2012">2012_7_9</doc>
+    <doc nome="Lei 31/2012">2012_8_14</doc>
+    <doc nome="Lei 32/2012">2012_8_15</doc>
+    <doc nome="Lei 23/2013">2013_3_5</doc>
+    <doc nome="Lei 2">2013_8_12</doc></docs>

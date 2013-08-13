@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <doc nome="﻿Lei 61/2008">
 <altera>1585</altera>
 <altera>1676</altera>
@@ -10,6 +10,7 @@
 <altera>1778-A</altera>
 <altera>1779</altera>
 <altera>1781</altera>
+<altera>1782</altera>
 <altera>1785</altera>
 <altera>1789</altera>
 <altera>1790</altera>
@@ -32,10 +33,7 @@
 <acrescenta>1776-A</acrescenta>
 <acrescenta>2016-A</acrescenta>
 <revoga>1780</revoga>
-<revoga>1782-2</revoga>
 <revoga>1783</revoga>
 <revoga>1786</revoga>
 <revoga>1787</revoga>
-<revoga>1795-D-3</revoga>
-<revoga>1795-D-4</revoga>
 </doc>

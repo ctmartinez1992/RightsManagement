@@ -452,6 +452,9 @@ class Model_api extends CI_Model {
      * Returns: The name of the document
      */
     public function get_doc_name($name) {
+        if ($name == "1966_11_25") {
+            return "Código Civil";
+        }
         $array = simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/' . $name . "/" . $name . ".xml");
         return $array['nome'];
     }
@@ -561,6 +564,7 @@ class Model_api extends CI_Model {
     public function get_all_doc_names() {
         return simplexml_load_file('C:/wamp/www/BasicSite/codigo_civil/documentos.xml');
     }
+    
     /*
      * Returns: An array with the names of all the documents existent in the directory
      */
@@ -574,6 +578,21 @@ class Model_api extends CI_Model {
         }
         return $array;
     }
+    
+    /*
+     * Returns: An array with the names and dates of all the documents existent in the directory
+     */
+    public function get_all_doc_names_titles_array() {
+        $xml = $this->get_all_doc_names();
+        $array = array();
+        $i = 0;
+        foreach($xml->doc as $doc) {
+            $array[$i] = $doc . " - " . $doc['nome'];
+            $i++;
+        }
+        return $array;
+    }
+    
     /*
      * Returns: An array with the count of all the documents existent in the directory
      */
